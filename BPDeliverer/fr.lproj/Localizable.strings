@@ -1,0 +1,151 @@
+/* 
+  Localizable.strings
+  BPDeliverer
+
+  Created by yangjian on 2023/12/6.
+  
+*/
+
+"tracker" = "Traqueur";
+"add" = "ajouter";
+"analytics" = "analyses";
+"profile" = "profil";
+"Record blood pressure status" = "Enregistrer l'état de la tension artérielle";
+
+"Add" = "Ajouter";
+"Low BP" = "TA faible";
+"Normal BP" = "TA normale";
+"Elevated BP" = "TA élevée";
+"Hypertension1 BP" = "Hypertension1 TA";
+"Hypertension2 BP" = "Hypertension2 TA";
+"Severe hypertension" = "Hypertension sévère";
+
+"Tip" = "Astuce";
+"Cancel" = "Annuler";
+"Delete" = "Supprimer";
+
+"Are you sure you want to delete this record？" = "Êtes-vous sûr de vouloir supprimer cet enregistrement？";
+"Details" = "Détails";
+"New Measurement" = "Nouvelle mesure";
+
+"Systolic" = "Systolique";
+"Diastolic" = "diastoliqu";
+"Pulse" = "impulsion";
+
+"Continue" = "Continuer";
+"Edit" = "Modifier";
+"Range: %@" = "Plage : %@";
+
+"Feeling" = "Sentiment";
+"Measured arm" = "Bras mesuré";
+"Body Position" = "Position du corps";
+
+"Note" = "Remarque";
+"Mabel Figueroa Hattie Fitzgerald Nancy Ball Mabel Figueroa" = "Mabel Figueroa Hattie Fitzgerald Nancy Ball Mabel Figueroa";
+"OK" = "D'accord";
+
+"Analytics Data" = "Données analytiques";
+"The proportion of normal blood pressure values" = "La proportion de valeurs de tension artérielle normales";
+"BP Proportion" = "Proportion de PA";
+"BP Trends" = "Tendances BP";
+"MAP Trends" = "Tendances MAP";
+"Heart Rate" = "Fréquence cardiaque";
+
+"is the proportion of normal blood pressure values" = "est la proportion de valeurs de tension artérielle normales";
+
+"Days" = "Jours";
+
+"Your Average BP" = "Votre TA moyenne";
+"Your Average HR" = "Votre FC moyenne";
+"The normal range 120-80 mmHg" = "La plage normale 120-80 mmHg";
+"The normal range 79-110 mmHg" = "La plage normale 79-110 mmHg";
+
+"Daily reminder" = "Rappel quotidien";
+"Privacy policy" = "Politique de confidentialité";
+"Language" = "Langue";
+"Contact us" = "Contactez-nous";
+
+"English" = "Anglais";
+"Portuguese" = "Portugais";
+"French" = "Français";
+"Spanish" = "Espagnol";
+"German" = "Allemand";
+"Arabic" = "Arabe";
+
+"Selection period" = "Période de sélection";
+
+"Record your blood pressure status and analyze your health status!" = "Enregistrez votre état de tension artérielle et analysez votre état de santé !";
+"privacy" = "Veuillez lire cette politique de confidentialité en détail. Cette politique de confidentialité est destinée à vous informer sur les données personnelles que nous collectons auprès de vous. Nous utiliserons et protégerons vos informations personnelles par des moyens formels et nous partagerons légalement vos informations personnelles.
+
+
+Quelles informations allons-nous collecter
+
+Nous pouvons collecter les informations que vous fournissez lors de votre inscription, de votre utilisation de l'application ou de votre contact, y compris, mais sans s'y limiter :
+
+Vos données de tension artérielle et autres informations liées à la santé.
+
+Dans le même temps, notre application collectera également automatiquement ces informations, y compris, mais sans s'y limiter :
+
+Informations sur l'équipement (modèle, version du système d'exploitation, etc.)
+
+Statistiques d'utilisation des applications
+
+adresse IP
+
+Rapport de plantage de l'application
+
+
+Comment nous utilisons vos informations
+
+Les informations que nous collectons seront utilisées aux fins suivantes :
+
+1. Fournir, maintenir et améliorer les fonctionnalités et les services de l'application
+
+2. Envoyez des notifications et des mises à jour liées à l'application
+
+3. Gérer les demandes des utilisateurs ou fournir un support client
+
+4. Améliorer l'expérience utilisateur
+
+
+Comment allons-nous partager vos informations
+
+Nous nous engageons à ne pas vendre, échanger ou transférer vos informations personnelles à des tiers, sauf dans les situations suivantes : avec votre consentement, conformément aux dispositions légales ou aux exigences de conformité, pour protéger nos droits, notre propriété ou notre sécurité.
+
+
+À propos de la vie privée des enfants
+
+Nous promettons que nos applications et services ne sont applicables qu'aux personnes âgées de 17 ans et plus. Si nous apprenons que des enfants de moins de 17 ans nous ont fourni des informations personnelles, nous supprimerons immédiatement ces informations du serveur. Si vous êtes un parent ou un tuteur et savez que votre enfant nous a fourni des informations personnelles, veuillez nous contacter.
+
+
+Mise à jour
+
+Nous pouvons mettre à jour cette politique de confidentialité sur cette page.
+
+
+Contactez-nous
+
+ming1997317@outlook.com
+
+
+Conditions d'utilisation
+
+Utilisation de l'application
+
+1. Vous acceptez que nous utilisions vos informations aux fins requises par les lois et réglementations.
+
+2. Vous reconnaissez que vous ne pouvez pas utiliser notre application à des fins illégales.
+
+3. Vous acceptez que nous puissions cesser de fournir nos produits et services à tout moment et sans préavis.
+
+4. En acceptant de télécharger ou d'installer notre logiciel, vous acceptez notre politique de confidentialité.
+
+
+Mise à jour
+
+Nous pouvons mettre à jour cette politique de confidentialité sur cette page.
+
+
+Contactez-nous
+
+ming1997317@outlook.com";

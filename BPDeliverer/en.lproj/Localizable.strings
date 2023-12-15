@@ -1,0 +1,124 @@
+/* 
+  Localizable.strings
+  BPDeliverer
+
+  Created by yangjian on 2023/12/6.
+  
+*/
+"tracker" = "tracker";
+"add" = "add";
+"analytics" = "analytics";
+"profile" = "profile";
+"Record blood pressure status" = "Record blood pressure status";
+"Add" = "Add";
+"Low BP" = "Low BP";
+"Normal BP" = "Normal BP";
+"Elevated BP" = "Elevated BP";
+"Hypertension1 BP" = "Hypertension1 BP";
+"Hypertension2 BP" = "Hypertension2 BP";
+"Severe hypertension" = "Severe hypertension";
+
+"Tip" = "Tip";
+"Cancel" = "Cancel";
+"Delete" = "Delete";
+
+"Are you sure you want to delete this record？" = "Are you sure you want to delete this record？";
+"Details" = "Details";
+"New Measurement" = "New Measurement";
+
+"systolic" = "Systolic";
+"diastolic" = "Diastolic";
+"pulse" = "Pulse";
+
+"Continue" = "Continue";
+"Edit" = "Edit";
+"Range: %@" = "Range: %@";
+
+"Feeling" = "Feeling";
+"Measured arm" = "Measured arm";
+"Body Position" = "Body Position";
+
+"Note" = "Note";
+"Mabel Figueroa Hattie Fitzgerald Nancy Ball Mabel Figueroa" = "Mabel Figueroa Hattie Fitzgerald Nancy Ball Mabel Figueroa";
+"OK" = "OK";
+
+"Analytics Data" = "Analytics Data";
+"The proportion of normal blood pressure values" = "The proportion of normal blood pressure values";
+"BP Trends" = "BP Trends";
+"MAP Trends" = "MAP Trends";
+"Heart Rate" = "Heart Rate";
+
+"is the proportion of normal blood pressure values" = "is the proportion of normal blood pressure values";
+
+"Days" = "Days";
+
+"Your Average BP" = "Your Average BP";
+"Your Average HR" = "Your Average HR";
+"The normal range 120-80 mmHg" = "The normal range 120-80 mmHg";
+"The normal range 79-110 mmHg" = "The normal range 79-110 mmHg";
+
+"Daily reminder" = "Daily reminder";
+"Privacy policy" = "Privacy policy";
+"Language" = "Language";
+"Contact us" = "Contact us";
+
+"English" = "English";
+"Portuguese" = "Portuguese";
+"French" = "French";
+"Spanish" = "Spanish";
+"German" = "German";
+"Arabic" = "Arabic";
+
+"Selection period" = "Selection period";
+"Record your blood pressure status and analyze your health status!" = "Record your blood pressure status and analyze your health status!";
+"privacy" = "Please read this privacy policy in detail. This Privacy Policy is intended to inform you about the personal data we collect from you. We will use and protect your personal information through formal means and we will legally share your personal information.
+
+
+What information will we collect
+
+We may collect information you provide when registering, using the application, or contacting us, including but not limited to:
+
+Your blood pressure data and other health-related information.
+
+At the same time, our app will also automatically collect this information, including but not limited to:
+
+Equipment information (model, operating system version, etc.)
+
+Application usage statistics
+
+IP address
+
+Application crash report
+
+
+How we use your information
+
+The information we collect will be used for the following purposes:
+
+1. Provide, maintain, and improve the functionality and services of the application
+
+2. Send notifications and updates related to the application
+
+3. Handle user requests or provide customer support
+
+4. Improve user experience
+
+
+How will we share your information
+
+We promise not to sell, exchange, or transfer your personal information to third parties, except in the following situations: with your consent, in accordance with legal provisions or compliance requirements, to protect our rights, property, or security.
+
+
+About children's privacy
+
+We promise that our apps and services are only applicable to people aged 17 and above. If we become aware that children under the age of 17 have provided us with personal information, we will immediately delete that information from the server. If you are a parent or guardian and know that your child has provided us with personal information, please contact us.
+
+
+Update
+
+We may update this Privacy Policy on this page.
+
+
+Contact us
+
+ming1997317@outlook.com";

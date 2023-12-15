@@ -1,0 +1,153 @@
+/* 
+  Localizable.strings
+  BPDeliverer
+
+  Created by yangjian on 2023/12/6.
+  
+*/
+
+"tracker" = "Rastreador";
+"add" = "Agregar";
+"analytics" = "Análisis";
+"profile" = "Perfil";
+
+"Record blood pressure status" = "Registrar estado de presión arterial";
+"Add" = "Agregar";
+
+"Low BP" = "PA baja";
+"Normal BP" = "PA normal";
+"Elevated BP" = "PA elevada";
+"Hypertension1 BP" = "Hipertensión1 PA";
+"Hypertension2 BP" = "Hipertensión2 PA";
+"Severe hypertension" = "Hipertensión grave";
+
+"Tip" = "Consejo";
+"Cancel" = "Cancelar";
+"Delete" = "Eliminar";
+
+"Are you sure you want to delete this record？" = "¿Está seguro de que desea eliminar este registro?";
+"Details" = "Detalles";
+"New Measurement" = "Nueva Medición";
+
+"Systolic" = "Sistólica";
+"Diastolic" = "Diastólica";
+"Pulse" = "Pulso";
+
+"Continue" = "Continuar";
+"Edit" = "Editar";
+"Range: %@" = "Rango: %@";
+
+"Feeling" = "Sentimiento";
+"Measured arm" = "Brazo medido";
+"Body Position" = "Posición del cuerpo";
+
+"Note" = "Nota";
+"Mabel Figueroa Hattie Fitzgerald Nancy Ball Mabel Figueroa" = "Mabel Figueroa Hattie Fitzgerald Nancy Ball Mabel Figueroa";
+"OK" = "Aceptar";
+
+"Analytics Data" = "Datos analíticos";
+"The proportion of normal blood pressure values" = "La proporción de valores normales de presión arterial";
+"BP Proportion" = "Proporción de PA";
+"BP Trends" = "Tendencias de BP";
+"MAP Trends" = "Tendencias MAP";
+"Heart Rate" = "Frecuencia cardíaca";
+
+"is the proportion of normal blood pressure values" = " es la proporción de valores normales de presión arterial";
+
+"Days" = "Días";
+
+"Your Average BP" = "Su PA promedio";
+"Your Average HR" = "Su FC promedio";
+"The normal range 120-80 mmHg" = "El rango normal 120-80 mmHg";
+"The normal range 79-110 mmHg" = "El rango normal 79-110 mmHg";
+
+"Daily reminder" = "Recordatorio diario";
+"Privacy policy" = "Política de privacidad";
+"Language" = "Idioma";
+"Contact us" = "Contáctenos";
+
+"English" = "inglés";
+"Portuguese" = "portugués";
+"French" = "francés";
+"Spanish" = "español";
+"German" = "alemán";
+"Arabic" = "árabe";
+
+"Selection period" = "Período de selección";
+
+"Record your blood pressure status and analyze your health status!" = "¡Registra tu estado de presión arterial y analiza tu estado de salud!";
+"privacy" = "
+Por favor lea esta política de privacidad en detalle. Esta Política de Privacidad tiene como objetivo informarle sobre los datos personales que recopilamos de usted. Usaremos y protegeremos su información personal a través de medios formales y compartiremos legalmente su información personal.
+
+
+¿Qué información recopilaremos?
+
+Podemos recopilar información que usted proporciona al registrarse, utilizar la aplicación o comunicarse con nosotros, incluidos, entre otros:
+
+Tus datos de presión arterial y otra información relacionada con la salud.
+
+Al mismo tiempo, nuestra aplicación también recopilará automáticamente esta información, que incluye, entre otros:
+
+Información del equipo (modelo, versión del sistema operativo, etc.)
+
+Estadísticas de uso de aplicaciones
+
+dirección IP
+
+Informe de fallo de la aplicación
+
+
+Cómo utilizamos su información
+
+La información que recopilamos se utilizará para los siguientes fines:
+
+1. Proporcionar, mantener y mejorar la funcionalidad y los servicios de la aplicación.
+
+2. Enviar notificaciones y actualizaciones relacionadas con la aplicación.
+
+3. Manejar las solicitudes de los usuarios o brindar atención al cliente.
+
+4. Mejorar la experiencia del usuario
+
+
+¿Cómo compartiremos su información?
+
+Nos comprometemos a no vender, intercambiar ni transferir su información personal a terceros, excepto en las siguientes situaciones: con su consentimiento, de conformidad con las disposiciones legales o requisitos de cumplimiento, para proteger nuestros derechos, propiedad o seguridad.
+
+
+Sobre la privacidad de los niños
+
+Prometemos que nuestras aplicaciones y servicios solo son aplicables a personas mayores de 17 años. Si nos damos cuenta de que niños menores de 17 años nos han proporcionado información personal, eliminaremos inmediatamente esa información del servidor. Si es padre o tutor y sabe que su hijo nos ha proporcionado información personal, comuníquese con nosotros.
+
+
+Actualizar
+
+Podemos actualizar esta Política de Privacidad en esta página.
+
+
+Contáctenos
+
+ming1997317@outlook.com
+
+
+Condiciones de uso
+
+Uso de la aplicación
+
+1. Usted acepta que utilizaremos su información para los fines requeridos por las leyes y regulaciones.
+
+2. Usted reconoce que no puede utilizar nuestra Aplicación con fines ilegales.
+
+3. Usted acepta que podemos dejar de proporcionar nuestros productos y servicios en cualquier momento sin previo aviso.
+
+4. Al aceptar descargar o instalar nuestro software, acepta nuestra Política de Privacidad.
+
+
+Actualizar
+
+Podemos actualizar esta Política de Privacidad en esta página.
+
+
+Contáctenos
+
+ming1997317@outlook.com";

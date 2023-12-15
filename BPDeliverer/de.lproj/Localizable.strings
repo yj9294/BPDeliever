@@ -1,0 +1,150 @@
+/* 
+  Localizable.strings
+  BPDeliverer
+
+  Created by yangjian on 2023/12/6.
+  
+*/
+"tracker" = "tracker";
+"add" = "add";
+"analytics" = "analytics";
+"profile" = "Profil";
+
+"Record blood pressure status" = "Blutdruckstatus aufzeichnen";
+"Add" = "Hinzufügen";
+
+"Low BP" = "Niedriger Blutdruck";
+"Normal BP" = "Normaler Blutdruck";
+"Elevated BP" = "Erhöhter Blutdruck";
+"Hypertension1 BP" = "Hypertonie1 BP";
+"Hypertension2 BP" = "Hypertonie2 BP";
+"Severe hypertension" = "Schwere Hypertonie";
+
+"Tip" = "Tipp";
+"Cancel" = "Abbrechen";
+"Delete" = "Löschen";
+
+"Are you sure you want to delete this record？" = "Sind Sie sicher, dass Sie diesen Datensatz löschen möchten?";
+"Details" = "Details";
+"New Measurement" = "Neue Messung";
+
+"Systolic" = "Systolisch";
+"Diastolic" = "Diastolisch";
+"Pulse" = "Puls";
+
+"Continue" = "Weiter";
+"Edit" = "Bearbeiten";
+"Range: %@" = "Bereich: %@";
+
+"Feeling" = "Gefühl";
+"Measured arm" = "Gemessener Arm";
+"Body Position" = "Körperposition";
+
+"Note" = "Hinweis";
+"Mabel Figueroa Hattie Fitzgerald Nancy Ball Mabel Figueroa" = "Mabel Figueroa Hattie Fitzgerald Nancy Ball Mabel Figueroa";
+"OK" = "OK";
+
+"Analytics Data" = "Analytics Data";
+"The proportion of normal blood pressure values" = "Der Anteil normaler Blutdruckwerte“";
+"BP Proportion" = "BP-Anteil";
+"BP Trends" = "BP-Trends";
+"MAP Trends" = "MAP Trends";
+"Heart Rate" = "Herzfrequenz";
+
+"is the proportion of normal blood pressure values" = "ist der Anteil normaler Blutdruckwerte";
+
+"Days" = "Days";
+
+"Your Average BP" = "Ihr durchschnittlicher Blutdruckk";
+"Your Average HR" = "Ihre durchschnittliche Herzfrequenz";
+"The normal range 120-80 mmHg" = "Der Normalbereich 120–80 mmHg";
+"The normal range 79-110 mmHg" = "Der Normalbereich 79–110 mmHg";
+
+"Daily reminder" = "Tägliche Erinnerung";
+"Privacy policy" = "Datenschutzerklärung";
+"Language" = "Sprache";
+"Contact us" = "Kontaktieren Sie uns";
+
+"English" = "Englisch";
+"Portuguese" = "Portugiesisch";
+"French" = "Französisch";
+"Spanish" = "Spanisch";
+"German" = "Deutsch";
+"Arabic" = "Arabisch";
+
+"Selection period" = "Auswahlzeitraum";
+"Record your blood pressure status and analyze your health status!" = "Erfassen Sie Ihren Blutdruckstatus und analysieren Sie Ihren Gesundheitszustand!";
+"privacy" = "Bitte lesen Sie diese Datenschutzerklärung im Detail. Mit dieser Datenschutzerklärung möchten wir Sie darüber informieren, welche personenbezogenen Daten wir von Ihnen erheben. Wir werden Ihre personenbezogenen Daten mit formellen Mitteln verwenden und schützen und Ihre personenbezogenen Daten rechtmäßig weitergeben.
+
+
+Welche Informationen werden wir sammeln?
+
+Wir können Informationen erfassen, die Sie bei der Registrierung, Nutzung der Anwendung oder Kontaktaufnahme mit uns angeben, einschließlich, aber nicht beschränkt auf:
+
+Ihre Blutdruckdaten und andere gesundheitsbezogene Informationen.
+
+Gleichzeitig erfasst unsere App auch automatisch diese Informationen, einschließlich, aber nicht beschränkt auf:
+
+Geräteinformationen (Modell, Betriebssystemversion usw.)
+
+Statistiken zur Anwendungsnutzung
+
+IP Adresse
+
+Anwendungsabsturzbericht
+
+
+Wie wir Ihre Informationen verwenden
+
+Die von uns erfassten Informationen werden für folgende Zwecke verwendet:
+
+1. Bereitstellung, Wartung und Verbesserung der Funktionalität und Dienste der Anwendung
+
+2. Senden Sie Benachrichtigungen und Aktualisierungen im Zusammenhang mit der Anwendung
+
+3. Behandeln Sie Benutzeranfragen oder leisten Sie Kundensupport
+
+4. Verbessern Sie die Benutzererfahrung
+
+
+Wie werden wir Ihre Informationen weitergeben?
+
+Wir versprechen, Ihre personenbezogenen Daten nicht an Dritte zu verkaufen, auszutauschen oder weiterzugeben, außer in den folgenden Situationen: mit Ihrer Zustimmung, in Übereinstimmung mit gesetzlichen Bestimmungen oder Compliance-Anforderungen, um unsere Rechte, unser Eigentum oder unsere Sicherheit zu schützen.
+
+
+Über die Privatsphäre von Kindern
+
+Wir versprechen, dass unsere Apps und Dienste nur für Personen ab 17 Jahren gelten. Sollten wir Kenntnis davon erlangen, dass uns Personen unter 17 Jahren personenbezogene Daten zur Verfügung gestellt haben, werden wir diese Daten unverzüglich vom Server löschen. Wenn Sie ein Elternteil oder Erziehungsberechtigter sind und wissen, dass Ihr Kind uns personenbezogene Daten zur Verfügung gestellt hat, kontaktieren Sie uns bitte.
+
+
+Aktualisieren
+
+Wir können diese Datenschutzrichtlinie auf dieser Seite aktualisieren.
+
+
+Kontaktiere uns
+
+ming1997317@outlook.com
+
+
+Nutzungsbedingungen
+
+Nutzung der Anwendung
+
+1. Sie erklären sich damit einverstanden, dass wir Ihre Daten für die gesetzlich und behördlich vorgeschriebenen Zwecke verwenden.
+
+2. Sie erkennen an, dass Sie unsere App nicht für illegale Zwecke nutzen dürfen.
+
+3. Sie erklären sich damit einverstanden, dass wir die Bereitstellung unserer Produkte und Dienstleistungen jederzeit und ohne vorherige Ankündigung einstellen können.
+
+4. Indem Sie dem Herunterladen oder Installieren unserer Software zustimmen, akzeptieren Sie unsere Datenschutzrichtlinie.
+
+
+Aktualisieren
+
+Wir können diese Datenschutzrichtlinie auf dieser Seite aktualisieren.
+
+
+Kontaktiere uns
+
+ming1997317@outlook.com";
