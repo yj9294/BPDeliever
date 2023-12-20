@@ -25,6 +25,7 @@ struct TrackerReducer: Reducer {
         case filterDateMinTapped
         case filterDateMaxTapped
         case itemSelected(Measurement)
+        case addButtonTapped
     }
     var body: some Reducer<State, Action> {
         Reduce{ state, action in
@@ -92,9 +93,24 @@ struct TrackerView: View {
                         }
                     }.padding(.vertical, 40)
                 }
+                
+                VStack{
+                    Spacer()
+                    HStack{
+                        Spacer()
+                        Button {
+                            viewStore.send(.addButtonTapped)
+                        } label: {
+                            Image("tracker_add_1")
+                        }.padding(.bottom, 88).padding(.trailing, 24)
+                    }
+                }
+                
                 if !viewStore.isGuide {
                     GuideView { viewStore.send(.guide) }
                 }
+                
+                
             }
         }.background(Color("#F3F8FB")).onAppear {
             ATTrackingManager.requestTrackingAuthorization { _ in

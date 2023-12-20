@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+import WebKit
 
 extension String {
     static let language = "language"
@@ -117,4 +118,59 @@ extension String {
         
         return localizedString
     }
+}
+
+extension Dictionary {
+    var jsonString: String? {
+        guard let data = try? JSONSerialization.data(withJSONObject: self, options: []) else {
+            return nil
+        }
+        let jsonString = String(data: data, encoding: .utf8)
+        return jsonString
+    }
+    
+    var data: Data? {
+        guard let data = try? JSONSerialization.data(withJSONObject: self, options: .prettyPrinted) else {
+            return nil
+        }
+        return data
+    }
+    
+}
+
+extension Data {
+    var json: [String: Any]? {
+        guard let json = try? JSONSerialization.jsonObject(with: self) else {
+            return nil
+        }
+        return json as? [String : Any]
+    }
+}
+
+public final class UserAgentFetcher: NSObject {
+    
+    private let webView: WKWebView = WKWebView(frame: .zero)
+    
+    @objc
+    public func fetch() -> String {
+        dispatchPrecondition(condition: .onQueue(.main))
+
+        var result: String?
+        
+        webView.evaluateJavaScript("navigator.userAgent") { response, error in
+            if error != nil {
+                result = ""
+                return
+            }
+            
+            result = response as? String ?? ""
+        }
+
+        while (result == nil) {
+            RunLoop.main.run(until: Date(timeIntervalSinceNow: 0.01))
+        }
+
+        return result ?? ""
+    }
+    
 }

@@ -16,8 +16,6 @@ struct HomeReducer: Reducer {
         
         @BindingState var item: Item = .tracker
         let items = Item.allCases
-        // 用于记录点击前的状态
-        var lastItem: Item = .tracker
         
         var tracker: TrackerReducer.State = .init()
         @PresentationState var add: AddReducer.State? = nil
@@ -31,8 +29,6 @@ struct HomeReducer: Reducer {
         case analytics(ChartsReducer.Action)
         case profile(ProfileReducer.Action)
         
-        case lastItem
-        case resetItem
         case presentAddView
         case add(PresentationAction<AddReducer.Action>)
         case datePicker(PresentationAction<DatePickerReducer.Action>)
@@ -41,10 +37,6 @@ struct HomeReducer: Reducer {
         BindingReducer()
         Reduce{ state, action in
             switch action {
-            case .lastItem:
-                state.updateLastItem()
-            case .resetItem:
-                state.resetItem()
             case .presentAddView:
                 state.presentAddView()
             case .add(.presented(.root(.dismiss))):
@@ -52,6 +44,8 @@ struct HomeReducer: Reducer {
             case let .add(.presented(.path(.element(id: _, action: .edit(.buttonTapped(measure)))))):
                 state.updateMeasures(measure)
                 state.dismissAddView()
+            case .tracker(.addButtonTapped):
+                state.presentAddView()
 //            case let .add(.presented(.path(.element(id: id, action: .edit(.dateButtonTapped))))):
 //                // 编辑的时候不跳转，新增才跳转
 //                if case let .edit(editState) = state.add?.path[id: id] {
@@ -95,7 +89,7 @@ struct HomeReducer: Reducer {
 
 extension HomeReducer.State {
     enum Item: String, CaseIterable {
-        case tracker, add, analytics, profile
+        case tracker, analytics, profile
         var icon: String{
             return "home_" + self.rawValue
         }
@@ -123,13 +117,6 @@ extension HomeReducer.State {
         datePicker = nil
     }
     
-    mutating func resetItem() {
-        item = lastItem
-    }
-    
-    mutating func updateLastItem() {
-        lastItem = item
-    }
     
     mutating func updateMeasures(_ measure: Measurement) {
         if measures.contains(where: { m in
@@ -178,14 +165,6 @@ struct HomeView: View {
                 ForEach(viewStore.items, id: \.self) { item in
                     ContentView(store: store, item: item)
                 }
-            }.onChange(of: viewStore.$item.wrappedValue) { value in
-                switch value {
-                case .add:
-                    viewStore.send(.resetItem)
-                    viewStore.send(.presentAddView)
-                default:
-                    viewStore.send(.lastItem)
-                }
             }.fullScreenCover(store: store.scope(state: \.$add, action: {.add($0)})) { store in
                 AddView(store: store)
             }.fullScreenCover(store: store.scope(state: \.$datePicker, action: {.datePicker($0)})) { store in
@@ -203,8 +182,6 @@ struct HomeView: View {
                     switch item {
                     case .tracker:
                         TrackerView(store: store.scope(state: \.tracker, action: HomeReducer.Action.tracker))
-                    case .add:
-                        EmptyView()
                     case .analytics:
                         ChartsView(store: store.scope(state: \.analytics, action: HomeReducer.Action.analytics))
                     case .profile:

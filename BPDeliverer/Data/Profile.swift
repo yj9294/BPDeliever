@@ -33,6 +33,26 @@ struct UserDefault<T: Codable> where T: Equatable {
     }
 }
 
+@propertyWrapper
+struct FileHelper<T: Codable> {
+    var value: T?
+    let key: String
+    init(_ key: String) {
+        self.key = key
+        self.value = UserDefaults.standard.getObject(T.self, forKey: key)
+    }
+    
+    var wrappedValue: T? {
+        set  {
+            value = newValue
+            UserDefaults.standard.setObject(value, forKey: key)
+            UserDefaults.standard.synchronize()
+        }
+        
+        get { value }
+    }
+}
+
 extension UserDefault: Equatable {
     static func == (lhs: UserDefault<T>, rhs: UserDefault<T>) -> Bool {
         lhs.value == rhs.value

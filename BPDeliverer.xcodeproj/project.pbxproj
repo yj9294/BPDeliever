@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C70446372B317F3900F60541 /* AnyCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70446362B317F3900F60541 /* AnyCodable.swift */; };
+		C70446462B31BF7300F60541 /* GADUtil in Frameworks */ = {isa = PBXBuildFile; productRef = C70446452B31BF7300F60541 /* GADUtil */; };
 		C7051BB92B2064310046D270 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7051BB82B2064310046D270 /* Helper.swift */; };
 		C7051BBC2B2064C70046D270 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C7051BBE2B2064C70046D270 /* Localizable.strings */; };
 		C728089A2B22F63C000E4A8D /* ProportionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72808992B22F63C000E4A8D /* ProportionView.swift */; };
@@ -38,9 +40,14 @@
 		C7D2918E2B19BE7C00A6B2D8 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D2918D2B19BE7C00A6B2D8 /* HomeView.swift */; };
 		C7D291902B19D8EE00A6B2D8 /* Measurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D2918F2B19D8EE00A6B2D8 /* Measurement.swift */; };
 		C7D291942B19DED800A6B2D8 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D291932B19DED800A6B2D8 /* Profile.swift */; };
+		C7E505662B3132C9009A5FCD /* NetworkUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E505652B3132C9009A5FCD /* NetworkUtil.swift */; };
+		C7E5056A2B314546009A5FCD /* EventRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E505692B314546009A5FCD /* EventRequest.swift */; };
+		C7F4CFAC2B3070E00093D739 /* BaseRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F4CFAB2B3070E00093D739 /* BaseRequest.swift */; };
+		C7F4CFAF2B3071100093D739 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = C7F4CFAE2B3071100093D739 /* Alamofire */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C70446362B317F3900F60541 /* AnyCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyCodable.swift; sourceTree = "<group>"; };
 		C7051BB82B2064310046D270 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		C7051BBD2B2064C70046D270 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C7051BBF2B2064D00046D270 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -75,6 +82,9 @@
 		C7D2918F2B19D8EE00A6B2D8 /* Measurement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Measurement.swift; sourceTree = "<group>"; };
 		C7D291932B19DED800A6B2D8 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		C7DE84632B26DD9900BA32E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		C7E505652B3132C9009A5FCD /* NetworkUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkUtil.swift; sourceTree = "<group>"; };
+		C7E505692B314546009A5FCD /* EventRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventRequest.swift; sourceTree = "<group>"; };
+		C7F4CFAB2B3070E00093D739 /* BaseRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +94,8 @@
 			files = (
 				C7678E922B27F6310015D757 /* FacebookBasics in Frameworks */,
 				C7678E902B27F6310015D757 /* FacebookAEM in Frameworks */,
+				C7F4CFAF2B3071100093D739 /* Alamofire in Frameworks */,
+				C70446462B31BF7300F60541 /* GADUtil in Frameworks */,
 				C7D2917A2B1981D700A6B2D8 /* ComposableArchitecture in Frameworks */,
 				C7678E942B27F6310015D757 /* FacebookCore in Frameworks */,
 			);
@@ -112,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				C7DE84632B26DD9900BA32E2 /* Info.plist */,
+				C7F4CFAA2B3070710093D739 /* API */,
 				C7D291952B19DEE400A6B2D8 /* Data */,
 				C7D291962B19DEF700A6B2D8 /* View */,
 				C7D2916E2B197F1900A6B2D8 /* Assets.xcassets */,
@@ -133,9 +146,11 @@
 			isa = PBXGroup;
 			children = (
 				C7D2918F2B19D8EE00A6B2D8 /* Measurement.swift */,
+				C70446362B317F3900F60541 /* AnyCodable.swift */,
 				C7051BB82B2064310046D270 /* Helper.swift */,
 				C7D291932B19DED800A6B2D8 /* Profile.swift */,
 				C72808AD2B242263000E4A8D /* Notification.swift */,
+				C7E505652B3132C9009A5FCD /* NetworkUtil.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -167,6 +182,15 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		C7F4CFAA2B3070710093D739 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				C7F4CFAB2B3070E00093D739 /* BaseRequest.swift */,
+				C7E505692B314546009A5FCD /* EventRequest.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -188,6 +212,8 @@
 				C7678E8F2B27F6310015D757 /* FacebookAEM */,
 				C7678E912B27F6310015D757 /* FacebookBasics */,
 				C7678E932B27F6310015D757 /* FacebookCore */,
+				C7F4CFAE2B3071100093D739 /* Alamofire */,
+				C70446452B31BF7300F60541 /* GADUtil */,
 			);
 			productName = BPDeliverer;
 			productReference = C7D291672B197F1600A6B2D8 /* BPDeliverer.app */;
@@ -225,6 +251,8 @@
 			packageReferences = (
 				C7D291782B1981D600A6B2D8 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
 				C7678E8E2B27F6310015D757 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */,
+				C7F4CFAD2B3071100093D739 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				C70446442B31BF7300F60541 /* XCRemoteSwiftPackageReference "GADUtil" */,
 			);
 			productRefGroup = C7D291682B197F1600A6B2D8 /* Products */;
 			projectDirPath = "";
@@ -253,6 +281,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7E505662B3132C9009A5FCD /* NetworkUtil.swift in Sources */,
 				C7D2916D2B197F1600A6B2D8 /* ContentView.swift in Sources */,
 				C72808AC2B240803000E4A8D /* DatePickerView.swift in Sources */,
 				C72808A82B234AAE000E4A8D /* LanguageView.swift in Sources */,
@@ -263,9 +292,11 @@
 				C728089A2B22F63C000E4A8D /* ProportionView.swift in Sources */,
 				C7D2918A2B19B8E400A6B2D8 /* ProfileView.swift in Sources */,
 				C7D291942B19DED800A6B2D8 /* Profile.swift in Sources */,
+				C7F4CFAC2B3070E00093D739 /* BaseRequest.swift in Sources */,
 				C7D291882B19B8CF00A6B2D8 /* ChartsView.swift in Sources */,
 				C7D291862B19B89E00A6B2D8 /* EditView.swift in Sources */,
 				C7D2918C2B19B8F300A6B2D8 /* DetailView.swift in Sources */,
+				C70446372B317F3900F60541 /* AnyCodable.swift in Sources */,
 				C7D2916B2B197F1600A6B2D8 /* BPDelivererApp.swift in Sources */,
 				C72808A42B234283000E4A8D /* ReminderView.swift in Sources */,
 				C72808A62B234947000E4A8D /* PrivacyView.swift in Sources */,
@@ -274,6 +305,7 @@
 				C72808A22B233C47000E4A8D /* HeartView.swift in Sources */,
 				C72808AA2B234B99000E4A8D /* CircleView.swift in Sources */,
 				C72808AE2B242263000E4A8D /* Notification.swift in Sources */,
+				C7E5056A2B314546009A5FCD /* EventRequest.swift in Sources */,
 				C7D291842B19B89600A6B2D8 /* AddView.swift in Sources */,
 				C7D2918E2B19BE7C00A6B2D8 /* HomeView.swift in Sources */,
 				C7D2917E2B19845300A6B2D8 /* HomeNavigationView.swift in Sources */,
@@ -423,15 +455,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"BPDeliverer/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 67D9SM7JC3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BPDeliverer/Info.plist;
 				INFOPLIST_KEY_NSUserTrackingUsageDescription = "Please allow access to your activity tracking to provide personalized push services and reduce interference caused by irrelevant services.";
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -443,7 +475,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.bpdeliver.keephabbit.iosapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bpdeliver.keephabbit.iosapp.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -459,15 +491,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"BPDeliverer/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 67D9SM7JC3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BPDeliverer/Info.plist;
 				INFOPLIST_KEY_NSUserTrackingUsageDescription = "Please allow access to your activity tracking to provide personalized push services and reduce interference caused by irrelevant services.";
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -479,7 +511,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.bpdeliver.keephabbit.iosapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bpdeliver.keephabbit.iosapp.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -514,6 +546,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		C70446442B31BF7300F60541 /* XCRemoteSwiftPackageReference "GADUtil" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/yj9294/GADUtil.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 		C7678E8E2B27F6310015D757 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/facebook/facebook-ios-sdk";
@@ -530,9 +570,22 @@
 				minimumVersion = 1.5.0;
 			};
 		};
+		C7F4CFAD2B3071100093D739 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.8.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		C70446452B31BF7300F60541 /* GADUtil */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C70446442B31BF7300F60541 /* XCRemoteSwiftPackageReference "GADUtil" */;
+			productName = GADUtil;
+		};
 		C7678E8F2B27F6310015D757 /* FacebookAEM */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = C7678E8E2B27F6310015D757 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
@@ -552,6 +605,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = C7D291782B1981D600A6B2D8 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
 			productName = ComposableArchitecture;
+		};
+		C7F4CFAE2B3071100093D739 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C7F4CFAD2B3071100093D739 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

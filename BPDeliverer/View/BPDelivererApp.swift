@@ -29,6 +29,16 @@ struct BPDelivererApp: App {
                         application,
                         didFinishLaunchingWithOptions: launchOptions
                     )
+            NetworkMonitor.shared.startMonitoring()
+            // 把缓存的上传了
+            if CacheUtil.shared.getInstall() {
+                Request.tbaRequest(event: .install)
+            }
+            if CacheUtil.shared.getFirstOpen() {
+                Request.tbaRequest(event: .locale)
+                Request.tbaRequest(event: .firstOpen)
+            }
+            
             return true
         }
         
