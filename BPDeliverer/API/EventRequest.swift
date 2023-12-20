@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import GADUtil
 import WebKit
 import AdSupport
 

@@ -7,7 +7,7 @@
 */
 "tracker" = "tracker";
 "add" = "add";
-"analytics" = "analytics";
+"analytics" = "version";
 "profile" = "profile";
 "Record blood pressure status" = "Record blood pressure status";
 "Add" = "Add";
@@ -122,3 +122,17 @@ We may update this Privacy Policy on this page.
 Contact us
 
 ming1997317@outlook.com";
+
+
+"basic" = "High blood pressure is a common but potentially dangerous health problem. A thorough understanding of the basics of hypertension is essential for prevention and management. This article will introduce the normal blood pressure range, measurement techniques, and possible hazards of high blood pressure to help you better recognize and understand high blood pressure.
+Normal blood pressure ranges are generally 90-120 MMHG systolic (high pressure) and 60-80 MMHG diastolic (low pressure). By mastering this range, you can more accurately assess your blood pressure status. Everyone should learn to measure blood pressure correctly, understand the individual's basic blood pressure level, and monitor changes at any time. A better understanding of the dangers of high blood pressure, including heart disease, stroke and kidney problems, can help raise enough awareness to take active preventive measures.";
+
+"balance" = "Diet plays a key role in blood pressure. High salt intake is one of the main factors leading to high blood pressure. Therefore, adopting a balanced and healthy diet is the basis for maintaining cardiovascular health.
+First, limit salt intake. Too much salt can cause fluid retention in the body and increase blood volume, which can raise blood pressure. Second, increase your intake of fresh fruits, vegetables, whole grains, and potassium-rich foods. Potassium helps balance sodium in the body and keeps blood pressure stable. At the same time, moderate dietary fiber intake can help control weight and further reduce the risk of high blood pressure";
+
+"exercise" = "Regular physical exercise is the golden rule for keeping blood pressure healthy. Aerobic exercise, such as brisk walking, jogging, swimming and cycling, is essential for the health of the cardiovascular system.
+At least 150 minutes of moderate-intensity aerobic exercise, such as brisk walking or jogging, is recommended each week. In addition, strength training more than twice a week helps to improve the body's metabolic level and reduce weight, thus further controlling blood pressure. Regular exercise can not only maintain a healthy cardiovascular system, but also improve mood, reduce stress, and play a positive role in the prevention and management of hypertension.";
+
+"burden" = "Obesity is one of the risk factors for hypertension. Excess weight increases the burden on the heart and increases pressure on the arteries, which can lead to high blood pressure. Therefore, maintaining a healthy weight is the key to preventing and controlling high blood pressure.
+Achieve an appropriate weight by developing a scientific diet plan and active exercise. Avoid extreme diets and fast weight loss to avoid bad effects on your body. Work with a professional medical team to develop an individualized weight loss plan to ensure weight loss goals are achieved in a safe and robust environment.
+By understanding the basics of blood pressure, maintaining a balanced diet, exercising regularly, and weight management, you can take a more holistic approach to your cardiovascular health and prevent and control high blood pressure. Every step is to take care of their own heart, so that life is more full and healthy.";

@@ -11,12 +11,14 @@ import ComposableArchitecture
 struct ProfileReducer: Reducer {
     struct State: Equatable {
         let items = Item.allCases
+        var adModel: GADNativeViewModel = .none
     }
     enum Action: Equatable {
         case itemDidSelected(State.Item)
         case reminderButtonTapped
         case  privacyButtonTapped
         case languageButtonTapped
+        case showAD
     }
     var body: some Reducer<State, Action> {
         Reduce{ state, action in
@@ -65,30 +67,42 @@ extension ProfileReducer.State {
             }
         }
     }
+    var hasAD: Bool {
+        adModel != .none
+    }
 }
 
 struct ProfileView: View {
     let store: StoreOf<ProfileReducer>
     var body: some View {
         WithViewStore(store, observe: {$0}) { viewStore in
-            ScrollView{
-                LazyVGrid(columns: [GridItem(.flexible())], spacing: 12) {
-                    ForEach(viewStore.items, id: \.self) { item in
-                        Button {
-                            viewStore.send(.itemDidSelected(item))
-                        } label: {
-                            HStack{
-                                HStack(spacing: 14){
-                                    Image(item.icon)
-                                    Text(LocalizedStringKey(item.title)).foregroundStyle(.black).font(.system(size: 16))
-                                    Spacer()
-                                    Image("arrow")
-                                }.padding(.all, 22).shadow
+            VStack{
+                ScrollView{
+                    LazyVGrid(columns: [GridItem(.flexible())], spacing: 12) {
+                        ForEach(viewStore.items, id: \.self) { item in
+                            Button {
+                                viewStore.send(.itemDidSelected(item))
+                            } label: {
+                                HStack{
+                                    HStack(spacing: 14){
+                                        Image(item.icon)
+                                        Text(LocalizedStringKey(item.title)).foregroundStyle(.black).font(.system(size: 16))
+                                        Spacer()
+                                        Image("arrow")
+                                    }.padding(.all, 22).shadow
+                                }
                             }
+                            .padding(.horizontal, 16)
                         }
-                        .padding(.horizontal, 16)
-                    }
-                }.padding(.top, 40)
+                    }.padding(.top, 40)
+                }
+                if viewStore.hasAD {
+                    HStack{
+                        GADNativeView(model: viewStore.adModel)
+                    }.frame(height: 62).padding(.horizontal, 20)
+                }
+            }.onAppear {
+                viewStore.send(.showAD)
             }
         }.background(Color("#F3F8FB").ignoresSafeArea())
     }

@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+import Combine
 import ComposableArchitecture
 
 struct ReminderReducer: Reducer {
@@ -20,6 +21,7 @@ struct ReminderReducer: Reducer {
         case addButtonTapped
         case deleteButtontapped(String)
         case datePicker(PresentationAction<DatePickerReducer.Action>)
+        case showAD
     }
     var body: some Reducer<State, Action> {
         Reduce{ state, action in
@@ -35,6 +37,17 @@ struct ReminderReducer: Reducer {
             if case let .datePicker(.presented(.ok(date, _))) = action {
                 state.addItem(date.time)
                 state.dismissDatePickerView()
+            }
+            if case .showAD = action {
+                GADUtil.share.load(.back)
+                let publisher = Future<Action, Never> { promiss in
+                    GADUtil.share.show(.back) { _ in
+                        promiss(.success(.pop))
+                    }
+                }
+                return .publisher {
+                    publisher
+                }
             }
             return .none
         }.ifLet(\.$datePicker, action: /Action.datePicker) {
@@ -87,6 +100,7 @@ struct ReminderView: View {
                     Spacer()
                 }
             }.onAppear(perform: {
+                GADUtil.share.load(.back)
                 viewStore.items.forEach {
                     NotificationHelper.shared.appendReminder($0)
                 }
@@ -94,7 +108,7 @@ struct ReminderView: View {
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button {
-                        viewStore.send(.pop)
+                        viewStore.send(.showAD)
                     } label: {
                         Image("add_back")
                     }

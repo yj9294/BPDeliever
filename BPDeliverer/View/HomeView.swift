@@ -32,6 +32,8 @@ struct HomeReducer: Reducer {
         case presentAddView
         case add(PresentationAction<AddReducer.Action>)
         case datePicker(PresentationAction<DatePickerReducer.Action>)
+        
+        case updateAD(GADNativeViewModel)
     }
     var body: some Reducer<State, Action> {
         BindingReducer()
@@ -41,6 +43,7 @@ struct HomeReducer: Reducer {
                 state.presentAddView()
             case .add(.presented(.root(.dismiss))):
                 state.dismissAddView()
+                
             case let .add(.presented(.path(.element(id: _, action: .edit(.buttonTapped(measure)))))):
                 state.updateMeasures(measure)
                 state.dismissAddView()
@@ -66,6 +69,16 @@ struct HomeReducer: Reducer {
                 state.presentDatePickerView(max, position: .filterMax)
             case .tracker(.guide):
                 state.presentAddView()
+        
+                
+            case .tracker(.showAD):
+                state.showAD(.tracker)
+            case .profile(.showAD):
+                state.showAD(.profile)
+            case .add(.presented(.root(.showAD))):
+                state.showAD(.add)
+            case let .updateAD(model):
+                state.updateAD(model)
             default:
                 break
             }
@@ -102,11 +115,16 @@ extension HomeReducer.State {
     }
     
     mutating func presentAddView(_ measure: Measurement = .init(), status: AddReducer.RootReducer.State.Status = .new) {
+        GADUtil.share.disappear(.tracker)
+        GADUtil.share.load(.submit)
         add = .init(root: .init(measure: measure, status: status))
     }
     
     mutating func dismissAddView() {
         add = nil
+        GADUtil.share.disappear(.tracker)
+        GADUtil.share.load(.tracker)
+        GADUtil.share.load(.enter)
     }
     
     mutating func presentDatePickerView(_ date: Date = Date(), position: DatePickerReducer.State.Position) {
@@ -154,6 +172,38 @@ extension HomeReducer.State {
             }
         }
     }
+    
+    mutating func showAD(_ item: GADPosition) {
+        GADPosition.allCases.filter({$0 == item}).forEach({
+            GADUtil.share.disappear($0)
+        })
+        GADPosition.allCases.filter({$0 == item}).forEach({
+            GADUtil.share.load($0)
+        })
+    }
+    
+    mutating func updateAD(_ model: GADNativeViewModel) {
+        if add != nil, model != .none {
+            if CacheUtil.shared.nativeCacheDate.add.canShow {
+                add?.root.adModel = model
+                CacheUtil.shared.updateNativeCacheDate(.add)
+            }
+        } else if item == .tracker, model != .none {
+            if CacheUtil.shared.nativeCacheDate.tracker.canShow {
+                tracker.adModel = model
+                CacheUtil.shared.updateNativeCacheDate(.tracker)
+            }
+        } else if item == .profile, model != .none {
+            if CacheUtil.shared.nativeCacheDate.profile.canShow {
+                profile.adModel = model
+                CacheUtil.shared.updateNativeCacheDate(.profile)
+            }
+        } else {
+            add?.root.adModel = .none
+            tracker.adModel = .none
+            profile.adModel = .none
+        }
+    }
 }
 
 
@@ -169,6 +219,12 @@ struct HomeView: View {
                 AddView(store: store)
             }.fullScreenCover(store: store.scope(state: \.$datePicker, action: {.datePicker($0)})) { store in
                 DatePickerView(store: store).background(BackgroundClearView())
+            }.onReceive(nativeADPubliser) { noti in
+                if let object = noti.object as? GADNativeModel {
+                    viewStore.send(.updateAD(GADNativeViewModel(model: object)))
+                } else {
+                    viewStore.send(.updateAD(.none))
+                }
             }
         }
     }

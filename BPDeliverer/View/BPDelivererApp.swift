@@ -18,7 +18,16 @@ struct BPDelivererApp: App {
         WindowGroup {
             ContentView(store: Store(initialState: ContentReducer.State(), reducer: {
                 ContentReducer()
-            }))
+            })).onReceive(NotificationCenter.default.publisher(for: UIApplication.willEnterForegroundNotification)) { _ in
+                if CacheUtil.shared.enterBackgrounded {
+                    NotificationCenter.default.post(name: .hotOpen, object: nil)
+                    Task{
+                        await GADUtil.share.dismiss()
+                    }
+                }
+            }.onReceive(NotificationCenter.default.publisher(for: UIApplication.didEnterBackgroundNotification)) { _ in
+                CacheUtil.shared.enterBackground()
+            }
         }
     }
     
@@ -30,6 +39,7 @@ struct BPDelivererApp: App {
                         didFinishLaunchingWithOptions: launchOptions
                     )
             NetworkMonitor.shared.startMonitoring()
+            GADUtil.share.requestConfig()
             // 把缓存的上传了
             if CacheUtil.shared.getInstall() {
                 Request.tbaRequest(event: .install)
@@ -37,6 +47,11 @@ struct BPDelivererApp: App {
             if CacheUtil.shared.getFirstOpen() {
                 Request.tbaRequest(event: .locale)
                 Request.tbaRequest(event: .firstOpen)
+            }
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                // 冷启动初始化
+                NotificationCenter.default.post(name: .coldOpen, object: nil)
             }
             
             return true
@@ -56,3 +71,12 @@ struct BPDelivererApp: App {
             }
     }
 }
+
+extension Notification.Name {
+    static let coldOpen = Notification.Name(rawValue: "code.open")
+    static let hotOpen = Notification.Name(rawValue: "hot.open")
+}
+
+let coldOpenPublisher = NotificationCenter.default.publisher(for: .coldOpen)
+let hotOpenPublisher = NotificationCenter.default.publisher(for: .hotOpen)
+let nativeADPubliser = NotificationCenter.default.publisher(for: .nativeUpdate)

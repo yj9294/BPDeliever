@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Combine
 import ComposableArchitecture
 import AppTrackingTransparency
 
@@ -17,6 +18,8 @@ struct TrackerReducer: Reducer {
         @UserDefault("measures", defaultValue: [])
         var measures: [Measurement]
         var filterDuration: DateDuration = .init()
+        
+        var adModel: GADNativeViewModel = .none
     }
     enum Action: Equatable {
         case guide
@@ -26,6 +29,8 @@ struct TrackerReducer: Reducer {
         case filterDateMaxTapped
         case itemSelected(Measurement)
         case addButtonTapped
+        case showAD
+        case showGuideAD
     }
     var body: some Reducer<State, Action> {
         Reduce{ state, action in
@@ -36,6 +41,16 @@ struct TrackerReducer: Reducer {
                 state.lastFilterDate()
             case .filterDateNextTapped:
                 state.nextFilterDate()
+            case .showGuideAD:
+                let publisher = Future<Action, Never> { promiss in
+                    GADUtil.share.load(.guide)
+                    GADUtil.share.show(.guide) { _ in
+                        promiss(.success(.addButtonTapped))
+                    }
+                }
+                return .publisher {
+                    publisher
+                }
             default:
                 break
             }
@@ -60,6 +75,10 @@ extension TrackerReducer.State {
         lastMeasure != nil
     }
     
+    var hasAD: Bool {
+        adModel != .none
+    }
+    
     mutating func lastFilterDate() {
         filterDuration.max = filterDuration.max.addingTimeInterval(-.weak)
         filterDuration.min = filterDuration.min.addingTimeInterval(-.weak)
@@ -76,6 +95,31 @@ struct TrackerView: View {
     var body: some View {
         WithViewStore(store, observe: {$0}) { viewStore in
             ZStack{
+                VStack{
+                    MeasureListView(store: store)
+                    if viewStore.hasAD {
+                        HStack{
+                            GADNativeView(model: viewStore.adModel)
+                        }.frame(height: 62).padding(.horizontal, 20)
+                    }
+                }
+                AddButtonView(action: { viewStore.send(.showGuideAD) })
+                if !viewStore.isGuide {
+                    GuideView { viewStore.send(.guide) }
+                }
+            }.onAppear {
+                viewStore.send(.showAD)
+            }
+        }.background(Color("#F3F8FB")).onAppear {
+            ATTrackingManager.requestTrackingAuthorization { _ in
+            }
+        }
+    }
+    
+    struct MeasureListView: View {
+        let store: StoreOf<TrackerReducer>
+        var body: some View {
+            WithViewStore(store, observe: {$0}) { viewStore in
                 ScrollView{
                     VStack(spacing: 0){
                         TopView(store: store).shadow.padding(.horizontal, 20)
@@ -93,27 +137,23 @@ struct TrackerView: View {
                         }
                     }.padding(.vertical, 40)
                 }
-                
-                VStack{
-                    Spacer()
-                    HStack{
-                        Spacer()
-                        Button {
-                            viewStore.send(.addButtonTapped)
-                        } label: {
-                            Image("tracker_add_1")
-                        }.padding(.bottom, 88).padding(.trailing, 24)
-                    }
-                }
-                
-                if !viewStore.isGuide {
-                    GuideView { viewStore.send(.guide) }
-                }
-                
-                
             }
-        }.background(Color("#F3F8FB")).onAppear {
-            ATTrackingManager.requestTrackingAuthorization { _ in
+        }
+    }
+    
+    struct AddButtonView: View {
+        let action: ()->Void
+        var body: some View {
+            VStack{
+                Spacer()
+                HStack{
+                    Spacer()
+                    Button {
+                        action()
+                    } label: {
+                        Image("tracker_add_1")
+                    }.padding(.bottom, 88).padding(.trailing, 24)
+                }
             }
         }
     }

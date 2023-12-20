@@ -14,9 +14,10 @@ struct AddReducer: Reducer {
             self.root = root
         }
         var path: StackState<Path.State> = .init()
-        var root: RootReducer.State = .init(measure: .init(), status: .new)
+        var root: RootReducer.State = .init(measure: .init(), status: .new, adModel: .none)
         
         @PresentationState var datePicker: DatePickerReducer.State? = nil
+        
     }
     enum Action: Equatable {
         case path(StackAction<Path.State, Path.Action>)
@@ -74,14 +75,19 @@ struct AddReducer: Reducer {
         struct State: Equatable {
             @BindingState var measure: Measurement
             let status: Status
+            var adModel: GADNativeViewModel = .none
             enum Status {
                 case new, edit
+            }
+            var hasAD: Bool {
+                adModel != .none
             }
         }
         enum Action: BindableAction, Equatable {
             case dismiss
             case binding(BindingAction<State>)
             case continueButtonTapped
+            case showAD
         }
         var body: some Reducer<State, Action> {
             BindingReducer()
@@ -115,6 +121,7 @@ extension AddReducer.State {
     mutating func updateMeasureDate(_ date: Date) {
         root.measure.date = date
     }
+    
 }
 
 struct AddView: View {
@@ -140,6 +147,11 @@ struct AddView: View {
                 VStack{
                     MeasurementView(measure: viewStore.$measure).padding(.horizontal, 20).padding(.vertical, 16)
                     ButtonView { viewStore.send(.continueButtonTapped)}
+                    if viewStore.hasAD {
+                        HStack{
+                            GADNativeView(model: viewStore.adModel)
+                        }.frame(height: 62).padding(.horizontal, 20)
+                    }
                     Spacer()
                 }.toolbar {
                     ToolbarItem(placement: .navigationBarLeading) {
@@ -150,6 +162,9 @@ struct AddView: View {
                         }
                     }
                 }.navigationTitle(LocalizedStringKey("New Measurement")).navigationBarTitleDisplayMode(.inline)
+                    .onAppear {
+                        viewStore.send(.showAD)
+                    }
             }
         }
         

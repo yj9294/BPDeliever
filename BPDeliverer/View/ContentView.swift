@@ -20,21 +20,23 @@ struct ContentReducer: Reducer {
     enum Action: Equatable {
         case launch(LaunchReducer.Action)
         case home(HomeNavigationReducer.Action)
+        
+        case item(State.Item)
     }
     var body: some Reducer<State, Action> {
         Reduce{ state, action in
             switch action {
             case .launch(.start):
                 state.updateItem(.launch)
-            case .launch(.update):
+            case .launch(.launched):
                 if state.launch.isLaunched {
                     state.updateItem(.home)
-                    return .run { send in
-                        await send(.launch(.stop))
-                    }
+                    GADUtil.share.load(.enter)
                 }
             case let .home(.path(.element(id: _, action: .language(.update(language))))):
                 state.language = language.code
+            case let .item(item):
+                state.item = item
             default:
                 break
             }
@@ -76,13 +78,15 @@ struct ContentView: View {
                 switch state {
                 case .active:
                     debugPrint("action")
-                    viewStore.send(.launch(.start))
                 case .background:
                     debugPrint("background")
                 default:
                     break
                 }
-            }.environment(\.locale, .init(identifier: viewStore.language))
+            }.environment(\.locale, .init(identifier: viewStore.language)).onReceive(hotOpenPublisher) { _ in
+                viewStore.send(.item(.launch))
+                viewStore.send(.launch(.start))
+            }
         }
     }
 }

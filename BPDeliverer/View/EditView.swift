@@ -29,6 +29,7 @@ struct EditReducer: Reducer {
         case itemSelected(String, Measurement.Posture)
         case buttonTapped(Measurement)
         case dateButtonTapped
+        case showAD
     }
     var body: some Reducer<State, Action> {
         BindingReducer()
@@ -36,6 +37,16 @@ struct EditReducer: Reducer {
             switch action {
             case let .itemSelected(item, posture):
                 state.itemSelected(item, posture: posture)
+            case .showAD:
+                GADUtil.share.load(.submit)
+                let publisher = Future<Action, Never> { [measure = state.measure] promise in
+                    GADUtil.share.show(.submit) { _ in
+                        promise(.success(.buttonTapped(measure)))
+                    }
+                }
+                return .publisher {
+                    publisher
+                }
             default:
                 break
             }
@@ -55,7 +66,9 @@ struct EditView: View {
                     DateView(store: store)
                     PostureView(store: store)
                     NoteView(measure: viewStore.$measure, enable: true)
-                    ButtonView { viewStore.send(.buttonTapped(viewStore.measure))}
+                    ButtonView {
+                        viewStore.send(.showAD)
+                    }
                     Spacer()
                 }
             }

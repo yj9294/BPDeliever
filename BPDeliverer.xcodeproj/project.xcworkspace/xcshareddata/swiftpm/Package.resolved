@@ -28,15 +28,6 @@
       }
     },
     {
-      "identity" : "gadutil",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/yj9294/GADUtil.git",
-      "state" : {
-        "branch" : "main",
-        "revision" : "52faf2c1f614f0f3b3aadd42a46c98a73ae159a7"
-      }
-    },
-    {
       "identity" : "googleappmeasurement",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/google/GoogleAppMeasurement.git",
@@ -50,8 +41,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/quanghits/GoogleMobileAds",
       "state" : {
-        "branch" : "main",
-        "revision" : "271e6d6bc1d7756a88fe82df558145a264a34331"
+        "revision" : "271e6d6bc1d7756a88fe82df558145a264a34331",
+        "version" : "9.8.0"
       }
     },
     {
