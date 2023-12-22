@@ -67,7 +67,10 @@ extension HeartReducer.State {
     }
     
     var averageValue: Int {
-        Int(Double(average.reduce(0, +)) / Double(dates.count))
+        if dates.count == 0 {
+            return 0
+        }
+        return Int(Double(average.reduce(0, +)) / Double(dates.count))
     }
     
     var numberUnit: [Int] {

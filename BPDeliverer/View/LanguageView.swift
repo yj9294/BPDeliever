@@ -23,6 +23,8 @@ struct LanguageReducer: Reducer {
         Reduce{ state, action in
             if case let .itemSelected(language) = action {
                 state.item = language
+                
+                Request.tbaRequest(event: .languageSelected, parameters: ["LO":"\((State.Language.allCases.firstIndex(of: language) ?? 0) + 1)"])
                 return .run { [language = language] send in
                     await send(.update(language))
                 }
@@ -117,6 +119,8 @@ struct LanguageView: View {
                     }
                     Spacer()
                 }
+            }.onAppear{
+                Request.tbaRequest(event: .language)
             }
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {

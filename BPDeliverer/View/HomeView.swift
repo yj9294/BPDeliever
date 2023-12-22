@@ -61,12 +61,15 @@ struct HomeReducer: Reducer {
             case let .datePicker(.presented(.ok(date,postion))):
                 state.updateDate(date, position: postion)
                 state.dismissDatePickerView()
+                Request.tbaRequest(event: .trackDateSelected)
             case .tracker(.filterDateMinTapped):
                 let min = state.tracker.filterDuration.min
                 state.presentDatePickerView(min, position: .filterMin)
+                Request.tbaRequest(event: .trackDateChange)
             case .tracker(.filterDateMaxTapped):
                 let max = state.tracker.filterDuration.min
                 state.presentDatePickerView(max, position: .filterMax)
+                Request.tbaRequest(event: .trackDateChange)
             case .tracker(.guide):
                 state.presentAddView()
         
@@ -124,7 +127,13 @@ extension HomeReducer.State {
         add = nil
         GADUtil.share.disappear(.tracker)
         GADUtil.share.load(.tracker)
-        GADUtil.share.load(.enter)
+        if CacheUtil.shared.isUserGo {
+            GADUtil.share.load(.enter)
+        }
+        
+        Request.tbaRequest(event: .track)
+        Request.tbaRequest(event: .home)
+        Request.tbaRequest(event: .homeShow)
     }
     
     mutating func presentDatePickerView(_ date: Date = Date(), position: DatePickerReducer.State.Position) {
@@ -180,6 +189,16 @@ extension HomeReducer.State {
         GADPosition.allCases.filter({$0 == item}).forEach({
             GADUtil.share.load($0)
         })
+        switch item {
+        case .tracker:
+            Request.tbaRequest(event: .homeShow)
+        case .add:
+            Request.tbaRequest(event: .addShow)
+        case .profile:
+            Request.tbaRequest(event: .settingShow)
+        default:
+            break
+        }
     }
     
     mutating func updateAD(_ model: GADNativeViewModel) {

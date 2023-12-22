@@ -12,11 +12,7 @@ import AdSupport
 extension Request {
     class func tbaRequest(id: String = UUID().uuidString, event: RequestEvent, parameters: [String: Any]? = nil, ad: GADBaseModel? = nil, retry count: Int = 2) {
         var param: [String: Any] = [:]
-        if event == .locale {
-            param["opium"] =  event.rawValue
-            let countryCode = Locale.current.identifier.components(separatedBy: "_").last
-            param["meadow"] = ["city": countryCode]
-        } else if event == .install {
+        if event == .install {
             // 系统构建版本，Build.ID， 以 build/ 开头
             param["wept"] = "Build/\(Bundle.main.infoDictionary?["CFBundleVersion"] ?? "1")"
             // webview中的user_agent, 注意为webview的，android中的useragent有;wv关键字
@@ -35,10 +31,16 @@ extension Request {
             param["horrible"] = Int(Date().timeIntervalSince1970)
             // 安装事件名称
             param["opium"] = "sorensen"
+        } else if event == .session {
+            param["duck"] = event.rawValue
         } else {
             param["opium"] =  event.rawValue
-            param["meadow"] = parameters
         }
+        
+        let countryCode = Locale.current.identifier.components(separatedBy: "_").last
+        param["meadow"] = parameters
+        param["bp_brith>melodic"] = countryCode
+        
         
         // 广告事件
         if let ad = ad,  event.isAD {
@@ -53,40 +55,79 @@ extension Request {
             // gid
             param["murder"] = ad.model?.theAdID
             // 广告位逻辑编号，例如：page1_bottom, connect_finished
-            param["example"] = ad.position
+            param["example"] = ad.position.rawValue
             // 广告类型，插屏，原生，banner，激励视频等
-            param["eleven"] = ad.position
+            param["eleven"] = ad.position.type
         }
         
         if event == .firstOpen {
-            NSLog("[TBA] 开始上报\(event.rawValue) 第\(3 - count ) 次")
+            NSLog("[tba] 开始上报\(event.rawValue) 第\(3 - count ) 次")
         } else {
-            NSLog("[TBA] 开始上报\(event.rawValue)")
+            NSLog("[tba] 开始上报\(event.rawValue) parameters: \(parameters ?? [:])")
+        }
+        if event == .firstOpen, CacheUtil.shared.getFirstOpenCnt() == 6 {
+            return
         }
         Request(id: id, parameters: param).netWorkConfig { req in
-            req.method = .get
+            req.method = .post
             req.event = event
         }.startRequestSuccess { _ in
-            NSLog("[TBA] 上报\(event.rawValue) 成功 ✅✅✅")
+            NSLog("[tba] 上报\(event.rawValue) 成功 ✅✅✅")
             if event == .firstOpen {
-                let count = count - 1
-                if count == -3 {
-                    return
-                }
-                DispatchQueue.global().asyncAfter(deadline: .now() + 10) {
-                    self.tbaRequest(id: id, event: event, parameters: parameters, retry: count)
-                }
+                CacheUtil.shared.uploadFirstOpenSuccess()
             }
         }.error { obj, code in
-            NSLog("[TBA] 上报\(event.rawValue) 失败 ❌❌❌")
+            NSLog("[tba] 上报\(event.rawValue) 失败 ❌❌❌")
             let count = count - 1
             if count == 0 {
                 return
             }
-            DispatchQueue.global().asyncAfter(deadline: .now() + 10) {
-                NSLog("[TBA] 开始重新上报\(event.rawValue)")
+            DispatchQueue.main.asyncAfter(deadline: .now() + 10) {
+                NSLog("[tba] 开始重新上报\(event.rawValue)")
+                if CacheUtil.shared.connectedNetworkUpload {
+                    return
+                }
                 self.tbaRequest(id: id, event: event, parameters: parameters, retry: count)
             }
+        }
+    }
+    
+    
+    class func requestADShowEvent(_ position: GADPosition, ad: GADBaseModel? = nil) {
+        switch position {
+        case .loading:
+            Request.tbaRequest(event: .loadingShow, ad: ad)
+        case .guide:
+            Request.tbaRequest(event: .guideAdShow, ad: ad)
+        case .submit:
+            Request.tbaRequest(event: .saveShow, ad: ad)
+        case .enter:
+            Request.tbaRequest(event: .enterShow, ad: ad)
+        case .back:
+            Request.tbaRequest(event: .backShow, ad: ad)
+        default:
+            break
+        }
+    }
+    
+    class func requestADImprsssionEvent(_ position: GADPosition, ad: GADBaseModel? = nil) {
+        switch position {
+        case .loading:
+            Request.tbaRequest(event: .loadingImpress, ad: ad)
+        case .tracker:
+            Request.tbaRequest(event: .homeImpress, ad: ad)
+        case .profile:
+            Request.tbaRequest(event: .settingImpress, ad: ad)
+        case .add:
+            Request.tbaRequest(event: .addImpress, ad: ad)
+        case .guide:
+            Request.tbaRequest(event: .guideAdImpress, ad: ad)
+        case .submit:
+            Request.tbaRequest(event: .saveImpress, ad: ad)
+        case .enter:
+            Request.tbaRequest(event: .enterImpress, ad: ad)
+        case .back:
+            Request.tbaRequest(event: .backImpress, ad: ad)
         }
     }
 }
@@ -96,11 +137,13 @@ enum RequestEvent: String, Codable {
     
     // 安装事件
     case install = "sorensen"
-    // 属性事件
-    case locale = "bp_brith"
+    
+    // session 事件
+    case session = "session_start"
 
-    case firstOpen = "bp_first"
-    case code = "bp_cold"
+    case firstOpen = "first_open"
+    case first = "bp_first"
+    case cold = "bp_cold"
     case hot = "bp_hot"
     case track = "bp_track"
     case guide = "bp_track_pop"
@@ -167,5 +210,6 @@ enum RequestEvent: String, Codable {
             return false
         }
     }
+
 }
 

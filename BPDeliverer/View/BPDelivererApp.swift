@@ -21,6 +21,7 @@ struct BPDelivererApp: App {
             })).onReceive(NotificationCenter.default.publisher(for: UIApplication.willEnterForegroundNotification)) { _ in
                 if CacheUtil.shared.enterBackgrounded {
                     NotificationCenter.default.post(name: .hotOpen, object: nil)
+                    Request.tbaRequest(event: .hot)
                     Task{
                         await GADUtil.share.dismiss()
                     }
@@ -45,16 +46,25 @@ struct BPDelivererApp: App {
                 Request.tbaRequest(event: .install)
             }
             if CacheUtil.shared.getFirstOpen() {
-                Request.tbaRequest(event: .locale)
-                Request.tbaRequest(event: .firstOpen)
+                Request.tbaRequest(event: .first)
+                uploadFirstOpen()
             }
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
                 // 冷启动初始化
                 NotificationCenter.default.post(name: .coldOpen, object: nil)
+                Request.tbaRequest(event: .cold)
+                Request.tbaRequest(event: .session)
             }
             
             return true
+        }
+        
+        func uploadFirstOpen() {
+            Request.tbaRequest(event: .firstOpen)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 10) {
+                self.uploadFirstOpen()
+            }
         }
         
         func application(

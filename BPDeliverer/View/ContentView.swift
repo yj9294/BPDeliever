@@ -31,7 +31,9 @@ struct ContentReducer: Reducer {
             case .launch(.launched):
                 if state.launch.isLaunched {
                     state.updateItem(.home)
-                    GADUtil.share.load(.enter)
+                    if CacheUtil.shared.isUserGo {
+                        GADUtil.share.load(.enter)
+                    }
                 }
             case let .home(.path(.element(id: _, action: .language(.update(language))))):
                 state.language = language.code
@@ -73,15 +75,6 @@ struct ContentView: View {
                     LaunchView(store: store.scope(state: \.launch, action: ContentReducer.Action.launch))
                 } else {
                     HomeNavigationView(store: store.scope(state: \.home, action: ContentReducer.Action.home))
-                }
-            }.onChange(of: scenePhase) { state in
-                switch state {
-                case .active:
-                    debugPrint("action")
-                case .background:
-                    debugPrint("background")
-                default:
-                    break
                 }
             }.environment(\.locale, .init(identifier: viewStore.language)).onReceive(hotOpenPublisher) { _ in
                 viewStore.send(.item(.launch))

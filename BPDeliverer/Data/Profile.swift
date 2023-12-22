@@ -64,7 +64,6 @@ extension UserDefaults {
     func setObject<T: Codable>(_ object: T?, forKey key: String) {
         let encoder = JSONEncoder()
         guard let object = object else {
-            debugPrint("[US] object is nil.")
             self.removeObject(forKey: key)
             return
         }
@@ -77,7 +76,6 @@ extension UserDefaults {
     
     func getObject<T: Codable>(_ type: T.Type, forKey key: String) -> T? {
         guard let data = self.data(forKey: key) else {
-            debugPrint("[US] data is nil for \(key).")
             return nil
         }
         guard let object = try? JSONDecoder().decode(type, from: data) else {

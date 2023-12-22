@@ -47,7 +47,7 @@ struct ReadingDetailView: View {
                             ForEach(viewStore.items, id:\.self) { item in
                                 ChartsView.RootView.ItemCell.ReadingView(item: item)
                             }
-                        }
+                        }.padding(.bottom, 15)
                     }.lineLimit(nil).truncationMode(.tail).multilineTextAlignment(.leading)
                 }.padding(.top, 15)
             }

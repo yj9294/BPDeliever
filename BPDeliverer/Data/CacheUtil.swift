@@ -30,8 +30,14 @@ class CacheUtil: NSObject {
     @FileHelper("userAgent")
     private var userAgent: String?
     
+    @FileHelper("userGo")
+    private var userGo: UserGo?
+    
+    @FileHelper("firstOpen")
+    private var firstOpenSuccessCnt: Int?
+    
     // 用于防止 定时间的轮训和网络变化同时进行网络请求
-    private var connectedNetworkUpload: Bool = false
+    var connectedNetworkUpload: Bool = false
     override init() {
         super.init()
         self.timer =  Timer.scheduledTimer(withTimeInterval: 65, repeats: true) { [weak self] timer in
@@ -42,8 +48,8 @@ class CacheUtil: NSObject {
         NotificationCenter.default.addObserver(forName: .connectivityStatus, object: nil, queue: .main) { [weak self] _ in
             if NetworkMonitor.shared.isConnected, self?.connectedNetworkUpload == false {
                 // 网络变化 直接上传
-                self?.uploadRequests()
                 self?.connectedNetworkUpload = true
+                self?.uploadRequests()
                 DispatchQueue.main.asyncAfter(deadline: .now() + 65) {
                     self?.connectedNetworkUpload = false
                 }
@@ -51,6 +57,8 @@ class CacheUtil: NSObject {
         }
     }
     
+    
+    // MARK - 网络请求失败参数缓存
     func uploadRequests() {
         // 实时清除两天内的缓存
         self.caches = self.caches?.filter({
@@ -61,7 +69,6 @@ class CacheUtil: NSObject {
             Request.tbaRequest(id: $0.id, event: $0.event)
         })
     }
-    
     func appendCache(_ cache: RequestCache) {
         if var caches = caches {
             let isContain = caches.contains {
@@ -76,31 +83,35 @@ class CacheUtil: NSObject {
             self.caches = [cache]
         }
     }
-    
     func removeCache(_ id: String) {
         self.caches = self.caches?.filter({
             $0.id != id
         })
     }
-    
     func cache(_ id: String) -> RequestCache? {
         self.caches?.filter({
             $0.id == id
         }).first
     }
     
+    
+    // 首次判定 关于install first open enterbackground
     func getInstall() -> Bool {
         let ret = install ?? true
         install = false
         return ret
     }
-    
     func getFirstOpen() -> Bool {
         let ret = firstOpen ?? true
         firstOpen = false
         return ret
     }
+    func enterBackground() {
+        enterBackgrounded = true
+    }
     
+    
+    // userAgent
     func getUserAgent() -> String {
         if Thread.isMainThread, self.userAgent == nil {
             self.userAgent = UserAgentFetcher().fetch()
@@ -109,11 +120,9 @@ class CacheUtil: NSObject {
         }
         return ""
     }
+
     
-    func enterBackground() {
-        enterBackgrounded = true
-    }
-    
+    // native 缓存时间间隔
     func updateNativeCacheDate(_ position: GADNativeCachePosition) {
         switch position {
         case .tracker:
@@ -123,6 +132,26 @@ class CacheUtil: NSObject {
         case .add:
             nativeCacheDate.add.date = Date()
         }
+    }
+    
+    
+    // cloak 判定
+    var isUserGoDefault: Bool {
+        return userGo == nil
+    }
+    var isUserGo: Bool {
+        (userGo ?? .go) == .go
+    }
+    func updateUserGo(_ userGo: UserGo) {
+        self.userGo = userGo
+    }
+    
+    func uploadFirstOpenSuccess() {
+        firstOpenSuccessCnt =  (firstOpenSuccessCnt ?? 0) + 1
+    }
+    
+    func getFirstOpenCnt() -> Int {
+        firstOpenSuccessCnt ?? 0
     }
 }
 

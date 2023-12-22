@@ -36,6 +36,10 @@ struct ChartsReducer: Reducer {
         Reduce{ state, action in
             if case let .itemDidSelected(item) = action {
                 state.itemDidSelected(item)
+                if !item.isAnalytics {
+                    Request.tbaRequest(event: .versionRed, parameters: ["red": "\(item.count)"])
+                }
+                Request.tbaRequest(event: .enter)
             }
             if case .proportion(.presented(.dismiss)) = action {
                 state.dismissProportionView()
@@ -53,14 +57,21 @@ struct ChartsReducer: Reducer {
                 state.dismissDetailView()
             }
             if case let .showAD(item) = action {
-                GADUtil.share.load(.enter)
-                let publisher = Future<Action, Never> { [item = item] promiss in
-                    GADUtil.share.show(.enter) { _ in
-                        promiss(.success(.itemDidSelected(item)))
+                Request.tbaRequest(event: .enterShow)
+                if CacheUtil.shared.isUserGo {
+                    GADUtil.share.load(.enter)
+                    let publisher = Future<Action, Never> { [item = item] promiss in
+                        GADUtil.share.show(.enter) { _ in
+                            promiss(.success(.itemDidSelected(item)))
+                        }
                     }
-                }
-                return .publisher {
-                    publisher
+                    return .publisher {
+                        publisher
+                    }
+                } else {
+                    return .run { send in
+                        await send(.itemDidSelected(item))
+                    }
                 }
             }
             return .none
@@ -182,6 +193,20 @@ extension ChartsReducer.State {
                 return "Ease the burden, guard the heart"
             }
         }
+        var count: Int {
+            switch self {
+            case .basic:
+                return 1
+            case .balance:
+                return 2
+            case .exercise:
+                return 3
+            case .burden:
+                return 4
+            default:
+                return 0
+            }
+        }
         var isAnalytics: Bool {
             switch self {
             case .proportion, .bp, .map, .heart:
@@ -206,20 +231,30 @@ struct ChartsView: View {
         WithViewStore(store, observe: {$0}) { viewStore in
             RootView(store: store)
                 .fullScreenCover(store: store.scope(state: \.$proportion, action: ChartsReducer.Action.proportion)) { store in
-                    ProportionView(store: store)
+                    ProportionView(store: store).onAppear {
+                        Request.tbaRequest(event: .bpPorprotion)
+                    }
                 }
                 .fullScreenCover(store: store.scope(state: \.$bp, action: ChartsReducer.Action.bp)) { store in
-                    BPTrendsView(store: store)
+                    BPTrendsView(store: store).onAppear{
+                        Request.tbaRequest(event: .bpTrends)
+                    }
                 }
                 .fullScreenCover(store: store.scope(state: \.$map, action: ChartsReducer.Action.map)) { store in
-                    MAPTrendsView(store: store)
+                    MAPTrendsView(store: store).onAppear {
+                        Request.tbaRequest(event: .mapTrends)
+                    }
                 }
                 .fullScreenCover(store: store.scope(state: \.$heart, action: ChartsReducer.Action.heart)) { store in
-                    HearView(store: store)
+                    HearView(store: store).onAppear {
+                        Request.tbaRequest(event: .heartRate)
+                    }
                 }
                 .fullScreenCover(store: store.scope(state: \.$detail, action: ChartsReducer.Action.detail)) { store in
                     ReadingDetailView(store: store)
                 }
+        }.onAppear{
+            Request.tbaRequest(event: .analytics)
         }
     }
     

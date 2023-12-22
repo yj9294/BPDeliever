@@ -55,7 +55,7 @@ class NotificationHelper: NSObject {
         let request = UNNotificationRequest(identifier: time , content: noticeContent, trigger: trigger)
         UNUserNotificationCenter.current().add(request) { error in
             if error != nil {
-                debugPrint("[UN] 通知错误。\(error?.localizedDescription ?? "")")
+                NSLog("[UN] 通知错误。\(error?.localizedDescription ?? "")")
             }
         }
         
@@ -91,12 +91,12 @@ extension NotificationHelper: UNUserNotificationCenterDelegate {
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         completionHandler([.sound, .banner, .list])
         NotificationHelper.shared.appendReminder(notification.request.identifier)
-        debugPrint("收到通知")
+        NSLog("收到通知")
     }
     
     
     /// 点击应用外弹窗
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
-        debugPrint("点击通知")
+        NSLog("点击通知")
     }
 }

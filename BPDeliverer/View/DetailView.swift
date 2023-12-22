@@ -29,6 +29,10 @@ struct DetailReducer: Reducer {
         Reduce{ state, action in
             if case action = Action.deleteButtonTapped {
                 state.alertView()
+                Request.tbaRequest(event: .trackDelete)
+            }
+            if case .editButtonTapped = action {
+                Request.tbaRequest(event: .trackEdit)
             }
             if case action = Action.alert(.presented(.delete)) {
                 return .run { send in

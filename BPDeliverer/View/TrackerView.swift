@@ -41,6 +41,10 @@ struct TrackerReducer: Reducer {
                 state.lastFilterDate()
             case .filterDateNextTapped:
                 state.nextFilterDate()
+            case .addButtonTapped:
+                return .run { send in
+                    await send(.guide)
+                }
             case .showGuideAD:
                 let publisher = Future<Action, Never> { promiss in
                     GADUtil.share.load(.guide)
@@ -103,12 +107,20 @@ struct TrackerView: View {
                         }.frame(height: 62).padding(.horizontal, 20)
                     }
                 }
-                AddButtonView(action: { viewStore.send(.showGuideAD) })
+                AddButtonView(action: {
+                    viewStore.send(.addButtonTapped)
+                    Request.tbaRequest(event: .trackAdd)
+                })
                 if !viewStore.isGuide {
-                    GuideView { viewStore.send(.guide) }
+                    GuideView {
+                        viewStore.send(.showGuideAD)
+                        Request.tbaRequest(event: .guideAdd)
+                        Request.tbaRequest(event: .guideAd)
+                    }
                 }
             }.onAppear {
                 viewStore.send(.showAD)
+                Request.tbaRequest(event: .track)
             }
         }.background(Color("#F3F8FB")).onAppear {
             ATTrackingManager.requestTrackingAuthorization { _ in
@@ -178,6 +190,8 @@ struct TrackerView: View {
                     }.background(.linearGradient(colors: [Color("#42C3D6"), Color("#5AE9FF")], startPoint: .leading, endPoint: .trailing)).cornerRadius(24)
                     Spacer()
                 }
+            }.onAppear {
+                Request.tbaRequest(event: .guide)
             }
         }
     }

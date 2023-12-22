@@ -47,6 +47,7 @@
 		C7EE9D4F2B330D2D00403C76 /* CacheUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EE9D4E2B330D2D00403C76 /* CacheUtil.swift */; };
 		C7EE9D512B33167E00403C76 /* GADUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EE9D502B33167E00403C76 /* GADUtil.swift */; };
 		C7EE9D542B33177400403C76 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = C7EE9D532B33177400403C76 /* GoogleMobileAds */; };
+		C7EE9D562B33D48600403C76 /* CloakRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EE9D552B33D48600403C76 /* CloakRequest.swift */; };
 		C7F4CFAC2B3070E00093D739 /* BaseRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F4CFAB2B3070E00093D739 /* BaseRequest.swift */; };
 		C7F4CFAF2B3071100093D739 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = C7F4CFAE2B3071100093D739 /* Alamofire */; };
 /* End PBXBuildFile section */
@@ -94,6 +95,7 @@
 		C7EE9D4C2B32E54500403C76 /* GADConfig.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = GADConfig.json; sourceTree = "<group>"; };
 		C7EE9D4E2B330D2D00403C76 /* CacheUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheUtil.swift; sourceTree = "<group>"; };
 		C7EE9D502B33167E00403C76 /* GADUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GADUtil.swift; sourceTree = "<group>"; };
+		C7EE9D552B33D48600403C76 /* CloakRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloakRequest.swift; sourceTree = "<group>"; };
 		C7F4CFAB2B3070E00093D739 /* BaseRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -202,6 +204,7 @@
 			children = (
 				C7F4CFAB2B3070E00093D739 /* BaseRequest.swift */,
 				C7E505692B314546009A5FCD /* EventRequest.swift */,
+				C7EE9D552B33D48600403C76 /* CloakRequest.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -299,6 +302,7 @@
 			files = (
 				C7E505662B3132C9009A5FCD /* NetworkUtil.swift in Sources */,
 				C7D2916D2B197F1600A6B2D8 /* ContentView.swift in Sources */,
+				C7EE9D562B33D48600403C76 /* CloakRequest.swift in Sources */,
 				C72808AC2B240803000E4A8D /* DatePickerView.swift in Sources */,
 				C72808A82B234AAE000E4A8D /* LanguageView.swift in Sources */,
 				C728089E2B23148B000E4A8D /* BPTrendsView.swift in Sources */,
@@ -476,10 +480,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 20221222;
 				DEVELOPMENT_ASSET_PATHS = "\"BPDeliverer/Preview Content\"";
-				DEVELOPMENT_TEAM = 67D9SM7JC3;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BPDeliverer/Info.plist;
@@ -494,8 +498,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.bpdeliver.keephabbit.iosapp.test;
+				MARKETING_VERSION = 1.0.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bpdeliver.keephabbit.iosapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -512,10 +516,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 20221222;
 				DEVELOPMENT_ASSET_PATHS = "\"BPDeliverer/Preview Content\"";
-				DEVELOPMENT_TEAM = 67D9SM7JC3;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BPDeliverer/Info.plist;
@@ -530,8 +534,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.bpdeliver.keephabbit.iosapp.test;
+				MARKETING_VERSION = 1.0.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bpdeliver.keephabbit.iosapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

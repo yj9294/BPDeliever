@@ -89,7 +89,7 @@ extension GADUtil {
     }
     
     /// 限制
-    fileprivate func add(_ status: GADLimit.Status) {
+    fileprivate func add(_ status: GADLimit.Status, in position: GADPosition?) {
         if status == .show {
             if isGADLimited {
                 NSLog("[AD] 用戶超限制。")
@@ -98,11 +98,11 @@ extension GADUtil {
             }
             let showTime = limit?.showTimes ?? 0
             limit?.showTimes = showTime + 1
-            NSLog("[AD] [LIMIT] showTime: \(showTime+1) total: \(config?.showTimes ?? 0)")
+            NSLog("[AD] (\(position ?? .loading)) [LIMIT] showTime: \(showTime+1) total: \(config?.showTimes ?? 0)")
         } else  if status == .click {
             let clickTime = limit?.clickTimes ?? 0
             limit?.clickTimes = clickTime + 1
-            NSLog("[AD] [LIMIT] clickTime: \(clickTime+1) total: \(config?.clickTimes ?? 0)")
+            NSLog("[AD] (\(position ?? .loading)) [LIMIT] clickTime: \(clickTime+1) total: \(config?.clickTimes ?? 0)")
             if isGADLimited {
                 NSLog("[AD] ad limited.")
                 GADPosition.allCases.forEach({self.clean($0)})
@@ -141,20 +141,24 @@ extension GADUtil {
         case .loading, .back, .enter, .guide, .submit:
             /// 有廣告
             if let ad = loadAD?.loadedArray.first as? GADFullScreenModel, !isGADLimited {
-                ad.impressionHandler = { [weak self, loadAD] in
+                ad.impressionHandler = { [weak self, loadAD, ad] in
                     loadAD?.impressionDate = Date()
-                    self?.add(.show)
+                    Request.requestADImprsssionEvent(position, ad: ad)
+                    self?.add(.show, in: loadAD?.position)
                     self?.display(position)
-                    self?.load(position)
+                    if position != .enter, position != .back, position != .guide {
+                        self?.load(position)
+                    }
                 }
                 ad.clickHandler = { [weak self] in
-                    self?.add(.click)
+                    self?.add(.click, in: loadAD?.position)
                 }
                 ad.closeHandler = { [weak self] in
                     self?.disappear(position)
                     completion?(nil)
                 }
                 ad.present(from: vc)
+                Request.requestADShowEvent(position, ad: ad)
             } else {
                 completion?(nil)
             }
@@ -168,16 +172,18 @@ extension GADUtil {
                 }
                 ad.nativeAd?.unregisterAdView()
                 ad.nativeAd?.delegate = ad
-                ad.impressionHandler = { [weak loadAD]  in
+                ad.impressionHandler = { [weak loadAD, ad]  in
                     loadAD?.impressionDate = Date()
-                    self.add(.show)
+                    Request.requestADImprsssionEvent(position, ad: ad)
+                    self.add(.show, in: loadAD?.position)
                     self.display(position)
                     self.load(position)
                 }
                 ad.clickHandler = {
-                    self.add(.click)
+                    self.add(.click, in: loadAD?.position)
                 }
                 completion?(ad)
+                Request.requestADShowEvent(position, ad: ad)
             } else {
                 /// 预加载回来数据 当时已经有显示数据了 并且没超过限制
                 if loadAD?.isDisplay == true, !isGADLimited {
@@ -326,6 +332,16 @@ public enum GADPosition: String, CaseIterable {
             return true
         default:
             return false
+        }
+    }
+    
+    var type: String {
+        if self.isInterstitial {
+            return "interstitial"
+        } else if isNative {
+            return "native"
+        } else {
+            return "open"
         }
     }
 }

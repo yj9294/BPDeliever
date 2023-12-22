@@ -34,6 +34,7 @@ struct LaunchReducer: Reducer {
                     return .none
                 }
                 state.initProgress()
+                state.startCloakRequest()
                 GADPosition.allCases.filter({ po in
                     po != .enter && po != .back
                 }).forEach({
@@ -58,6 +59,7 @@ struct LaunchReducer: Reducer {
                     }
                 }
             case .showAD:
+                Request.tbaRequest(event: .loadingShow)
                 let publisher = Future<Action, Never>{ promiss in
                     GADUtil.share.show(.loading) { _ in
                         promiss(.success(.launched))
@@ -77,6 +79,10 @@ struct LaunchReducer: Reducer {
 }
 
 extension LaunchReducer.State {
+    func startCloakRequest() {
+        Request.cloakRequest()
+        Request.tbaRequest(event: .loading)
+    }
     mutating func initProgress() {
         isStart = true
         progress = 0.0
@@ -84,7 +90,6 @@ extension LaunchReducer.State {
     }
     mutating func updateProgress() {
         progress += 0.01 / duration
-        debugPrint(progress)
         if progress >= 1.0 {
             progress = 1.0
         }

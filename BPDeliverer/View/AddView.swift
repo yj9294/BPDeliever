@@ -28,6 +28,7 @@ struct AddReducer: Reducer {
         Reduce{ state, action in
             if case .root(.continueButtonTapped) = action {
                 state.pushEditView()
+                Request.tbaRequest(event: .addContinue)
             }
             if case .path(.element(id: _, action: .edit(.pop))) = action {
                 state.popEditView()
@@ -42,6 +43,10 @@ struct AddReducer: Reducer {
                 state.updateMeasureDate(date)
                 state.dismissDatePickerView()
             }
+            if case .root(.dismiss) = action {
+                Request.tbaRequest(event: .addDismiss)
+            }
+            
             return .none
         }.forEach(\.path, action: /Action.path) {
             Path()
@@ -146,7 +151,10 @@ struct AddView: View {
             WithViewStore(store, observe: {$0}) { viewStore in
                 VStack{
                     MeasurementView(measure: viewStore.$measure).padding(.horizontal, 20).padding(.vertical, 16)
-                    ButtonView { viewStore.send(.continueButtonTapped)}
+                    ButtonView {
+                        viewStore.send(.continueButtonTapped)
+                        
+                    }
                     if viewStore.hasAD {
                         HStack{
                             GADNativeView(model: viewStore.adModel)
@@ -164,6 +172,7 @@ struct AddView: View {
                 }.navigationTitle(LocalizedStringKey("New Measurement")).navigationBarTitleDisplayMode(.inline)
                     .onAppear {
                         viewStore.send(.showAD)
+                        Request.tbaRequest(event: .add)
                     }
             }
         }

@@ -47,7 +47,7 @@ class Request {
     var event: RequestEvent = .install
     
     
-    enum RequestType: Equatable {
+    enum RequestType: String, Equatable {
         case tba, cloak
     }
     
@@ -56,10 +56,10 @@ class Request {
     private var error : NetWorkError?
     private var end : NetWorkEnd?
     private var config : ((_ req:Request) -> Void)?
-    private var query: [String: Any]?
+    private var query: [String: String]?
     private var id: String
 
-    required init(id: String,query: [String: Any]? = nil, parameters: [String:Any]? = nil) {
+    required init(id: String = UUID().uuidString,query: [String: String]? = nil, parameters: [String:Any]? = nil) {
         self.id = id
         self.parameters = parameters
         self.query = query
@@ -91,7 +91,7 @@ class Request {
     }
     
     deinit {
-        debugPrint("[API] request===============deinit")
+        NSLog("[API] request===============deinit")
     }
     
 }
@@ -104,12 +104,12 @@ extension Request {
         
         var url: String = requestType == .tba ? TBAUrl : CloakUrl
     
-        var queryDic: [String: String] = [:]
+        var queryDic: [String: String] =  self.query ?? [:]
         if requestType == .tba {
             queryDic["balsa"] = "\(startDate)"
             queryDic["indigo"] = UIDevice.current.identifierForVendor?.uuidString
             query?.forEach({ key, value in
-                queryDic[key] = value as? String
+                queryDic[key] = value
             })
         }
         if queryDic.count != 0  {
@@ -199,11 +199,11 @@ extension Request {
                 rq.setValue("application/json; charset=UTF-8", forHTTPHeaderField: "Content-Type")
                 rq.httpBody = parameters.data
             }
-            debugPrint("[API] -----------------------")
-            debugPrint("[API] 请求地址:\(url)")
-            debugPrint("[API] 请求参数:\(parameters.jsonString ?? "")")
-            debugPrint("[API] 请求header:\(headerDic.jsonString ?? "")")
-            debugPrint("[API] -----------------------")
+            NSLog("[API] -----------------------")
+            NSLog("[API] 请求地址:\(url)")
+            NSLog("[API] 请求参数:\(parameters.jsonString ?? "")")
+            NSLog("[API] 请求header:\(headerDic.jsonString ?? "")")
+            NSLog("[API] -----------------------")
         }
         
         dataRequest = sessionManager.request(url, method: method, parameters: nil , encoding: JSONEncoding(), headers: HTTPHeaders.init(headerDic), requestModifier: requestModifier)
@@ -213,27 +213,27 @@ extension Request {
                 
                 let retStr = String(data: result.data ?? Data(), encoding: .utf8)
                 let code = result.response?.statusCode ?? -9999
-                debugPrint("[API] ❌❌❌  url:\(url) code: \(code) error:\(retStr ?? "")")
+                NSLog("[API] ❌❌❌ type:\(self.requestType.rawValue) event:\(self.event.rawValue) code: \(code) error:\(retStr ?? "")")
                 self.handleError(code: code, error: retStr, request: result.request)
                 return
             }
             if let data = result.data {
-                let json = try? JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String: Any]
-                debugPrint("[API] ✅✅✅ url: \(url) response \(String(describing: json))")
-                self.requestSuccess()
+                let retStr = String(data: data, encoding: .utf8) ?? ""
+                NSLog("[API] ✅✅✅ type:\(self.requestType.rawValue) event: \(self.event.rawValue) response \(retStr)")
+                self.requestSuccess(retStr)
             } else {
-                debugPrint("[API] ❌❌❌ url: \(url) response data is nil")
+                NSLog("[API] ❌❌❌ type:\(self.requestType.rawValue) event: \(self.event.rawValue) response data is nil")
                 self.handleError(code: RequestCode.serverError.rawValue, error: nil, request: result.request)
             }
         }
         
     }
     
-    private func requestSuccess() -> Void {
+    private func requestSuccess(_ str: String) -> Void {
         if requestType == .tba {
             CacheUtil.shared.removeCache(id)
         }
-        self.success?(nil)
+        self.success?(str)
         self.success = nil
         self.end?()
         self.end = nil

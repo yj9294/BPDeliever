@@ -56,12 +56,18 @@ extension ProportionReducer.State {
     
     var progress: [Double] {
         Measurement.Status.allCases.map { status in
-            Double(filterMeasure.filter({$0.status == status}).count) / Double(filterMeasure.count)
+            if filterMeasure.isEmpty {
+                return 0.0
+            }
+            return Double(filterMeasure.filter({$0.status == status}).count) / Double(filterMeasure.count)
         }
     }
     
     var normalProgress: Double {
-        Double(filterMeasure.filter({$0.status == .normal}).count) / Double(filterMeasure.count)
+        if filterMeasure.isEmpty {
+            return 0.0
+        }
+        return  Double(filterMeasure.filter({$0.status == .normal}).count) / Double(filterMeasure.count)
     }
     
     var normalDesc: String {

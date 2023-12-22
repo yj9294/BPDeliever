@@ -47,6 +47,8 @@ struct EditReducer: Reducer {
                 return .publisher {
                     publisher
                 }
+            case .pop:
+                Request.tbaRequest(event: .addPop)
             default:
                 break
             }
@@ -68,6 +70,15 @@ struct EditView: View {
                     NoteView(measure: viewStore.$measure, enable: true)
                     ButtonView {
                         viewStore.send(.showAD)
+                        Request.tbaRequest(event: .save)
+                        Request.tbaRequest(event: .addSave)
+                        Request.tbaRequest(event: .addEditSave)
+//                        Request.tbaRequest(event: .addFeel)
+//                        Request.tbaRequest(event: .addArm)
+//                        Request.tbaRequest(event: .addBody)
+//                        if !viewStore.measure.note.isEmpty {
+//                            Request.tbaRequest(event: .addNote)
+//                        }
                     }
                     Spacer()
                 }

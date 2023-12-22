@@ -27,9 +27,11 @@ struct ReminderReducer: Reducer {
         Reduce{ state, action in
             if case let .deleteButtontapped(item) = action {
                 state.deleteItem(item)
+                Request.tbaRequest(event: .reminderDelete)
             }
             if case .addButtonTapped = action {
                 state.presentDatePickerView()
+                Request.tbaRequest(event: .reminderAdd)
             }
             if case .datePicker(.presented(.cancel)) = action {
                 state.dismissDatePickerView()
@@ -39,14 +41,20 @@ struct ReminderReducer: Reducer {
                 state.dismissDatePickerView()
             }
             if case .showAD = action {
-                GADUtil.share.load(.back)
-                let publisher = Future<Action, Never> { promiss in
-                    GADUtil.share.show(.back) { _ in
-                        promiss(.success(.pop))
+                if CacheUtil.shared.isUserGo {
+                    GADUtil.share.load(.back)
+                    let publisher = Future<Action, Never> { promiss in
+                        GADUtil.share.show(.back) { _ in
+                            promiss(.success(.pop))
+                        }
                     }
-                }
-                return .publisher {
-                    publisher
+                    return .publisher {
+                        publisher
+                    }
+                } else {
+                    return .run { send in
+                        await send(.pop)
+                    }
                 }
             }
             return .none
@@ -100,15 +108,20 @@ struct ReminderView: View {
                     Spacer()
                 }
             }.onAppear(perform: {
-                GADUtil.share.load(.back)
+                Request.tbaRequest(event: .backShow)
+                if CacheUtil.shared.isUserGo {
+                    GADUtil.share.load(.back)
+                }
                 viewStore.items.forEach {
                     NotificationHelper.shared.appendReminder($0)
                 }
+                Request.tbaRequest(event: .reminder)
             })
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button {
                         viewStore.send(.showAD)
+                        Request.tbaRequest(event: .back)
                     } label: {
                         Image("add_back")
                     }
