@@ -69,9 +69,15 @@ class NotificationHelper: NSObject {
         let noti = UNUserNotificationCenter.current()
         noti.requestAuthorization(options: [.badge, .sound, .alert]) { granted, error in
             if granted {
+                if CacheUtil.shared.getFirstOpen() {
+                    Request.tbaRequest(event: .notificationAgres)
+                }
                 print("开启通知")
                 completion?(true)
             } else {
+                if CacheUtil.shared.getFirstNoti() {
+                    Request.tbaRequest(event: .notificationDisagreen)
+                }
                 print("关闭通知")
                 completion?(false)
             }

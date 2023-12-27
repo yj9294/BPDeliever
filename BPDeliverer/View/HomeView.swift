@@ -206,16 +206,22 @@ extension HomeReducer.State {
             if CacheUtil.shared.nativeCacheDate.add.canShow {
                 add?.root.adModel = model
                 CacheUtil.shared.updateNativeCacheDate(.add)
+            } else {
+                add?.root.adModel = .none
             }
         } else if item == .tracker, model != .none {
             if CacheUtil.shared.nativeCacheDate.tracker.canShow {
                 tracker.adModel = model
                 CacheUtil.shared.updateNativeCacheDate(.tracker)
+            } else {
+                tracker.adModel = .none
             }
         } else if item == .profile, model != .none {
             if CacheUtil.shared.nativeCacheDate.profile.canShow {
                 profile.adModel = model
                 CacheUtil.shared.updateNativeCacheDate(.profile)
+            } else {
+                profile.adModel = .none
             }
         } else {
             add?.root.adModel = .none

@@ -97,6 +97,9 @@ struct AddReducer: Reducer {
         var body: some Reducer<State, Action> {
             BindingReducer()
             Reduce{ state, action in
+                if case .continueButtonTapped = action {
+                    GADUtil.share.disappear(.add)
+                }
                 return .none
             }
         }
@@ -171,7 +174,9 @@ struct AddView: View {
                     }
                 }.navigationTitle(LocalizedStringKey("New Measurement")).navigationBarTitleDisplayMode(.inline)
                     .onAppear {
-                        viewStore.send(.showAD)
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                            viewStore.send(.showAD)
+                        }
                         Request.tbaRequest(event: .add)
                     }
             }

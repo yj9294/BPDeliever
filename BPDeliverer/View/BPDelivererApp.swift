@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Adjust
 import FBSDKCoreKit
 import ComposableArchitecture
 
@@ -54,9 +55,18 @@ struct BPDelivererApp: App {
                 // 冷启动初始化
                 NotificationCenter.default.post(name: .coldOpen, object: nil)
                 Request.tbaRequest(event: .cold)
-                Request.tbaRequest(event: .session)
             }
-            
+            Request.tbaRequest(event: .session)
+            Request.tbaRequest(event: .sessionStart)
+                        
+            let yourAppToken = "eih6xmix2sjk"
+            let environment = ADJEnvironmentProduction
+            let adjustConfig = ADJConfig(
+                appToken: yourAppToken,
+                environment: environment)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
+                Adjust.appDidLaunch(adjustConfig)
+            }
             return true
         }
         

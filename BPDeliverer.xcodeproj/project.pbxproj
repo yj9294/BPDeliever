@@ -20,14 +20,18 @@
 		C72808AA2B234B99000E4A8D /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72808A92B234B99000E4A8D /* CircleView.swift */; };
 		C72808AC2B240803000E4A8D /* DatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72808AB2B240803000E4A8D /* DatePickerView.swift */; };
 		C72808AE2B242263000E4A8D /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72808AD2B242263000E4A8D /* Notification.swift */; };
-		C7678E902B27F6310015D757 /* FacebookAEM in Frameworks */ = {isa = PBXBuildFile; productRef = C7678E8F2B27F6310015D757 /* FacebookAEM */; };
-		C7678E922B27F6310015D757 /* FacebookBasics in Frameworks */ = {isa = PBXBuildFile; productRef = C7678E912B27F6310015D757 /* FacebookBasics */; };
-		C7678E942B27F6310015D757 /* FacebookCore in Frameworks */ = {isa = PBXBuildFile; productRef = C7678E932B27F6310015D757 /* FacebookCore */; };
+		C78DA2AE2B3C12B5008B3EE9 /* Adjust in Frameworks */ = {isa = PBXBuildFile; productRef = C78DA2AD2B3C12B5008B3EE9 /* Adjust */; };
+		C78DA2B02B3C12B5008B3EE9 /* Criteo in Frameworks */ = {isa = PBXBuildFile; productRef = C78DA2AF2B3C12B5008B3EE9 /* Criteo */; };
+		C78DA2B22B3C12B5008B3EE9 /* Sociomantic in Frameworks */ = {isa = PBXBuildFile; productRef = C78DA2B12B3C12B5008B3EE9 /* Sociomantic */; };
+		C78DA2B42B3C12B5008B3EE9 /* Trademob in Frameworks */ = {isa = PBXBuildFile; productRef = C78DA2B32B3C12B5008B3EE9 /* Trademob */; };
+		C78DA2B62B3C12B5008B3EE9 /* WebBridge in Frameworks */ = {isa = PBXBuildFile; productRef = C78DA2B52B3C12B5008B3EE9 /* WebBridge */; };
+		C7AC79D72B3BFF9F00521F84 /* GADUtil in Frameworks */ = {isa = PBXBuildFile; productRef = C7AC79D62B3BFF9F00521F84 /* GADUtil */; };
+		C7AC79DA2B3BFFCC00521F84 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = C7AC79D92B3BFFCC00521F84 /* Alamofire */; };
+		C7AC79E42B3C005900521F84 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = C7AC79E32B3C005900521F84 /* ComposableArchitecture */; };
 		C7D2916B2B197F1600A6B2D8 /* BPDelivererApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D2916A2B197F1600A6B2D8 /* BPDelivererApp.swift */; };
 		C7D2916D2B197F1600A6B2D8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D2916C2B197F1600A6B2D8 /* ContentView.swift */; };
 		C7D2916F2B197F1900A6B2D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7D2916E2B197F1900A6B2D8 /* Assets.xcassets */; };
 		C7D291722B197F1900A6B2D8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7D291712B197F1900A6B2D8 /* Preview Assets.xcassets */; };
-		C7D2917A2B1981D700A6B2D8 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = C7D291792B1981D700A6B2D8 /* ComposableArchitecture */; };
 		C7D2917C2B19844B00A6B2D8 /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D2917B2B19844B00A6B2D8 /* LaunchView.swift */; };
 		C7D2917E2B19845300A6B2D8 /* HomeNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D2917D2B19845300A6B2D8 /* HomeNavigationView.swift */; };
 		C7D291802B19B7BE00A6B2D8 /* TrackerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D2917F2B19B7BE00A6B2D8 /* TrackerView.swift */; };
@@ -46,10 +50,11 @@
 		C7EE9D4D2B32E54500403C76 /* GADConfig.json in Resources */ = {isa = PBXBuildFile; fileRef = C7EE9D4C2B32E54500403C76 /* GADConfig.json */; };
 		C7EE9D4F2B330D2D00403C76 /* CacheUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EE9D4E2B330D2D00403C76 /* CacheUtil.swift */; };
 		C7EE9D512B33167E00403C76 /* GADUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EE9D502B33167E00403C76 /* GADUtil.swift */; };
-		C7EE9D542B33177400403C76 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = C7EE9D532B33177400403C76 /* GoogleMobileAds */; };
 		C7EE9D562B33D48600403C76 /* CloakRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EE9D552B33D48600403C76 /* CloakRequest.swift */; };
 		C7F4CFAC2B3070E00093D739 /* BaseRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F4CFAB2B3070E00093D739 /* BaseRequest.swift */; };
-		C7F4CFAF2B3071100093D739 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = C7F4CFAE2B3071100093D739 /* Alamofire */; };
+		C7F699E12B3C288B007AEDF7 /* FacebookAEM in Frameworks */ = {isa = PBXBuildFile; productRef = C7F699E02B3C288B007AEDF7 /* FacebookAEM */; };
+		C7F699E32B3C288B007AEDF7 /* FacebookBasics in Frameworks */ = {isa = PBXBuildFile; productRef = C7F699E22B3C288B007AEDF7 /* FacebookBasics */; };
+		C7F699E52B3C288B007AEDF7 /* FacebookCore in Frameworks */ = {isa = PBXBuildFile; productRef = C7F699E42B3C288B007AEDF7 /* FacebookCore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -104,12 +109,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C7EE9D542B33177400403C76 /* GoogleMobileAds in Frameworks */,
-				C7678E922B27F6310015D757 /* FacebookBasics in Frameworks */,
-				C7678E902B27F6310015D757 /* FacebookAEM in Frameworks */,
-				C7F4CFAF2B3071100093D739 /* Alamofire in Frameworks */,
-				C7D2917A2B1981D700A6B2D8 /* ComposableArchitecture in Frameworks */,
-				C7678E942B27F6310015D757 /* FacebookCore in Frameworks */,
+				C7F699E12B3C288B007AEDF7 /* FacebookAEM in Frameworks */,
+				C78DA2B62B3C12B5008B3EE9 /* WebBridge in Frameworks */,
+				C78DA2AE2B3C12B5008B3EE9 /* Adjust in Frameworks */,
+				C78DA2B42B3C12B5008B3EE9 /* Trademob in Frameworks */,
+				C7F699E52B3C288B007AEDF7 /* FacebookCore in Frameworks */,
+				C78DA2B22B3C12B5008B3EE9 /* Sociomantic in Frameworks */,
+				C7AC79E42B3C005900521F84 /* ComposableArchitecture in Frameworks */,
+				C78DA2B02B3C12B5008B3EE9 /* Criteo in Frameworks */,
+				C7F699E32B3C288B007AEDF7 /* FacebookBasics in Frameworks */,
+				C7AC79D72B3BFF9F00521F84 /* GADUtil in Frameworks */,
+				C7AC79DA2B3BFFCC00521F84 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -226,12 +236,17 @@
 			);
 			name = BPDeliverer;
 			packageProductDependencies = (
-				C7D291792B1981D700A6B2D8 /* ComposableArchitecture */,
-				C7678E8F2B27F6310015D757 /* FacebookAEM */,
-				C7678E912B27F6310015D757 /* FacebookBasics */,
-				C7678E932B27F6310015D757 /* FacebookCore */,
-				C7F4CFAE2B3071100093D739 /* Alamofire */,
-				C7EE9D532B33177400403C76 /* GoogleMobileAds */,
+				C7AC79D62B3BFF9F00521F84 /* GADUtil */,
+				C7AC79D92B3BFFCC00521F84 /* Alamofire */,
+				C7AC79E32B3C005900521F84 /* ComposableArchitecture */,
+				C78DA2AD2B3C12B5008B3EE9 /* Adjust */,
+				C78DA2AF2B3C12B5008B3EE9 /* Criteo */,
+				C78DA2B12B3C12B5008B3EE9 /* Sociomantic */,
+				C78DA2B32B3C12B5008B3EE9 /* Trademob */,
+				C78DA2B52B3C12B5008B3EE9 /* WebBridge */,
+				C7F699E02B3C288B007AEDF7 /* FacebookAEM */,
+				C7F699E22B3C288B007AEDF7 /* FacebookBasics */,
+				C7F699E42B3C288B007AEDF7 /* FacebookCore */,
 			);
 			productName = BPDeliverer;
 			productReference = C7D291672B197F1600A6B2D8 /* BPDeliverer.app */;
@@ -267,10 +282,11 @@
 			);
 			mainGroup = C7D2915E2B197F1600A6B2D8;
 			packageReferences = (
-				C7D291782B1981D600A6B2D8 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
-				C7678E8E2B27F6310015D757 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */,
-				C7F4CFAD2B3071100093D739 /* XCRemoteSwiftPackageReference "Alamofire" */,
-				C7EE9D522B33177400403C76 /* XCRemoteSwiftPackageReference "GoogleMobileAds" */,
+				C7AC79D52B3BFF9F00521F84 /* XCRemoteSwiftPackageReference "GADUtil" */,
+				C7AC79D82B3BFFCC00521F84 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				C7AC79E22B3C005900521F84 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+				C78DA2AC2B3C12B5008B3EE9 /* XCRemoteSwiftPackageReference "ios_sdk" */,
+				C7F699DF2B3C288B007AEDF7 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */,
 			);
 			productRefGroup = C7D291682B197F1600A6B2D8 /* Products */;
 			projectDirPath = "";
@@ -570,31 +586,23 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		C7678E8E2B27F6310015D757 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */ = {
+		C78DA2AC2B3C12B5008B3EE9 /* XCRemoteSwiftPackageReference "ios_sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/facebook/facebook-ios-sdk";
+			repositoryURL = "https://github.com/adjust/ios_sdk";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 14.1.0;
+				branch = master;
+				kind = branch;
 			};
 		};
-		C7D291782B1981D600A6B2D8 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+		C7AC79D52B3BFF9F00521F84 /* XCRemoteSwiftPackageReference "GADUtil" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture.git";
+			repositoryURL = "https://github.com/yj9294/GADUtil.git";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.5.0;
+				branch = main;
+				kind = branch;
 			};
 		};
-		C7EE9D522B33177400403C76 /* XCRemoteSwiftPackageReference "GoogleMobileAds" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/quanghits/GoogleMobileAds.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 9.8.0;
-			};
-		};
-		C7F4CFAD2B3071100093D739 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+		C7AC79D82B3BFFCC00521F84 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
 			requirement = {
@@ -602,38 +610,79 @@
 				minimumVersion = 5.8.1;
 			};
 		};
+		C7AC79E22B3C005900521F84 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.5.6;
+			};
+		};
+		C7F699DF2B3C288B007AEDF7 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/facebook/facebook-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 14.1.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		C7678E8F2B27F6310015D757 /* FacebookAEM */ = {
+		C78DA2AD2B3C12B5008B3EE9 /* Adjust */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = C7678E8E2B27F6310015D757 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
-			productName = FacebookAEM;
+			package = C78DA2AC2B3C12B5008B3EE9 /* XCRemoteSwiftPackageReference "ios_sdk" */;
+			productName = Adjust;
 		};
-		C7678E912B27F6310015D757 /* FacebookBasics */ = {
+		C78DA2AF2B3C12B5008B3EE9 /* Criteo */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = C7678E8E2B27F6310015D757 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
-			productName = FacebookBasics;
+			package = C78DA2AC2B3C12B5008B3EE9 /* XCRemoteSwiftPackageReference "ios_sdk" */;
+			productName = Criteo;
 		};
-		C7678E932B27F6310015D757 /* FacebookCore */ = {
+		C78DA2B12B3C12B5008B3EE9 /* Sociomantic */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = C7678E8E2B27F6310015D757 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
-			productName = FacebookCore;
+			package = C78DA2AC2B3C12B5008B3EE9 /* XCRemoteSwiftPackageReference "ios_sdk" */;
+			productName = Sociomantic;
 		};
-		C7D291792B1981D700A6B2D8 /* ComposableArchitecture */ = {
+		C78DA2B32B3C12B5008B3EE9 /* Trademob */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = C7D291782B1981D600A6B2D8 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			package = C78DA2AC2B3C12B5008B3EE9 /* XCRemoteSwiftPackageReference "ios_sdk" */;
+			productName = Trademob;
+		};
+		C78DA2B52B3C12B5008B3EE9 /* WebBridge */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C78DA2AC2B3C12B5008B3EE9 /* XCRemoteSwiftPackageReference "ios_sdk" */;
+			productName = WebBridge;
+		};
+		C7AC79D62B3BFF9F00521F84 /* GADUtil */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C7AC79D52B3BFF9F00521F84 /* XCRemoteSwiftPackageReference "GADUtil" */;
+			productName = GADUtil;
+		};
+		C7AC79D92B3BFFCC00521F84 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C7AC79D82B3BFFCC00521F84 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		C7AC79E32B3C005900521F84 /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C7AC79E22B3C005900521F84 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
 			productName = ComposableArchitecture;
 		};
-		C7EE9D532B33177400403C76 /* GoogleMobileAds */ = {
+		C7F699E02B3C288B007AEDF7 /* FacebookAEM */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = C7EE9D522B33177400403C76 /* XCRemoteSwiftPackageReference "GoogleMobileAds" */;
-			productName = GoogleMobileAds;
+			package = C7F699DF2B3C288B007AEDF7 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
+			productName = FacebookAEM;
 		};
-		C7F4CFAE2B3071100093D739 /* Alamofire */ = {
+		C7F699E22B3C288B007AEDF7 /* FacebookBasics */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = C7F4CFAD2B3071100093D739 /* XCRemoteSwiftPackageReference "Alamofire" */;
-			productName = Alamofire;
+			package = C7F699DF2B3C288B007AEDF7 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
+			productName = FacebookBasics;
+		};
+		C7F699E42B3C288B007AEDF7 /* FacebookCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C7F699DF2B3C288B007AEDF7 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
+			productName = FacebookCore;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

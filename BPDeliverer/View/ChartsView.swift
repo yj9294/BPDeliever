@@ -340,13 +340,13 @@ struct ChartsView: View {
                     "\(Int(progress * 100))" + "%"
                 }
                 var body: some View {
-                    VStack(spacing: 36){
+                    VStack(spacing: 16){
                         ZStack{
                             CircleView(progress: [progress], colors: [UIColor(named: "#4BED80")!], lineWidth: 21).frame(width: 92, height: 92)
                             Text(progressString).font(.system(size: 13))
                         }
                         Text(LocalizedStringKey(title)).font(.system(size: 12)).lineLimit(2)
-                    }.padding(.top, 45).padding(.bottom, 40).padding(.horizontal, 10).shadow
+                    }.padding(.horizontal, 10).frame(height: 188).shadow
                 }
             }
             
@@ -356,7 +356,7 @@ struct ChartsView: View {
                     VStack(spacing: 20){
                         Text(LocalizedStringKey(item.title)).font(.system(size: 14))
                         Image("charts_icon").padding(.horizontal, 32)
-                    }.padding(.top, 20).padding(.bottom, 36).shadow
+                    }.frame(height: 188).shadow
                 }
             }
             

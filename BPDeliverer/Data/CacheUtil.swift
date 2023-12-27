@@ -36,6 +36,9 @@ class CacheUtil: NSObject {
     @FileHelper("firstOpen")
     private var firstOpenSuccessCnt: Int?
     
+    @FileHelper("firstNotification")
+    private var firstNoti: Bool?
+    
     // 用于防止 定时间的轮训和网络变化同时进行网络请求
     var connectedNetworkUpload: Bool = false
     override init() {
@@ -106,6 +109,13 @@ class CacheUtil: NSObject {
         firstOpen = false
         return ret
     }
+    func getFirstNoti() -> Bool {
+        let ret = firstNoti ?? true
+        firstNoti = false
+        return ret
+    }
+    
+    
     func enterBackground() {
         enterBackgrounded = true
     }
@@ -145,6 +155,7 @@ class CacheUtil: NSObject {
     func updateUserGo(_ userGo: UserGo) {
         self.userGo = userGo
     }
+    
     
     func uploadFirstOpenSuccess() {
         firstOpenSuccessCnt =  (firstOpenSuccessCnt ?? 0) + 1

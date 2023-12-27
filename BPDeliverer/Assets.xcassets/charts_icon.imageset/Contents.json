@@ -1,12 +1,12 @@
 {
   "images" : [
     {
-      "filename" : "bar chart.png",
+      "filename" : "statistics img.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "bar chart@2x.png",
+      "filename" : "statistics img@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },

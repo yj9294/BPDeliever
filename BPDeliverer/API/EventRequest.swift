@@ -7,6 +7,7 @@
 
 import Foundation
 import WebKit
+import FBSDKCoreKit
 import AdSupport
 
 extension Request {
@@ -33,6 +34,22 @@ extension Request {
             param["opium"] = "sorensen"
         } else if event == .session {
             param["duck"] = event.rawValue
+        } else if event == .adImpresssion {
+            // 预估收入，需要满足上报结果是收入 * 10^6
+            param["devotee"] = Int((ad?.price ?? 0) * 1000000.0)
+            // 预估收益的货币单位,字符串长度：3
+            param["pump"] = ad?.currency
+            // 广告网络，广告真实的填充平台，例如admob的bidding，填充了Facebook的广告，此值为Facebook
+            param["spell"] = ad?.network
+            // 广告SDK，admob，max等
+            param["parr"] = "admob"
+            // gid
+            param["murder"] = ad?.model?.theAdID
+            // 广告位逻辑编号，例如：page1_bottom, connect_finished
+            param["example"] = ad?.position.rawValue
+            // 广告类型，插屏，原生，banner，激励视频等
+            param["eleven"] = ad?.position.type
+            param["opium"] = "gaze"
         } else {
             param["opium"] =  event.rawValue
         }
@@ -40,25 +57,6 @@ extension Request {
         let countryCode = Locale.current.identifier.components(separatedBy: "_").last
         param["meadow"] = parameters
         param["bp_brith>melodic"] = countryCode
-        
-        
-        // 广告事件
-        if let ad = ad,  event.isAD {
-            // 预估收入，需要满足上报结果是收入 * 10^6
-            param["devotee"] = Int(ad.price * 1000000.0)
-            // 预估收益的货币单位,字符串长度：3
-            param["pump"] = ad.currency
-            // 广告网络，广告真实的填充平台，例如admob的bidding，填充了Facebook的广告，此值为Facebook
-            param["spell"] = ad.network
-            // 广告SDK，admob，max等
-            param["parr"] = "admob"
-            // gid
-            param["murder"] = ad.model?.theAdID
-            // 广告位逻辑编号，例如：page1_bottom, connect_finished
-            param["example"] = ad.position.rawValue
-            // 广告类型，插屏，原生，banner，激励视频等
-            param["eleven"] = ad.position.type
-        }
         
         if event == .firstOpen {
             NSLog("[tba] 开始上报\(event.rawValue) 第\(3 - count ) 次")
@@ -129,6 +127,10 @@ extension Request {
         case .back:
             Request.tbaRequest(event: .backImpress, ad: ad)
         }
+        Request.tbaRequest(event: .adImpresssion, ad: ad)
+        if let price = ad?.price, let currency = ad?.currency {
+            AppEvents.shared.logPurchase(amount: price, currency: currency)
+        }
     }
 }
 
@@ -139,8 +141,9 @@ enum RequestEvent: String, Codable {
     case install = "sorensen"
     
     // session 事件
-    case session = "session_start"
-
+    case session = "session"
+    
+    case sessionStart = "session_start"
     case firstOpen = "first_open"
     case first = "bp_first"
     case cold = "bp_cold"
@@ -200,16 +203,11 @@ enum RequestEvent: String, Codable {
     case guideAdImpress = "bp_success_6"
     case enterImpress = "bp_success_7"
     case backImpress = "bp_success_8"
-    var isAD: Bool {
-        switch self {
-        case .loading, .home, .add, .save, .setting, .guideAd, .enter, .back,
-                .loadingShow, .homeShow, .addShow, .saveShow, .settingShow, .guideAdShow, .enterShow, .backShow
-            , .loadingImpress, .homeImpress, .addImpress, .saveImpress, .settingImpress, .guideAdImpress, .enterImpress, .backImpress:
-            return true
-        default:
-            return false
-        }
-    }
+
+    case adImpresssion = "gaze"
+    
+    case notificationAgres = "bp_ses_notice1"
+    case notificationDisagreen = "bp_ses_notice0"
 
 }
 
