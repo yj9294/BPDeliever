@@ -11,7 +11,14 @@ import AdSupport
 import UIKit
 import CoreTelephony
 
-var TBAUrl = "https://test-fungus.bpdeliver.net/karma/sloth/apropos"
+var TBAUrl: String = {
+    #if DEBUG
+    return "https://test-fungus.bpdeliver.net/karma/sloth/apropos"
+    #else
+    return "https://fungus.bpdeliver.net/topology/engle"
+    #endif
+}()
+
 var CloakUrl = "https://erbium.bpdeliver.net/stung/may/neat"
 
 let sessionManager: Session = {
