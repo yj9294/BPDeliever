@@ -151,15 +151,94 @@ ming1997317@outlook.com";
 
 
 
-"basic" = "Hoher Blutdruck ist ein häufiges, aber potenziell gefährliches Gesundheitsproblem. Ein gründliches Verständnis der Grundlagen von Bluthochdruck ist für die Prävention und Behandlung unerlässlich. In diesem Artikel werden der normale Blutdruckbereich, Messtechniken und mögliche Gefahren von Bluthochdruck vorgestellt, damit Sie Bluthochdruck besser erkennen und verstehen können.
-Normale Blutdruckbereiche liegen im Allgemeinen bei 90–120 MMHG systolisch (hoher Druck) und 60–80 MMHG diastolisch (niedriger Druck). Wenn Sie diesen Bereich beherrschen, können Sie Ihren Blutdruckstatus genauer beurteilen. Jeder sollte lernen, den Blutdruck richtig zu messen, den individuellen Blutdruckwert zu verstehen und Veränderungen jederzeit zu überwachen. Ein besseres Verständnis der Gefahren von Bluthochdruck, einschließlich Herzerkrankungen, Schlaganfall und Nierenproblemen, kann dazu beitragen, das Bewusstsein für die Ergreifung aktiver Präventionsmaßnahmen zu schärfen.";
+"basic" = "Bedeutung des Blutdrucks
+Der Blutdruck ist einer der wichtigsten Messwerte für die Gesundheit des Kreislaufs und von entscheidender Bedeutung für die allgemeine Körperfunktion und das ordnungsgemäße Funktionieren des Herz-Kreislauf-Systems. So wichtig ist der Blutdruck:
+1. Herz-Kreislauf-Gesundheit: Der Blutdruck spiegelt wider, wie hart das Herz ist
+Pumpen und Blut fließt durch die Blutgefäße. Normaler Blutdruck
+Hilft, das Herz-Kreislauf-System gesund zu halten und die Belastung zu verringern
+Herz und verringert das Risiko von Herzerkrankungen und Schlaganfällen.
+2. Gleichgewicht des Kreislaufsystems: Ein normaler Blutdruck trägt dazu bei, das Blutgleichgewicht zwischen den Arterien und Venen aufrechtzuerhalten und eine ausreichende Versorgung der verschiedenen Gewebe und Organe des Körpers mit Sauerstoff und Nährstoffen sicherzustellen.
+3. Nierenfunktion: Ein im normalen Bereich gehaltener Blutdruck trägt zum Schutz der Nieren bei. Hoher Blutdruck kann zu Nierenschäden führen, während normaler Blutdruck dazu beiträgt, die normale Filterfunktion der Glomeruli aufrechtzuerhalten.
+4. Vorbeugung von Herz-Kreislauf-Erkrankungen: Bluthochdruck ist einer der Hauptrisikofaktoren für Herz-Kreislauf-Erkrankungen. Durch die Kontrolle des Blutdrucks können Sie Herzerkrankungen, Schlaganfällen und anderen damit verbundenen Krankheiten wirksam vorbeugen.
+5. Lebensqualität: Die Aufrechterhaltung eines normalen Blutdruckniveaus trägt zur Verbesserung der Lebensqualität bei. Ein normaler Blutdruck erleichtert es, energiegeladen und konzentriert zu bleiben und unangenehme Symptome wie Müdigkeit und Kopfschmerzen zu vermeiden.
+6. Frühwarnsystem: Die Blutdruckmessung kann als Frühwarnsystem fungieren und dabei helfen, potenzielle Probleme im Körper zu erkennen. Durch die regelmäßige Überwachung des Blutdrucks können Probleme wie Bluthochdruck frühzeitig erkannt und frühzeitig verhindert werden.
+Zusammenfassend lässt sich sagen, dass die Aufrechterhaltung eines normalen Blutdrucks ein Schlüsselfaktor für die Erhaltung der allgemeinen Gesundheit und die Vorbeugung mehrerer chronischer Krankheiten ist. Der richtige Blutdruck kann durch einen gesunden Lebensstil und regelmäßige ärztliche Untersuchungen effektiv kontrolliert und aufrechterhalten werden.
 
-"balance" = "Die Ernährung spielt eine Schlüsselrolle beim Blutdruck. Ein hoher Salzkonsum ist einer der Hauptfaktoren für Bluthochdruck. Daher ist eine ausgewogene und gesunde Ernährung die Grundlage für die Erhaltung der Herz-Kreislauf-Gesundheit.
-Begrenzen Sie zunächst die Salzaufnahme. Zu viel Salz kann zu Flüssigkeitsansammlungen im Körper führen und das Blutvolumen erhöhen, was zu einem Anstieg des Blutdrucks führen kann. Zweitens erhöhen Sie die Aufnahme von frischem Obst, Gemüse, Vollkornprodukten und kaliumreichen Lebensmitteln. Kalium hilft, den Natriumhaushalt im Körper auszugleichen und den Blutdruck stabil zu halten. Gleichzeitig kann eine moderate Ballaststoffzufuhr dazu beitragen, das Gewicht zu kontrollieren und das Risiko für Bluthochdruck weiter zu senken";
+Informationsquellen zum Artikel:
+1. https://www.jacc.org/doi/10.1016/S0735-1097%2802%2981088-9
+2. https://www.jacc.org/doi/10.1016/j.jacasi.2023.02.001";
 
-"exercise" = "Regelmäßige körperliche Bewegung ist die goldene Regel für einen gesunden Blutdruck. Aerobic-Übungen wie zügiges Gehen, Joggen, Schwimmen und Radfahren sind für die Gesundheit des Herz-Kreislauf-Systems unerlässlich.
-Es wird empfohlen, jede Woche mindestens 150 Minuten Aerobic-Training mittlerer Intensität durchzuführen, beispielsweise zügiges Gehen oder Joggen. Darüber hinaus hilft Krafttraining mehr als zweimal pro Woche, den Stoffwechsel des Körpers zu verbessern, das Gewicht zu reduzieren und so den Blutdruck weiter zu kontrollieren. Regelmäßige Bewegung kann nicht nur ein gesundes Herz-Kreislauf-System aufrechterhalten, sondern auch die Stimmung verbessern, Stress reduzieren und eine positive Rolle bei der Vorbeugung und Behandlung von Bluthochdruck spielen.";
 
-"burden" = "Fettleibigkeit ist einer der Risikofaktoren für Bluthochdruck. Übergewicht erhöht die Belastung des Herzens und erhöht den Druck auf die Arterien, was zu Bluthochdruck führen kann. Daher ist die Aufrechterhaltung eines gesunden Gewichts der Schlüssel zur Vorbeugung und Kontrolle von Bluthochdruck.
-Erreichen Sie ein angemessenes Gewicht, indem Sie einen wissenschaftlichen Ernährungsplan entwickeln und aktiv trainieren. Vermeiden Sie extreme Diäten und schnellen Gewichtsverlust, um negative Auswirkungen auf Ihren Körper zu vermeiden. Arbeiten Sie mit einem professionellen medizinischen Team zusammen, um einen individuellen Abnehmplan zu entwickeln, um sicherzustellen, dass die Abnehmziele in einer sicheren und stabilen Umgebung erreicht werden.
-Wenn Sie die Grundlagen des Blutdrucks verstehen, sich ausgewogen ernähren, regelmäßig Sport treiben und Ihr Gewicht kontrollieren, können Sie einen ganzheitlicheren Ansatz für Ihre Herz-Kreislauf-Gesundheit verfolgen und Bluthochdruck verhindern und kontrollieren. Bei jedem Schritt geht es darum, sich um das eigene Herz zu kümmern, damit das Leben erfüllter und gesünder wird.";
+
+"balance" = "Diät- und Blutdruckmanagement
+Die Ernährung spielt eine Schlüsselrolle bei der Blutdruckkontrolle. Eine gesunde Ernährung kann dabei helfen, den idealen Blutdruck zu kontrollieren und aufrechtzuerhalten. Hier sind einige Ernährungsvorschläge, die bei der Blutdruckkontrolle helfen:
+1. Salzarme Ernährung: Die Kontrolle der Salzaufnahme ist ein wichtiger Schritt zur Aufrechterhaltung eines gesunden Blutdrucks. Zu
+Zu viel Natrium kann zu Wassereinlagerungen im Körper führen und das Blutvolumen erhöhen, was wiederum den Blutdruck erhöht. Die empfohlene tägliche Salzaufnahme beträgt nicht mehr als 5 Gramm.
+2. Essen Sie mehr Obst und Gemüse: Obst und Gemüse sind von Natur aus reich an Kalium, Magnesium und Ballaststoffen, die zur Senkung des Blutdrucks beitragen. Insbesondere der Verzehr von kaliumreichen Früchten wie Bananen, Orangen und Erdbeeren wirkt sich positiv auf den Elektrolythaushalt aus.
+3. Holen Sie sich die richtige Proteinmenge: Wählen Sie fettarme Proteinquellen wie Fisch, Huhn, Tofu und Bohnen. Diese Lebensmittel tragen dazu bei, ein gesundes Gewicht zu halten und den Blutdruck aufrechtzuerhalten.
+4. Fettarme Ernährung: Wählen Sie fettarme Lebensmittel und reduzieren Sie die Aufnahme von gesättigten Fettsäuren und Transfetten. Eine fettarme Ernährung kann helfen, das Gewicht zu kontrollieren und Ihr Herz zu entlasten.
+5. Vollkornprodukte: Wählen Sie Vollkornprodukte wie Hafer, brauner Reis und Vollkornbrot, die reich an Ballaststoffen und Nährstoffen sind, die dazu beitragen, den Blutzuckerspiegel stabil zu halten und den Blutdruck zu senken.
+6. Begrenzen Sie Koffein und Alkohol: Ein hoher Koffein- und Alkoholkonsum kann den Blutdruck erhöhen. Beschränken Sie Ihren Kaffee- und Weinkonsum oder erwägen Sie die Wahl entkoffeinierter Alternativen.
+7. Zucker kontrollieren: Eine hohe Zuckeraufnahme kann mit Bluthochdruck verbunden sein. Vermeiden Sie übermäßigen Konsum von Zucker und verarbeiteten Lebensmitteln und wählen Sie zuckerarme und natürlich süße Alternativen.
+8. Trinken Sie ausreichend Wasser: Für einen stabilen Blutdruck ist die Aufrechterhaltung eines guten Wasserhaushalts wichtig. Achten Sie darauf, jeden Tag ausreichend Wasser zu trinken, insbesondere bei heißem Wetter und nach dem Training.
+Bitte beachten Sie, dass die oben genannten Ratschläge nicht für alle gelten und es individuelle Unterschiede gibt. Bevor Sie eine Ernährungsumstellung vornehmen, wird empfohlen, einen Arzt oder einen professionellen Gesundheitsdienstleister um Rat zu fragen, insbesondere bei Menschen mit anderen chronischen Erkrankungen.
+
+Informationsquellen zum Artikel:
+1. https://www.jacc.org/doi/10.1016/j.jacc.2012.09.010
+2. https://www.jacc.org/doi/10.1016/j.jacc.2017.10.011";
+
+
+
+"exercise" = "Die Wirkung von Bewegung auf den Blutdruck
+Bewegung wirkt sich positiv auf den Blutdruck aus und ist ein wichtiger Faktor für die Erhaltung der Herz-Kreislauf-Gesundheit und die Verringerung des Risikos für Bluthochdruck. Hier sind die Auswirkungen von Bewegung auf den Blutdruck:
+1. Senken Sie den systolischen und diastolischen Blutdruck: Aerobic-Übungen wie zügiges Gehen, Joggen, Schwimmen
+und Radfahren, kann den systolischen und diastolischen Blutdruck wirksam senken. Dies liegt daran, dass das Herz durch Bewegung das Blut effizienter pumpt und die Blutgefäße flexibler werden, wodurch der Druck auf die Blutgefäßwände verringert wird.
+2. Verbessern Sie die Gesundheit des Herzens: Sport stärkt den Herzmuskel, sodass er das Blut stärker pumpen kann, wodurch die Belastung des Herzens verringert wird. Dies kann die Anstrengung des Herzens bei jedem Schlag reduzieren und so zur Kontrolle des Blutdrucks beitragen.
+3. Fördert die Gewichtskontrolle: Bewegung ist ein Schlüsselfaktor für die Aufrechterhaltung eines gesunden Gewichts. Zu viel Gewicht kann das Herz belasten und den Blutdruck erhöhen. Durch regelmäßige Bewegung können Sie überschüssige Kalorien verbrennen, Ihr Gewicht kontrollieren und so einen gesunden Blutdruck aufrechterhalten.
+4. Reduziert die Aktivität des sympathischen Nervensystems: Bewegung trägt dazu bei, die Aktivität des sympathischen und parasympathischen Nervensystems auszugleichen. Ein überaktives sympathisches Nervensystem kann zu einem erhöhten Blutdruck führen. Moderates Aerobic-Training kann diese Überstimulation reduzieren und dabei helfen, den Blutdruck stabil zu halten.
+5. Verbessern Sie die Insulinsensitivität: Sport trägt dazu bei, die Insulinsensitivität des Körpers zu verbessern und die normale Regulierung des Blutzuckers zu fördern. Dies ist hilfreich, um chronischen Krankheiten wie Diabetes vorzubeugen und den Blutdruck zu senken.
+6. Reduziert Stress: Sport setzt Endorphine und andere Substanzen im Körper frei, die helfen, Stress und Ängste abzubauen. Dies ist vorteilhaft für die Senkung des Blutdrucks und die Verbesserung der allgemeinen psychischen Gesundheit.
+7. Langfristige Wirkung: Kontinuierliche Trainingsgewohnheiten haben eine signifikantere langfristige Kontrollwirkung auf den Blutdruck. Durch regelmäßige Bewegung kann sich der Körper allmählich an die Regulierung des Blutdrucks anpassen und sich allmählich verbessern.
+Vor Beginn eines Trainingsprogramms, insbesondere für Menschen mit chronischen Vorerkrankungen, empfiehlt es sich, den Rat eines Arztes einzuholen, um ein für die individuelle Situation geeignetes Trainingsprogramm zu entwickeln. Eine schrittweise Steigerung der Trainingsintensität und die Vermeidung von Überanstrengung sind wichtige Faktoren, um die positiven Auswirkungen von Bewegung auf den Blutdruck sicherzustellen.
+
+Informationsquellen zum Artikel:
+1. https://www.acsm.org/all-blog-posts/certification-blog/acsm-certified-blog/2020/02/11/blood-pression-hypertension-exercise-cec-course
+2. https://www.acsm.org/all-blog-posts/acsm-blog/acsm-blog/2017/12/01/new-high-blood-pression-guidelines
+3. https://members.acsm.org/Shared_Content/ContactManagement/Sign_In.aspx?ReturnURL=/Shared_Content/ContactManagement/SignInRedirect.aspx
+4. https://www.acsm.org/news-detail/2019/03/11/featured-certification-blog-exercise-and-hypertension---implications-and-application";
+
+
+
+"burden" = "Fähigkeiten zur Blutdrucküberwachung und -verwaltung
+Die Überwachung und Kontrolle des Blutdrucks ist ein wichtiger Schritt zur Aufrechterhaltung der Herz-Kreislauf-Gesundheit. Hier sind einige Tipps zur Blutdrucküberwachung und -kontrolle:
+1. Messen Sie regelmäßig Ihren Blutdruck:
+Führen Sie regelmäßige Blutdruckmessungen durch, wie von Ihrem Arzt empfohlen, insbesondere bei Personen, bei denen das Risiko eines Bluthochdrucks besteht.
+Versuchen Sie, die Messungen zur gleichen Zeit und unter den gleichen Bedingungen durchzuführen, beispielsweise jeden Morgen oder Abend.
+2. Verwenden Sie ein geeignetes Blutdruckmessgerät:
+Wählen Sie ein elektronisches oder Quecksilber-Blutdruckmessgerät mit bewährter Genauigkeit.
+Stellen Sie sicher, dass die Manschette die richtige Größe hat. Zu klein oder zu groß kann zu ungenauen Messungen führen.
+3. Behalten Sie die richtige Haltung bei:
+Wenn Sie den Blutdruck messen, setzen Sie sich mit geraden Füßen und geradem Rücken auf einen Stuhl.
+Binden Sie die Manschette auf Herzhöhe um Ihren linken Arm.
+4. Vermeiden Sie übermäßige Aktivität und Stimulation:
+Vermeiden Sie vor der Messung Kaffee oder Tee, Rauchen, anstrengende körperliche Betätigung und andere Aktivitäten, die die Messergebnisse beeinflussen könnten.
+5. Blutdruckdaten aufzeichnen:
+Notieren Sie den Blutdruckwert jeder Messung, einschließlich des systolischen und diastolischen Blutdrucks.
+Die Verfolgung von Blutdrucktrends über einen bestimmten Zeitraum kann dabei helfen, Anomalien rechtzeitig zu erkennen.
+6. Verwalten Sie Ihre Ernährung:
+Befolgen Sie eine salzarme Diät und reduzieren Sie die Aufnahme natriumreicher Lebensmittel.
+Erhöhen Sie die Ernährung mit Gemüse, Obst, Vollkornprodukten und wenig Lipoprotein.
+7. Treiben Sie regelmäßig Sport:
+Machen Sie mindestens 150 Minuten Aerobic-Übungen mittlerer Intensität pro Woche, zum Beispiel zügiges Gehen, Joggen oder Schwimmen.
+Moderates Krafttraining wirkt sich auch positiv auf die Herz-Kreislauf-Gesundheit aus.
+8. Regelmäßige ärztliche Untersuchungen:
+Regelmäßige umfassende Gesundheitsuntersuchungen, einschließlich Blutdruckmessungen, Cholesterinkontrollen usw., und regelmäßige Gespräche mit Ihrem Arzt über einen Plan zur Blutdruckkontrolle.
+
+Informationsquellen zum Artikel:
+1. https://en.wikipedia.org/wiki/Hypotension
+2. https://en.wikipedia.org/wiki/Blutdruckmessgerät
+3. https://en.wikipedia.org/wiki/Blood_pression";
+
+"Disclaimer" = "Haftungsausschluss";
+"Disclaimer_desc" = "BP Deliverer bietet lediglich ein Tool zur Blutdruckaufzeichnung, mit dem Benutzer ihren Blutdruck im Auge behalten können. Es wird keine medizinische Hilfe geleistet. Wenn Sie Probleme haben, wenden Sie sich bitte an das Krankenhaus, um professionelle Hilfe zu erhalten";
+"OK" = "OK";

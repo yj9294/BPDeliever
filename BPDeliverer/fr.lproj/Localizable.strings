@@ -151,14 +151,93 @@ Contactez-nous
 ming1997317@outlook.com";
 
 
-"basic" = "L’hypertension artérielle est un problème de santé courant mais potentiellement dangereux. Une compréhension approfondie des bases de l’hypertension est essentielle à la prévention et à la gestion. Cet article présentera la plage normale de tension artérielle, les techniques de mesure et les risques possibles liés à l'hypertension artérielle pour vous aider à mieux reconnaître et comprendre l'hypertension artérielle.";
+"basic" = "Importance de la tension artérielle
+La pression artérielle est l’une des mesures les plus importantes de la santé circulatoire et est essentielle au fonctionnement global du corps et au bon fonctionnement du système cardiovasculaire. Voici à quel point la tension artérielle est importante :
+1. Santé cardiovasculaire : La tension artérielle reflète la dureté du cœur
+pompes et le sang circule dans les vaisseaux sanguins. Pression artérielle normale
+aide à maintenir le système cardiovasculaire en bonne santé, réduisant ainsi le fardeau sur le
+cœur et réduire le risque de maladie cardiaque et d’accident vasculaire cérébral.
+2. Équilibre du système circulatoire : Un niveau normal de pression artérielle aide à maintenir l’équilibre du sang entre les artères et les veines, assurant un apport adéquat d’oxygène et de nutriments aux différents tissus et organes du corps.
+3. Fonction rénale : Une pression artérielle maintenue dans la plage normale aide à protéger les reins. L’hypertension artérielle peut entraîner des lésions rénales, tandis qu’une pression artérielle normale aide à maintenir la fonction de filtrage normale des glomérules.
+4. Prévention des maladies cardiovasculaires : L’hypertension artérielle est l’un des principaux facteurs de risque de maladies cardiovasculaires. En contrôlant la tension artérielle, vous pouvez prévenir efficacement les maladies cardiaques, les accidents vasculaires cérébraux et autres maladies connexes.
+5. Qualité de vie : Le maintien d’une tension artérielle normale contribue à améliorer la qualité de vie. Une tension artérielle normale permet de rester plus énergique et concentré et d’éviter les symptômes désagréables tels que la fatigue et les maux de tête.
+6. Système d’alerte précoce : La mesure de la pression artérielle peut agir comme un système d’alerte précoce pour aider à détecter des problèmes potentiels dans le corps. En surveillant régulièrement la tension artérielle, des problèmes tels que l’hypertension artérielle peuvent être détectés et intervenir rapidement pour les prévenir.
+En résumé, le maintien d’une tension artérielle normale est un facteur clé pour maintenir la santé globale et prévenir de multiples maladies chroniques. Des niveaux de tension artérielle appropriés peuvent être gérés et maintenus efficacement grâce à un mode de vie sain et à des examens médicaux réguliers.
 
-"balance" = "L'alimentation joue un rôle clé dans la tension artérielle. Une consommation élevée de sel est l’un des principaux facteurs conduisant à l’hypertension artérielle. Adopter une alimentation saine et équilibrée est donc la base du maintien de la santé cardiovasculaire.
-Tout d’abord, limitez votre consommation de sel. Trop de sel peut provoquer une rétention d'eau dans le corps et augmenter le volume sanguin, ce qui peut augmenter la tension artérielle. Deuxièmement, augmentez votre consommation de fruits frais, de légumes, de grains entiers et d’aliments riches en potassium. Le potassium aide à équilibrer le sodium dans le corps et à maintenir la tension artérielle stable. Dans le même temps, un apport modéré en fibres alimentaires peut aider à contrôler le poids et à réduire davantage le risque d’hypertension artérielle.";
+Sources d'informations pour l'article :
+1. https://www.jacc.org/doi/10.1016/S0735-1097%2802%2981088-9
+2. https://www.jacc.org/doi/10.1016/j.jacasi.2023.02.001";
 
-"exercise" = "L’exercice physique régulier est la règle d’or pour maintenir une tension artérielle saine. Les exercices aérobiques, comme la marche rapide, le jogging, la natation et le vélo, sont essentiels à la santé du système cardiovasculaire.
-Au moins 150 minutes d’exercices aérobiques d’intensité modérée, comme la marche rapide ou le jogging, sont recommandées chaque semaine. De plus, faire de la musculation plus de deux fois par semaine contribue à améliorer le niveau métabolique du corps et à réduire le poids, contrôlant ainsi davantage la tension artérielle. L'exercice régulier peut non seulement maintenir un système cardiovasculaire sain, mais également améliorer l'humeur, réduire le stress et jouer un rôle positif dans la prévention et la gestion de l'hypertension.";
+"balance" = "Gestion de l’alimentation et de la tension artérielle
+L’alimentation joue un rôle clé dans la gestion de la tension artérielle. Adopter une alimentation saine peut aider à contrôler et à maintenir des niveaux de tension artérielle idéaux. Voici quelques suggestions diététiques pour vous aider à gérer votre tension artérielle :
+1. Régime pauvre en sel : Contrôler la consommation de sel est une étape importante pour maintenir une tension artérielle saine. Aussi
+une grande quantité de sodium peut provoquer une rétention d’eau dans le corps et augmenter le volume sanguin, ce qui augmente la tension artérielle. L'apport quotidien recommandé en sel ne dépasse pas 5 grammes.
+2. Mangez plus de fruits et légumes : Les fruits et légumes sont naturellement riches en potassium, en magnésium et en fibres, qui contribuent à abaisser la tension artérielle. En particulier, la consommation de fruits riches en potassium, comme les bananes, les oranges et les fraises, a un effet positif sur le maintien de l’équilibre électrolytique.
+3. Obtenez la bonne quantité de protéines : Choisissez des sources de protéines faibles en gras comme le poisson, le poulet, le tofu et les haricots. Ces aliments aident à maintenir un poids santé et à maintenir la tension artérielle.
+4. Régime faible en gras : Choisissez des aliments faibles en gras et réduisez votre consommation de gras saturés et trans. Un régime faible en gras peut aider à contrôler le poids et à réduire la charge exercée sur votre cœur.
+5. Céréales entières : Choisissez des aliments à grains entiers comme l’avoine, le riz brun et le pain de blé entier, qui sont riches en fibres et en nutriments qui aident à maintenir une glycémie stable et à abaisser la tension artérielle.
+6. Limitez la caféine et l’alcool : Une consommation élevée de caféine et d’alcool peut augmenter la tension artérielle. Modérez votre consommation de café et de vin ou envisagez de choisir des alternatives décaféinées.
+7. Contrôlez le sucre : Une consommation élevée de sucre peut être liée à l’hypertension artérielle. Évitez la consommation excessive de sucre et d’aliments transformés et choisissez des alternatives faibles en sucre et naturellement sucrées.
+8. Buvez suffisamment d’eau : Le maintien d’un bon équilibre hydrique est important pour une tension artérielle stable. Assurez-vous de boire suffisamment d’eau chaque jour, surtout par temps chaud et après l’exercice.
+Veuillez noter que les conseils ci-dessus ne s’appliquent pas à tout le monde et que des différences individuelles existent. Avant de procéder à tout ajustement alimentaire, il est recommandé de consulter un médecin ou un professionnel de la santé pour obtenir des conseils, en particulier pour les personnes souffrant d'autres maladies chroniques.
 
-"burden" = "L'obésité est l'un des facteurs de risque d'hypertension. L'excès de poids augmente la charge sur le cœur et augmente la pression sur les artères, ce qui peut entraîner une hypertension artérielle. Par conséquent, maintenir un poids santé est la clé pour prévenir et contrôler l’hypertension artérielle.
-Atteignez un poids approprié en développant un plan de régime scientifique et en faisant de l’exercice actif. Évitez les régimes extrêmes et la perte de poids rapide pour éviter les effets néfastes sur votre corps. Travaillez avec une équipe médicale professionnelle pour développer un plan de perte de poids individualisé afin de garantir que les objectifs de perte de poids sont atteints dans un environnement sûr et robuste.
-En comprenant les bases de la tension artérielle, en maintenant une alimentation équilibrée, en faisant régulièrement de l'exercice et en gérant votre poids, vous pouvez adopter une approche plus holistique de votre santé cardiovasculaire et prévenir et contrôler l'hypertension artérielle. Chaque étape consiste à prendre soin de son propre cœur, afin que la vie soit plus pleine et plus saine.";
+Sources d'informations pour l'article :
+1. https://www.jacc.org/doi/10.1016/j.jacc.2012.09.010
+2. https://www.jacc.org/doi/10.1016/j.jacc.2017.10.011";
+
+
+
+"exercise" = "L'effet de l'exercice sur la tension artérielle
+L'exercice a un impact positif sur la tension artérielle et constitue un facteur important dans le maintien de la santé cardiovasculaire et la réduction du risque d'hypertension. Voici les effets de l’exercice sur la tension artérielle :
+1. Abaisser la tension artérielle systolique et diastolique : exercices aérobiques, tels que la marche rapide, le jogging, la natation
+et le cyclisme, peuvent réduire efficacement la pression artérielle systolique et diastolique. En effet, l’exercice permet au cœur de pomper le sang plus efficacement et aux vaisseaux sanguins d’être plus flexibles, réduisant ainsi la pression sur les parois des vaisseaux sanguins.
+2. Améliorer la santé cardiaque : L’exercice aide à renforcer le muscle cardiaque, le rendant plus puissant pour pousser le sang, réduisant ainsi la charge sur le cœur. Cela peut réduire l’effort requis par le cœur à chaque battement, aidant ainsi à contrôler la tension artérielle.
+3. Favorise le contrôle du poids : L’exercice est un facteur clé pour maintenir un poids santé. Trop de poids peut fatiguer le cœur et augmenter la tension artérielle. Grâce à une activité physique régulière, vous pouvez brûler les calories excédentaires et aider à contrôler votre poids, maintenant ainsi une tension artérielle saine.
+4. Réduit l’activité du nerf sympathique : L’exercice aide à équilibrer l’activité des systèmes nerveux sympathique et parasympathique. Un système nerveux sympathique hyperactif peut entraîner une augmentation de la pression artérielle. Un exercice aérobique modéré peut réduire cette surstimulation et aider à maintenir une tension artérielle stable.
+5. Améliorer la sensibilité à l'insuline : L'exercice contribue à améliorer la sensibilité du corps à l'insuline et à favoriser la régulation normale de la glycémie. Ceci est utile pour prévenir les maladies chroniques telles que le diabète et abaisser la tension artérielle.
+6. Réduit les niveaux de stress : L’exercice libère des endorphines et d’autres substances dans le corps qui aident à soulager le stress et l’anxiété. Ceci est bénéfique pour abaisser les niveaux de tension artérielle et améliorer la santé mentale globale.
+7. Effet à long terme : les habitudes d’exercice continu ont un effet de contrôle à long terme plus significatif sur la tension artérielle. L'exercice régulier peut permettre au corps de s'adapter progressivement à la régulation de la pression artérielle et de s'améliorer progressivement.
+Avant de commencer tout programme d'exercices, en particulier pour les personnes souffrant de maladies chroniques préexistantes, il est recommandé de consulter un médecin pour élaborer un programme d'exercices adapté aux circonstances individuelles. Augmenter progressivement l’intensité de l’exercice et éviter le surmenage sont des facteurs importants pour garantir les effets positifs de l’exercice sur la tension artérielle.
+
+Sources d'informations pour l'article :
+1. https://www.acsm.org/all-blog-posts/certification-blog/acsm-certified-blog/2020/02/11/blood-pression-hypertension-exercise-cec-course
+2. https://www.acsm.org/all-blog-posts/acsm-blog/acsm-blog/2017/12/01/new-high-blood-pression-guidelines
+3. https://members.acsm.org/Shared_Content/ContactManagement/Sign_In.aspx?ReturnURL=/Shared_Content/ContactManagement/SignInRedirect.aspx
+4. https://www.acsm.org/news-detail/2019/03/11/featured-certification-blog-exercise-and-hypertension---implications-and-application";
+
+
+
+"burden" = "Compétences en matière de surveillance et de gestion de la pression artérielle
+La surveillance et la gestion de la pression artérielle sont une étape clé dans le maintien de la santé cardiovasculaire. Voici quelques conseils pour la surveillance et la gestion de la pression artérielle :
+1. Mesurez régulièrement votre tension artérielle :
+Prenez régulièrement des mesures de votre tension artérielle, comme recommandé par votre médecin, en particulier pour les personnes à risque d'hypertension.
+Essayez de prendre les mesures à la même heure et dans les mêmes conditions, par exemple chaque matin ou soir.
+2. Utilisez un tensiomètre adapté :
+Choisissez un tensiomètre électronique ou à mercure dont la précision a été prouvée.
+Assurez-vous que le brassard est de la bonne taille, trop petit ou trop grand peut entraîner des mesures inexactes.
+3. Maintenez une bonne posture :
+Lorsque vous prenez la tension artérielle, asseyez-vous sur une chaise, les pieds à plat sur le sol et le dos droit.
+Attachez le brassard autour de votre bras gauche au niveau du cœur.
+4. Évitez les activités et les stimulations excessives :
+Évitez de boire du café ou du thé, de fumer, de faire des exercices intenses et d'autres activités susceptibles d'affecter les résultats de la mesure avant la mesure.
+5. Enregistrez les données de tension artérielle :
+Enregistrez la valeur de la pression artérielle de chaque mesure, y compris la pression artérielle systolique et diastolique.
+Le suivi des tendances de la tension artérielle sur une période donnée peut aider à détecter les anomalies à temps.
+6. Gérez votre alimentation :
+Suivez un régime pauvre en sel et réduisez votre consommation d’aliments riches en sodium.
+Augmentez votre alimentation composée de légumes, de fruits, de grains entiers et d'une faible teneur en lipoprotéines.
+7. Faites de l’exercice physique régulièrement :
+Faites au moins 150 minutes d'exercices aérobiques d'intensité modérée par semaine, comme la marche rapide, le jogging ou la natation.
+Un entraînement musculaire modéré est également bénéfique pour la santé cardiovasculaire.
+8. Contrôles médicaux réguliers :
+Des examens de santé complets et réguliers, comprenant des mesures de la tension artérielle, des contrôles du cholestérol, etc., et des discussions régulières avec votre médecin au sujet d'un plan de gestion de la tension artérielle.
+
+Sources d'informations pour l'article :
+1. https://en.wikipedia.org/wiki/Hypotension
+2. https://en.wikipedia.org/wiki/Sphygmomanometer
+3. https://en.wikipedia.org/wiki/Blood_pression";
+
+
+"Disclaimer" = "Clause de non-responsabilité";
+"Disclaimer_desc" = "BP Deliverer fournit simplement un outil d'enregistrement de la pression artérielle pour aider les utilisateurs à garder un œil sur leur tension artérielle. Aucune aide médicale n'est fournie. Si vous avez des problèmes, veuillez vous rendre à l'hôpital pour obtenir l'aide d'un professionnel.";
+"OK" = "D'ACCORD";

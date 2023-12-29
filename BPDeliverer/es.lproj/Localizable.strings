@@ -153,15 +153,88 @@ Contáctenos
 ming1997317@outlook.com";
 
 
-"basic" = "La presión arterial alta es un problema de salud común pero potencialmente peligroso. Una comprensión profunda de los conceptos básicos de la hipertensión es esencial para la prevención y el tratamiento. Este artículo presentará el rango normal de presión arterial, las técnicas de medición y los posibles peligros de la presión arterial alta para ayudarlo a reconocer y comprender mejor la presión arterial alta.
-Los rangos normales de presión arterial son generalmente de 90 a 120 MMHG sistólica (presión alta) y de 60 a 80 MMHG diastólica (presión baja). Al dominar este rango, podrá evaluar con mayor precisión el estado de su presión arterial. Todo el mundo debería aprender a medir la presión arterial correctamente, comprender el nivel básico de presión arterial del individuo y controlar los cambios en cualquier momento. Una mejor comprensión de los peligros de la presión arterial alta, incluidas las enfermedades cardíacas, los accidentes cerebrovasculares y los problemas renales, puede ayudar a generar suficiente conciencia para tomar medidas preventivas activas.";
+"basic" = "Importancia de la presión arterial
+La presión arterial es una de las medidas más importantes de la salud circulatoria y es esencial para el funcionamiento general del cuerpo y el funcionamiento adecuado del sistema cardiovascular. Así de importante es la presión arterial:
+1. Salud cardiovascular: la presión arterial refleja la dureza del corazón
+bombea y la sangre fluye a través de los vasos sanguíneos. presión arterial normal
+ayuda a mantener sano el sistema cardiovascular, reduciendo la carga sobre el
+corazón y reducir el riesgo de enfermedades cardíacas y accidentes cerebrovasculares.
+2. Equilibrio del sistema circulatorio: Un nivel normal de presión arterial ayuda a mantener el equilibrio de la sangre entre las arterias y las venas, asegurando un suministro adecuado de oxígeno y nutrientes a los distintos tejidos y órganos del cuerpo.
+3. Función renal: la presión arterial mantenida dentro del rango normal ayuda a proteger los riñones. La presión arterial alta puede provocar daño renal, mientras que la presión arterial normal ayuda a mantener la función de filtrado normal de los glomérulos.
+4. Prevención de enfermedades cardiovasculares: La presión arterial alta es uno de los principales factores de riesgo de enfermedades cardiovasculares. Al controlar la presión arterial, se pueden prevenir eficazmente enfermedades cardíacas, accidentes cerebrovasculares y otras enfermedades relacionadas.
+5. Calidad de vida: Mantener niveles normales de presión arterial ayuda a mejorar la calidad de vida. La presión arterial normal hace que sea más fácil mantenerse con energía y concentración, y evitar síntomas desagradables como fatiga y dolores de cabeza.
+6. Sistema de alerta temprana: La medición de la presión arterial puede actuar como un sistema de alerta temprana para ayudar a detectar posibles problemas en el cuerpo. Al controlar la presión arterial con regularidad, se pueden detectar problemas como la presión arterial alta e intervenir tempranamente para prevenirlos.
+En resumen, mantener una presión arterial normal es un factor clave para mantener la salud general y prevenir múltiples enfermedades crónicas. Los niveles adecuados de presión arterial se pueden controlar y mantener eficazmente mediante un estilo de vida saludable y controles médicos periódicos.
 
-"balance" = "La dieta juega un papel clave en la presión arterial. El consumo elevado de sal es uno de los principales factores que conducen a la hipertensión arterial. Por tanto, adoptar una dieta equilibrada y saludable es la base para mantener la salud cardiovascular.
-Primero, limite el consumo de sal. Demasiada sal puede provocar retención de líquidos en el cuerpo y aumentar el volumen sanguíneo, lo que puede elevar la presión arterial. En segundo lugar, aumente la ingesta de frutas frescas, verduras, cereales integrales y alimentos ricos en potasio. El potasio ayuda a equilibrar el sodio en el cuerpo y mantiene estable la presión arterial. Al mismo tiempo, una ingesta moderada de fibra dietética puede ayudar a controlar el peso y reducir aún más el riesgo de hipertensión arterial.";
+Fuentes de información del artículo:
+1. https://www.jacc.org/doi/10.1016/S0735-1097%2802%2981088-9
+2. https://www.jacc.org/doi/10.1016/j.jacasi.2023.02.001";
 
-"exercise" = "El ejercicio físico regular es la regla de oro para mantener saludable la presión arterial. El ejercicio aeróbico, como caminar a paso ligero, trotar, nadar y andar en bicicleta, es esencial para la salud del sistema cardiovascular.
-Se recomiendan al menos 150 minutos de ejercicio aeróbico de intensidad moderada, como caminar a paso ligero o trotar cada semana. Además, el entrenamiento de fuerza más de dos veces por semana ayuda a mejorar el nivel metabólico del cuerpo y reducir el peso, controlando así aún más la presión arterial. El ejercicio regular no sólo puede mantener un sistema cardiovascular saludable, sino también mejorar el estado de ánimo, reducir el estrés y desempeñar un papel positivo en la prevención y el tratamiento de la hipertensión.";
+"balance" = "Manejo de la dieta y la presión arterial.
+La dieta juega un papel clave en el control de la presión arterial. Adoptar una dieta saludable puede ayudar a controlar y mantener los niveles ideales de presión arterial. Aquí hay algunas sugerencias dietéticas para ayudar con el control de la presión arterial:
+1. Dieta baja en sal: Controlar el consumo de sal es un paso importante para mantener una presión arterial saludable. También
+Demasiado sodio puede provocar retención de agua en el cuerpo y aumentar el volumen sanguíneo, lo que a su vez aumenta la presión arterial. La ingesta diaria recomendada de sal no supera los 5 gramos.
+2. Coma más frutas y verduras: Las frutas y verduras son naturalmente ricas en potasio, magnesio y fibra, que ayudan a reducir la presión arterial. En particular, comer frutas ricas en potasio, como plátanos, naranjas y fresas, tiene un efecto positivo en el mantenimiento del equilibrio electrolítico.
+3. Obtenga la cantidad adecuada de proteínas: elija fuentes de proteínas bajas en grasas, como pescado, pollo, tofu y frijoles. Estos alimentos ayudan a mantener un peso saludable y mantener la presión arterial.
+4. Dieta baja en grasas: Elija alimentos bajos en grasas y reduzca la ingesta de grasas saturadas y trans. Una dieta baja en grasas puede ayudar a controlar el peso y reducir la carga sobre el corazón.
+5. Cereales integrales: elija alimentos integrales como avena, arroz integral y pan integral, que son ricos en fibra y nutrientes que ayudan a mantener estables los niveles de azúcar en sangre y reducir la presión arterial.
+6. Limite la cafeína y el alcohol: el consumo elevado de cafeína y alcohol puede aumentar la presión arterial. Modere su consumo de café y vino, o considere elegir alternativas descafeinadas.
+7. Controle el azúcar: el consumo elevado de azúcar puede estar relacionado con la presión arterial alta. Evite el consumo excesivo de azúcar y alimentos procesados ​​y elija alternativas bajas en azúcar y naturalmente dulces.
+8. Beba suficiente agua: Mantener un buen equilibrio hídrico es importante para mantener la presión arterial estable. Asegúrese de beber suficiente agua todos los días, especialmente durante el clima cálido y después del ejercicio.
+Tenga en cuenta que los consejos anteriores no se aplican a todos y existen diferencias individuales. Antes de realizar cualquier ajuste en la dieta, se recomienda consultar a un médico o profesional de la salud, especialmente para personas con otras afecciones crónicas.
 
-"burden" = "La obesidad es uno de los factores de riesgo de hipertensión. El exceso de peso aumenta la carga sobre el corazón y aumenta la presión sobre las arterias, lo que puede provocar presión arterial alta. Por tanto, mantener un peso saludable es la clave para prevenir y controlar la hipertensión arterial.
-Consiga un peso adecuado desarrollando un plan de dieta científico y ejercicio activo. Evita dietas extremas y pérdidas de peso rápidas para evitar efectos negativos en tu organismo. Trabaje con un equipo médico profesional para desarrollar un plan de pérdida de peso individualizado para garantizar que se logren los objetivos de pérdida de peso en un entorno seguro y sólido.
-Al comprender los conceptos básicos de la presión arterial, mantener una dieta equilibrada, hacer ejercicio con regularidad y controlar el peso, podrá adoptar un enfoque más holístico de su salud cardiovascular y prevenir y controlar la presión arterial alta. Cada paso es para cuidar el propio corazón, para que la vida sea más plena y saludable.";
+Fuentes de información del artículo:
+1. https://www.jacc.org/doi/10.1016/j.jacc.2012.09.010
+2. https://www.jacc.org/doi/10.1016/j.jacc.2017.10.011";
+
+"exercise" = "El efecto del ejercicio sobre la presión arterial.
+El ejercicio tiene un impacto positivo en la presión arterial y es un factor importante para mantener la salud cardiovascular y reducir el riesgo de hipertensión. Estos son los efectos del ejercicio sobre la presión arterial:
+1. Reducir la presión arterial sistólica y diastólica: ejercicio aeróbico, como caminar a paso ligero, trotar o nadar.
+y el ciclismo, pueden reducir eficazmente la presión arterial sistólica y diastólica. Esto se debe a que el ejercicio hace que el corazón bombee sangre de manera más eficiente y los vasos sanguíneos sean más flexibles, lo que reduce la presión sobre las paredes de los vasos sanguíneos.
+2. Mejorar la salud del corazón: El ejercicio ayuda a fortalecer el músculo cardíaco, haciéndolo más potente para impulsar la sangre, reduciendo la carga sobre el corazón. Esto puede reducir el esfuerzo que requiere el corazón en cada latido, ayudando a controlar la presión arterial.
+3. Promueve el control del peso: El ejercicio es un factor clave para mantener un peso saludable. Demasiado peso puede forzar el corazón y aumentar la presión arterial. Mediante el ejercicio regular, puede quemar el exceso de calorías y ayudar a controlar su peso, manteniendo así niveles saludables de presión arterial.
+4. Reduce la actividad del nervio simpático: El ejercicio ayuda a equilibrar la actividad de los sistemas nerviosos simpático y parasimpático. Un sistema nervioso simpático hiperactivo puede provocar un aumento de la presión arterial. El ejercicio aeróbico moderado puede reducir esta sobreestimulación y ayudar a mantener estable la presión arterial.
+5. Mejorar la sensibilidad a la insulina: El ejercicio ayuda a mejorar la sensibilidad del cuerpo a la insulina y promueve la regulación normal del azúcar en sangre. Esto es útil para prevenir enfermedades crónicas como la diabetes y reducir la presión arterial.
+6. Reduce los niveles de estrés: El ejercicio libera endorfinas y otras sustancias en el cuerpo que ayudan a aliviar el estrés y la ansiedad. Esto es beneficioso para reducir los niveles de presión arterial y mejorar la salud mental en general.
+7. Efecto a largo plazo: los hábitos de ejercicio continuo tienen un efecto de control a largo plazo más significativo sobre la presión arterial. El ejercicio regular puede hacer que el cuerpo se adapte gradualmente y la regulación de la presión arterial mejore gradualmente.
+Antes de iniciar cualquier programa de ejercicios, especialmente para personas con enfermedades crónicas preexistentes, se recomienda consultar a un médico para desarrollar un programa de ejercicios que sea apropiado para las circunstancias individuales. Aumentar gradualmente la intensidad del ejercicio y evitar el esfuerzo excesivo son factores importantes para asegurar los efectos positivos del ejercicio sobre la presión arterial.
+
+Fuentes de información del artículo:
+1. https://www.acsm.org/all-blog-posts/certification-blog/acsm-certified-blog/2020/02/11/blood-pression-hypertension-exercise-cec-course
+2. https://www.acsm.org/all-blog-posts/acsm-blog/acsm-blog/2017/12/01/new-high-blood-pression-guidelines
+3. https://members.acsm.org/Shared_Content/ContactManagement/Sign_In.aspx?ReturnURL=/Shared_Content/ContactManagement/SignInRedirect.aspx
+4. https://www.acsm.org/news-detail/2019/03/11/featured-certification-blog-exercise-and-hypertension---implications-and-application";
+
+"burden" = "Habilidades de control y manejo de la presión arterial.
+El control y control de la presión arterial es un paso clave para mantener la salud cardiovascular. A continuación se ofrecen algunos consejos para controlar y controlar la presión arterial:
+1. Mida su presión arterial con regularidad:
+Tome medidas periódicas de la presión arterial según lo recomendado por su médico, especialmente en personas con riesgo de hipertensión arterial.
+Intente tomar medidas a la misma hora y en las mismas condiciones, por ejemplo cada mañana o cada noche.
+2. Utilice un tensiómetro adecuado:
+Elija un esfigmomanómetro electrónico o de mercurio con precisión comprobada.
+Asegúrese de que el brazalete sea del tamaño correcto; demasiado pequeño o demasiado grande puede dar lugar a mediciones inexactas.
+3. Mantenga una postura adecuada:
+Al tomar la presión arterial, siéntese en una silla con los pies apoyados en el suelo y la espalda recta.
+Ate el brazalete alrededor de su brazo izquierdo a la altura del corazón.
+4. Evite la actividad y estimulación excesivas:
+Evite beber café o té, fumar, hacer ejercicio extenuante y otras actividades que puedan afectar los resultados de la medición antes de la medición.
+5. Registre los datos de presión arterial:
+Registre el valor de la presión arterial de cada medición, incluida la presión arterial sistólica y diastólica.
+El seguimiento de las tendencias de la presión arterial durante un período de tiempo puede ayudar a detectar anomalías a tiempo.
+6. Gestiona tu dieta:
+Siga una dieta baja en sal y reduzca la ingesta de alimentos ricos en sodio.
+Incrementar la dieta de verduras, frutas, cereales integrales y bajos en lipoproteínas.
+7. Haz ejercicio físico regularmente:
+Haga al menos 150 minutos de ejercicio aeróbico de intensidad moderada a la semana, como caminar a paso ligero, trotar o nadar.
+El entrenamiento de fuerza moderado también es beneficioso para la salud cardiovascular.
+8. Revisiones médicas periódicas:
+Chequeos de salud integrales periódicos, que incluyen mediciones de la presión arterial, controles del colesterol, etc., y conversaciones periódicas con su médico sobre un plan de control de la presión arterial.
+
+Fuentes de información del artículo:
+1. https://en.wikipedia.org/wiki/Hypotension
+2. https://en.wikipedia.org/wiki/Sphygmomanometer
+3. https://en.wikipedia.org/wiki/Blood_pression";
+
+"Disclaimer" = "Descargo de responsabilidad";
+"Disclaimer_desc" = "BP Deliverer simplemente proporciona una herramienta de registro de la presión arterial para ayudar a los usuarios a controlar su presión arterial. No se proporciona ayuda médica. Si tiene algún problema, vaya al hospital para obtener ayuda profesional.";
+"OK" = "DE ACUERDO";

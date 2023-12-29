@@ -11,6 +11,9 @@ import ComposableArchitecture
 struct HomeReducer: Reducer {
     struct State: Equatable {
         
+        @UserDefault("allowUser", defaultValue: false)
+        var allowUser: Bool
+
         @UserDefault("measures", defaultValue: [])
         var measures: [Measurement]
         
@@ -32,6 +35,7 @@ struct HomeReducer: Reducer {
         case presentAddView
         case add(PresentationAction<AddReducer.Action>)
         case datePicker(PresentationAction<DatePickerReducer.Action>)
+        case allowUser
         
         case updateAD(GADNativeViewModel)
     }
@@ -82,6 +86,9 @@ struct HomeReducer: Reducer {
                 state.showAD(.add)
             case let .updateAD(model):
                 state.updateAD(model)
+                
+            case .allowUser:
+                state.allowUser = true
             default:
                 break
             }
@@ -236,19 +243,26 @@ struct HomeView: View {
     let store: StoreOf<HomeReducer>
     var body: some View {
         WithViewStore(store, observe: {$0}) { viewStore in
-            TabView(selection: viewStore.$item) {
-                ForEach(viewStore.items, id: \.self) { item in
-                    ContentView(store: store, item: item)
+            ZStack{
+                TabView(selection: viewStore.$item) {
+                    ForEach(viewStore.items, id: \.self) { item in
+                        ContentView(store: store, item: item)
+                    }
+                }.fullScreenCover(store: store.scope(state: \.$add, action: {.add($0)})) { store in
+                    AddView(store: store)
+                }.fullScreenCover(store: store.scope(state: \.$datePicker, action: {.datePicker($0)})) { store in
+                    DatePickerView(store: store).background(BackgroundClearView())
+                }.onReceive(nativeADPubliser) { noti in
+                    if let object = noti.object as? GADNativeModel {
+                        viewStore.send(.updateAD(GADNativeViewModel(model: object)))
+                    } else {
+                        viewStore.send(.updateAD(.none))
+                    }
                 }
-            }.fullScreenCover(store: store.scope(state: \.$add, action: {.add($0)})) { store in
-                AddView(store: store)
-            }.fullScreenCover(store: store.scope(state: \.$datePicker, action: {.datePicker($0)})) { store in
-                DatePickerView(store: store).background(BackgroundClearView())
-            }.onReceive(nativeADPubliser) { noti in
-                if let object = noti.object as? GADNativeModel {
-                    viewStore.send(.updateAD(GADNativeViewModel(model: object)))
-                } else {
-                    viewStore.send(.updateAD(.none))
+                if !viewStore.allowUser {
+                    AllowUserView {
+                        viewStore.send(.allowUser)
+                    }
                 }
             }
         }
@@ -274,6 +288,27 @@ struct HomeView: View {
                         Text(LocalizedStringKey(stringLiteral: item.title))
                     }
                 }.id(item)
+            }
+        }
+    }
+    
+    struct AllowUserView: View {
+        let action: ()->Void
+        var body: some View {
+            ZStack{
+                Color.black.opacity(0.7)
+                VStack{
+                    HStack{Spacer()}
+                    Spacer()
+                    VStack(spacing: 20){
+                        Text(LocalizedStringKey("Disclaimer")).font(.system(size: 20, weight: .semibold)).foregroundStyle(Color("#242C44"))
+                        Text(LocalizedStringKey("Disclaimer_desc")).font(.system(size: 16)).foregroundStyle(Color("#242C44")).lineLimit(nil).truncationMode(.tail).padding(.horizontal, 30)
+                        Button(action: action, label: {
+                            Text(LocalizedStringKey("OK")).font(.system(size: 15)).foregroundStyle(.white).padding(.vertical, 15).padding(.horizontal, 100)
+                        }).background(Color("#42C3D6")).cornerRadius(26)
+                    }.padding(.vertical, 28).background(.white).cornerRadius(10).padding(.horizontal, 35)
+                    Spacer()
+                }
             }
         }
     }
