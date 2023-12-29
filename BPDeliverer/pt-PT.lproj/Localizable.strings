@@ -150,15 +150,88 @@ Contate-nos
 ming1997317@outlook.com";
 
 
-"basic" = "A hipertensão arterial é um problema de saúde comum, mas potencialmente perigoso. Uma compreensão completa dos princípios básicos da hipertensão é essencial para prevenção e tratamento. Este artigo apresentará a faixa normal de pressão arterial, técnicas de medição e possíveis perigos da pressão alta para ajudá-lo a reconhecer e compreender melhor a pressão alta.
-As faixas normais de pressão arterial são geralmente 90-120 MMHG sistólica (pressão alta) e 60-80 MMHG diastólica (pressão baixa). Ao dominar essa faixa, você pode avaliar com mais precisão o status da sua pressão arterial. Todos devem aprender a medir a pressão arterial corretamente, compreender o nível básico de pressão arterial do indivíduo e monitorar as alterações a qualquer momento. Uma melhor compreensão dos perigos da pressão arterial elevada, incluindo doenças cardíacas, acidentes vasculares cerebrais e problemas renais, pode ajudar a aumentar a sensibilização para tomar medidas preventivas ativas.";
+"basic" = "Importância da pressão arterial
+A pressão arterial é uma das medidas mais importantes da saúde circulatória e é essencial para o funcionamento geral do corpo e o funcionamento adequado do sistema cardiovascular. Veja a importância da pressão arterial:
+1. Saúde cardiovascular: a pressão arterial reflete o quão duro o coração
+bombas e o sangue flui através dos vasos sanguíneos. Pressão arterial normal
+ajuda a manter o sistema cardiovascular saudável, reduzindo a carga sobre o
+coração e reduzindo o risco de doenças cardíacas e derrames.
+2. Equilíbrio do sistema circulatório: Um nível normal de pressão arterial ajuda a manter o equilíbrio do sangue entre as artérias e veias, garantindo o fornecimento adequado de oxigênio e nutrientes aos diversos tecidos e órgãos do corpo.
+3. Função renal: A pressão arterial mantida dentro da faixa normal ajuda a proteger os rins. A hipertensão arterial pode causar danos aos rins, enquanto a pressão arterial normal ajuda a manter a função normal de filtragem dos glomérulos.
+4. Prevenção de doenças cardiovasculares: A hipertensão arterial é um dos principais fatores de risco para doenças cardiovasculares. Ao controlar a pressão arterial, você pode prevenir eficazmente doenças cardíacas, derrames e outras doenças relacionadas.
+5. Qualidade de vida: Manter níveis normais de pressão arterial ajuda a melhorar a qualidade de vida. A pressão arterial normal torna mais fácil manter-se energizado e concentrado e evitar sintomas desagradáveis, como fadiga e dores de cabeça.
+6. Sistema de alerta precoce: A medição da pressão arterial pode atuar como um sistema de alerta precoce para ajudar a detectar possíveis problemas no corpo. Ao monitorar regularmente a pressão arterial, problemas como pressão alta podem ser detectados e intervencionados precocemente para evitá-los.
+Resumindo, manter a pressão arterial normal é um fator chave para manter a saúde geral e prevenir múltiplas doenças crónicas. Níveis adequados de pressão arterial podem ser controlados e mantidos de forma eficaz por meio de um estilo de vida saudável e exames médicos regulares.
 
-"balance" = "A dieta desempenha um papel fundamental na pressão arterial. A alta ingestão de sal é um dos principais fatores que levam à hipertensão. Portanto, adotar uma alimentação equilibrada e saudável é a base para a manutenção da saúde cardiovascular.
-Primeiro, limite a ingestão de sal. Muito sal pode causar retenção de líquidos no corpo e aumentar o volume sanguíneo, o que pode aumentar a pressão arterial. Em segundo lugar, aumente a ingestão de frutas frescas, vegetais, grãos integrais e alimentos ricos em potássio. O potássio ajuda a equilibrar o sódio no corpo e mantém a pressão arterial estável. Ao mesmo tempo, a ingestão moderada de fibra alimentar pode ajudar a controlar o peso e reduzir ainda mais o risco de hipertensão.";
+Fontes de informação do artigo:
+1. https://www.jacc.org/doi/10.1016/S0735-1097%2802%2981088-9
+2. https://www.jacc.org/doi/10.1016/j.jacasi.2023.02.001";
 
-"exercise" = "O exercício físico regular é a regra de ouro para manter a pressão arterial saudável. O exercício aeróbico, como caminhada rápida, corrida, natação e ciclismo, é essencial para a saúde do sistema cardiovascular.
-Recomenda-se pelo menos 150 minutos de exercícios aeróbicos de intensidade moderada, como caminhada rápida ou corrida, por semana. Além disso, o treinamento de força mais de duas vezes por semana ajuda a melhorar o nível metabólico do corpo e a reduzir o peso, controlando ainda mais a pressão arterial. O exercício regular pode não apenas manter um sistema cardiovascular saudável, mas também melhorar o humor, reduzir o estresse e desempenhar um papel positivo na prevenção e no controle da hipertensão.";
+"balance" = "Dieta e controle da pressão arterial
+A dieta desempenha um papel fundamental no controle da pressão arterial. Adotar uma dieta saudável pode ajudar a controlar e manter os níveis ideais de pressão arterial. Aqui estão algumas sugestões dietéticas para ajudar no controle da pressão arterial:
+1. Dieta com baixo teor de sal: Controlar a ingestão de sal é um passo importante para manter uma pressão arterial saudável. Também
+muito sódio pode causar retenção de água no corpo e aumentar o volume sanguíneo, o que por sua vez aumenta a pressão arterial. A ingestão diária recomendada de sal não é superior a 5 gramas.
+2. Coma mais frutas e vegetais: Frutas e vegetais são naturalmente ricos em potássio, magnésio e fibras, que ajudam a reduzir a pressão arterial. Em particular, comer frutas ricas em potássio, como bananas, laranjas e morangos, tem um efeito positivo na manutenção do equilíbrio eletrolítico.
+3. Obtenha a quantidade certa de proteína: Escolha fontes de proteína com baixo teor de gordura, como peixe, frango, tofu e feijão. Esses alimentos ajudam a manter um peso saudável e a pressão arterial.
+4. Dieta com baixo teor de gordura: Escolha alimentos com baixo teor de gordura e reduza a ingestão de gorduras saturadas e trans. Uma dieta com baixo teor de gordura pode ajudar a controlar o peso e reduzir a carga no coração.
+5. Grãos integrais: Escolha alimentos integrais, como aveia, arroz integral e pão integral, que são ricos em fibras e nutrientes que ajudam a manter níveis estáveis de açúcar no sangue e reduzir a pressão arterial.
+6. Limite a cafeína e o álcool: A alta ingestão de cafeína e álcool pode aumentar a pressão arterial. Modere a ingestão de café e vinho ou considere escolher alternativas descafeinadas.
+7. Controle o açúcar: A ingestão elevada de açúcar pode estar associada à hipertensão. Evite o consumo excessivo de açúcar e alimentos processados e escolha alternativas com baixo teor de açúcar e naturalmente doces.
+8. Beba bastante água: Manter um bom equilíbrio hídrico é importante para manter a pressão arterial estável. Certifique-se de beber bastante água todos os dias, especialmente durante o tempo quente e após o exercício.
+Observe que o conselho acima não se aplica a todos e existem diferenças individuais. Antes de fazer qualquer ajuste na dieta, é recomendável consultar um médico ou profissional de saúde para aconselhamento, especialmente para pessoas com outras condições crônicas.
 
-"burden" = "A obesidade é um dos fatores de risco para hipertensão. O excesso de peso aumenta a carga sobre o coração e aumenta a pressão nas artérias, o que pode levar à hipertensão. Portanto, manter um peso saudável é a chave para prevenir e controlar a hipertensão.
-Alcance um peso adequado desenvolvendo um plano de dieta científico e exercícios ativos. Evite dietas extremas e perda rápida de peso para evitar efeitos negativos em seu corpo. Trabalhe com uma equipe médica profissional para desenvolver um plano individualizado de perda de peso para garantir que as metas de perda de peso sejam alcançadas em um ambiente seguro e robusto.
-Ao compreender os princípios básicos da pressão arterial, manter uma dieta equilibrada, praticar exercícios regularmente e controlar o peso, você pode adotar uma abordagem mais holística à sua saúde cardiovascular e prevenir e controlar a pressão alta. Cada passo é cuidar do próprio coração, para que a vida seja mais plena e saudável.";
+Fontes de informação do artigo:
+1. https://www.jacc.org/doi/10.1016/j.jacc.2012.09.010
+2. https://www.jacc.org/doi/10.1016/j.jacc.2017.10.011";
+
+"exercise" = "O efeito do exercício na pressão arterial
+O exercício tem um impacto positivo na pressão arterial e é um fator importante na manutenção da saúde cardiovascular e na redução do risco de hipertensão. Aqui estão os efeitos do exercício na pressão arterial:
+1. Pressão arterial sistólica e diastólica mais baixa: Exercício aeróbico, como caminhada rápida, corrida, natação
+e andar de bicicleta, podem efetivamente reduzir a pressão arterial sistólica e diastólica. Isso ocorre porque o exercício faz com que o coração bombeie o sangue com mais eficiência e os vasos sanguíneos sejam mais flexíveis, reduzindo a pressão nas paredes dos vasos sanguíneos.
+2. Melhorar a saúde do coração: O exercício ajuda a fortalecer o músculo cardíaco, tornando-o mais poderoso para empurrar o sangue, reduzindo a carga sobre o coração. Isso pode reduzir o esforço exigido pelo coração em cada batimento, ajudando a controlar a pressão arterial.
+3. Promove o controle do peso: O exercício é um fator chave para manter um peso saudável. Muito peso pode sobrecarregar o coração e aumentar a pressão arterial. Através de exercícios regulares, você pode queimar o excesso de calorias e ajudar a controlar o peso, mantendo assim níveis saudáveis de pressão arterial.
+4. Reduz a atividade nervosa simpática: O exercício ajuda a equilibrar a atividade dos sistemas nervosos simpático e parassimpático. Um sistema nervoso simpático hiperativo pode levar ao aumento da pressão arterial. O exercício aeróbico moderado pode reduzir essa superestimulação e ajudar a manter a pressão arterial estável.
+5. Melhorar a sensibilidade à insulina: O exercício ajuda a melhorar a sensibilidade do corpo à insulina e a promover a regulação normal do açúcar no sangue. Isso é útil para prevenir doenças crônicas, como diabetes, e reduzir a pressão arterial.
+6. Reduz os níveis de estresse: O exercício libera endorfinas e outras substâncias no corpo que ajudam a aliviar o estresse e a ansiedade. Isso é benéfico para reduzir os níveis de pressão arterial e melhorar a saúde mental geral.
+7. Efeito a longo prazo: Os hábitos de exercício contínuo têm um efeito de controle mais significativo a longo prazo sobre a pressão arterial. O exercício regular pode fazer com que o corpo se adapte gradualmente à regulação da pressão arterial e melhore gradualmente.
+Antes de iniciar qualquer programa de exercícios, especialmente para pessoas com doenças crônicas pré-existentes, é recomendável consultar um médico para desenvolver um programa de exercícios apropriado às circunstâncias individuais. Aumentar gradualmente a intensidade do exercício e evitar esforço excessivo são fatores importantes para garantir os efeitos positivos do exercício sobre a pressão arterial.
+
+Fontes de informação do artigo:
+1. https://www.acsm.org/all-blog-posts/certification-blog/acsm-certified-blog/2020/02/11/blood- Pressure-hypertension-exercise-cec-course
+2. https://www.acsm.org/all-blog-posts/acsm-blog/acsm-blog/2017/12/01/new-high-blood- Pressure-guidelines
+3. https://members.acsm.org/Shared_Content/ContactManagement/Sign_In.aspx?ReturnURL=/Shared_Content/ContactManagement/SignInRedirect.aspx
+4. https://www.acsm.org/news-detail/2019/03/11/featured-certification-blog-exercise-and-hypertension---implications-and-application";
+
+"burden" = "Habilidades de monitoramento e gerenciamento da pressão arterial
+O monitoramento e o gerenciamento da pressão arterial são uma etapa fundamental na manutenção da saúde cardiovascular. Aqui estão algumas dicas para monitoramento e gerenciamento da pressão arterial:
+1. Meça sua pressão arterial regularmente:
+Faça medições regulares da pressão arterial conforme recomendado pelo seu médico, especialmente para pessoas com risco de hipertensão.
+Tente fazer medições ao mesmo tempo e nas mesmas condições, como todas as manhãs ou noites.
+2. Use um monitor de pressão arterial adequado:
+Escolha um esfigmomanômetro eletrônico ou de mercúrio com precisão comprovada.
+Certifique-se de que o manguito seja do tamanho certo, muito pequeno ou muito grande pode levar a medições imprecisas.
+3. Mantenha uma postura adequada:
+Ao medir a pressão arterial, sente-se em uma cadeira com os pés apoiados no chão e as costas retas.
+Amarre a braçadeira em volta do braço esquerdo, na altura do coração.
+4. Evite atividade e estimulação excessivas:
+Evite beber café ou chá, fumar, fazer exercícios extenuantes e outras atividades que possam afetar os resultados da medição antes da medição.
+5. Registre os dados da pressão arterial:
+Registre o valor da pressão arterial de cada medição, incluindo pressão arterial sistólica e diastólica.
+Acompanhar as tendências da pressão arterial durante um período de tempo pode ajudar a detectar anormalidades a tempo.
+6. Gerencie sua dieta:
+Siga uma dieta com baixo teor de sal e reduza a ingestão de alimentos ricos em sódio.
+Aumente a dieta de vegetais, frutas, grãos integrais e baixa lipoproteína.
+7. Faça exercícios físicos regularmente:
+Faça pelo menos 150 minutos de exercícios aeróbicos de intensidade moderada por semana, como caminhada rápida, corrida ou natação.
+O treinamento de força moderado também é benéfico para a saúde cardiovascular.
+8. Exames médicos regulares:
+Exames de saúde regulares e abrangentes, incluindo medições de pressão arterial, verificações de colesterol, etc., e discussões regulares com seu médico sobre um plano de controle da pressão arterial.
+
+Fontes de informação do artigo:
+1. https://en.wikipedia.org/wiki/Hipotensão
+2. https://en.wikipedia.org/wiki/Sphygmomanometer
+3. https://en.wikipedia.org/wiki/Blood_pression";
+
+"Disclaimer" = "Isenção de responsabilidade";
+"Disclaimer_desc" = "O BP Deliverer simplesmente fornece uma ferramenta de registro de pressão arterial para ajudar os usuários a monitorar sua pressão arterial. Nenhuma ajuda médica é fornecida. Se você tiver algum problema, vá ao hospital para obter ajuda profissional";
+"OK" = "OK";
