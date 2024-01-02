@@ -67,6 +67,7 @@ class NotificationHelper: NSObject {
     
     func register(completion: ((Bool)->Void)? = nil) {
         let noti = UNUserNotificationCenter.current()
+        Request.tbaRequest(event: .notification)
         noti.requestAuthorization(options: [.badge, .sound, .alert]) { granted, error in
             if granted {
                 if CacheUtil.shared.getFirstOpen() {

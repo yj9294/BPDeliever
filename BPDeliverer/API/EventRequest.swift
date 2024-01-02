@@ -209,5 +209,7 @@ enum RequestEvent: String, Codable {
     case notificationAgres = "bp_ses_notice1"
     case notificationDisagreen = "bp_ses_notice0"
 
+    case notification = "bp_ses_notice"
+    case disclaimer = "bp_disclaimer"
 }
 

@@ -261,6 +261,7 @@ struct HomeView: View {
                 }
                 if !viewStore.allowUser {
                     AllowUserView {
+                        Request.tbaRequest(event: .disclaimer)
                         viewStore.send(.allowUser)
                     }
                 }
