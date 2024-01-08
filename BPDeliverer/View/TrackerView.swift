@@ -17,6 +17,10 @@ struct TrackerReducer: Reducer {
         
         @UserDefault("measures", defaultValue: [])
         var measures: [Measurement]
+        
+        @UserDefault("top.mode", defaultValue: .last)
+        var topMode: MeasureTopMode
+        
         var filterDuration: DateDuration = .init()
         
         var adModel: GADNativeViewModel = .none
@@ -31,6 +35,7 @@ struct TrackerReducer: Reducer {
         case addButtonTapped
         case showAD
         case showGuideAD
+        case updateTopMode(MeasureTopMode)
     }
     var body: some Reducer<State, Action> {
         Reduce{ state, action in
@@ -55,6 +60,8 @@ struct TrackerReducer: Reducer {
                 return .publisher {
                     publisher
                 }
+            case let .updateTopMode(mode):
+                state.topMode = mode
             default:
                 break
             }
@@ -72,11 +79,21 @@ extension TrackerReducer.State {
     }
     
     var lastMeasure: Measurement? {
-        measures.first
+        topMode == .last ? measures.first : avgMeasure
     }
     
-    var hasHistory: Bool {
-        lastMeasure != nil
+    var avgMeasure: Measurement {
+        let measures = measures.filter { measure in
+            Date().timeIntervalSince1970 -  measure.date.timeIntervalSince1970 < 30 * 24 * 3600
+        }
+        let sys = measures.map({$0.systolic}).reduce(0, +)
+        let dia = measures.map({$0.diastolic}).reduce(0, +)
+        let pul = measures.map({$0.pulse}).reduce(0, +)
+        if measures.isEmpty {
+            return Measurement(systolic: 0, diastolic: 0, pulse: 0)
+        } else {
+            return Measurement(systolic: sys / measures.count, diastolic: dia / measures.count, pulse: pul / measures.count)
+        }
     }
     
     var hasAD: Bool {
@@ -155,7 +172,7 @@ struct TrackerView: View {
                                     Button {
                                         viewStore.send(.itemSelected(item))
                                     } label: {
-                                        TrackerCell(measure: item).shadow
+                                        TrackerCell(measure: item, topMode: viewStore.topMode, isTop: false).shadow
                                     }
                                 }.padding(.horizontal, 20)
                             }
@@ -215,9 +232,13 @@ struct TrackerView: View {
             WithViewStore(store, observe: {$0}) { viewStore in
                 if let measure = viewStore.lastMeasure {
                     Button {
-                        viewStore.send(.itemSelected(measure))
+                        if viewStore.topMode == .last { 
+                            viewStore.send(.itemSelected(measure))
+                        }
                     } label: {
-                        TrackerCell(measure: measure)
+                        TrackerCell(measure: measure, topMode: viewStore.topMode, isTop: true) { mode in
+                            viewStore.send(.updateTopMode(mode))
+                        }
                     }
                 }
             }
@@ -247,15 +268,28 @@ struct TrackerView: View {
     
     struct TrackerCell: View {
         let measure: Measurement
+        let topMode: MeasureTopMode
+        let isTop: Bool
+        var action: ((MeasureTopMode)->Void)? = nil
+        
         var body: some View {
-            VStack{
+            VStack(spacing: 0){
                 HStack{
-                    Image("tracker_date")
-                    Text(measure.date.detail).foregroundStyle(Color("#BBCDD9")).font(.system(size: 12))
+                    if isTop, topMode == .avg {
+                        Text("48 Hours average").foregroundStyle(Color.white).font(.system(size: 14.0))
+                    } else {
+                        HStack(spacing: 0){
+                            Image(isTop ? "tracker_date_top" : "tracker_date")
+                            Text(measure.date.detail).foregroundStyle(isTop ? Color.white : Color("#BBCDD9")).font(.system(size: 12))
+                        }
+                    }
                     Spacer()
-                }
-                Divider()
-                VStack{
+                    if isTop {
+                        TopButtonView(mode: topMode, action: action)
+                    }
+                }.padding(.all, 14).background(LinearGradient.linearGradient(colors: [Color("#42C3D6"), Color("#5AE9FF")], startPoint: .leading, endPoint: .trailing).clipShape(CustomRoundedRectangle(topLeftRadius: 8, topRightRadius: 8, bottomLeftRadius: 0, bottomRightRadius: 0)).opacity(isTop ? 1.0 : 0.0))
+                Color("#E9F0F5").frame(height: 1).padding(.horizontal, 12)
+                VStack(spacing: 4){
                     HStack{
                         HStack(alignment: .bottom, spacing: 6){
                             Text(verbatim: "\(measure.systolic)/\(measure.diastolic)").font(.system(size: 32)).foregroundStyle(Color("#194D54"))
@@ -270,25 +304,63 @@ struct TrackerView: View {
                             }
                         }
                     }
-                    HStack{
-                        Text(LocalizedStringKey(measure.status.title)).padding(.vertical,4).padding(.horizontal, 9).background(.linearGradient(colors: [Color(uiColor: measure.status.color), Color(uiColor: measure.status.endColor)], startPoint: .leading, endPoint: .trailing)).cornerRadius(13).foregroundColor(.white).font(.system(size: 14.0))
-                        Spacer()
-                        HStack(spacing: 0){
-                            ForEach(measure.posture, id:\.self) { item in
-                                if case let Measurement.Posture.feeel(feel) = item {
-                                    Image(feel.icon)
-                                }
-                                if case let Measurement.Posture.arm(feel) = item {
-                                    Image(feel.icon)
-                                }
-                                if case let Measurement.Posture.body(feel) = item {
-                                    Image(feel.icon)
+                    if isTop, topMode == .avg {
+                        Spacer().frame(height: 1)
+                    } else {
+                        HStack{
+                            Text(LocalizedStringKey(measure.status.title)).padding(.vertical,4).padding(.horizontal, 9).background(.linearGradient(colors: [Color(uiColor: measure.status.color), Color(uiColor: measure.status.endColor)], startPoint: .leading, endPoint: .trailing)).cornerRadius(13).foregroundColor(.white).font(.system(size: 14.0))
+                            Spacer()
+                            HStack(spacing: 0){
+                                ForEach(measure.posture, id:\.self) { item in
+                                    if case let Measurement.Posture.feeel(feel) = item {
+                                        Image(feel.icon)
+                                    }
+                                    if case let Measurement.Posture.arm(feel) = item {
+                                        Image(feel.icon)
+                                    }
+                                    if case let Measurement.Posture.body(feel) = item {
+                                        Image(feel.icon)
+                                    }
                                 }
                             }
                         }
                     }
-                }
-            }.padding(.vertical, 12).padding(.horizontal, 14)
+                }.padding(.vertical, (isTop && topMode == .avg) ? 25 : 12).padding(.horizontal, 14)
+            }
         }
+    }
+    
+    struct TopButtonView: View {
+        let mode: MeasureTopMode
+        var action: ((MeasureTopMode)->Void)? = nil
+        var body: some View {
+            HStack(spacing: 0){
+                ItemButtonView(title: MeasureTopMode.last.title, isSelected: mode == .last) {
+                    action?(.last)
+                }
+                ItemButtonView(title: MeasureTopMode.avg.title, isSelected: mode == .avg) {
+                    action?(.avg)
+                }
+            }.padding(.all, 2).background(Color("#FFEFE3").cornerRadius(16.0))
+        }
+        
+        struct ItemButtonView: View {
+            let title: String
+            let isSelected: Bool
+            let action: ()->Void
+            var body: some View {
+                Button(action: action, label: {
+                    Text(title).foregroundStyle(isSelected ? Color.white : Color("#C8B8AC")).font(.system(size: 12)).padding(.vertical, 7).padding(.horizontal, 12)
+                }).background(isSelected ? Color("#F89042").cornerRadius(14) : Color.clear.cornerRadius(0))
+            }
+        }
+    }
+}
+
+enum MeasureTopMode: String,Codable {
+   case last, avg
+    
+    var title: String {
+        return self.rawValue.capitalized
     }
 }

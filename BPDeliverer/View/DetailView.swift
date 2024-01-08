@@ -67,7 +67,7 @@ struct DetailView: View {
     var body: some View {
         WithViewStore(store, observe: {$0}) { viewStore in
             VStack(spacing: 16){
-                TrackerView.TrackerCell(measure: viewStore.measure).shadow.padding(.top, 20)
+                TrackerView.TrackerCell(measure: viewStore.measure, topMode: .last, isTop: false).shadow.padding(.top, 20)
                 EditView.NoteView(measure: viewStore.$measure, enable: false)
                 Spacer()
                 VStack(spacing: 10){
