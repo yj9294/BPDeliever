@@ -111,11 +111,24 @@ struct TrackerView: View {
                     viewStore.send(.addButtonTapped)
                     Request.tbaRequest(event: .trackAdd)
                 })
-                if !viewStore.isGuide {
-                    GuideView {
-                        viewStore.send(.showGuideAD)
-                        Request.tbaRequest(event: .guideAdd)
-                        Request.tbaRequest(event: .guideAd)
+                // 方案判定
+                if CacheUtil.shared.getMeasureGuide() == .a {
+                    // a 方案是 一次安装首次打开
+                    if !viewStore.isGuide {
+                        GuideView {
+                            viewStore.send(.showGuideAD)
+                            Request.tbaRequest(event: .guideAdd)
+                            Request.tbaRequest(event: .guideAd)
+                        }
+                    }
+                } else {
+                    // b 方案是每次打开判定是否有记录 没得记录都要弹出
+                    if viewStore.measures.count == 0 {
+                        GuideView {
+                            viewStore.send(.showGuideAD)
+                            Request.tbaRequest(event: .guideAdd)
+                            Request.tbaRequest(event: .guideAd)
+                        }
                     }
                 }
             }.onAppear {

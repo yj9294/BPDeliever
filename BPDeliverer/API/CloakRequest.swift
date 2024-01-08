@@ -47,7 +47,7 @@ extension Request {
         }).startRequestSuccess { obj in
             NSLog("[cloak] 请求cloak 成功 ✅✅✅")
             if let obj = obj as? String {
-                let userGo = UserGo(rawValue: obj)
+                let userGo = Cloak(rawValue: obj)
                 if userGo == .unknown {
                     NSLog("[cloak] 返回错误 error: \(obj)")
                     return
@@ -65,15 +65,15 @@ extension Request {
     }
 }
 
-enum UserGo: String, Codable {
+enum Cloak: String, Codable {
     case stay = "bandit" // 审核模式
     case go = "heinrich" // 激进模式
     case unknown = "unknown"
     
     init(rawValue: String) {
-        if rawValue == UserGo.stay.rawValue {
+        if rawValue == Cloak.stay.rawValue {
             self = .stay
-        } else if rawValue == UserGo.go.rawValue {
+        } else if rawValue == Cloak.go.rawValue {
             self = .go
         } else {
             self = .unknown

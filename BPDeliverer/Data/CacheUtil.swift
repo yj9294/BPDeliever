@@ -18,26 +18,38 @@ class CacheUtil: NSObject {
     // 是否可以展示原生广告 判定是否10s内进入
     var nativeCacheDate: GADCacheDate = .init()
     
-    @FileHelper("cache")
+    @FileHelper(.apis)
     private var caches: [RequestCache]?
     
-    @FileHelper("install")
+    @FileHelper(.firstInstall)
     private var install: Bool?
     
-    @FileHelper("first")
+    @FileHelper(.firstOpen)
     private var firstOpen: Bool?
     
-    @FileHelper("userAgent")
+    @FileHelper(.userAgent)
     private var userAgent: String?
     
-    @FileHelper("userGo")
-    private var userGo: UserGo?
+    @FileHelper(.cloak)
+    private var cloak: Cloak?
     
-    @FileHelper("firstOpen")
+    @FileHelper(.firstOpenCount)
     private var firstOpenSuccessCnt: Int?
     
-    @FileHelper("firstNotification")
+    @FileHelper(.firstNotification)
     private var firstNoti: Bool?
+    
+    
+//    血压记录引导弹窗，弹出时机
+//    A 方案
+//
+//    1. 用户第一次打开app，弹出引导弹窗
+//    B 方案
+//    1. 只要没有任何血压记录数据，就弹引导弹窗
+//      1. 有血压数据，但是全部清空后也需要弹
+    @FileHelper(.measureGuide)
+    private var measureGuide: ABTest?
+    
     
     // 用于防止 定时间的轮训和网络变化同时进行网络请求
     var connectedNetworkUpload: Bool = false
@@ -147,13 +159,13 @@ class CacheUtil: NSObject {
     
     // cloak 判定
     var isUserGoDefault: Bool {
-        return userGo == nil
+        return cloak == nil
     }
     var isUserGo: Bool {
-        (userGo ?? .go) == .go
+        (cloak ?? .go) == .go
     }
-    func updateUserGo(_ userGo: UserGo) {
-        self.userGo = userGo
+    func updateUserGo(_ cloak: Cloak) {
+        self.cloak = cloak
     }
     
     
@@ -163,6 +175,32 @@ class CacheUtil: NSObject {
     
     func getFirstOpenCnt() -> Int {
         firstOpenSuccessCnt ?? 0
+    }
+    
+    // 计算 measure guide 的随机ab 概率分布
+    // a: 0~100 随机概率
+    private func configMeasureGuide(a: Int) -> ABTest {
+        let random = arc4random() % 100
+        NSLog("[AB] 开始随机值：\(random)")
+        if random < a {
+            NSLog("[AB] 当前方案：A")
+            measureGuide = .a
+            return .a
+        } else {
+            NSLog("[AB] 当前方案：B")
+            measureGuide = .b
+            return .b
+        }
+    }
+    
+    func getMeasureGuide() -> ABTest {
+        if let measureGuide = measureGuide {
+            NSLog("[AB] 当前已有AB，当前配置:\(measureGuide)")
+            return measureGuide
+        } else {
+            NSLog("[AB] 当前没有AB，开始随机按照AB比例分配, A(50%)")
+            return configMeasureGuide(a: 50);
+        }
     }
 }
 
@@ -207,4 +245,8 @@ struct GADNativeCacheDate: Codable {
 // 用于原生广告缓存时间判定10s
 enum GADNativeCachePosition: Codable {
     case tracker, profile, add
+}
+
+enum ABTest: Codable {
+    case a, b
 }

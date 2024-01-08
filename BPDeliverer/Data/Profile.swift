@@ -37,9 +37,9 @@ struct UserDefault<T: Codable> where T: Equatable {
 struct FileHelper<T: Codable> {
     var value: T?
     let key: String
-    init(_ key: String) {
-        self.key = key
-        self.value = UserDefaults.standard.getObject(T.self, forKey: key)
+    init(_ key: FileHelperKey) {
+        self.key = key.rawValue
+        self.value = UserDefaults.standard.getObject(T.self, forKey: key.rawValue)
     }
     
     var wrappedValue: T? {
@@ -50,6 +50,10 @@ struct FileHelper<T: Codable> {
         }
         
         get { value }
+    }
+    
+    enum FileHelperKey: String {
+        case apis, firstInstall, firstOpen, firstOpenCount, firstNotification, userAgent, cloak, measureGuide
     }
 }
 

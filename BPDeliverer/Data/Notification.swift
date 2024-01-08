@@ -70,7 +70,7 @@ class NotificationHelper: NSObject {
         Request.tbaRequest(event: .notification)
         noti.requestAuthorization(options: [.badge, .sound, .alert]) { granted, error in
             if granted {
-                if CacheUtil.shared.getFirstOpen() {
+                if CacheUtil.shared.getFirstNoti() {
                     Request.tbaRequest(event: .notificationAgres)
                 }
                 print("开启通知")
