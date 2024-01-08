@@ -14,20 +14,21 @@ struct DateDuration: Equatable {
 }
 
 struct Measurement: Codable, Equatable, Hashable, Identifiable {
+    //   1. 默认值：Systolic: 103、Diastolic: 72、Pulse: 67；
     var id: String = UUID().uuidString
     
-    var systolic: Int = 100 { // 收缩呀
+    var systolic: Int = 103 { // 收缩呀
         didSet {
             updateStatus()
         }
     }
     
-    var diastolic: Int = 70 { // 舒张压
+    var diastolic: Int = 72 { // 舒张压
         didSet {
             updateStatus()
         }
     }
-    var pulse: Int = 70 // 心率
+    var pulse: Int = 67 // 心率
     
     
     var status: Status = .normal
