@@ -1,0 +1,4 @@
+module Trademob {
+umbrella "/Users/yangjian/Library/Developer/Xcode/DerivedData/BPDeliverer-bhmolynkhvnatbdciqvvcsfwxiif/SourcePackages/checkouts/ios_sdk/plugin/Trademob"
+export *
+}

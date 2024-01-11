@@ -278,7 +278,7 @@ struct TrackerView: View {
                     if isTop, topMode == .avg {
                         Text("48 Hours average").foregroundStyle(Color.white).font(.system(size: 14.0))
                     } else {
-                        HStack(spacing: 0){
+                        HStack(spacing: 8){
                             Image(isTop ? "tracker_date_top" : "tracker_date")
                             Text(measure.date.detail).foregroundStyle(isTop ? Color.white : Color("#BBCDD9")).font(.system(size: 12))
                         }

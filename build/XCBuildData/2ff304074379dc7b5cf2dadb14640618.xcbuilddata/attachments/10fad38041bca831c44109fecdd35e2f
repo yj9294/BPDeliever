@@ -1,0 +1,378 @@
+{
+  "" : {
+    "diagnostics" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/BPDeliverer-master.dia",
+    "emit-module-dependencies" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/BPDeliverer-master-emit-module.d",
+    "emit-module-diagnostics" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/BPDeliverer-master-emit-module.dia",
+    "swift-dependencies" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/BPDeliverer-master.swiftdeps"
+  },
+  "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/BPDeliverer/API/BaseRequest.swift" : {
+    "const-values" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/BaseRequest.swiftconstvalues",
+    "dependencies" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/BaseRequest.d",
+    "diagnostics" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/BaseRequest.dia",
+    "index-unit-output-path" : "/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/BaseRequest.o",
+    "llvm-bc" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/BaseRequest.bc",
+    "object" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/BaseRequest.o",
+    "swift-dependencies" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/BaseRequest.swiftdeps",
+    "swiftmodule" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/BaseRequest~partial.swiftmodule"
+  },
+  "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/BPDeliverer/API/CloakRequest.swift" : {
+    "const-values" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/CloakRequest.swiftconstvalues",
+    "dependencies" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/CloakRequest.d",
+    "diagnostics" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/CloakRequest.dia",
+    "index-unit-output-path" : "/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/CloakRequest.o",
+    "llvm-bc" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/CloakRequest.bc",
+    "object" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/CloakRequest.o",
+    "swift-dependencies" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/CloakRequest.swiftdeps",
+    "swiftmodule" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/CloakRequest~partial.swiftmodule"
+  },
+  "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/BPDeliverer/API/EventRequest.swift" : {
+    "const-values" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/EventRequest.swiftconstvalues",
+    "dependencies" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/EventRequest.d",
+    "diagnostics" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/EventRequest.dia",
+    "index-unit-output-path" : "/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/EventRequest.o",
+    "llvm-bc" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/EventRequest.bc",
+    "object" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/EventRequest.o",
+    "swift-dependencies" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/EventRequest.swiftdeps",
+    "swiftmodule" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/EventRequest~partial.swiftmodule"
+  },
+  "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/BPDeliverer/Data/AnyCodable.swift" : {
+    "const-values" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/AnyCodable.swiftconstvalues",
+    "dependencies" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/AnyCodable.d",
+    "diagnostics" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/AnyCodable.dia",
+    "index-unit-output-path" : "/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/AnyCodable.o",
+    "llvm-bc" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/AnyCodable.bc",
+    "object" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/AnyCodable.o",
+    "swift-dependencies" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/AnyCodable.swiftdeps",
+    "swiftmodule" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/AnyCodable~partial.swiftmodule"
+  },
+  "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/BPDeliverer/Data/CacheUtil.swift" : {
+    "const-values" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/CacheUtil.swiftconstvalues",
+    "dependencies" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/CacheUtil.d",
+    "diagnostics" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/CacheUtil.dia",
+    "index-unit-output-path" : "/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/CacheUtil.o",
+    "llvm-bc" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/CacheUtil.bc",
+    "object" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/CacheUtil.o",
+    "swift-dependencies" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/CacheUtil.swiftdeps",
+    "swiftmodule" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/CacheUtil~partial.swiftmodule"
+  },
+  "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/BPDeliverer/Data/GADUtil.swift" : {
+    "const-values" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/GADUtil.swiftconstvalues",
+    "dependencies" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/GADUtil.d",
+    "diagnostics" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/GADUtil.dia",
+    "index-unit-output-path" : "/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/GADUtil.o",
+    "llvm-bc" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/GADUtil.bc",
+    "object" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/GADUtil.o",
+    "swift-dependencies" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/GADUtil.swiftdeps",
+    "swiftmodule" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/GADUtil~partial.swiftmodule"
+  },
+  "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/BPDeliverer/Data/Helper.swift" : {
+    "const-values" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/Helper.swiftconstvalues",
+    "dependencies" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/Helper.d",
+    "diagnostics" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/Helper.dia",
+    "index-unit-output-path" : "/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/Helper.o",
+    "llvm-bc" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/Helper.bc",
+    "object" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/Helper.o",
+    "swift-dependencies" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/Helper.swiftdeps",
+    "swiftmodule" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/Helper~partial.swiftmodule"
+  },
+  "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/BPDeliverer/Data/Measurement.swift" : {
+    "const-values" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/Measurement.swiftconstvalues",
+    "dependencies" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/Measurement.d",
+    "diagnostics" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/Measurement.dia",
+    "index-unit-output-path" : "/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/Measurement.o",
+    "llvm-bc" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/Measurement.bc",
+    "object" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/Measurement.o",
+    "swift-dependencies" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/Measurement.swiftdeps",
+    "swiftmodule" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/Measurement~partial.swiftmodule"
+  },
+  "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/BPDeliverer/Data/NetworkUtil.swift" : {
+    "const-values" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/NetworkUtil.swiftconstvalues",
+    "dependencies" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/NetworkUtil.d",
+    "diagnostics" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/NetworkUtil.dia",
+    "index-unit-output-path" : "/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/NetworkUtil.o",
+    "llvm-bc" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/NetworkUtil.bc",
+    "object" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/NetworkUtil.o",
+    "swift-dependencies" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/NetworkUtil.swiftdeps",
+    "swiftmodule" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/NetworkUtil~partial.swiftmodule"
+  },
+  "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/BPDeliverer/Data/Notification.swift" : {
+    "const-values" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/Notification.swiftconstvalues",
+    "dependencies" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/Notification.d",
+    "diagnostics" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/Notification.dia",
+    "index-unit-output-path" : "/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/Notification.o",
+    "llvm-bc" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/Notification.bc",
+    "object" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/Notification.o",
+    "swift-dependencies" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/Notification.swiftdeps",
+    "swiftmodule" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/Notification~partial.swiftmodule"
+  },
+  "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/BPDeliverer/Data/Profile.swift" : {
+    "const-values" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/Profile.swiftconstvalues",
+    "dependencies" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/Profile.d",
+    "diagnostics" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/Profile.dia",
+    "index-unit-output-path" : "/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/Profile.o",
+    "llvm-bc" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/Profile.bc",
+    "object" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/Profile.o",
+    "swift-dependencies" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/Profile.swiftdeps",
+    "swiftmodule" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/Profile~partial.swiftmodule"
+  },
+  "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/BPDeliverer/View/AddView.swift" : {
+    "const-values" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/AddView.swiftconstvalues",
+    "dependencies" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/AddView.d",
+    "diagnostics" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/AddView.dia",
+    "index-unit-output-path" : "/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/AddView.o",
+    "llvm-bc" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/AddView.bc",
+    "object" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/AddView.o",
+    "swift-dependencies" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/AddView.swiftdeps",
+    "swiftmodule" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/AddView~partial.swiftmodule"
+  },
+  "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/BPDeliverer/View/BPDelivererApp.swift" : {
+    "const-values" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/BPDelivererApp.swiftconstvalues",
+    "dependencies" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/BPDelivererApp.d",
+    "diagnostics" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/BPDelivererApp.dia",
+    "index-unit-output-path" : "/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/BPDelivererApp.o",
+    "llvm-bc" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/BPDelivererApp.bc",
+    "object" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/BPDelivererApp.o",
+    "swift-dependencies" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/BPDelivererApp.swiftdeps",
+    "swiftmodule" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/BPDelivererApp~partial.swiftmodule"
+  },
+  "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/BPDeliverer/View/BPTrendsView.swift" : {
+    "const-values" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/BPTrendsView.swiftconstvalues",
+    "dependencies" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/BPTrendsView.d",
+    "diagnostics" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/BPTrendsView.dia",
+    "index-unit-output-path" : "/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/BPTrendsView.o",
+    "llvm-bc" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/BPTrendsView.bc",
+    "object" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/BPTrendsView.o",
+    "swift-dependencies" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/BPTrendsView.swiftdeps",
+    "swiftmodule" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/BPTrendsView~partial.swiftmodule"
+  },
+  "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/BPDeliverer/View/ChartsView.swift" : {
+    "const-values" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/ChartsView.swiftconstvalues",
+    "dependencies" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/ChartsView.d",
+    "diagnostics" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/ChartsView.dia",
+    "index-unit-output-path" : "/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/ChartsView.o",
+    "llvm-bc" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/ChartsView.bc",
+    "object" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/ChartsView.o",
+    "swift-dependencies" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/ChartsView.swiftdeps",
+    "swiftmodule" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/ChartsView~partial.swiftmodule"
+  },
+  "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/BPDeliverer/View/CircleView.swift" : {
+    "const-values" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/CircleView.swiftconstvalues",
+    "dependencies" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/CircleView.d",
+    "diagnostics" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/CircleView.dia",
+    "index-unit-output-path" : "/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/CircleView.o",
+    "llvm-bc" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/CircleView.bc",
+    "object" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/CircleView.o",
+    "swift-dependencies" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/CircleView.swiftdeps",
+    "swiftmodule" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/CircleView~partial.swiftmodule"
+  },
+  "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/BPDeliverer/View/ContentView.swift" : {
+    "const-values" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/ContentView.swiftconstvalues",
+    "dependencies" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/ContentView.d",
+    "diagnostics" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/ContentView.dia",
+    "index-unit-output-path" : "/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/ContentView.o",
+    "llvm-bc" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/ContentView.bc",
+    "object" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/ContentView.o",
+    "swift-dependencies" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/ContentView.swiftdeps",
+    "swiftmodule" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/ContentView~partial.swiftmodule"
+  },
+  "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/BPDeliverer/View/CustomRoundedRectangel.swift" : {
+    "const-values" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/CustomRoundedRectangel.swiftconstvalues",
+    "dependencies" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/CustomRoundedRectangel.d",
+    "diagnostics" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/CustomRoundedRectangel.dia",
+    "index-unit-output-path" : "/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/CustomRoundedRectangel.o",
+    "llvm-bc" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/CustomRoundedRectangel.bc",
+    "object" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/CustomRoundedRectangel.o",
+    "swift-dependencies" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/CustomRoundedRectangel.swiftdeps",
+    "swiftmodule" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/CustomRoundedRectangel~partial.swiftmodule"
+  },
+  "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/BPDeliverer/View/DatePickerView.swift" : {
+    "const-values" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/DatePickerView.swiftconstvalues",
+    "dependencies" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/DatePickerView.d",
+    "diagnostics" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/DatePickerView.dia",
+    "index-unit-output-path" : "/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/DatePickerView.o",
+    "llvm-bc" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/DatePickerView.bc",
+    "object" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/DatePickerView.o",
+    "swift-dependencies" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/DatePickerView.swiftdeps",
+    "swiftmodule" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/DatePickerView~partial.swiftmodule"
+  },
+  "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/BPDeliverer/View/DetailView.swift" : {
+    "const-values" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/DetailView.swiftconstvalues",
+    "dependencies" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/DetailView.d",
+    "diagnostics" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/DetailView.dia",
+    "index-unit-output-path" : "/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/DetailView.o",
+    "llvm-bc" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/DetailView.bc",
+    "object" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/DetailView.o",
+    "swift-dependencies" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/DetailView.swiftdeps",
+    "swiftmodule" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/DetailView~partial.swiftmodule"
+  },
+  "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/BPDeliverer/View/EditView.swift" : {
+    "const-values" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/EditView.swiftconstvalues",
+    "dependencies" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/EditView.d",
+    "diagnostics" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/EditView.dia",
+    "index-unit-output-path" : "/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/EditView.o",
+    "llvm-bc" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/EditView.bc",
+    "object" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/EditView.o",
+    "swift-dependencies" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/EditView.swiftdeps",
+    "swiftmodule" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/EditView~partial.swiftmodule"
+  },
+  "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/BPDeliverer/View/GADNativeView.swift" : {
+    "const-values" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/GADNativeView.swiftconstvalues",
+    "dependencies" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/GADNativeView.d",
+    "diagnostics" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/GADNativeView.dia",
+    "index-unit-output-path" : "/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/GADNativeView.o",
+    "llvm-bc" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/GADNativeView.bc",
+    "object" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/GADNativeView.o",
+    "swift-dependencies" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/GADNativeView.swiftdeps",
+    "swiftmodule" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/GADNativeView~partial.swiftmodule"
+  },
+  "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/BPDeliverer/View/HeartView.swift" : {
+    "const-values" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/HeartView.swiftconstvalues",
+    "dependencies" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/HeartView.d",
+    "diagnostics" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/HeartView.dia",
+    "index-unit-output-path" : "/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/HeartView.o",
+    "llvm-bc" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/HeartView.bc",
+    "object" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/HeartView.o",
+    "swift-dependencies" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/HeartView.swiftdeps",
+    "swiftmodule" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/HeartView~partial.swiftmodule"
+  },
+  "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/BPDeliverer/View/HomeNavigationView.swift" : {
+    "const-values" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/HomeNavigationView.swiftconstvalues",
+    "dependencies" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/HomeNavigationView.d",
+    "diagnostics" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/HomeNavigationView.dia",
+    "index-unit-output-path" : "/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/HomeNavigationView.o",
+    "llvm-bc" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/HomeNavigationView.bc",
+    "object" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/HomeNavigationView.o",
+    "swift-dependencies" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/HomeNavigationView.swiftdeps",
+    "swiftmodule" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/HomeNavigationView~partial.swiftmodule"
+  },
+  "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/BPDeliverer/View/HomeView.swift" : {
+    "const-values" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/HomeView.swiftconstvalues",
+    "dependencies" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/HomeView.d",
+    "diagnostics" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/HomeView.dia",
+    "index-unit-output-path" : "/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/HomeView.o",
+    "llvm-bc" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/HomeView.bc",
+    "object" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/HomeView.o",
+    "swift-dependencies" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/HomeView.swiftdeps",
+    "swiftmodule" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/HomeView~partial.swiftmodule"
+  },
+  "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/BPDeliverer/View/LanguageView.swift" : {
+    "const-values" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/LanguageView.swiftconstvalues",
+    "dependencies" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/LanguageView.d",
+    "diagnostics" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/LanguageView.dia",
+    "index-unit-output-path" : "/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/LanguageView.o",
+    "llvm-bc" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/LanguageView.bc",
+    "object" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/LanguageView.o",
+    "swift-dependencies" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/LanguageView.swiftdeps",
+    "swiftmodule" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/LanguageView~partial.swiftmodule"
+  },
+  "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/BPDeliverer/View/LaunchView.swift" : {
+    "const-values" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/LaunchView.swiftconstvalues",
+    "dependencies" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/LaunchView.d",
+    "diagnostics" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/LaunchView.dia",
+    "index-unit-output-path" : "/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/LaunchView.o",
+    "llvm-bc" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/LaunchView.bc",
+    "object" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/LaunchView.o",
+    "swift-dependencies" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/LaunchView.swiftdeps",
+    "swiftmodule" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/LaunchView~partial.swiftmodule"
+  },
+  "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/BPDeliverer/View/MAPTrendsView.swift" : {
+    "const-values" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/MAPTrendsView.swiftconstvalues",
+    "dependencies" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/MAPTrendsView.d",
+    "diagnostics" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/MAPTrendsView.dia",
+    "index-unit-output-path" : "/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/MAPTrendsView.o",
+    "llvm-bc" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/MAPTrendsView.bc",
+    "object" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/MAPTrendsView.o",
+    "swift-dependencies" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/MAPTrendsView.swiftdeps",
+    "swiftmodule" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/MAPTrendsView~partial.swiftmodule"
+  },
+  "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/BPDeliverer/View/NotificationAlertView.swift" : {
+    "const-values" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/NotificationAlertView.swiftconstvalues",
+    "dependencies" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/NotificationAlertView.d",
+    "diagnostics" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/NotificationAlertView.dia",
+    "index-unit-output-path" : "/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/NotificationAlertView.o",
+    "llvm-bc" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/NotificationAlertView.bc",
+    "object" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/NotificationAlertView.o",
+    "swift-dependencies" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/NotificationAlertView.swiftdeps",
+    "swiftmodule" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/NotificationAlertView~partial.swiftmodule"
+  },
+  "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/BPDeliverer/View/PrivacyView.swift" : {
+    "const-values" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/PrivacyView.swiftconstvalues",
+    "dependencies" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/PrivacyView.d",
+    "diagnostics" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/PrivacyView.dia",
+    "index-unit-output-path" : "/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/PrivacyView.o",
+    "llvm-bc" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/PrivacyView.bc",
+    "object" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/PrivacyView.o",
+    "swift-dependencies" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/PrivacyView.swiftdeps",
+    "swiftmodule" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/PrivacyView~partial.swiftmodule"
+  },
+  "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/BPDeliverer/View/ProfileView.swift" : {
+    "const-values" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/ProfileView.swiftconstvalues",
+    "dependencies" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/ProfileView.d",
+    "diagnostics" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/ProfileView.dia",
+    "index-unit-output-path" : "/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/ProfileView.o",
+    "llvm-bc" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/ProfileView.bc",
+    "object" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/ProfileView.o",
+    "swift-dependencies" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/ProfileView.swiftdeps",
+    "swiftmodule" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/ProfileView~partial.swiftmodule"
+  },
+  "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/BPDeliverer/View/ProportionView.swift" : {
+    "const-values" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/ProportionView.swiftconstvalues",
+    "dependencies" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/ProportionView.d",
+    "diagnostics" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/ProportionView.dia",
+    "index-unit-output-path" : "/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/ProportionView.o",
+    "llvm-bc" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/ProportionView.bc",
+    "object" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/ProportionView.o",
+    "swift-dependencies" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/ProportionView.swiftdeps",
+    "swiftmodule" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/ProportionView~partial.swiftmodule"
+  },
+  "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/BPDeliverer/View/ReadingDetailView.swift" : {
+    "const-values" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/ReadingDetailView.swiftconstvalues",
+    "dependencies" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/ReadingDetailView.d",
+    "diagnostics" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/ReadingDetailView.dia",
+    "index-unit-output-path" : "/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/ReadingDetailView.o",
+    "llvm-bc" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/ReadingDetailView.bc",
+    "object" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/ReadingDetailView.o",
+    "swift-dependencies" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/ReadingDetailView.swiftdeps",
+    "swiftmodule" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/ReadingDetailView~partial.swiftmodule"
+  },
+  "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/BPDeliverer/View/ReminderView.swift" : {
+    "const-values" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/ReminderView.swiftconstvalues",
+    "dependencies" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/ReminderView.d",
+    "diagnostics" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/ReminderView.dia",
+    "index-unit-output-path" : "/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/ReminderView.o",
+    "llvm-bc" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/ReminderView.bc",
+    "object" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/ReminderView.o",
+    "swift-dependencies" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/ReminderView.swiftdeps",
+    "swiftmodule" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/ReminderView~partial.swiftmodule"
+  },
+  "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/BPDeliverer/View/TrackerView.swift" : {
+    "const-values" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/TrackerView.swiftconstvalues",
+    "dependencies" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/TrackerView.d",
+    "diagnostics" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/TrackerView.dia",
+    "index-unit-output-path" : "/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/TrackerView.o",
+    "llvm-bc" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/TrackerView.bc",
+    "object" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/TrackerView.o",
+    "swift-dependencies" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/TrackerView.swiftdeps",
+    "swiftmodule" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/TrackerView~partial.swiftmodule"
+  },
+  "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/BPDeliverer/View/WebView.swift" : {
+    "const-values" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/WebView.swiftconstvalues",
+    "dependencies" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/WebView.d",
+    "diagnostics" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/WebView.dia",
+    "index-unit-output-path" : "/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/WebView.o",
+    "llvm-bc" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/WebView.bc",
+    "object" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/WebView.o",
+    "swift-dependencies" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/WebView.swiftdeps",
+    "swiftmodule" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/WebView~partial.swiftmodule"
+  },
+  "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/DerivedSources/GeneratedAssetSymbols.swift" : {
+    "const-values" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/GeneratedAssetSymbols.swiftconstvalues",
+    "dependencies" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/GeneratedAssetSymbols.d",
+    "diagnostics" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/GeneratedAssetSymbols.dia",
+    "index-unit-output-path" : "/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/GeneratedAssetSymbols.o",
+    "llvm-bc" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/GeneratedAssetSymbols.bc",
+    "object" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/GeneratedAssetSymbols.o",
+    "swift-dependencies" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/GeneratedAssetSymbols.swiftdeps",
+    "swiftmodule" : "/Users/yangjian/Documents/TestBird/Health/SwiftUI/BPDeliever_release/build/BPDeliverer.build/Debug-iphoneos/BPDeliverer.build/Objects-normal/arm64/GeneratedAssetSymbols~partial.swiftmodule"
+  }
+}

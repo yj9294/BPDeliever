@@ -173,6 +173,20 @@ extension ChartsReducer.State {
     
     enum Item: String, CaseIterable {
         case proportion, bp, map, heart, basic, balance, exercise, burden
+        var url: String {
+            switch self{
+            case .basic:
+                return "https://sites.google.com/view/bp-artical-1/%E9%A6%96%E9%A0%81";
+            case .balance:
+                return "https://sites.google.com/view/bp-artical-2/%E9%A6%96%E9%A0%81"
+            case .exercise:
+                return "https://sites.google.com/view/bpartical-3/%E9%A6%96%E9%A0%81"
+            case .burden:
+                return "https://sites.google.com/view/bp-artical-4/%E9%A6%96%E9%A0%81"
+            default:
+                return ""
+            }
+        }
         var title: String {
             switch self {
             case .proportion:

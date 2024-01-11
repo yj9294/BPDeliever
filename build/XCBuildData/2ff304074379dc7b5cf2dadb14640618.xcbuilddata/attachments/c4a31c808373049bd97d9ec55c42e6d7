@@ -1,0 +1,28 @@
+{
+  "" : {
+    "diagnostics" : "/Users/yangjian/Library/Developer/Xcode/DerivedData/BPDeliverer-bhmolynkhvnatbdciqvvcsfwxiif/SourcePackages/checkouts/GADUtil/build/GADUtil.build/Debug-iphoneos/GADUtil.build/Objects-normal/arm64/GADUtil-master.dia",
+    "emit-module-dependencies" : "/Users/yangjian/Library/Developer/Xcode/DerivedData/BPDeliverer-bhmolynkhvnatbdciqvvcsfwxiif/SourcePackages/checkouts/GADUtil/build/GADUtil.build/Debug-iphoneos/GADUtil.build/Objects-normal/arm64/GADUtil-master-emit-module.d",
+    "emit-module-diagnostics" : "/Users/yangjian/Library/Developer/Xcode/DerivedData/BPDeliverer-bhmolynkhvnatbdciqvvcsfwxiif/SourcePackages/checkouts/GADUtil/build/GADUtil.build/Debug-iphoneos/GADUtil.build/Objects-normal/arm64/GADUtil-master-emit-module.dia",
+    "swift-dependencies" : "/Users/yangjian/Library/Developer/Xcode/DerivedData/BPDeliverer-bhmolynkhvnatbdciqvvcsfwxiif/SourcePackages/checkouts/GADUtil/build/GADUtil.build/Debug-iphoneos/GADUtil.build/Objects-normal/arm64/GADUtil-master.swiftdeps"
+  },
+  "/Users/yangjian/Library/Developer/Xcode/DerivedData/BPDeliverer-bhmolynkhvnatbdciqvvcsfwxiif/SourcePackages/checkouts/GADUtil/Sources/GADUtil/GADUtil_async.swift" : {
+    "const-values" : "/Users/yangjian/Library/Developer/Xcode/DerivedData/BPDeliverer-bhmolynkhvnatbdciqvvcsfwxiif/SourcePackages/checkouts/GADUtil/build/GADUtil.build/Debug-iphoneos/GADUtil.build/Objects-normal/arm64/GADUtil_async.swiftconstvalues",
+    "dependencies" : "/Users/yangjian/Library/Developer/Xcode/DerivedData/BPDeliverer-bhmolynkhvnatbdciqvvcsfwxiif/SourcePackages/checkouts/GADUtil/build/GADUtil.build/Debug-iphoneos/GADUtil.build/Objects-normal/arm64/GADUtil_async.d",
+    "diagnostics" : "/Users/yangjian/Library/Developer/Xcode/DerivedData/BPDeliverer-bhmolynkhvnatbdciqvvcsfwxiif/SourcePackages/checkouts/GADUtil/build/GADUtil.build/Debug-iphoneos/GADUtil.build/Objects-normal/arm64/GADUtil_async.dia",
+    "index-unit-output-path" : "/GADUtil.build/Debug-iphoneos/GADUtil.build/Objects-normal/arm64/GADUtil_async.o",
+    "llvm-bc" : "/Users/yangjian/Library/Developer/Xcode/DerivedData/BPDeliverer-bhmolynkhvnatbdciqvvcsfwxiif/SourcePackages/checkouts/GADUtil/build/GADUtil.build/Debug-iphoneos/GADUtil.build/Objects-normal/arm64/GADUtil_async.bc",
+    "object" : "/Users/yangjian/Library/Developer/Xcode/DerivedData/BPDeliverer-bhmolynkhvnatbdciqvvcsfwxiif/SourcePackages/checkouts/GADUtil/build/GADUtil.build/Debug-iphoneos/GADUtil.build/Objects-normal/arm64/GADUtil_async.o",
+    "swift-dependencies" : "/Users/yangjian/Library/Developer/Xcode/DerivedData/BPDeliverer-bhmolynkhvnatbdciqvvcsfwxiif/SourcePackages/checkouts/GADUtil/build/GADUtil.build/Debug-iphoneos/GADUtil.build/Objects-normal/arm64/GADUtil_async.swiftdeps",
+    "swiftmodule" : "/Users/yangjian/Library/Developer/Xcode/DerivedData/BPDeliverer-bhmolynkhvnatbdciqvvcsfwxiif/SourcePackages/checkouts/GADUtil/build/GADUtil.build/Debug-iphoneos/GADUtil.build/Objects-normal/arm64/GADUtil_async~partial.swiftmodule"
+  },
+  "/Users/yangjian/Library/Developer/Xcode/DerivedData/BPDeliverer-bhmolynkhvnatbdciqvvcsfwxiif/SourcePackages/checkouts/GADUtil/Sources/GADUtil/GADUtil.swift" : {
+    "const-values" : "/Users/yangjian/Library/Developer/Xcode/DerivedData/BPDeliverer-bhmolynkhvnatbdciqvvcsfwxiif/SourcePackages/checkouts/GADUtil/build/GADUtil.build/Debug-iphoneos/GADUtil.build/Objects-normal/arm64/GADUtil.swiftconstvalues",
+    "dependencies" : "/Users/yangjian/Library/Developer/Xcode/DerivedData/BPDeliverer-bhmolynkhvnatbdciqvvcsfwxiif/SourcePackages/checkouts/GADUtil/build/GADUtil.build/Debug-iphoneos/GADUtil.build/Objects-normal/arm64/GADUtil.d",
+    "diagnostics" : "/Users/yangjian/Library/Developer/Xcode/DerivedData/BPDeliverer-bhmolynkhvnatbdciqvvcsfwxiif/SourcePackages/checkouts/GADUtil/build/GADUtil.build/Debug-iphoneos/GADUtil.build/Objects-normal/arm64/GADUtil.dia",
+    "index-unit-output-path" : "/GADUtil.build/Debug-iphoneos/GADUtil.build/Objects-normal/arm64/GADUtil.o",
+    "llvm-bc" : "/Users/yangjian/Library/Developer/Xcode/DerivedData/BPDeliverer-bhmolynkhvnatbdciqvvcsfwxiif/SourcePackages/checkouts/GADUtil/build/GADUtil.build/Debug-iphoneos/GADUtil.build/Objects-normal/arm64/GADUtil.bc",
+    "object" : "/Users/yangjian/Library/Developer/Xcode/DerivedData/BPDeliverer-bhmolynkhvnatbdciqvvcsfwxiif/SourcePackages/checkouts/GADUtil/build/GADUtil.build/Debug-iphoneos/GADUtil.build/Objects-normal/arm64/GADUtil.o",
+    "swift-dependencies" : "/Users/yangjian/Library/Developer/Xcode/DerivedData/BPDeliverer-bhmolynkhvnatbdciqvvcsfwxiif/SourcePackages/checkouts/GADUtil/build/GADUtil.build/Debug-iphoneos/GADUtil.build/Objects-normal/arm64/GADUtil.swiftdeps",
+    "swiftmodule" : "/Users/yangjian/Library/Developer/Xcode/DerivedData/BPDeliverer-bhmolynkhvnatbdciqvvcsfwxiif/SourcePackages/checkouts/GADUtil/build/GADUtil.build/Debug-iphoneos/GADUtil.build/Objects-normal/arm64/GADUtil~partial.swiftmodule"
+  }
+}

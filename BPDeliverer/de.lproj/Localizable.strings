@@ -242,3 +242,9 @@ Informationsquellen zum Artikel:
 "Disclaimer" = "Haftungsausschluss";
 "Disclaimer_desc" = "BP Deliverer bietet lediglich ein Tool zur Blutdruckaufzeichnung, mit dem Benutzer ihren Blutdruck im Auge behalten können. Es wird keine medizinische Hilfe geleistet. Wenn Sie Probleme haben, wenden Sie sich bitte an das Krankenhaus, um professionelle Hilfe zu erhalten";
 "OK" = "OK";
+
+"noti_desc" = "Aktivieren Sie die Benachrichtigungsfunktion, lassen Sie sich von der App daran erinnern, Ihre Blutdruckdaten aufzuzeichnen und auf die Gesundheit Ihres Blutdrucks zu achten";
+"Set it now" = "Stellen Sie es jetzt ein";
+"Skip" = "Überspringen";
+"Message alert permission" = "Berechtigung zur Nachrichtenbenachrichtigung";
+"not enabled to set" = "Die Einstellung ist nicht möglich";

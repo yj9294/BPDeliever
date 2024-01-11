@@ -39,6 +39,14 @@ class CacheUtil: NSObject {
     @FileHelper(.firstNotification)
     private var firstNoti: Bool?
     
+    @FileHelper(.notification)
+    private var mutNotification: Bool?
+    
+    @FileHelper(.sysNotification)
+    private var sysNotification: Bool?
+    
+    @FileHelper(.notiAlert)
+    private var notiAlert: NotiAlertModel?
     
 //    血压记录引导弹窗，弹出时机
 //    A 方案
@@ -123,8 +131,10 @@ class CacheUtil: NSObject {
     }
     func getFirstNoti() -> Bool {
         let ret = firstNoti ?? true
-        firstNoti = false
         return ret
+    }
+    func updateFirstNoti() {
+        firstNoti = false
     }
     
     
@@ -202,6 +212,81 @@ class CacheUtil: NSObject {
             return configMeasureGuide(a: 50);
         }
     }
+    
+    func getNotificationOn() -> Bool {
+        mutNotification ?? false
+    }
+    
+    func getSysNotificationOn() -> Bool {
+        sysNotification ?? false
+    }
+    
+    func updateMutNotificationOn(isOn: Bool) {
+        mutNotification = isOn
+    }
+    func updateSysNotificationOn(isOn: Bool) {
+        sysNotification = isOn
+    }
+    
+    func getNeedNotiAlert() -> Bool {
+        // 如果系统通知已经开了就没必要通知引导
+        if getSysNotificationOn() {
+            return false
+        } else {
+            guard let alertModel = notiAlert else {
+                // 不存在就不需要引导
+                return false
+            }
+            //  1. 第一次完成血压记录，返回到主页后，弹一次；
+            if alertModel.addMeasureCount == 1 {
+                updateNotiAlertAddMeasureCount()
+                return true
+            }
+            //  2. 安装应用第二次打开app（冷启动），显示主页后，弹一次；
+            if alertModel.openAppCount == 2 {
+                return true
+            }
+            
+            //  3. 此后每周打开app，冷启动显示主页后，弹一次（firstopen +7）
+            if let date = alertModel.openDate {
+                // openDate 一周内不弹 , 一周外 每周谈一次
+                if Date().timeIntervalSince1970 < date.addingTimeInterval(7 * 24 * 3600).timeIntervalSince1970 && Date().timeIntervalSince1970 > date.timeIntervalSince1970 {
+                    return false
+                }
+                updateNotiAlertOpenDate()
+                return true
+            } else {
+                return false
+            }
+        }
+    }
+    
+    func updateNotiAlertOpenAppCount() {
+        if var model = notiAlert {
+            model.openAppCount += 1
+            notiAlert = model
+        } else {
+            notiAlert = NotiAlertModel(openAppCount: 1)
+        }
+    }
+    
+    func updateNotiAlertAddMeasureCount() {
+        if var model = notiAlert {
+            model.addMeasureCount += 1
+            notiAlert = model
+        } else {
+            notiAlert = NotiAlertModel(addMeasureCount: 1)
+        }
+    }
+    
+    func updateNotiAlertOpenDate() {
+        if var model = notiAlert {
+            model.openDate = Date()
+            notiAlert = model
+        } else {
+            notiAlert = NotiAlertModel(openDate: Date())
+        }
+    }
 }
 
 struct RequestCache: Codable, Identifiable {
@@ -247,6 +332,18 @@ enum GADNativeCachePosition: Codable {
     case tracker, profile, add
 }
 
-enum ABTest: Codable {
+enum ABTest: String, Codable {
     case a, b
+}
+
+
+// 通知弹窗记录
+//4. 弹出时机（用户未同意开启系统通知时）：
+//  1. 第一次完成血压记录，返回到主页后，弹一次；
+//  2. 安装应用第二次打开app（冷启动），显示主页后，弹一次；
+//  3. 此后每周打开app，冷启动显示主页后，弹一次（firstopen +7）
+struct NotiAlertModel: Codable, Equatable {
+    var addMeasureCount: Int = 0
+    var openAppCount: Int = 0
+    var openDate: Date? = nil
 }

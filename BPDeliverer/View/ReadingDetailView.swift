@@ -34,22 +34,7 @@ struct ReadingDetailView: View {
         WithViewStore(store, observe: {$0}) { viewStore in
             VStack(spacing: 0){
                 NavigationBarView(backAction: {viewStore.send(.dismiss)}, title: "Details")
-                ScrollView(showsIndicators: false) {
-                    VStack(spacing: 15){
-                        VStack(spacing: 15){
-                            HStack{
-                                Text(LocalizedStringKey(viewStore.item.title)).font(.system(size: 16, weight: .medium)).foregroundStyle(Color("#272C2E"))
-                                Spacer()
-                            }
-                            Text(LocalizedStringKey(viewStore.item.rawValue)).font(.system(size: 14.0)).foregroundStyle(Color("#30313C"))
-                        }.padding(.horizontal, 20)
-                        LazyVGrid(columns: [GridItem(.flexible())], spacing: 15) {
-                            ForEach(viewStore.items, id:\.self) { item in
-                                ChartsView.RootView.ItemCell.ReadingView(item: item)
-                            }
-                        }.padding(.bottom, 15)
-                    }.lineLimit(nil).truncationMode(.tail).multilineTextAlignment(.leading)
-                }.padding(.top, 15)
+                WebView(urlString: viewStore.item.url).padding(.top, 5).padding(.horizontal, 20)
             }
             
         }.background(Color("#F3F8FB").ignoresSafeArea())

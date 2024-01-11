@@ -54,9 +54,13 @@ extension Request {
             param["opium"] =  event.rawValue
         }
         
-        let countryCode = Locale.current.identifier.components(separatedBy: "_").last
+        // 参数
         param["meadow"] = parameters
+        // 全局属性
+        let countryCode = Locale.current.identifier.components(separatedBy: "_").last
         param["bp_brith>melodic"] = countryCode
+        let guideModel = CacheUtil.shared.getMeasureGuide()
+        param["guild_test>melodic"] = guideModel.rawValue
         
         if event == .firstOpen {
             NSLog("[tba] 开始上报\(event.rawValue) 第\(3 - count ) 次")
@@ -211,5 +215,13 @@ enum RequestEvent: String, Codable {
 
     case notification = "bp_ses_notice"
     case disclaimer = "bp_disclaimer"
+    
+    case notificationAlert = "bp_pre_notice"
+    case notificationAlertGoSetting = "bp_pre_notice1"
+    case notificationAlertSkip = "bp_pre_notice0"
+    
+    case notificationMutOff = "bp_set_notice1"
+    case notificationMutOn = "bp_set_notice0"
+    
 }
 

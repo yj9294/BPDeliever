@@ -1,0 +1,18 @@
+{
+  "" : {
+    "diagnostics" : "/Users/yangjian/Library/Developer/Xcode/DerivedData/BPDeliverer-bhmolynkhvnatbdciqvvcsfwxiif/SourcePackages/checkouts/GoogleMobileAds/build/GoogleMobileAds.build/Debug-iphoneos/GoogleMobileAdsTarget.build/Objects-normal/arm64/GoogleMobileAdsTarget-master.dia",
+    "emit-module-dependencies" : "/Users/yangjian/Library/Developer/Xcode/DerivedData/BPDeliverer-bhmolynkhvnatbdciqvvcsfwxiif/SourcePackages/checkouts/GoogleMobileAds/build/GoogleMobileAds.build/Debug-iphoneos/GoogleMobileAdsTarget.build/Objects-normal/arm64/GoogleMobileAdsTarget-master-emit-module.d",
+    "emit-module-diagnostics" : "/Users/yangjian/Library/Developer/Xcode/DerivedData/BPDeliverer-bhmolynkhvnatbdciqvvcsfwxiif/SourcePackages/checkouts/GoogleMobileAds/build/GoogleMobileAds.build/Debug-iphoneos/GoogleMobileAdsTarget.build/Objects-normal/arm64/GoogleMobileAdsTarget-master-emit-module.dia",
+    "swift-dependencies" : "/Users/yangjian/Library/Developer/Xcode/DerivedData/BPDeliverer-bhmolynkhvnatbdciqvvcsfwxiif/SourcePackages/checkouts/GoogleMobileAds/build/GoogleMobileAds.build/Debug-iphoneos/GoogleMobileAdsTarget.build/Objects-normal/arm64/GoogleMobileAdsTarget-master.swiftdeps"
+  },
+  "/Users/yangjian/Library/Developer/Xcode/DerivedData/BPDeliverer-bhmolynkhvnatbdciqvvcsfwxiif/SourcePackages/checkouts/GoogleMobileAds/Sources/weak_import.swift" : {
+    "const-values" : "/Users/yangjian/Library/Developer/Xcode/DerivedData/BPDeliverer-bhmolynkhvnatbdciqvvcsfwxiif/SourcePackages/checkouts/GoogleMobileAds/build/GoogleMobileAds.build/Debug-iphoneos/GoogleMobileAdsTarget.build/Objects-normal/arm64/weak_import.swiftconstvalues",
+    "dependencies" : "/Users/yangjian/Library/Developer/Xcode/DerivedData/BPDeliverer-bhmolynkhvnatbdciqvvcsfwxiif/SourcePackages/checkouts/GoogleMobileAds/build/GoogleMobileAds.build/Debug-iphoneos/GoogleMobileAdsTarget.build/Objects-normal/arm64/weak_import.d",
+    "diagnostics" : "/Users/yangjian/Library/Developer/Xcode/DerivedData/BPDeliverer-bhmolynkhvnatbdciqvvcsfwxiif/SourcePackages/checkouts/GoogleMobileAds/build/GoogleMobileAds.build/Debug-iphoneos/GoogleMobileAdsTarget.build/Objects-normal/arm64/weak_import.dia",
+    "index-unit-output-path" : "/GoogleMobileAds.build/Debug-iphoneos/GoogleMobileAdsTarget.build/Objects-normal/arm64/weak_import.o",
+    "llvm-bc" : "/Users/yangjian/Library/Developer/Xcode/DerivedData/BPDeliverer-bhmolynkhvnatbdciqvvcsfwxiif/SourcePackages/checkouts/GoogleMobileAds/build/GoogleMobileAds.build/Debug-iphoneos/GoogleMobileAdsTarget.build/Objects-normal/arm64/weak_import.bc",
+    "object" : "/Users/yangjian/Library/Developer/Xcode/DerivedData/BPDeliverer-bhmolynkhvnatbdciqvvcsfwxiif/SourcePackages/checkouts/GoogleMobileAds/build/GoogleMobileAds.build/Debug-iphoneos/GoogleMobileAdsTarget.build/Objects-normal/arm64/weak_import.o",
+    "swift-dependencies" : "/Users/yangjian/Library/Developer/Xcode/DerivedData/BPDeliverer-bhmolynkhvnatbdciqvvcsfwxiif/SourcePackages/checkouts/GoogleMobileAds/build/GoogleMobileAds.build/Debug-iphoneos/GoogleMobileAdsTarget.build/Objects-normal/arm64/weak_import.swiftdeps",
+    "swiftmodule" : "/Users/yangjian/Library/Developer/Xcode/DerivedData/BPDeliverer-bhmolynkhvnatbdciqvvcsfwxiif/SourcePackages/checkouts/GoogleMobileAds/build/GoogleMobileAds.build/Debug-iphoneos/GoogleMobileAdsTarget.build/Objects-normal/arm64/weak_import~partial.swiftmodule"
+  }
+}

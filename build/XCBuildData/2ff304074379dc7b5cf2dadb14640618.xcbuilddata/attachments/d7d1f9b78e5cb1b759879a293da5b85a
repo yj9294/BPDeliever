@@ -1,0 +1,4 @@
+module Criteo {
+umbrella "/Users/yangjian/Library/Developer/Xcode/DerivedData/BPDeliverer-bhmolynkhvnatbdciqvvcsfwxiif/SourcePackages/checkouts/ios_sdk/plugin/Criteo"
+export *
+}

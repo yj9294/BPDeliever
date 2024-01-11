@@ -25,6 +25,13 @@ struct HomeReducer: Reducer {
         @PresentationState var datePicker: DatePickerReducer.State? = nil
         var analytics: ChartsReducer.State = .init()
         var profile: ProfileReducer.State = .init()
+        
+        @UserDefault("notiAlert", defaultValue: NotiAlertModel())
+        var alertModel: NotiAlertModel
+        
+        var showNotiAlertView: Bool = CacheUtil.shared.getNeedNotiAlert()
+        
+        var notiAlert: NotificationAlertReducer.State = .init()
     }
     enum Action: BindableAction, Equatable {
         case binding(BindingAction<State>)
@@ -38,6 +45,8 @@ struct HomeReducer: Reducer {
         case allowUser
         
         case updateAD(GADNativeViewModel)
+        
+        case notiAlert(NotificationAlertReducer.Action)
     }
     var body: some Reducer<State, Action> {
         BindingReducer()
@@ -49,6 +58,9 @@ struct HomeReducer: Reducer {
                 state.dismissAddView()
                 
             case let .add(.presented(.path(.element(id: _, action: .edit(.buttonTapped(measure)))))):
+                state.showNotiAlertView
+                
+                = CacheUtil.shared.getNeedNotiAlert()
                 state.updateMeasures(measure)
                 state.dismissAddView()
             case .tracker(.addButtonTapped):
@@ -89,6 +101,11 @@ struct HomeReducer: Reducer {
                 
             case .allowUser:
                 state.allowUser = true
+                
+            case .notiAlert(.dismiss):
+                state.showNotiAlertView = false
+            case .notiAlert(.gotoSetting):
+                state.showNotiAlertView = false
             default:
                 break
             }
@@ -106,6 +123,10 @@ struct HomeReducer: Reducer {
         }
         Scope(state: \.profile, action: /Action.profile) {
             ProfileReducer()
+        }
+        
+        Scope(state: \.notiAlert, action: /Action.notiAlert) {
+            NotificationAlertReducer()
         }
     }
 }
@@ -265,6 +286,12 @@ struct HomeView: View {
                         viewStore.send(.allowUser)
                     }
                 }
+                
+                if viewStore.showNotiAlertView {
+                    NotificationAlertView(store: store.scope(state: \.notiAlert, action: {.notiAlert($0)})).onAppear {
+                        Request.tbaRequest(event: .notificationAlert)
+                    }
+                }
             }
         }
     }
@@ -297,7 +324,7 @@ struct HomeView: View {
         let action: ()->Void
         var body: some View {
             ZStack{
-                Color.black.opacity(0.7)
+                Color.black.opacity(0.7).ignoresSafeArea()
                 VStack{
                     HStack{Spacer()}
                     Spacer()

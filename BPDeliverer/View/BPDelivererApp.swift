@@ -20,6 +20,7 @@ struct BPDelivererApp: App {
             ContentView(store: Store(initialState: ContentReducer.State(), reducer: {
                 ContentReducer()
             })).onReceive(NotificationCenter.default.publisher(for: UIApplication.willEnterForegroundNotification)) { _ in
+                NotificationHelper.shared.register()
                 if CacheUtil.shared.enterBackgrounded {
                     NotificationCenter.default.post(name: .hotOpen, object: nil)
                     Request.tbaRequest(event: .hot)
@@ -47,9 +48,12 @@ struct BPDelivererApp: App {
                 Request.tbaRequest(event: .install)
             }
             if CacheUtil.shared.getFirstOpen() {
+                CacheUtil.shared.updateNotiAlertOpenDate()
                 Request.tbaRequest(event: .first)
                 uploadFirstOpen()
             }
+            
+            CacheUtil.shared.updateNotiAlertOpenAppCount()
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
                 // 冷启动初始化
@@ -73,7 +77,9 @@ struct BPDelivererApp: App {
         func uploadFirstOpen() {
             Request.tbaRequest(event: .firstOpen)
             DispatchQueue.main.asyncAfter(deadline: .now() + 10) {
-                self.uploadFirstOpen()
+                if CacheUtil.shared.getFirstOpenCnt() < 6 {
+                    self.uploadFirstOpen()
+                }
             }
         }
         

@@ -1,0 +1,28 @@
+{
+  "" : {
+    "diagnostics" : "/Users/yangjian/Library/Developer/Xcode/DerivedData/BPDeliverer-bhmolynkhvnatbdciqvvcsfwxiif/SourcePackages/checkouts/swift-dependencies/build/swift-dependencies.build/Debug-iphoneos/DependenciesMacros.build/Objects-normal/arm64/DependenciesMacros-master.dia",
+    "emit-module-dependencies" : "/Users/yangjian/Library/Developer/Xcode/DerivedData/BPDeliverer-bhmolynkhvnatbdciqvvcsfwxiif/SourcePackages/checkouts/swift-dependencies/build/swift-dependencies.build/Debug-iphoneos/DependenciesMacros.build/Objects-normal/arm64/DependenciesMacros-master-emit-module.d",
+    "emit-module-diagnostics" : "/Users/yangjian/Library/Developer/Xcode/DerivedData/BPDeliverer-bhmolynkhvnatbdciqvvcsfwxiif/SourcePackages/checkouts/swift-dependencies/build/swift-dependencies.build/Debug-iphoneos/DependenciesMacros.build/Objects-normal/arm64/DependenciesMacros-master-emit-module.dia",
+    "swift-dependencies" : "/Users/yangjian/Library/Developer/Xcode/DerivedData/BPDeliverer-bhmolynkhvnatbdciqvvcsfwxiif/SourcePackages/checkouts/swift-dependencies/build/swift-dependencies.build/Debug-iphoneos/DependenciesMacros.build/Objects-normal/arm64/DependenciesMacros-master.swiftdeps"
+  },
+  "/Users/yangjian/Library/Developer/Xcode/DerivedData/BPDeliverer-bhmolynkhvnatbdciqvvcsfwxiif/SourcePackages/checkouts/swift-dependencies/Sources/DependenciesMacros/Internal/Exports.swift" : {
+    "const-values" : "/Users/yangjian/Library/Developer/Xcode/DerivedData/BPDeliverer-bhmolynkhvnatbdciqvvcsfwxiif/SourcePackages/checkouts/swift-dependencies/build/swift-dependencies.build/Debug-iphoneos/DependenciesMacros.build/Objects-normal/arm64/Exports.swiftconstvalues",
+    "dependencies" : "/Users/yangjian/Library/Developer/Xcode/DerivedData/BPDeliverer-bhmolynkhvnatbdciqvvcsfwxiif/SourcePackages/checkouts/swift-dependencies/build/swift-dependencies.build/Debug-iphoneos/DependenciesMacros.build/Objects-normal/arm64/Exports.d",
+    "diagnostics" : "/Users/yangjian/Library/Developer/Xcode/DerivedData/BPDeliverer-bhmolynkhvnatbdciqvvcsfwxiif/SourcePackages/checkouts/swift-dependencies/build/swift-dependencies.build/Debug-iphoneos/DependenciesMacros.build/Objects-normal/arm64/Exports.dia",
+    "index-unit-output-path" : "/swift-dependencies.build/Debug-iphoneos/DependenciesMacros.build/Objects-normal/arm64/Exports.o",
+    "llvm-bc" : "/Users/yangjian/Library/Developer/Xcode/DerivedData/BPDeliverer-bhmolynkhvnatbdciqvvcsfwxiif/SourcePackages/checkouts/swift-dependencies/build/swift-dependencies.build/Debug-iphoneos/DependenciesMacros.build/Objects-normal/arm64/Exports.bc",
+    "object" : "/Users/yangjian/Library/Developer/Xcode/DerivedData/BPDeliverer-bhmolynkhvnatbdciqvvcsfwxiif/SourcePackages/checkouts/swift-dependencies/build/swift-dependencies.build/Debug-iphoneos/DependenciesMacros.build/Objects-normal/arm64/Exports.o",
+    "swift-dependencies" : "/Users/yangjian/Library/Developer/Xcode/DerivedData/BPDeliverer-bhmolynkhvnatbdciqvvcsfwxiif/SourcePackages/checkouts/swift-dependencies/build/swift-dependencies.build/Debug-iphoneos/DependenciesMacros.build/Objects-normal/arm64/Exports.swiftdeps",
+    "swiftmodule" : "/Users/yangjian/Library/Developer/Xcode/DerivedData/BPDeliverer-bhmolynkhvnatbdciqvvcsfwxiif/SourcePackages/checkouts/swift-dependencies/build/swift-dependencies.build/Debug-iphoneos/DependenciesMacros.build/Objects-normal/arm64/Exports~partial.swiftmodule"
+  },
+  "/Users/yangjian/Library/Developer/Xcode/DerivedData/BPDeliverer-bhmolynkhvnatbdciqvvcsfwxiif/SourcePackages/checkouts/swift-dependencies/Sources/DependenciesMacros/Macros.swift" : {
+    "const-values" : "/Users/yangjian/Library/Developer/Xcode/DerivedData/BPDeliverer-bhmolynkhvnatbdciqvvcsfwxiif/SourcePackages/checkouts/swift-dependencies/build/swift-dependencies.build/Debug-iphoneos/DependenciesMacros.build/Objects-normal/arm64/Macros.swiftconstvalues",
+    "dependencies" : "/Users/yangjian/Library/Developer/Xcode/DerivedData/BPDeliverer-bhmolynkhvnatbdciqvvcsfwxiif/SourcePackages/checkouts/swift-dependencies/build/swift-dependencies.build/Debug-iphoneos/DependenciesMacros.build/Objects-normal/arm64/Macros.d",
+    "diagnostics" : "/Users/yangjian/Library/Developer/Xcode/DerivedData/BPDeliverer-bhmolynkhvnatbdciqvvcsfwxiif/SourcePackages/checkouts/swift-dependencies/build/swift-dependencies.build/Debug-iphoneos/DependenciesMacros.build/Objects-normal/arm64/Macros.dia",
+    "index-unit-output-path" : "/swift-dependencies.build/Debug-iphoneos/DependenciesMacros.build/Objects-normal/arm64/Macros.o",
+    "llvm-bc" : "/Users/yangjian/Library/Developer/Xcode/DerivedData/BPDeliverer-bhmolynkhvnatbdciqvvcsfwxiif/SourcePackages/checkouts/swift-dependencies/build/swift-dependencies.build/Debug-iphoneos/DependenciesMacros.build/Objects-normal/arm64/Macros.bc",
+    "object" : "/Users/yangjian/Library/Developer/Xcode/DerivedData/BPDeliverer-bhmolynkhvnatbdciqvvcsfwxiif/SourcePackages/checkouts/swift-dependencies/build/swift-dependencies.build/Debug-iphoneos/DependenciesMacros.build/Objects-normal/arm64/Macros.o",
+    "swift-dependencies" : "/Users/yangjian/Library/Developer/Xcode/DerivedData/BPDeliverer-bhmolynkhvnatbdciqvvcsfwxiif/SourcePackages/checkouts/swift-dependencies/build/swift-dependencies.build/Debug-iphoneos/DependenciesMacros.build/Objects-normal/arm64/Macros.swiftdeps",
+    "swiftmodule" : "/Users/yangjian/Library/Developer/Xcode/DerivedData/BPDeliverer-bhmolynkhvnatbdciqvvcsfwxiif/SourcePackages/checkouts/swift-dependencies/build/swift-dependencies.build/Debug-iphoneos/DependenciesMacros.build/Objects-normal/arm64/Macros~partial.swiftmodule"
+  }
+}

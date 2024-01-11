@@ -1,0 +1,28 @@
+{
+  "" : {
+    "diagnostics" : "/Users/yangjian/Library/Developer/Xcode/DerivedData/BPDeliverer-bhmolynkhvnatbdciqvvcsfwxiif/SourcePackages/checkouts/swift-case-paths/build/swift-case-paths.build/Debug-iphoneos/CasePathsMacros.build/Objects-normal/arm64/CasePathsMacros-master.dia",
+    "emit-module-dependencies" : "/Users/yangjian/Library/Developer/Xcode/DerivedData/BPDeliverer-bhmolynkhvnatbdciqvvcsfwxiif/SourcePackages/checkouts/swift-case-paths/build/swift-case-paths.build/Debug-iphoneos/CasePathsMacros.build/Objects-normal/arm64/CasePathsMacros-master-emit-module.d",
+    "emit-module-diagnostics" : "/Users/yangjian/Library/Developer/Xcode/DerivedData/BPDeliverer-bhmolynkhvnatbdciqvvcsfwxiif/SourcePackages/checkouts/swift-case-paths/build/swift-case-paths.build/Debug-iphoneos/CasePathsMacros.build/Objects-normal/arm64/CasePathsMacros-master-emit-module.dia",
+    "swift-dependencies" : "/Users/yangjian/Library/Developer/Xcode/DerivedData/BPDeliverer-bhmolynkhvnatbdciqvvcsfwxiif/SourcePackages/checkouts/swift-case-paths/build/swift-case-paths.build/Debug-iphoneos/CasePathsMacros.build/Objects-normal/arm64/CasePathsMacros-master.swiftdeps"
+  },
+  "/Users/yangjian/Library/Developer/Xcode/DerivedData/BPDeliverer-bhmolynkhvnatbdciqvvcsfwxiif/SourcePackages/checkouts/swift-case-paths/Sources/CasePathsMacros/CasePathableMacro.swift" : {
+    "const-values" : "/Users/yangjian/Library/Developer/Xcode/DerivedData/BPDeliverer-bhmolynkhvnatbdciqvvcsfwxiif/SourcePackages/checkouts/swift-case-paths/build/swift-case-paths.build/Debug-iphoneos/CasePathsMacros.build/Objects-normal/arm64/CasePathableMacro.swiftconstvalues",
+    "dependencies" : "/Users/yangjian/Library/Developer/Xcode/DerivedData/BPDeliverer-bhmolynkhvnatbdciqvvcsfwxiif/SourcePackages/checkouts/swift-case-paths/build/swift-case-paths.build/Debug-iphoneos/CasePathsMacros.build/Objects-normal/arm64/CasePathableMacro.d",
+    "diagnostics" : "/Users/yangjian/Library/Developer/Xcode/DerivedData/BPDeliverer-bhmolynkhvnatbdciqvvcsfwxiif/SourcePackages/checkouts/swift-case-paths/build/swift-case-paths.build/Debug-iphoneos/CasePathsMacros.build/Objects-normal/arm64/CasePathableMacro.dia",
+    "index-unit-output-path" : "/swift-case-paths.build/Debug-iphoneos/CasePathsMacros.build/Objects-normal/arm64/CasePathableMacro.o",
+    "llvm-bc" : "/Users/yangjian/Library/Developer/Xcode/DerivedData/BPDeliverer-bhmolynkhvnatbdciqvvcsfwxiif/SourcePackages/checkouts/swift-case-paths/build/swift-case-paths.build/Debug-iphoneos/CasePathsMacros.build/Objects-normal/arm64/CasePathableMacro.bc",
+    "object" : "/Users/yangjian/Library/Developer/Xcode/DerivedData/BPDeliverer-bhmolynkhvnatbdciqvvcsfwxiif/SourcePackages/checkouts/swift-case-paths/build/swift-case-paths.build/Debug-iphoneos/CasePathsMacros.build/Objects-normal/arm64/CasePathableMacro.o",
+    "swift-dependencies" : "/Users/yangjian/Library/Developer/Xcode/DerivedData/BPDeliverer-bhmolynkhvnatbdciqvvcsfwxiif/SourcePackages/checkouts/swift-case-paths/build/swift-case-paths.build/Debug-iphoneos/CasePathsMacros.build/Objects-normal/arm64/CasePathableMacro.swiftdeps",
+    "swiftmodule" : "/Users/yangjian/Library/Developer/Xcode/DerivedData/BPDeliverer-bhmolynkhvnatbdciqvvcsfwxiif/SourcePackages/checkouts/swift-case-paths/build/swift-case-paths.build/Debug-iphoneos/CasePathsMacros.build/Objects-normal/arm64/CasePathableMacro~partial.swiftmodule"
+  },
+  "/Users/yangjian/Library/Developer/Xcode/DerivedData/BPDeliverer-bhmolynkhvnatbdciqvvcsfwxiif/SourcePackages/checkouts/swift-case-paths/Sources/CasePathsMacros/Plugin.swift" : {
+    "const-values" : "/Users/yangjian/Library/Developer/Xcode/DerivedData/BPDeliverer-bhmolynkhvnatbdciqvvcsfwxiif/SourcePackages/checkouts/swift-case-paths/build/swift-case-paths.build/Debug-iphoneos/CasePathsMacros.build/Objects-normal/arm64/Plugin.swiftconstvalues",
+    "dependencies" : "/Users/yangjian/Library/Developer/Xcode/DerivedData/BPDeliverer-bhmolynkhvnatbdciqvvcsfwxiif/SourcePackages/checkouts/swift-case-paths/build/swift-case-paths.build/Debug-iphoneos/CasePathsMacros.build/Objects-normal/arm64/Plugin.d",
+    "diagnostics" : "/Users/yangjian/Library/Developer/Xcode/DerivedData/BPDeliverer-bhmolynkhvnatbdciqvvcsfwxiif/SourcePackages/checkouts/swift-case-paths/build/swift-case-paths.build/Debug-iphoneos/CasePathsMacros.build/Objects-normal/arm64/Plugin.dia",
+    "index-unit-output-path" : "/swift-case-paths.build/Debug-iphoneos/CasePathsMacros.build/Objects-normal/arm64/Plugin.o",
+    "llvm-bc" : "/Users/yangjian/Library/Developer/Xcode/DerivedData/BPDeliverer-bhmolynkhvnatbdciqvvcsfwxiif/SourcePackages/checkouts/swift-case-paths/build/swift-case-paths.build/Debug-iphoneos/CasePathsMacros.build/Objects-normal/arm64/Plugin.bc",
+    "object" : "/Users/yangjian/Library/Developer/Xcode/DerivedData/BPDeliverer-bhmolynkhvnatbdciqvvcsfwxiif/SourcePackages/checkouts/swift-case-paths/build/swift-case-paths.build/Debug-iphoneos/CasePathsMacros.build/Objects-normal/arm64/Plugin.o",
+    "swift-dependencies" : "/Users/yangjian/Library/Developer/Xcode/DerivedData/BPDeliverer-bhmolynkhvnatbdciqvvcsfwxiif/SourcePackages/checkouts/swift-case-paths/build/swift-case-paths.build/Debug-iphoneos/CasePathsMacros.build/Objects-normal/arm64/Plugin.swiftdeps",
+    "swiftmodule" : "/Users/yangjian/Library/Developer/Xcode/DerivedData/BPDeliverer-bhmolynkhvnatbdciqvvcsfwxiif/SourcePackages/checkouts/swift-case-paths/build/swift-case-paths.build/Debug-iphoneos/CasePathsMacros.build/Objects-normal/arm64/Plugin~partial.swiftmodule"
+  }
+}

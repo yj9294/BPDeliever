@@ -235,3 +235,9 @@ Fontes de informação do artigo:
 "Disclaimer" = "Isenção de responsabilidade";
 "Disclaimer_desc" = "O BP Deliverer simplesmente fornece uma ferramenta de registro de pressão arterial para ajudar os usuários a monitorar sua pressão arterial. Nenhuma ajuda médica é fornecida. Se você tiver algum problema, vá ao hospital para obter ajuda profissional";
 "OK" = "OK";
+
+"noti_desc" = "Ative a função de notificação, deixe o aplicativo lembrá-lo de registrar seus dados de pressão arterial e prestar atenção à saúde da pressão arterial";
+"Set it now" = "Defina agora";
+"Skip" = "Pular";
+"Message alert permission" = "Permissão de alerta de mensagem";
+"not enabled to set" = "não habilitado para definir";

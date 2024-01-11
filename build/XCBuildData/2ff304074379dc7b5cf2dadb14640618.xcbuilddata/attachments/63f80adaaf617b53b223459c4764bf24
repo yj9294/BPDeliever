@@ -1,0 +1,4 @@
+module Adjust {
+umbrella header "/Users/yangjian/Library/Developer/Xcode/DerivedData/BPDeliverer-bhmolynkhvnatbdciqvvcsfwxiif/SourcePackages/checkouts/ios_sdk/Adjust/include/Adjust.h"
+export *
+}

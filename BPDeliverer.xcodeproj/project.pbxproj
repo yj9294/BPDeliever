@@ -29,6 +29,8 @@
 		C7AC79D72B3BFF9F00521F84 /* GADUtil in Frameworks */ = {isa = PBXBuildFile; productRef = C7AC79D62B3BFF9F00521F84 /* GADUtil */; };
 		C7AC79DA2B3BFFCC00521F84 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = C7AC79D92B3BFFCC00521F84 /* Alamofire */; };
 		C7AC79E42B3C005900521F84 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = C7AC79E32B3C005900521F84 /* ComposableArchitecture */; };
+		C7BD62222B4E34B1000021E9 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7BD62212B4E34B1000021E9 /* Launch Screen.storyboard */; };
+		C7BD62242B4E3639000021E9 /* NotificationAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7BD62232B4E3639000021E9 /* NotificationAlertView.swift */; };
 		C7D2916B2B197F1600A6B2D8 /* BPDelivererApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D2916A2B197F1600A6B2D8 /* BPDelivererApp.swift */; };
 		C7D2916D2B197F1600A6B2D8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D2916C2B197F1600A6B2D8 /* ContentView.swift */; };
 		C7D2916F2B197F1900A6B2D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7D2916E2B197F1900A6B2D8 /* Assets.xcassets */; };
@@ -53,6 +55,7 @@
 		C7EE9D512B33167E00403C76 /* GADUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EE9D502B33167E00403C76 /* GADUtil.swift */; };
 		C7EE9D562B33D48600403C76 /* CloakRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EE9D552B33D48600403C76 /* CloakRequest.swift */; };
 		C7F4CFAC2B3070E00093D739 /* BaseRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F4CFAB2B3070E00093D739 /* BaseRequest.swift */; };
+		C7F5BAB12B4E5D4E00DCE945 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F5BAB02B4E5D4E00DCE945 /* WebView.swift */; };
 		C7F699E12B3C288B007AEDF7 /* FacebookAEM in Frameworks */ = {isa = PBXBuildFile; productRef = C7F699E02B3C288B007AEDF7 /* FacebookAEM */; };
 		C7F699E32B3C288B007AEDF7 /* FacebookBasics in Frameworks */ = {isa = PBXBuildFile; productRef = C7F699E22B3C288B007AEDF7 /* FacebookBasics */; };
 		C7F699E52B3C288B007AEDF7 /* FacebookCore in Frameworks */ = {isa = PBXBuildFile; productRef = C7F699E42B3C288B007AEDF7 /* FacebookCore */; };
@@ -78,6 +81,8 @@
 		C72808AB2B240803000E4A8D /* DatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerView.swift; sourceTree = "<group>"; };
 		C72808AD2B242263000E4A8D /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		C79A040D2B4C1D0800FE58CF /* CustomRoundedRectangel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomRoundedRectangel.swift; sourceTree = "<group>"; };
+		C7BD62212B4E34B1000021E9 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		C7BD62232B4E3639000021E9 /* NotificationAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationAlertView.swift; sourceTree = "<group>"; };
 		C7D291672B197F1600A6B2D8 /* BPDeliverer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BPDeliverer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7D2916A2B197F1600A6B2D8 /* BPDelivererApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BPDelivererApp.swift; sourceTree = "<group>"; };
 		C7D2916C2B197F1600A6B2D8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -104,6 +109,7 @@
 		C7EE9D502B33167E00403C76 /* GADUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GADUtil.swift; sourceTree = "<group>"; };
 		C7EE9D552B33D48600403C76 /* CloakRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloakRequest.swift; sourceTree = "<group>"; };
 		C7F4CFAB2B3070E00093D739 /* BaseRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRequest.swift; sourceTree = "<group>"; };
+		C7F5BAB02B4E5D4E00DCE945 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +158,7 @@
 				C7D291952B19DEE400A6B2D8 /* Data */,
 				C7D291962B19DEF700A6B2D8 /* View */,
 				C7D2916E2B197F1900A6B2D8 /* Assets.xcassets */,
+				C7BD62212B4E34B1000021E9 /* Launch Screen.storyboard */,
 				C7051BBE2B2064C70046D270 /* Localizable.strings */,
 				C7D291702B197F1900A6B2D8 /* Preview Content */,
 			);
@@ -208,6 +215,8 @@
 				C72808AB2B240803000E4A8D /* DatePickerView.swift */,
 				C7EE9D4A2B32E50400403C76 /* GADNativeView.swift */,
 				C79A040D2B4C1D0800FE58CF /* CustomRoundedRectangel.swift */,
+				C7BD62232B4E3639000021E9 /* NotificationAlertView.swift */,
+				C7F5BAB02B4E5D4E00DCE945 /* WebView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -308,6 +317,7 @@
 				C7EE9D4D2B32E54500403C76 /* GADConfig.json in Resources */,
 				C7D291722B197F1900A6B2D8 /* Preview Assets.xcassets in Resources */,
 				C7051BBC2B2064C70046D270 /* Localizable.strings in Resources */,
+				C7BD62222B4E34B1000021E9 /* Launch Screen.storyboard in Resources */,
 				C7D2916F2B197F1900A6B2D8 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -320,6 +330,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C7E505662B3132C9009A5FCD /* NetworkUtil.swift in Sources */,
+				C7BD62242B4E3639000021E9 /* NotificationAlertView.swift in Sources */,
 				C7D2916D2B197F1600A6B2D8 /* ContentView.swift in Sources */,
 				C7EE9D562B33D48600403C76 /* CloakRequest.swift in Sources */,
 				C72808AC2B240803000E4A8D /* DatePickerView.swift in Sources */,
@@ -351,6 +362,7 @@
 				C72808AE2B242263000E4A8D /* Notification.swift in Sources */,
 				C7E5056A2B314546009A5FCD /* EventRequest.swift in Sources */,
 				C7D291842B19B89600A6B2D8 /* AddView.swift in Sources */,
+				C7F5BAB12B4E5D4E00DCE945 /* WebView.swift in Sources */,
 				C7D2918E2B19BE7C00A6B2D8 /* HomeView.swift in Sources */,
 				C7D2917E2B19845300A6B2D8 /* HomeNavigationView.swift in Sources */,
 			);
@@ -501,9 +513,9 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 20221229;
+				CURRENT_PROJECT_VERSION = 20240110;
 				DEVELOPMENT_ASSET_PATHS = "\"BPDeliverer/Preview Content\"";
-				DEVELOPMENT_TEAM = 67D9SM7JC3;
+				DEVELOPMENT_TEAM = 7HH5ZUB44G;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BPDeliverer/Info.plist;
@@ -518,8 +530,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.1;
-				PRODUCT_BUNDLE_IDENTIFIER = com.bpdeliver.keephabbit.iosapp.test;
+				MARKETING_VERSION = 1.3.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bpdeliver.keephabbit.iosapp.test1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -537,9 +549,9 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 20221229;
+				CURRENT_PROJECT_VERSION = 20240110;
 				DEVELOPMENT_ASSET_PATHS = "\"BPDeliverer/Preview Content\"";
-				DEVELOPMENT_TEAM = 67D9SM7JC3;
+				DEVELOPMENT_TEAM = 7HH5ZUB44G;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BPDeliverer/Info.plist;
@@ -554,8 +566,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.1;
-				PRODUCT_BUNDLE_IDENTIFIER = com.bpdeliver.keephabbit.iosapp.test;
+				MARKETING_VERSION = 1.3.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bpdeliver.keephabbit.iosapp.test1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

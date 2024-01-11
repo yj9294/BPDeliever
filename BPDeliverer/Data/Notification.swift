@@ -23,7 +23,11 @@ class NotificationHelper: NSObject {
     // time eg: 08:32
     func appendReminder(_ time: String, localID: String = UserDefaults.standard.getObject(String.self, forKey: .language) ?? .en) {
         
-        deleteNotifications(time)
+        deleteNotification(time)
+        
+        if !CacheUtil.shared.getNotificationOn() {
+            return
+        }
 
         let noticeContent = UNMutableNotificationContent()
         noticeContent.title = (Bundle.main.infoDictionary?["CFBundleDisplayName"] as? String) ?? ""
@@ -61,25 +65,36 @@ class NotificationHelper: NSObject {
         
     }
     
-    func deleteNotifications(_ time: String) {
+    func deleteNotification(_ time: String) {
         UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [time])
+    }
+    
+    func deleteNotifications(_ times: [String]) {
+        UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: times)
     }
     
     func register(completion: ((Bool)->Void)? = nil) {
         let noti = UNUserNotificationCenter.current()
-        Request.tbaRequest(event: .notification)
+        if CacheUtil.shared.getFirstNoti() {
+            Request.tbaRequest(event: .notification)
+        }
         noti.requestAuthorization(options: [.badge, .sound, .alert]) { granted, error in
             if granted {
                 if CacheUtil.shared.getFirstNoti() {
                     Request.tbaRequest(event: .notificationAgres)
+                    CacheUtil.shared.updateFirstNoti()
                 }
                 print("开启通知")
+                CacheUtil.shared.updateSysNotificationOn(isOn: true)
+                CacheUtil.shared.updateMutNotificationOn(isOn: true)
                 completion?(true)
             } else {
                 if CacheUtil.shared.getFirstNoti() {
                     Request.tbaRequest(event: .notificationDisagreen)
+                    CacheUtil.shared.updateFirstNoti()
                 }
                 print("关闭通知")
+                CacheUtil.shared.updateSysNotificationOn(isOn: false)
                 completion?(false)
             }
         }

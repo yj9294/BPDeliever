@@ -53,7 +53,7 @@ struct FileHelper<T: Codable> {
     }
     
     enum FileHelperKey: String {
-        case apis, firstInstall, firstOpen, firstOpenCount, firstNotification, userAgent, cloak, measureGuide
+        case apis, firstInstall, firstOpen, firstOpenCount, firstNotification, userAgent, cloak, measureGuide, notification, sysNotification, notiAlert
     }
 }
 

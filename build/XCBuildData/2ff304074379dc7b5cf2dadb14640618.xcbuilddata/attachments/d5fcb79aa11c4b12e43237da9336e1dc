@@ -1,0 +1,4 @@
+module GADUtil {
+header "GADUtil-Swift.h"
+export *
+}

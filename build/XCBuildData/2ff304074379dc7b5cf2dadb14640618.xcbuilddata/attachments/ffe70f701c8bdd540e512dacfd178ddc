@@ -1,0 +1,4 @@
+module Sociomantic {
+umbrella "/Users/yangjian/Library/Developer/Xcode/DerivedData/BPDeliverer-bhmolynkhvnatbdciqvvcsfwxiif/SourcePackages/checkouts/ios_sdk/plugin/Sociomantic"
+export *
+}

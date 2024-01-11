@@ -1,0 +1,4 @@
+module UserMessagingPlatformTarget {
+header "UserMessagingPlatformTarget-Swift.h"
+export *
+}

@@ -69,6 +69,7 @@ struct EditView: View {
                     PostureView(store: store)
                     NoteView(measure: viewStore.$measure, enable: true)
                     ButtonView {
+                        CacheUtil.shared.updateNotiAlertAddMeasureCount()
                         viewStore.send(.showAD)
                         Request.tbaRequest(event: .save)
                         Request.tbaRequest(event: .addSave)

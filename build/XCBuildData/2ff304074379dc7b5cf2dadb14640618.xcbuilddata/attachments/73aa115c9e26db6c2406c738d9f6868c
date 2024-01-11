@@ -1,0 +1,4 @@
+module SwiftUINavigationCore {
+header "SwiftUINavigationCore-Swift.h"
+export *
+}

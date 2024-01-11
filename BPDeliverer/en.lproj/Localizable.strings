@@ -57,7 +57,7 @@
 "The normal range 120-80 mmHg" = "The normal range 120-80 mmHg";
 "The normal range 79-110 mmHg" = "The normal range 79-110 mmHg";
 
-"Daily reminder" = "Daily reminder";
+"Daily reminder" = "Notice";
 "Privacy policy" = "Privacy policy";
 "Language" = "Language";
 "Contact us" = "Contact us";
@@ -210,3 +210,10 @@ Sources of information for the article:
 "Disclaimer" = "Disclaimer";
 "Disclaimer_desc" = "BP Deliverer simply provides a blood pressure recording tool to help users keep an eye on their blood pressure. No medical help is provided. If you have any problems, please go to the hospital for professional help";
 "OK" = "OK";
+
+
+"noti_desc" = "Enable notification function, let the app remind you to record your blood pressure data and pay attention to blood pressure health";
+"Set it now" = "Set it now";
+"Skip" = "Skip";
+"Message alert permission" = "Message alert permission";
+"not enabled to set" = "not enabled to set";

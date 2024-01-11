@@ -241,3 +241,9 @@ Sources d'informations pour l'article :
 "Disclaimer" = "Clause de non-responsabilité";
 "Disclaimer_desc" = "BP Deliverer fournit simplement un outil d'enregistrement de la pression artérielle pour aider les utilisateurs à garder un œil sur leur tension artérielle. Aucune aide médicale n'est fournie. Si vous avez des problèmes, veuillez vous rendre à l'hôpital pour obtenir l'aide d'un professionnel.";
 "OK" = "D'ACCORD";
+
+"noti_desc" = "Activez la fonction de notification, laissez l'application vous rappeler d'enregistrer vos données de tension artérielle et de faire attention à la santé de votre tension artérielle.";
+"Set it now" = "Réglez-le maintenant";
+"Skip" = "Sauter";
+"Message alert permission" = "Autorisation d'alerte de message";
+"not enabled to set" = "pas activé pour définir";
