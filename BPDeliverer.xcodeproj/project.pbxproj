@@ -58,6 +58,7 @@
 		C7F699E12B3C288B007AEDF7 /* FacebookAEM in Frameworks */ = {isa = PBXBuildFile; productRef = C7F699E02B3C288B007AEDF7 /* FacebookAEM */; };
 		C7F699E32B3C288B007AEDF7 /* FacebookBasics in Frameworks */ = {isa = PBXBuildFile; productRef = C7F699E22B3C288B007AEDF7 /* FacebookBasics */; };
 		C7F699E52B3C288B007AEDF7 /* FacebookCore in Frameworks */ = {isa = PBXBuildFile; productRef = C7F699E42B3C288B007AEDF7 /* FacebookCore */; };
+		C7F973982B4FC4520014D4D5 /* GADConfig.json in Resources */ = {isa = PBXBuildFile; fileRef = C7F973972B4FC4520014D4D5 /* GADConfig.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -108,6 +109,7 @@
 		C7EE9D552B33D48600403C76 /* CloakRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloakRequest.swift; sourceTree = "<group>"; };
 		C7F4CFAB2B3070E00093D739 /* BaseRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRequest.swift; sourceTree = "<group>"; };
 		C7F5BAB02B4E5D4E00DCE945 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		C7F973972B4FC4520014D4D5 /* GADConfig.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = GADConfig.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +176,7 @@
 		C7D291952B19DEE400A6B2D8 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				C7F973972B4FC4520014D4D5 /* GADConfig.json */,
 				C7EE9D502B33167E00403C76 /* GADUtil.swift */,
 				C7EE9D4E2B330D2D00403C76 /* CacheUtil.swift */,
 				C7D2918F2B19D8EE00A6B2D8 /* Measurement.swift */,
@@ -311,6 +314,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7F973982B4FC4520014D4D5 /* GADConfig.json in Resources */,
 				C7D291722B197F1900A6B2D8 /* Preview Assets.xcassets in Resources */,
 				C7051BBC2B2064C70046D270 /* Localizable.strings in Resources */,
 				C7BD62222B4E34B1000021E9 /* Launch Screen.storyboard in Resources */,

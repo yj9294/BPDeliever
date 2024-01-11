@@ -1,0 +1,78 @@
+{
+    "showTimes":30,
+    "clickTimes":5,
+    "ads": [
+        {
+            "key": "loading",
+            "value": [
+                {
+                    "theAdPriority":1,
+                    "theAdID":"ca-app-pub-3189996234987863/5951937319"
+                }
+            ]
+        },
+        {
+            "key": "enter",
+            "value": [
+                {
+                    "theAdPriority":1,
+                    "theAdID":"ca-app-pub-3189996234987863/1186695798"
+                }
+            ]
+        },
+        {
+            "key": "back",
+            "value": [
+                {
+                    "theAdPriority":1,
+                    "theAdID":"ca-app-pub-3189996234987863/6634463594"
+                }
+            ]
+        },
+        {
+            "key": "submit",
+            "value": [
+                {
+                    "theAdPriority":1,
+                    "theAdID":"ca-app-pub-3189996234987863/7752104143"
+                }
+            ]
+        },
+        {
+            "key": "guide",
+            "value": [
+                {
+                    "theAdPriority":1,
+                    "theAdID":"ca-app-pub-3189996234987863/4085726843"
+                }
+            ]
+        },
+        {
+            "key": "tracker",
+            "value": [
+                {
+                    "theAdPriority":1,
+                    "theAdID":"ca-app-pub-3189996234987863/4820170110"
+                }
+            ]
+        },
+        {
+            "key": "profile",
+            "value": [
+                {
+                    "theAdPriority":1,
+                    "theAdID":"ca-app-pub-3189996234987863/7254761764"
+                }
+            ]
+        },
+        {
+            "key": "add",
+            "value": [
+                {
+                    "theAdPriority":1,
+                    "theAdID":"ca-app-pub-3189996234987863/2525233164"
+                }
+            ]
+        }
+    ]
+}
