@@ -50,7 +50,6 @@
 		C7E5056A2B314546009A5FCD /* EventRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E505692B314546009A5FCD /* EventRequest.swift */; };
 		C7EE9D492B32DE4400403C76 /* ReadingDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EE9D482B32DE4400403C76 /* ReadingDetailView.swift */; };
 		C7EE9D4B2B32E50400403C76 /* GADNativeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EE9D4A2B32E50400403C76 /* GADNativeView.swift */; };
-		C7EE9D4D2B32E54500403C76 /* GADConfig.json in Resources */ = {isa = PBXBuildFile; fileRef = C7EE9D4C2B32E54500403C76 /* GADConfig.json */; };
 		C7EE9D4F2B330D2D00403C76 /* CacheUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EE9D4E2B330D2D00403C76 /* CacheUtil.swift */; };
 		C7EE9D512B33167E00403C76 /* GADUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EE9D502B33167E00403C76 /* GADUtil.swift */; };
 		C7EE9D562B33D48600403C76 /* CloakRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EE9D552B33D48600403C76 /* CloakRequest.swift */; };
@@ -104,7 +103,6 @@
 		C7E505692B314546009A5FCD /* EventRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventRequest.swift; sourceTree = "<group>"; };
 		C7EE9D482B32DE4400403C76 /* ReadingDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingDetailView.swift; sourceTree = "<group>"; };
 		C7EE9D4A2B32E50400403C76 /* GADNativeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GADNativeView.swift; sourceTree = "<group>"; };
-		C7EE9D4C2B32E54500403C76 /* GADConfig.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = GADConfig.json; sourceTree = "<group>"; };
 		C7EE9D4E2B330D2D00403C76 /* CacheUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheUtil.swift; sourceTree = "<group>"; };
 		C7EE9D502B33167E00403C76 /* GADUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GADUtil.swift; sourceTree = "<group>"; };
 		C7EE9D552B33D48600403C76 /* CloakRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloakRequest.swift; sourceTree = "<group>"; };
@@ -176,7 +174,6 @@
 		C7D291952B19DEE400A6B2D8 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				C7EE9D4C2B32E54500403C76 /* GADConfig.json */,
 				C7EE9D502B33167E00403C76 /* GADUtil.swift */,
 				C7EE9D4E2B330D2D00403C76 /* CacheUtil.swift */,
 				C7D2918F2B19D8EE00A6B2D8 /* Measurement.swift */,
@@ -314,7 +311,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C7EE9D4D2B32E54500403C76 /* GADConfig.json in Resources */,
 				C7D291722B197F1900A6B2D8 /* Preview Assets.xcassets in Resources */,
 				C7051BBC2B2064C70046D270 /* Localizable.strings in Resources */,
 				C7BD62222B4E34B1000021E9 /* Launch Screen.storyboard in Resources */,
