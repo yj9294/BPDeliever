@@ -68,6 +68,9 @@ struct BPDelivererApp: App {
             let adjustConfig = ADJConfig(
                 appToken: yourAppToken,
                 environment: environment)
+            // 用于归因
+            let idfv = UIDevice.current.identifierForVendor?.uuidString ?? ""
+            Adjust().addSessionCallbackParameter("customer_user_id", value: idfv)
             DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
                 Adjust.appDidLaunch(adjustConfig)
             }
