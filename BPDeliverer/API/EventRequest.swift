@@ -131,7 +131,6 @@ extension Request {
         case .back:
             Request.tbaRequest(event: .backImpress, ad: ad)
         }
-        Request.tbaRequest(event: .adImpresssion, ad: ad)
         if let price = ad?.price, let currency = ad?.currency {
             AppEvents.shared.logPurchase(amount: price, currency: currency)
         }
