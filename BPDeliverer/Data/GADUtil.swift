@@ -202,7 +202,8 @@ extension GADUtil {
                     self.add(.click, in: loadAD?.position)
                 }
                 completion?(ad)
-                Request.requestADShowEvent(position, ad: ad)
+                // 原生广告加载 不在这里 在 场景出现的时候
+                // Request.requestADShowEvent(position, ad: ad)
             } else {
                 /// 预加载回来数据 当时已经有显示数据了 并且没超过限制
                 if loadAD?.isDisplay == true, !isGADLimited {
