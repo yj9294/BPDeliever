@@ -9,6 +9,10 @@ import Foundation
 
 struct Profile: Codable {
     static let shared: Profile = .init()
+    var bundleIdentifier = Bundle.main.bundleIdentifier ?? "com.bpdeliver.keephabbit.iosapp"
+    var isRelease: Bool {
+        bundleIdentifier == "com.bpdeliver.keephabbit.iosapp"
+    }
 }
 
 @propertyWrapper

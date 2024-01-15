@@ -71,7 +71,7 @@ extension GADUtil {
     public func requestConfig() {
         // 获取本地配置
         if config == nil {
-            let path = Bundle.main.path(forResource: "GADConfig", ofType: "json")
+            let path = Bundle.main.path(forResource: Profile.shared.isRelease ? "GADConfig_release" : "GADConfig", ofType: "json")
             let url = URL(fileURLWithPath: path!)
             do {
                 let data = try Data(contentsOf: url)

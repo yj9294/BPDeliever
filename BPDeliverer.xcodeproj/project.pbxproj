@@ -20,6 +20,7 @@
 		C72808AA2B234B99000E4A8D /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72808A92B234B99000E4A8D /* CircleView.swift */; };
 		C72808AC2B240803000E4A8D /* DatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72808AB2B240803000E4A8D /* DatePickerView.swift */; };
 		C72808AE2B242263000E4A8D /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72808AD2B242263000E4A8D /* Notification.swift */; };
+		C73795442B5504D30038B1A7 /* GADConfig.json in Resources */ = {isa = PBXBuildFile; fileRef = C73795432B5504D30038B1A7 /* GADConfig.json */; };
 		C78DA2AE2B3C12B5008B3EE9 /* Adjust in Frameworks */ = {isa = PBXBuildFile; productRef = C78DA2AD2B3C12B5008B3EE9 /* Adjust */; };
 		C78DA2B02B3C12B5008B3EE9 /* Criteo in Frameworks */ = {isa = PBXBuildFile; productRef = C78DA2AF2B3C12B5008B3EE9 /* Criteo */; };
 		C78DA2B22B3C12B5008B3EE9 /* Sociomantic in Frameworks */ = {isa = PBXBuildFile; productRef = C78DA2B12B3C12B5008B3EE9 /* Sociomantic */; };
@@ -58,7 +59,7 @@
 		C7F699E12B3C288B007AEDF7 /* FacebookAEM in Frameworks */ = {isa = PBXBuildFile; productRef = C7F699E02B3C288B007AEDF7 /* FacebookAEM */; };
 		C7F699E32B3C288B007AEDF7 /* FacebookBasics in Frameworks */ = {isa = PBXBuildFile; productRef = C7F699E22B3C288B007AEDF7 /* FacebookBasics */; };
 		C7F699E52B3C288B007AEDF7 /* FacebookCore in Frameworks */ = {isa = PBXBuildFile; productRef = C7F699E42B3C288B007AEDF7 /* FacebookCore */; };
-		C7F973982B4FC4520014D4D5 /* GADConfig.json in Resources */ = {isa = PBXBuildFile; fileRef = C7F973972B4FC4520014D4D5 /* GADConfig.json */; };
+		C7F973982B4FC4520014D4D5 /* GADConfig_release.json in Resources */ = {isa = PBXBuildFile; fileRef = C7F973972B4FC4520014D4D5 /* GADConfig_release.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +81,7 @@
 		C72808A92B234B99000E4A8D /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		C72808AB2B240803000E4A8D /* DatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerView.swift; sourceTree = "<group>"; };
 		C72808AD2B242263000E4A8D /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
+		C73795432B5504D30038B1A7 /* GADConfig.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = GADConfig.json; sourceTree = "<group>"; };
 		C79A040D2B4C1D0800FE58CF /* CustomRoundedRectangel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomRoundedRectangel.swift; sourceTree = "<group>"; };
 		C7BD62212B4E34B1000021E9 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		C7BD62232B4E3639000021E9 /* NotificationAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationAlertView.swift; sourceTree = "<group>"; };
@@ -109,7 +111,7 @@
 		C7EE9D552B33D48600403C76 /* CloakRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloakRequest.swift; sourceTree = "<group>"; };
 		C7F4CFAB2B3070E00093D739 /* BaseRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRequest.swift; sourceTree = "<group>"; };
 		C7F5BAB02B4E5D4E00DCE945 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
-		C7F973972B4FC4520014D4D5 /* GADConfig.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = GADConfig.json; sourceTree = "<group>"; };
+		C7F973972B4FC4520014D4D5 /* GADConfig_release.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = GADConfig_release.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,7 +178,8 @@
 		C7D291952B19DEE400A6B2D8 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				C7F973972B4FC4520014D4D5 /* GADConfig.json */,
+				C73795432B5504D30038B1A7 /* GADConfig.json */,
+				C7F973972B4FC4520014D4D5 /* GADConfig_release.json */,
 				C7EE9D502B33167E00403C76 /* GADUtil.swift */,
 				C7EE9D4E2B330D2D00403C76 /* CacheUtil.swift */,
 				C7D2918F2B19D8EE00A6B2D8 /* Measurement.swift */,
@@ -314,10 +317,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C7F973982B4FC4520014D4D5 /* GADConfig.json in Resources */,
+				C7F973982B4FC4520014D4D5 /* GADConfig_release.json in Resources */,
 				C7D291722B197F1900A6B2D8 /* Preview Assets.xcassets in Resources */,
 				C7051BBC2B2064C70046D270 /* Localizable.strings in Resources */,
 				C7BD62222B4E34B1000021E9 /* Launch Screen.storyboard in Resources */,
+				C73795442B5504D30038B1A7 /* GADConfig.json in Resources */,
 				C7D2916F2B197F1900A6B2D8 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
