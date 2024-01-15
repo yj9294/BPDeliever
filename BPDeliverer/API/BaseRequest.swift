@@ -12,11 +12,7 @@ import UIKit
 import CoreTelephony
 
 var TBAUrl: String = {
-    #if DEBUG
-    return "https://test-fungus.bpdeliver.net/karma/sloth/apropos"
-    #else
-    return "https://fungus.bpdeliver.net/topology/engle"
-    #endif
+    Profile.shared.isRelease ? "https://fungus.bpdeliver.net/topology/engle" : "https://test-fungus.bpdeliver.net/karma/sloth/apropos"
 }()
 
 var CloakUrl = "https://erbium.bpdeliver.net/stung/may/neat"

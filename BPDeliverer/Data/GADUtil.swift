@@ -141,22 +141,23 @@ extension GADUtil {
         case .loading, .back, .enter, .guide, .submit:
             /// 有廣告
             if let ad = loadAD?.loadedArray.first as? GADFullScreenModel, !isGADLimited {
-                ad.impressionHandler = { [weak self, loadAD, ad] in
+                if let ad = ad as? GADInterstitialModel {
+                    ad.ad?.paidEventHandler = { adValue in
+                        ad.price = Double(truncating: adValue.value)
+                        ad.currency = adValue.currencyCode
+                        Request.tbaRequest(event: .adImpresssion, ad: ad)
+                    }
+                }
+                if let ad = ad as? GADOpenModel {
+                    ad.ad?.paidEventHandler = { adValue in
+                        ad.price = Double(truncating: adValue.value)
+                        ad.currency = adValue.currencyCode
+                        Request.tbaRequest(event: .adImpresssion, ad: ad)
+                    }
+                }
+                
+                ad.impressionHandler = { [weak self, loadAD] in
                     Request.requestADImprsssionEvent(position)
-                    if let ad = ad as? GADInterstitialModel {
-                        ad.ad?.paidEventHandler = { adValue in
-                            ad.price = Double(truncating: adValue.value)
-                            ad.currency = adValue.currencyCode
-                            Request.tbaRequest(event: .adImpresssion, ad: ad)
-                        }
-                    }
-                    if let ad = ad as? GADOpenModel {
-                        ad.ad?.paidEventHandler = { adValue in
-                            ad.price = Double(truncating: adValue.value)
-                            ad.currency = adValue.currencyCode
-                            Request.tbaRequest(event: .adImpresssion, ad: ad)
-                        }
-                    }
                     loadAD?.impressionDate = Date()
                     self?.add(.show, in: loadAD?.position)
                     self?.display(position)
@@ -186,13 +187,13 @@ extension GADUtil {
                 }
                 ad.nativeAd?.unregisterAdView()
                 ad.nativeAd?.delegate = ad
-                ad.impressionHandler = { [weak loadAD, ad]  in
+                ad.nativeAd?.paidEventHandler = { adValue in
+                    ad.price = Double(truncating: adValue.value)
+                    ad.currency = adValue.currencyCode
+                    Request.tbaRequest(event: .adImpresssion, ad: ad)
+                }
+                ad.impressionHandler = { [weak loadAD]  in
                     Request.requestADImprsssionEvent(position)
-                    ad.nativeAd?.paidEventHandler = { adValue in
-                        ad.price = Double(truncating: adValue.value)
-                        ad.currency = adValue.currencyCode
-                        Request.requestADImprsssionEvent(position, ad: ad)
-                    }
                     loadAD?.impressionDate = Date()
                     self.add(.show, in: loadAD?.position)
                     self.display(position)
