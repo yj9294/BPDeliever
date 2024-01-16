@@ -10,6 +10,7 @@ import Foundation
 struct Profile: Codable {
     static let shared: Profile = .init()
     var bundleIdentifier = Bundle.main.bundleIdentifier ?? "com.bpdeliver.keephabbit.iosapp"
+    var version = (Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String) ?? "1.0.0"
     var isRelease: Bool {
         bundleIdentifier == "com.bpdeliver.keephabbit.iosapp"
     }
@@ -71,19 +72,21 @@ extension UserDefault: Equatable {
 extension UserDefaults {
     func setObject<T: Codable>(_ object: T?, forKey key: String) {
         let encoder = JSONEncoder()
+        let version = Profile.shared.version
         guard let object = object else {
-            self.removeObject(forKey: key)
+            self.removeObject(forKey: key + version)
             return
         }
         guard let encoded = try? encoder.encode(object) else {
             debugPrint("[US] encoding error.")
             return
         }
-        self.setValue(encoded, forKey: key)
+        self.setValue(encoded, forKey: key + version)
     }
     
     func getObject<T: Codable>(_ type: T.Type, forKey key: String) -> T? {
-        guard let data = self.data(forKey: key) else {
+        let version = Profile.shared.version
+        guard let data = self.data(forKey: key + version) else {
             return nil
         }
         guard let object = try? JSONDecoder().decode(type, from: data) else {

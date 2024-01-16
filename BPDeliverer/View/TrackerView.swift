@@ -61,6 +61,11 @@ struct TrackerReducer: Reducer {
                     publisher
                 }
             case let .updateTopMode(mode):
+                if mode != state.topMode {
+                    GADUtil.share.load(.trackerExchange)
+                    GADUtil.share.show(.trackerExchange)
+                    Request.tbaRequest(event: .trackerExchange)
+                }
                 state.topMode = mode
             default:
                 break

@@ -25,20 +25,20 @@ public class GADUtil: NSObject {
     // 本地记录 配置
     public var config: GADConfig? {
         set{
-            UserDefaults.standard.setModel(newValue, forKey: .adConfig)
+            UserDefaults.standard.setObject(newValue, forKey: .adConfig)
         }
         get {
-            UserDefaults.standard.model(GADConfig.self, forKey: .adConfig)
+            UserDefaults.standard.getObject(GADConfig.self, forKey: .adConfig)
         }
     }
     
     // 本地记录 限制次数
     fileprivate var limit: GADLimit? {
         set{
-            UserDefaults.standard.setModel(newValue, forKey: .adLimited)
+            UserDefaults.standard.setObject(newValue, forKey: .adLimited)
         }
         get {
-            UserDefaults.standard.model(GADLimit.self, forKey: .adLimited)
+            UserDefaults.standard.getObject(GADLimit.self, forKey: .adLimited)
         }
     }
     
@@ -138,7 +138,7 @@ extension GADUtil {
             $0.position == position
         }.first
         switch position {
-        case .loading, .back, .enter, .guide, .submit:
+        case .loading, .back, .enter, .guide, .submit, .trackerExchange, .trackerBar:
             /// 有廣告
             if let ad = loadAD?.loadedArray.first as? GADFullScreenModel, !isGADLimited {
                 if let ad = ad as? GADInterstitialModel {
@@ -338,10 +338,10 @@ struct GADLimit: Codable {
 }
 
 public enum GADPosition: String, CaseIterable {
-    case loading, tracker, profile, add, submit, guide, enter, back
+    case loading, tracker, profile, add, submit, guide, enter, back, trackerBar, trackerExchange
     var isInterstitial: Bool {
         switch self {
-        case .submit, .guide, .enter , .back:
+        case .submit, .guide, .enter , .back, .trackerBar, .trackerExchange:
             return true
         default:
             return false
@@ -448,12 +448,11 @@ extension GADLoadModel {
         }
         
         var ad: GADBaseModel? = nil
-        switch position {
-        case .tracker, .profile, .add:
+        if position.isNative {
             ad = GADNativeModel(model: array[index])
-        case .enter, .back, .guide, .submit:
+        } else if position.isInterstitial {
             ad = GADInterstitialModel(model: array[index])
-        case .loading:
+        } else {
             ad = GADOpenModel(model: array[index])
         }
         guard let ad = ad  else {
@@ -710,35 +709,6 @@ extension GADNativeModel: GADNativeAdDelegate {
     }
     
     public func nativeAdWillPresentScreen(_ nativeAd: GADNativeAd) {
-    }
-}
-
-
-extension UserDefaults {
-    public func setModel<T: Encodable> (_ object: T?, forKey key: String) {
-        let encoder =  JSONEncoder()
-        guard let object = object else {
-            self.removeObject(forKey: key)
-            return
-        }
-        guard let encoded = try? encoder.encode(object) else {
-            return
-        }
-        
-        self.setValue(encoded, forKey: key)
-    }
-    
-    public func model<T: Decodable> (_ type: T.Type, forKey key: String) -> T? {
-        guard let data = self.data(forKey: key) else {
-            return nil
-        }
-        let decoder = JSONDecoder()
-        guard let object = try? decoder.decode(type, from: data) else {
-            print("Could'n find key")
-            return nil
-        }
-        
-        return object
     }
 }
 

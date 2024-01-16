@@ -107,6 +107,10 @@ extension Request {
             Request.tbaRequest(event: .enterShow, ad: ad)
         case .back:
             Request.tbaRequest(event: .backShow, ad: ad)
+        case .trackerBar:
+            Request.tbaRequest(event: .trackerBarShow, ad: ad)
+        case .trackerExchange:
+            Request.tbaRequest(event: .trackerExchangeShow, ad: ad)
         default:
             break
         }
@@ -130,6 +134,10 @@ extension Request {
             Request.tbaRequest(event: .enterImpress, ad: ad)
         case .back:
             Request.tbaRequest(event: .backImpress, ad: ad)
+        case .trackerBar:
+            Request.tbaRequest(event: .trackerBarImpress, ad: ad)
+        case .trackerExchange:
+            Request.tbaRequest(event: .trackerExchangeImpress, ad: ad)
         }
         if let price = ad?.price, let currency = ad?.currency {
             AppEvents.shared.logPurchase(amount: price, currency: currency)
@@ -181,7 +189,7 @@ enum RequestEvent: String, Codable {
     case languageSelected = "bp_language_ch"
     
     
-    // 广告事件
+    // 自定义广告打点事件
     case loading = "bp_enter_1"
     case home = "bp_enter_2"
     case add = "bp_enter_3"
@@ -190,6 +198,9 @@ enum RequestEvent: String, Codable {
     case guideAd = "bp_enter_6"
     case enter = "bp_enter_7"
     case back = "bp_enter_8"
+    case trackerBar = "bp_enter_9"
+    case trackerExchange = "bp_enter_10"
+    
     case loadingShow = "bp_start_1"
     case homeShow = "bp_start_2"
     case addShow = "bp_start_3"
@@ -198,6 +209,9 @@ enum RequestEvent: String, Codable {
     case guideAdShow = "bp_start_6"
     case enterShow = "bp_start_7"
     case backShow = "bp_start_8"
+    case trackerBarShow = "bp_start_9"
+    case trackerExchangeShow = "bp_start_10"
+    
     case loadingImpress = "bp_success_1"
     case homeImpress = "bp_success_2"
     case addImpress = "bp_success_3"
@@ -206,7 +220,10 @@ enum RequestEvent: String, Codable {
     case guideAdImpress = "bp_success_6"
     case enterImpress = "bp_success_7"
     case backImpress = "bp_success_8"
-
+    case trackerBarImpress = "bp_success_9"
+    case trackerExchangeImpress = "bp_success_10"
+    
+    // tba广告事件
     case adImpresssion = "gaze"
     
     case notificationAgres = "bp_ses_notice1"

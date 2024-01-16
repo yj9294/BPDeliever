@@ -73,6 +73,24 @@
                     "theAdID":"ca-app-pub-3189996234987863/2525233164"
                 }
             ]
+        },
+        {
+            "key": "trackerBar",
+            "value": [
+                {
+                    "theAdPriority":1,
+                    "theAdID":"ca-app-pub-3189996234987863/4085726843"
+                }
+            ]
+        },
+        {
+            "key": "trackerExchange",
+            "value": [
+                {
+                    "theAdPriority":1,
+                    "theAdID":"ca-app-pub-3189996234987863/4085726843"
+                }
+            ]
         }
     ]
 }

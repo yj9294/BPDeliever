@@ -32,6 +32,8 @@ struct HomeReducer: Reducer {
         var showNotiAlertView: Bool = CacheUtil.shared.getNeedNotiAlert()
         
         var notiAlert: NotificationAlertReducer.State = .init()
+        
+        var lastItem: Item = .tracker
     }
     enum Action: BindableAction, Equatable {
         case binding(BindingAction<State>)
@@ -47,6 +49,8 @@ struct HomeReducer: Reducer {
         case updateAD(GADNativeViewModel)
         
         case notiAlert(NotificationAlertReducer.Action)
+        
+        case lastItem(State.Item)
     }
     var body: some Reducer<State, Action> {
         BindingReducer()
@@ -106,6 +110,9 @@ struct HomeReducer: Reducer {
                 state.showNotiAlertView = false
             case .notiAlert(.gotoSetting):
                 state.showNotiAlertView = false
+                
+            case let .lastItem(item):
+                state.lastItem = item
             default:
                 break
             }
@@ -279,6 +286,15 @@ struct HomeView: View {
                     } else {
                         viewStore.send(.updateAD(.none))
                     }
+                }.onChange(of: viewStore.item) { newValue in
+                    if viewStore.item != viewStore.state.lastItem {
+                        if viewStore.item == .tracker {
+                            GADUtil.share.load(.trackerBar)
+                            GADUtil.share.show(.trackerBar)
+                            Request.tbaRequest(event: .trackerBar)
+                        }
+                    }
+                    viewStore.send(.lastItem(newValue))
                 }
                 if !viewStore.allowUser {
                     AllowUserView {
