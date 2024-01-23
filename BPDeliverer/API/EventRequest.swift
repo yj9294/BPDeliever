@@ -9,8 +9,17 @@ import Foundation
 import WebKit
 import FBSDKCoreKit
 import AdSupport
+import Adjust
 
 extension Request {
+    class func adjustRequest(ad: GADBaseModel? = nil) {
+        if let ad = ad, let adRevenue = ADJAdRevenue(source: ADJAdRevenueSourceAdMob) {
+            adRevenue.setRevenue(ad.price, currency: ad.currency)
+            adRevenue.setAdRevenueNetwork(ad.network ?? "")
+            Adjust.trackAdRevenue(adRevenue)
+        }
+    }
+    
     class func tbaRequest(id: String = UUID().uuidString, event: RequestEvent, parameters: [String: Any]? = nil, ad: GADBaseModel? = nil, retry count: Int = 2) {
         var param: [String: Any] = [:]
         if event == .install {

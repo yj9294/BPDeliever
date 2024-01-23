@@ -21,6 +21,10 @@
 		C72808AC2B240803000E4A8D /* DatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72808AB2B240803000E4A8D /* DatePickerView.swift */; };
 		C72808AE2B242263000E4A8D /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72808AD2B242263000E4A8D /* Notification.swift */; };
 		C73795442B5504D30038B1A7 /* GADConfig.json in Resources */ = {isa = PBXBuildFile; fileRef = C73795432B5504D30038B1A7 /* GADConfig.json */; };
+		C74739512B5E121F0045907F /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C74739502B5E121F0045907F /* StoreKit.framework */; };
+		C74739532B5E122A0045907F /* AdServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C74739522B5E122A0045907F /* AdServices.framework */; };
+		C74739552B5E12320045907F /* AppTrackingTransparency.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C74739542B5E12320045907F /* AppTrackingTransparency.framework */; };
+		C74739572B5E12400045907F /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C74739562B5E12400045907F /* AdSupport.framework */; };
 		C78DA2AE2B3C12B5008B3EE9 /* Adjust in Frameworks */ = {isa = PBXBuildFile; productRef = C78DA2AD2B3C12B5008B3EE9 /* Adjust */; };
 		C78DA2B02B3C12B5008B3EE9 /* Criteo in Frameworks */ = {isa = PBXBuildFile; productRef = C78DA2AF2B3C12B5008B3EE9 /* Criteo */; };
 		C78DA2B22B3C12B5008B3EE9 /* Sociomantic in Frameworks */ = {isa = PBXBuildFile; productRef = C78DA2B12B3C12B5008B3EE9 /* Sociomantic */; };
@@ -82,6 +86,10 @@
 		C72808AB2B240803000E4A8D /* DatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerView.swift; sourceTree = "<group>"; };
 		C72808AD2B242263000E4A8D /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		C73795432B5504D30038B1A7 /* GADConfig.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = GADConfig.json; sourceTree = "<group>"; };
+		C74739502B5E121F0045907F /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		C74739522B5E122A0045907F /* AdServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdServices.framework; path = System/Library/Frameworks/AdServices.framework; sourceTree = SDKROOT; };
+		C74739542B5E12320045907F /* AppTrackingTransparency.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppTrackingTransparency.framework; path = System/Library/Frameworks/AppTrackingTransparency.framework; sourceTree = SDKROOT; };
+		C74739562B5E12400045907F /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		C79A040D2B4C1D0800FE58CF /* CustomRoundedRectangel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomRoundedRectangel.swift; sourceTree = "<group>"; };
 		C7BD62212B4E34B1000021E9 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		C7BD62232B4E3639000021E9 /* NotificationAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationAlertView.swift; sourceTree = "<group>"; };
@@ -122,11 +130,15 @@
 				C7F699E12B3C288B007AEDF7 /* FacebookAEM in Frameworks */,
 				C78DA2B62B3C12B5008B3EE9 /* WebBridge in Frameworks */,
 				C78DA2AE2B3C12B5008B3EE9 /* Adjust in Frameworks */,
+				C74739512B5E121F0045907F /* StoreKit.framework in Frameworks */,
 				C78DA2B42B3C12B5008B3EE9 /* Trademob in Frameworks */,
+				C74739552B5E12320045907F /* AppTrackingTransparency.framework in Frameworks */,
 				C7F699E52B3C288B007AEDF7 /* FacebookCore in Frameworks */,
 				C78DA2B22B3C12B5008B3EE9 /* Sociomantic in Frameworks */,
 				C7AC79E42B3C005900521F84 /* ComposableArchitecture in Frameworks */,
+				C74739532B5E122A0045907F /* AdServices.framework in Frameworks */,
 				C78DA2B02B3C12B5008B3EE9 /* Criteo in Frameworks */,
+				C74739572B5E12400045907F /* AdSupport.framework in Frameworks */,
 				C7F699E32B3C288B007AEDF7 /* FacebookBasics in Frameworks */,
 				C7AC79D72B3BFF9F00521F84 /* GADUtil in Frameworks */,
 				C7AC79DA2B3BFFCC00521F84 /* Alamofire in Frameworks */,
@@ -136,11 +148,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C747394F2B5E121E0045907F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C74739562B5E12400045907F /* AdSupport.framework */,
+				C74739542B5E12320045907F /* AppTrackingTransparency.framework */,
+				C74739522B5E122A0045907F /* AdServices.framework */,
+				C74739502B5E121F0045907F /* StoreKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C7D2915E2B197F1600A6B2D8 = {
 			isa = PBXGroup;
 			children = (
 				C7D291692B197F1600A6B2D8 /* BPDeliverer */,
 				C7D291682B197F1600A6B2D8 /* Products */,
+				C747394F2B5E121E0045907F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -519,7 +543,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 20240115;
 				DEVELOPMENT_ASSET_PATHS = "\"BPDeliverer/Preview Content\"";
-				DEVELOPMENT_TEAM = 7HH5ZUB44G;
+				DEVELOPMENT_TEAM = BCP5872BLQ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BPDeliverer/Info.plist;
@@ -535,7 +559,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.3.1;
-				PRODUCT_BUNDLE_IDENTIFIER = com.bpdeliver.keephabbit.iosapp.test1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bpdeliver.keephabbit.iosapp.tes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -555,7 +579,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 20240115;
 				DEVELOPMENT_ASSET_PATHS = "\"BPDeliverer/Preview Content\"";
-				DEVELOPMENT_TEAM = 7HH5ZUB44G;
+				DEVELOPMENT_TEAM = BCP5872BLQ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BPDeliverer/Info.plist;
@@ -571,7 +595,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.3.1;
-				PRODUCT_BUNDLE_IDENTIFIER = com.bpdeliver.keephabbit.iosapp.test1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bpdeliver.keephabbit.iosapp.tes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

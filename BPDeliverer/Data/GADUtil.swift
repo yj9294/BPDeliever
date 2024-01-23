@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Adjust
 import GoogleMobileAds
 
 public class GADUtil: NSObject {
@@ -143,16 +144,20 @@ extension GADUtil {
             if let ad = loadAD?.loadedArray.first as? GADFullScreenModel, !isGADLimited {
                 if let ad = ad as? GADInterstitialModel {
                     ad.ad?.paidEventHandler = { adValue in
+                        ad.network = ad.ad?.responseInfo.loadedAdNetworkResponseInfo?.adNetworkClassName
                         ad.price = Double(truncating: adValue.value)
                         ad.currency = adValue.currencyCode
                         Request.tbaRequest(event: .adImpresssion, ad: ad)
+                        Request.adjustRequest(ad: ad)
                     }
                 }
                 if let ad = ad as? GADOpenModel {
                     ad.ad?.paidEventHandler = { adValue in
+                        ad.network = ad.ad?.responseInfo.loadedAdNetworkResponseInfo?.adNetworkClassName
                         ad.price = Double(truncating: adValue.value)
                         ad.currency = adValue.currencyCode
                         Request.tbaRequest(event: .adImpresssion, ad: ad)
+                        Request.adjustRequest(ad: ad)
                     }
                 }
                 
@@ -188,9 +193,11 @@ extension GADUtil {
                 ad.nativeAd?.unregisterAdView()
                 ad.nativeAd?.delegate = ad
                 ad.nativeAd?.paidEventHandler = { adValue in
+                    ad.network = ad.nativeAd?.responseInfo.loadedAdNetworkResponseInfo?.adNetworkClassName
                     ad.price = Double(truncating: adValue.value)
                     ad.currency = adValue.currencyCode
                     Request.tbaRequest(event: .adImpresssion, ad: ad)
+                    Request.adjustRequest(ad: ad)
                 }
                 ad.impressionHandler = { [weak loadAD]  in
                     Request.requestADImprsssionEvent(position)
