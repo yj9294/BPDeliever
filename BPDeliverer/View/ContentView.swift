@@ -31,9 +31,6 @@ struct ContentReducer: Reducer {
             case .launch(.launched):
                 if state.launch.isLaunched {
                     state.updateItem(.home)
-                    if CacheUtil.shared.isUserGo {
-                        GADUtil.share.load(.enter)
-                    }
                 }
             case let .home(.path(.element(id: _, action: .language(.update(language))))):
                 state.language = language.code

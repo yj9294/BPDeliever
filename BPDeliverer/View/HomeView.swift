@@ -162,10 +162,6 @@ extension HomeReducer.State {
         add = nil
         GADUtil.share.disappear(.tracker)
         GADUtil.share.load(.tracker)
-        if CacheUtil.shared.isUserGo {
-            GADUtil.share.load(.enter)
-        }
-        
         Request.tbaRequest(event: .track)
         Request.tbaRequest(event: .home)
         Request.tbaRequest(event: .homeShow)
