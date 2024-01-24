@@ -149,6 +149,7 @@ extension GADUtil {
                         ad.currency = adValue.currencyCode
                         Request.tbaRequest(event: .adImpresssion, ad: ad)
                         Request.adjustRequest(ad: ad)
+                        Request.facebookAndAdjustRequest(ad: ad)
                     }
                 }
                 if let ad = ad as? GADOpenModel {
@@ -158,6 +159,7 @@ extension GADUtil {
                         ad.currency = adValue.currencyCode
                         Request.tbaRequest(event: .adImpresssion, ad: ad)
                         Request.adjustRequest(ad: ad)
+                        Request.facebookAndAdjustRequest(ad: ad)
                     }
                 }
                 
@@ -166,7 +168,7 @@ extension GADUtil {
                     loadAD?.impressionDate = Date()
                     self?.add(.show, in: loadAD?.position)
                     self?.display(position)
-                    if position != .enter, position != .back, position != .guide {
+                    if position != .back, position != .guide {
                         self?.load(position)
                     }
                 }
@@ -198,6 +200,7 @@ extension GADUtil {
                     ad.currency = adValue.currencyCode
                     Request.tbaRequest(event: .adImpresssion, ad: ad)
                     Request.adjustRequest(ad: ad)
+                    Request.facebookAndAdjustRequest(ad: ad)
                 }
                 ad.impressionHandler = { [weak loadAD]  in
                     Request.requestADImprsssionEvent(position)
@@ -605,7 +608,6 @@ extension GADOpenModel: GADFullScreenContentDelegate {
     override func loadAd(completion: ((_ result: Bool, _ error: String) -> Void)?) {
         loadedHandler = completion
         loadedDate = nil
-        let orientation = (UIApplication.shared.connectedScenes.filter({$0 is UIWindowScene}).first as? UIWindowScene)?.interfaceOrientation ?? .portrait
         GADAppOpenAd.load(withAdUnitID: model?.theAdID ?? "", request: GADRequest(), orientation: .portrait) { [weak self] ad, error in
             guard let self = self else { return }
             if let error = error {

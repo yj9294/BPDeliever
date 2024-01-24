@@ -20,6 +20,18 @@ extension Request {
         }
     }
     
+    class func facebookAndAdjustRequest(ad: GADBaseModel? = nil) {
+        if let price = ad?.price, let currency = ad?.currency {
+            CacheUtil.shared.addFBPrice(price: price , currency: currency);
+            if CacheUtil.shared.needUploadFBPrice() {
+                FBSDKCoreKit.AppEvents.shared.logPurchase(amount: price, currency: currency)
+                let adRevenue = ADJEvent(eventToken: "j2a71h")
+                adRevenue?.setRevenue(price, currency: currency)
+                Adjust.trackEvent(adRevenue)
+            }
+        }
+    }
+    
     class func tbaRequest(id: String = UUID().uuidString, event: RequestEvent, parameters: [String: Any]? = nil, ad: GADBaseModel? = nil, retry count: Int = 2) {
         var param: [String: Any] = [:]
         if event == .install {

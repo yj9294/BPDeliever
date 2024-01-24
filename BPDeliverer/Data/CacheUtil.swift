@@ -48,6 +48,10 @@ class CacheUtil: NSObject {
     @FileHelper(.notiAlert)
     private var notiAlert: NotiAlertModel?
     
+    // fb广告价值回传
+    @FileHelper(.fbPrice)
+    private var fbPrice: FBPrice?
+    
 //    血压记录引导弹窗，弹出时机
 //    A 方案
 //
@@ -191,16 +195,18 @@ class CacheUtil: NSObject {
     // a: 0~100 随机概率
     private func configMeasureGuide(a: Int) -> ABTest {
         let random = arc4random() % 100
-        NSLog("[AB] 开始随机值：\(random)")
-        if random < a {
-            NSLog("[AB] 当前方案：A")
-            measureGuide = .a
-            return .a
-        } else {
-            NSLog("[AB] 当前方案：B")
-            measureGuide = .b
-            return .b
-        }
+        NSLog("[AB] 开始随机值：\(random), 当前版本已确定使用 b方案")
+        measureGuide = .b
+        return .b
+//        if random < a {
+//            NSLog("[AB] 当前方案：A")
+//            measureGuide = .a
+//            return .a
+//        } else {
+//            NSLog("[AB] 当前方案：B")
+//            measureGuide = .b
+//            return .b
+//        }
     }
     
     func getMeasureGuide() -> ABTest {
@@ -287,6 +293,25 @@ class CacheUtil: NSObject {
             notiAlert = NotiAlertModel(openDate: Date())
         }
     }
+    
+    func needUploadFBPrice() -> Bool {
+        NSLog("[FB+Adjust] 当前正在积累广告价值 总价值： \(fbPrice?.price ?? 0) 单位：\(fbPrice?.currency ?? "")")
+        let ret = (fbPrice?.price ?? 0.0) > 0.01
+        if ret {
+            // 晴空
+            NSLog("[FB+Adjust] 当前广告价值达到要求进行上传 并清空本地 总价值： \(fbPrice?.price ?? 0) 单位：\(fbPrice?.currency ?? "")")
+            fbPrice = nil
+        }
+        return ret
+    }
+    
+    func addFBPrice(price: Double, currency: String) {
+        if let fbPrice = fbPrice, fbPrice.currency == currency {
+            self.fbPrice = FBPrice(price: fbPrice.price + price, currency: currency)
+        } else {
+            fbPrice = FBPrice(price: price, currency: currency)
+        }
+    }
 }
 
 struct RequestCache: Codable, Identifiable {
@@ -346,4 +371,9 @@ struct NotiAlertModel: Codable, Equatable {
     var addMeasureCount: Int = 0
     var openAppCount: Int = 0
     var openDate: Date? = nil
+}
+
+struct FBPrice: Codable {
+    var price: Double
+    var currency: String
 }

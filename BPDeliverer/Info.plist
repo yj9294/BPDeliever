@@ -7,18 +7,18 @@
 		<dict>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>fb1208630823858187</string>
+				<string></string>
 			</array>
 		</dict>
 	</array>
 	<key>FacebookAdvertiserIDCollectionEnabled</key>
 	<true/>
 	<key>FacebookAppID</key>
-	<string>1208630823858187</string>
+	<string></string>
 	<key>FacebookAutoLogAppEventsEnabled</key>
 	<true/>
 	<key>FacebookClientToken</key>
-	<string>8d39c4b40d8f6885af1b585b5cdb0b32</string>
+	<string></string>
 	<key>FacebookDisplayName</key>
 	<string>BPDeliverer</string>
 	<key>GADApplicationIdentifier</key>
