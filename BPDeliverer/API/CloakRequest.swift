@@ -17,6 +17,11 @@ extension Request {
             return
         }
         
+        if !Profile.shared.isRelease {
+            NSLog("[cloak] 当前测试环境 不请求cloak， 默认激进模式")
+            return
+        }
+        
         var query: [String: String] = [:]
         // 用户排重字段，统计涉及到的排重用户数就是依据该字段，对接时需要和产品确认：
         query["domino"] = UIDevice.current.identifierForVendor?.uuidString

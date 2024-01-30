@@ -8,6 +8,7 @@
 import Foundation
 import GoogleMobileAds
 import SwiftUI
+import SnapKit
 
 struct GADNativeView: UIViewRepresentable {
     let model: GADNativeViewModel?
@@ -51,6 +52,19 @@ class UINativeAdView: GADNativeAdView {
         return image
     }()
     
+    lazy var bigImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.backgroundColor = .gray
+        imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
+        return imageView
+    }()
+    
+    lazy var rightView: UIView = {
+        let view = UIView()
+        return view
+    }()
+    
     lazy var iconImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.backgroundColor = .gray
@@ -65,7 +79,7 @@ class UINativeAdView: GADNativeAdView {
         label.font = UIFont.systemFont(ofSize: 14.0, weight: .medium)
         label.textColor = .white
         label.numberOfLines = 1
-        label.textAlignment = .left
+        label.textAlignment = .center
         return label
     }()
     
@@ -74,15 +88,15 @@ class UINativeAdView: GADNativeAdView {
         label.font = UIFont.systemFont(ofSize: 10.0)
         label.textColor = .white
         label.numberOfLines = 1
-        label.textAlignment = .left
+        label.textAlignment = .center
         return label
     }()
     
     lazy var installLabel: UIButton = {
         let label = UIButton()
-        label.titleLabel?.font = UIFont.systemFont(ofSize: 14, weight: .regular)
+        label.titleLabel?.font = UIFont.systemFont(ofSize: 12, weight: .regular)
         label.setTitleColor(UIColor.white, for: .normal)
-        label.layer.cornerRadius = 18
+        label.layer.cornerRadius = 14
         label.layer.masksToBounds = true
         return label
     }()
@@ -93,30 +107,53 @@ extension UINativeAdView {
         
         self.layer.cornerRadius = 12
         self.layer.masksToBounds = true
+        self.backgroundColor = UIColor(named: "#F3F8FB")
         
-        addSubview(installLabel)
-        installLabel.frame = CGRectMake(self.bounds.width - 68 - 12, 14, 68, 34)
-
-        addSubview(iconImageView)
-        iconImageView.frame = CGRectMake(12, 14, 34, 34)
+        addSubview(bigImageView)
+        bigImageView.snp.makeConstraints { make in
+            make.left.bottom.top.equalToSuperview()
+            make.width.equalTo(163)
+        }
         
-        let width = self.bounds.width - installLabel.bounds.width - 12 - iconImageView.frame.maxX - 8 - 8
-        addSubview(subTitleLabel)
-        subTitleLabel.frame = CGRectMake(iconImageView.frame.maxX + 8, 36, width, 12)
+        addSubview(rightView)
+        rightView.snp.makeConstraints { make in
+            make.top.bottom.equalToSuperview()
+            make.left.equalTo(bigImageView.snp.right).offset(28)
+            make.right.equalToSuperview().offset(-28)
+        }
         
-        addSubview(titleLabel)
-        titleLabel.frame = CGRectMake(iconImageView.frame.maxX + 8, 14, width - 21 - 10 - 10, 14)
-
+        rightView.addSubview(iconImageView)
+        iconImageView.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.top.equalToSuperview().offset(9)
+            make.width.height.equalTo(36)
+        }
+        
+        rightView.addSubview(titleLabel)
+        titleLabel.snp.makeConstraints { make in
+            make.top.equalTo(iconImageView.snp.bottom).offset(8)
+            make.left.right.equalToSuperview()
+        }
+        
+        rightView.addSubview(subTitleLabel)
+        subTitleLabel.snp.makeConstraints { make in
+            make.top.equalTo(titleLabel.snp.bottom).offset(8)
+            make.left.right.equalToSuperview()
+        }
+        
+        rightView.addSubview(installLabel)
+        installLabel.snp.makeConstraints { make in
+            make.top.equalTo(subTitleLabel.snp.bottom).offset(11)
+            make.centerX.equalToSuperview()
+            make.width.equalTo(102)
+            make.height.equalTo(28)
+        }
         
         addSubview(adView)
-        adView.frame = CGRectMake(titleLabel.frame.maxX + 10, 15, 21, 12)
-
-        
-    }
+        adView.snp.makeConstraints { make in
+            make.top.right.equalToSuperview()
+        }
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        setupUI()
     }
     
     func refreshUI(ad: GADNativeAd? = nil) {
@@ -131,9 +168,11 @@ extension UINativeAdView {
         self.iconView = self.iconImageView
         self.headlineView = self.titleLabel
         self.bodyView = self.subTitleLabel
+        self.imageView = self.bigImageView
         self.callToActionView = self.installLabel
         self.installLabel.setTitle(ad?.callToAction, for: .normal)
         self.iconImageView.image = ad?.icon?.image
+        self.bigImageView.image = ad?.images?.first?.image
         self.titleLabel.text = ad?.headline
         self.subTitleLabel.text = ad?.body
         

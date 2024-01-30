@@ -24,6 +24,8 @@ struct TrackerReducer: Reducer {
         var filterDuration: DateDuration = .init()
         
         var adModel: GADNativeViewModel = .none
+        
+        var showReadingGuide = false
     }
     enum Action: Equatable {
         case guide
@@ -31,11 +33,13 @@ struct TrackerReducer: Reducer {
         case filterDateNextTapped
         case filterDateMinTapped
         case filterDateMaxTapped
-        case itemSelected(Measurement)
         case addButtonTapped
+        case historyButtonTapped
         case showAD
         case showGuideAD
         case updateTopMode(MeasureTopMode)
+        case updateShowReadingGuide(Bool)
+        case okButtonTapped
     }
     var body: some Reducer<State, Action> {
         Reduce{ state, action in
@@ -67,6 +71,8 @@ struct TrackerReducer: Reducer {
                     Request.tbaRequest(event: .trackerExchange)
                 }
                 state.topMode = mode
+            case let .updateShowReadingGuide(isShow):
+                state.showReadingGuide = isShow
             default:
                 break
             }
@@ -83,8 +89,8 @@ extension TrackerReducer.State {
         }
     }
     
-    var lastMeasure: Measurement? {
-        topMode == .last ? measures.first : avgMeasure
+    var lastMeasure: Measurement {
+        topMode == .last ? (measures.first ?? Measurement()) : avgMeasure
     }
     
     var avgMeasure: Measurement {
@@ -122,17 +128,16 @@ struct TrackerView: View {
         WithViewStore(store, observe: {$0}) { viewStore in
             ZStack{
                 VStack{
-                    MeasureListView(store: store)
+                    MeasurementView(store: store)
+                    Spacer()
                     if viewStore.hasAD {
                         HStack{
                             GADNativeView(model: viewStore.adModel)
-                        }.frame(height: 62).padding(.horizontal, 20)
+                        }.frame(height: 136).padding(.horizontal, 20).padding(.bottom, 20)
+                    } else {
+                        Spacer().frame(height: 136)
                     }
                 }
-                AddButtonView(action: {
-                    viewStore.send(.addButtonTapped)
-                    Request.tbaRequest(event: .trackAdd)
-                })
                 // 方案判定
                 if CacheUtil.shared.getMeasureGuide() == .a {
                     // a 方案是 一次安装首次打开
@@ -153,6 +158,16 @@ struct TrackerView: View {
                         }
                     }
                 }
+                
+                // reading 引导
+                if viewStore.showReadingGuide {
+                    ReadingGuideView {
+                        viewStore.send(.updateShowReadingGuide(false))
+                        viewStore.send(.okButtonTapped)
+                    } skip: {
+                        viewStore.send(.updateShowReadingGuide(false))
+                    }
+                }
             }.onAppear {
                 viewStore.send(.showAD)
                 Request.tbaRequest(event: .track)
@@ -163,43 +178,112 @@ struct TrackerView: View {
         }
     }
     
-    struct MeasureListView: View {
+    struct MeasurementView: View {
         let store: StoreOf<TrackerReducer>
         var body: some View {
             WithViewStore(store, observe: {$0}) { viewStore in
-                ScrollView{
-                    VStack(spacing: 0){
-                        TopView(store: store).shadow.padding(.horizontal, 20)
-                        DateView(store: store).padding(.vertical, 30)
-                        LazyVGrid(columns: [GridItem(.flexible())]) {
-                            ForEach(viewStore.filterMeasures, id: \.self) { item in
-                                VStack{
-                                    Button {
-                                        viewStore.send(.itemSelected(item))
-                                    } label: {
-                                        TrackerCell(measure: item, topMode: viewStore.topMode, isTop: false).shadow
-                                    }
-                                }.padding(.horizontal, 20)
-                            }
-                        }
-                    }.padding(.vertical, 40)
-                }
+                VStack(spacing: 20){
+                    MeasurementContentView(store: store).padding(.top, 12)
+                    MeasurementButtonView(store: store)
+                }.padding(.horizontal, 20)
             }
         }
     }
     
-    struct AddButtonView: View {
-        let action: ()->Void
+    struct MeasurementContentView: View {
+        let store: StoreOf<TrackerReducer>
         var body: some View {
-            VStack{
+            WithViewStore(store, observe: {$0}) { viewStore in
+                VStack(spacing: 14){
+                    HStack{
+                        if viewStore.topMode == .avg {
+                            Text("48 Hours average").foregroundStyle(Color.white).font(.system(size: 14.0))
+                        } else {
+                            Text(viewStore.lastMeasure.date.detail).foregroundStyle(.white).font(.system(size: 12))
+                        }
+                        Spacer()
+                        TopButtonView(mode: viewStore.topMode) { mode in
+                            viewStore.send(.updateTopMode(mode))
+                        }
+                    }.padding(.vertical, 11)
+                    HStack{
+                        VStack(spacing: 16){
+                            MeasurementLabelView(value: viewStore.lastMeasure.systolic, item: .systolic)
+                            MeasurementLabelView(value: viewStore.lastMeasure.diastolic, item: .diastolic)
+                            MeasurementLabelView(value: viewStore.lastMeasure.pulse, item: .pulse)
+                            Spacer()
+                        }.frame(width: 130)
+                        Spacer()
+                        if viewStore.topMode == .last {
+                            VStack{
+                                Spacer()
+                                MeasurementDetailView(measure: viewStore.lastMeasure)
+                            }.padding(.bottom, 20)
+                        }
+                    }
+                }.padding(.horizontal, 16).background(Image("tracker_content").resizable()).shadow
+            }
+        }
+    }
+    
+    struct MeasurementDetailView: View {
+        let measure: Measurement
+        var body: some View {
+            VStack(alignment: .leading, spacing: 5){
+                Text(measure.status.title).foregroundStyle(.white).padding(.horizontal, 9).padding(.vertical, 4).background(.linearGradient(colors: [Color(uiColor: measure.status.color), Color(uiColor: measure.status.endColor)], startPoint: .leading, endPoint: .trailing)).cornerRadius(13)
+                HStack(spacing: 6){
+                    ForEach(measure.posture, id:\.self) { item in
+                        if case let Measurement.Posture.feeel(feel) = item {
+                            Image(feel.icon)
+                        }
+                        if case let Measurement.Posture.arm(feel) = item {
+                            Image(feel.icon)
+                        }
+                        if case let Measurement.Posture.body(feel) = item {
+                            Image(feel.icon)
+                        }
+                    }
+                }
+            }.padding(.all, 10).background(Image("tracker_detail").resizable())
+        }
+    }
+    
+    struct MeasurementLabelView: View {
+        let value: Int?
+        let item: Measurement.BloodPressure
+        var body: some View {
+            HStack{
+                Text("\(value ?? 0)").foregroundStyle(Color("#194D54")).font(.system(size: 28))
                 Spacer()
-                HStack{
-                    Spacer()
+                Text("(\(item.unit))").foregroundStyle(Color("#194D54")).font(.system(size: 11))
+            }.padding(.all, 12).frame(height: 64).background(.white).cornerRadius(8)
+        }
+    }
+    
+    struct MeasurementButtonView: View {
+        let store: StoreOf<TrackerReducer>
+        var body: some View {
+            WithViewStore(store, observe: {$0}) { viewStore in
+                HStack(spacing: 13){
                     Button {
-                        action()
+                        viewStore.send(.historyButtonTapped)
                     } label: {
-                        Image("tracker_add_1")
-                    }.padding(.bottom, 88).padding(.trailing, 24)
+                        HStack{
+                            Spacer()
+                            Text("History").foregroundStyle(Color("#43C4D7")).font(.system(size: 16.0)).padding(.vertical, 15)
+                            Spacer()
+                        }
+                    }.background(RoundedRectangle(cornerRadius: 26).stroke(Color("#43C4D7"), lineWidth: 1))
+                    Button {
+                        viewStore.send(.addButtonTapped)
+                        Request.tbaRequest(event: .trackAdd)
+                    } label: {
+                        HStack{
+                            Spacer()
+                            Text("Log").foregroundStyle(.white).font(.system(size: 16.0)).padding(.vertical, 15)
+                            Spacer()
+                        }
+                    }.background(.linearGradient(colors: [Color("#42C3D6"), Color("#5AE9FF")], startPoint: .leading, endPoint: .trailing)).cornerRadius(26)
                 }
             }
         }
@@ -227,25 +311,6 @@ struct TrackerView: View {
                 }
             }.onAppear {
                 Request.tbaRequest(event: .guide)
-            }
-        }
-    }
-    
-    struct TopView: View {
-        let store: StoreOf<TrackerReducer>
-        var body: some View {
-            WithViewStore(store, observe: {$0}) { viewStore in
-                if let measure = viewStore.lastMeasure {
-                    Button {
-                        if viewStore.topMode == .last { 
-                            viewStore.send(.itemSelected(measure))
-                        }
-                    } label: {
-                        TrackerCell(measure: measure, topMode: viewStore.topMode, isTop: true) { mode in
-                            viewStore.send(.updateTopMode(mode))
-                        }
-                    }
-                }
             }
         }
     }
@@ -357,6 +422,53 @@ struct TrackerView: View {
                 Button(action: action, label: {
                     Text(title).foregroundStyle(isSelected ? Color.white : Color("#C8B8AC")).font(.system(size: 12)).padding(.vertical, 7).padding(.horizontal, 12)
                 }).background(isSelected ? Color("#F89042").cornerRadius(14) : Color.clear.cornerRadius(0))
+            }
+        }
+    }
+    
+    struct ReadingGuideView: View {
+        let ok: ()->Void
+        let skip: ()->Void
+        @State var time: Int = 5
+        let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+        var body: some View {
+            ZStack{
+                Color.black.opacity(0.7).ignoresSafeArea()
+                VStack{
+                    HStack{Spacer()}.frame(height: 1)
+                    Spacer()
+                    VStack(spacing: 18){
+                        Image("reading_guide")
+                        Text("Try to learn more about blood pressure health!").lineLimit(nil).multilineTextAlignment(.center).foregroundStyle(Color("#53545C")).font(.system(size: 16))
+                        VStack(spacing: 12){
+                            Button{
+                                ok()
+                            } label: {
+                                HStack{
+                                    Spacer()
+                                    Text("ok").padding(.vertical,15).foregroundStyle(.white)
+                                    Spacer()
+                                }
+                            }.background(.linearGradient(colors: [Color("#42C3D6"), Color("#5AE9FF")], startPoint: .leading, endPoint: .trailing)).cornerRadius(26).padding(.horizontal, 30)
+                            Button {
+                                if time == 0 {
+                                    skip()
+                                }
+                            } label: {
+                                if time > 0 {
+                                    Text("Skip(\(time)s)").foregroundStyle(Color("#B4B3B3"))
+                                } else {
+                                    Text("Skip").foregroundStyle(Color("#42C3D6"))
+                                }
+                            }
+                        }.font(.system(size: 16))
+                    }.padding(.all, 20).background(Color("#F3F8FB")).cornerRadius(16).padding(.horizontal, 20)
+                    Spacer()
+                }
+            }.onReceive(timer) { _ in
+                if self.time > 0 {
+                    self.time -= 1
+                }
             }
         }
     }

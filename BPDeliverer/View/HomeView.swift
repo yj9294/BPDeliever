@@ -23,6 +23,7 @@ struct HomeReducer: Reducer {
         var tracker: TrackerReducer.State = .init()
         @PresentationState var add: AddReducer.State? = nil
         @PresentationState var datePicker: DatePickerReducer.State? = nil
+        @PresentationState var history: HistoryReducer.State? = nil
         var analytics: ChartsReducer.State = .init()
         var profile: ProfileReducer.State = .init()
         
@@ -44,6 +45,7 @@ struct HomeReducer: Reducer {
         case presentAddView
         case add(PresentationAction<AddReducer.Action>)
         case datePicker(PresentationAction<DatePickerReducer.Action>)
+        case history(PresentationAction<HistoryReducer.Action>)
         case allowUser
         
         case updateAD(GADNativeViewModel)
@@ -61,12 +63,12 @@ struct HomeReducer: Reducer {
             case .add(.presented(.root(.dismiss))):
                 state.dismissAddView()
                 
-            case let .add(.presented(.path(.element(id: _, action: .edit(.buttonTapped(measure)))))):
-                state.showNotiAlertView
-                
-                = CacheUtil.shared.getNeedNotiAlert()
+            // 新增 血压 （关闭广告后）
+            case let .add(.presented(.path(.element(id: _, action: .edit(.saveButtonTapped(measure)))))):
+                state.showNotiAlertView = CacheUtil.shared.getNeedNotiAlert()
                 state.updateMeasures(measure)
                 state.dismissAddView()
+                state.updateShowReadingGuide(true)
             case .tracker(.addButtonTapped):
                 state.presentAddView()
 //            case let .add(.presented(.path(.element(id: id, action: .edit(.dateButtonTapped))))):
@@ -76,6 +78,8 @@ struct HomeReducer: Reducer {
 //                        state.presentDatePickerView(position: .newMeasure)
 //                    }
 //                }
+            case .tracker(.historyButtonTapped):
+                state.presentHistoryView()
             case .datePicker(.presented(.cancel)):
                 state.dismissDatePickerView()
             case let .datePicker(.presented(.ok(date,postion))):
@@ -113,6 +117,12 @@ struct HomeReducer: Reducer {
                 
             case let .lastItem(item):
                 state.lastItem = item
+            
+            // 进入历史血压列表
+            case .history(.presented(.dismiss)):
+                state.dismissHistoryView()
+            case .history(.presented(.itemSelected)):
+                state.dismissHistoryView()
             default:
                 break
             }
@@ -121,6 +131,8 @@ struct HomeReducer: Reducer {
             AddReducer()
         }.ifLet(\.$datePicker, action: /Action.datePicker) {
             DatePickerReducer()
+        }.ifLet(\.$history, action: /Action.history) {
+            HistoryReducer()
         }
         Scope(state: \.tracker, action: /Action.tracker) {
             TrackerReducer()
@@ -156,6 +168,14 @@ extension HomeReducer.State {
         GADUtil.share.disappear(.tracker)
         GADUtil.share.load(.submit)
         add = .init(root: .init(measure: measure, status: status))
+    }
+    
+    mutating func presentHistoryView() {
+        history = .init()
+    }
+    
+    mutating func dismissHistoryView() {
+        history = nil
     }
     
     mutating func dismissAddView() {
@@ -260,6 +280,10 @@ extension HomeReducer.State {
             profile.adModel = .none
         }
     }
+    
+    mutating func updateShowReadingGuide(_ isShow: Bool) {
+        tracker.showReadingGuide = isShow
+    }
 }
 
 
@@ -274,6 +298,8 @@ struct HomeView: View {
                     }
                 }.fullScreenCover(store: store.scope(state: \.$add, action: {.add($0)})) { store in
                     AddView(store: store)
+                }.fullScreenCover(store: store.scope(state: \.$history, action: {.history($0)})) { store in
+                    HistoryView(store: store)
                 }.fullScreenCover(store: store.scope(state: \.$datePicker, action: {.datePicker($0)})) { store in
                     DatePickerView(store: store).background(BackgroundClearView())
                 }.onReceive(nativeADPubliser) { noti in

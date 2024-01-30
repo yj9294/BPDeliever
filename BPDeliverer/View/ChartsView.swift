@@ -42,23 +42,33 @@ struct ChartsReducer: Reducer {
                 Request.tbaRequest(event: .enter)
             }
             if case .proportion(.presented(.dismiss)) = action {
-                GADUtil.share.load(.enter)
+                if CacheUtil.shared.isUserGo {
+                    GADUtil.share.load(.enter)
+                }
                 state.dismissProportionView()
             }
             if case .bp(.presented(.dismiss)) = action {
-                GADUtil.share.load(.enter)
+                if CacheUtil.shared.isUserGo {
+                    GADUtil.share.load(.enter)
+                }
                 state.dismissBPView()
             }
             if case .map(.presented(.dismiss)) = action {
-                GADUtil.share.load(.enter)
+                if CacheUtil.shared.isUserGo {
+                    GADUtil.share.load(.enter)
+                }
                 state.dismissMAPView()
             }
             if case .heart(.presented(.dismiss)) = action {
-                GADUtil.share.load(.enter)
+                if CacheUtil.shared.isUserGo {
+                    GADUtil.share.load(.enter)
+                }
                 state.dismissHeartView()
             }
             if case .detail(.presented(.dismiss)) = action {
-                GADUtil.share.load(.enter)
+                if CacheUtil.shared.isUserGo {
+                    GADUtil.share.load(.enter)
+                }
                 state.dismissDetailView()
             }
             if case let .showAD(item) = action {
@@ -272,7 +282,9 @@ struct ChartsView: View {
                     ReadingDetailView(store: store)
                 }
         }.onAppear{
-            GADUtil.share.load(.enter)
+            if CacheUtil.shared.isUserGo {
+                GADUtil.share.load(.enter)
+            }
             Request.tbaRequest(event: .analytics)
         }
     }

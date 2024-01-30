@@ -28,7 +28,6 @@ struct ReminderReducer: Reducer {
         case addButtonTapped
         case deleteButtontapped(String)
         case datePicker(PresentationAction<DatePickerReducer.Action>)
-        case showAD
         case notifcationToggle
         case gotoSetting
         case onAppear
@@ -68,23 +67,6 @@ struct ReminderReducer: Reducer {
             }
             if case .onAppear = action {
                 state.sysNotificationOn = CacheUtil.shared.getSysNotificationOn()
-            }
-            if case .showAD = action {
-                if CacheUtil.shared.isUserGo {
-                    GADUtil.share.load(.back)
-                    let publisher = Future<Action, Never> { promiss in
-                        GADUtil.share.show(.back) { _ in
-                            promiss(.success(.pop))
-                        }
-                    }
-                    return .publisher {
-                        publisher
-                    }
-                } else {
-                    return .run { send in
-                        await send(.pop)
-                    }
-                }
             }
             return .none
         }.ifLet(\.$datePicker, action: /Action.datePicker) {
@@ -132,9 +114,6 @@ struct ReminderView: View {
                 ReminderListView(store: store)
             }.onAppear(perform: {
                 Request.tbaRequest(event: .backShow)
-                if CacheUtil.shared.isUserGo {
-                    GADUtil.share.load(.back)
-                }
                 viewStore.items.forEach {
                     NotificationHelper.shared.appendReminder($0)
                 }
@@ -143,8 +122,7 @@ struct ReminderView: View {
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button {
-                        viewStore.send(.showAD)
-                        Request.tbaRequest(event: .back)
+                        viewStore.send(.pop)
                     } label: {
                         Image("add_back")
                     }

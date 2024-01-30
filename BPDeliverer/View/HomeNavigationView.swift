@@ -20,7 +20,7 @@ struct HomeNavigationReducer: Reducer {
     var body: some Reducer<State, Action> {
         Reduce{ state, action in
             switch action{
-            case let .root(.tracker(.itemSelected(measure))):
+            case let .root(.history(.presented(.itemSelected(measure)))):
                 state.pushDetailView(measure)
             case .root(.profile(.reminderButtonTapped)):
                 state.pushreminderView()
@@ -44,6 +44,15 @@ struct HomeNavigationReducer: Reducer {
                 reminders?.forEach({
                     NotificationHelper.shared.appendReminder($0, localID: language.code)
                 })
+                
+            // 点击 reading 引导进入reading 详细（随机一篇）
+            case .root(.tracker(.okButtonTapped)):
+                state.root.item = .analytics
+                return .run { send in
+                    // 进入详情
+                    let item = ChartsReducer.State.Item.allCases.randomElement() ?? .balance
+                    await send(.root(.analytics(.itemDidSelected(item))))
+                }
             default:
                 break
             }

@@ -161,7 +161,7 @@ struct AddView: View {
                     if viewStore.hasAD {
                         HStack{
                             GADNativeView(model: viewStore.adModel)
-                        }.frame(height: 62).padding(.horizontal, 20)
+                        }.frame(height: 136).padding(.horizontal, 20)
                     }
                     Spacer()
                 }.toolbar {

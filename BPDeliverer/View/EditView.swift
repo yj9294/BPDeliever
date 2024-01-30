@@ -27,7 +27,7 @@ struct EditReducer: Reducer {
         case pop
         case binding(BindingAction<State>)
         case itemSelected(String, Measurement.Posture)
-        case buttonTapped(Measurement)
+        case saveButtonTapped(Measurement)
         case dateButtonTapped
         case showAD
     }
@@ -41,7 +41,7 @@ struct EditReducer: Reducer {
                 GADUtil.share.load(.submit)
                 let publisher = Future<Action, Never> { [measure = state.measure] promise in
                     GADUtil.share.show(.submit) { _ in
-                        promise(.success(.buttonTapped(measure)))
+                        promise(.success(.saveButtonTapped(measure)))
                     }
                 }
                 return .publisher {
