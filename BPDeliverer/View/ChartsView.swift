@@ -24,6 +24,8 @@ struct ChartsReducer: Reducer {
         @PresentationState var detail: ReadingDetailReducer.State? = nil
     }
     enum Action: Equatable {
+        case historyButtonTapped
+        
         case proportion(PresentationAction<ProportionReducer.Action>)
         case bp(PresentationAction<BPTrendsReducer.Action>)
         case map(PresentationAction<MAPTrendsReducer.Action>)
@@ -293,7 +295,15 @@ struct ChartsView: View {
         var body: some View {
             WithViewStore(store, observe: {$0}) { viewStore in
                 VStack{
-                    Text(LocalizedStringKey("Version")).font(.system(size: 18, weight: .medium)).padding(.vertical, 10)
+                    ZStack{
+                        Text(LocalizedStringKey("Version")).font(.system(size: 18, weight: .medium))
+                        HStack{
+                            Spacer()
+                            HistoryButtonView {
+                                viewStore.send(.historyButtonTapped)
+                            }
+                        }.padding(.trailing, 20)
+                    }.frame(height: 44)
                     ScrollView(showsIndicators: false){
                         VStack{
                             LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 12) {
@@ -334,6 +344,18 @@ struct ChartsView: View {
                     Spacer()
                 }.background(Color("#F3F8FB").ignoresSafeArea())
             }.foregroundStyle(Color("#0C2529"))
+        }
+        
+        struct HistoryButtonView: View {
+            let action: ()->Void
+            var body: some View {
+                Button(action: action, label: {
+                    HStack(spacing: 5){
+                        Image("history")
+                        Text("History").foregroundStyle(Color("#43C4D7")).font(.system(size: 14.0))
+                    }.padding(.horizontal, 9).padding(.vertical, 8)
+                }).background(RoundedRectangle(cornerRadius: 16).stroke(Color("#43C4D7"), lineWidth: 1))
+            }
         }
         
         struct SectionHeader: View {

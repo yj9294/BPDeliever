@@ -78,7 +78,7 @@ struct HomeReducer: Reducer {
 //                        state.presentDatePickerView(position: .newMeasure)
 //                    }
 //                }
-            case .tracker(.historyButtonTapped):
+            case .analytics(.historyButtonTapped):
                 state.presentHistoryView()
             case .datePicker(.presented(.cancel)):
                 state.dismissDatePickerView()
@@ -180,11 +180,13 @@ extension HomeReducer.State {
     
     mutating func dismissAddView() {
         add = nil
-        GADUtil.share.disappear(.tracker)
-        GADUtil.share.load(.tracker)
-        Request.tbaRequest(event: .track)
-        Request.tbaRequest(event: .homeAD)
-        Request.tbaRequest(event: .homeShow)
+        if item == .tracker {
+            GADUtil.share.disappear(.tracker)
+            GADUtil.share.load(.tracker)
+            Request.tbaRequest(event: .track)
+            Request.tbaRequest(event: .homeAD)
+            Request.tbaRequest(event: .homeShow)
+        }
     }
     
     mutating func presentDatePickerView(_ date: Date = Date(), position: DatePickerReducer.State.Position) {

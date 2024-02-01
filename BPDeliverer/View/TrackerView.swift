@@ -34,7 +34,6 @@ struct TrackerReducer: Reducer {
         case filterDateMinTapped
         case filterDateMaxTapped
         case addButtonTapped
-        case historyButtonTapped
         case showAD
         case showGuideAD
         case updateTopMode(MeasureTopMode)
