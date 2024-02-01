@@ -40,6 +40,7 @@ struct TrackerReducer: Reducer {
         case updateTopMode(MeasureTopMode)
         case updateShowReadingGuide(Bool)
         case okButtonTapped
+        case showEnterAD
     }
     var body: some Reducer<State, Action> {
         Reduce{ state, action in
@@ -59,6 +60,16 @@ struct TrackerReducer: Reducer {
                     GADUtil.share.load(.guide)
                     GADUtil.share.show(.guide) { _ in
                         promiss(.success(.addButtonTapped))
+                    }
+                }
+                return .publisher {
+                    publisher
+                }
+            case .showEnterAD:
+                let publisher = Future<Action, Never> { promise in
+                    GADUtil.share.load(.enter)
+                    GADUtil.share.show(.enter) { _ in
+                        promise(.success(.okButtonTapped))
                     }
                 }
                 return .publisher {
@@ -163,7 +174,7 @@ struct TrackerView: View {
                 if viewStore.showReadingGuide {
                     ReadingGuideView {
                         viewStore.send(.updateShowReadingGuide(false))
-                        viewStore.send(.okButtonTapped)
+                        viewStore.send(.showEnterAD)
                     } skip: {
                         viewStore.send(.updateShowReadingGuide(false))
                     }
@@ -182,7 +193,7 @@ struct TrackerView: View {
         let store: StoreOf<TrackerReducer>
         var body: some View {
             WithViewStore(store, observe: {$0}) { viewStore in
-                VStack(spacing: 20){
+                VStack(spacing: 38){
                     MeasurementContentView(store: store).padding(.top, 12)
                     MeasurementButtonView(store: store)
                 }.padding(.horizontal, 20)
@@ -211,16 +222,14 @@ struct TrackerView: View {
                             MeasurementLabelView(value: viewStore.lastMeasure.systolic, item: .systolic)
                             MeasurementLabelView(value: viewStore.lastMeasure.diastolic, item: .diastolic)
                             MeasurementLabelView(value: viewStore.lastMeasure.pulse, item: .pulse)
-                            Spacer()
                         }.frame(width: 130)
                         Spacer()
                         if viewStore.topMode == .last {
                             VStack{
-                                Spacer()
                                 MeasurementDetailView(measure: viewStore.lastMeasure)
-                            }.padding(.bottom, 20)
+                            }.padding(.top, 157)
                         }
-                    }
+                    }.padding(.bottom, 20)
                 }.padding(.horizontal, 16).background(Image("tracker_content").resizable()).shadow
             }
         }
@@ -264,27 +273,17 @@ struct TrackerView: View {
         let store: StoreOf<TrackerReducer>
         var body: some View {
             WithViewStore(store, observe: {$0}) { viewStore in
-                HStack(spacing: 13){
-                    Button {
-                        viewStore.send(.historyButtonTapped)
-                    } label: {
-                        HStack{
-                            Spacer()
-                            Text("History").foregroundStyle(Color("#43C4D7")).font(.system(size: 16.0)).padding(.vertical, 15)
-                            Spacer()
-                        }
-                    }.background(RoundedRectangle(cornerRadius: 26).stroke(Color("#43C4D7"), lineWidth: 1))
-                    Button {
-                        viewStore.send(.addButtonTapped)
-                        Request.tbaRequest(event: .trackAdd)
-                    } label: {
-                        HStack{
-                            Spacer()
-                            Text("Log").foregroundStyle(.white).font(.system(size: 16.0)).padding(.vertical, 15)
-                            Spacer()
-                        }
-                    }.background(.linearGradient(colors: [Color("#42C3D6"), Color("#5AE9FF")], startPoint: .leading, endPoint: .trailing)).cornerRadius(26)
-                }
+                Button {
+                    viewStore.send(.addButtonTapped)
+                    Request.tbaRequest(event: .trackAdd)
+                } label: {
+                    HStack(spacing: 7){
+                        Spacer()
+                        Image("guide_add")
+                        Text("Add").foregroundStyle(.white).font(.system(size: 16.0)).padding(.vertical, 15)
+                        Spacer()
+                    }
+                }.background(.linearGradient(colors: [Color("#FFB985"), Color("#F89042")], startPoint: .leading, endPoint: .trailing)).cornerRadius(26).padding(.horizontal, 70)
             }
         }
     }
@@ -293,7 +292,7 @@ struct TrackerView: View {
         let action: ()->Void
         var body: some View {
             ZStack{
-                Color.black.opacity(0.3).ignoresSafeArea()
+                Color.black.opacity(0.9).ignoresSafeArea()
                 VStack(spacing: 30){
                     HStack{Spacer()}
                     Spacer()
@@ -301,12 +300,16 @@ struct TrackerView: View {
                         Image("tracker_guide")
                         Text(LocalizedStringKey("Record blood pressure status")).foregroundStyle(.white).font(.system(size: 17))
                     }
-                    Button(action: action) {
-                        HStack{
-                            Image("tracker_add")
-                            Text(LocalizedStringKey("Add")).foregroundStyle(.white).font(.system(size: 16))
-                        }.padding(.vertical, 15).padding(.horizontal, 75)
-                    }.background(.linearGradient(colors: [Color("#42C3D6"), Color("#5AE9FF")], startPoint: .leading, endPoint: .trailing)).cornerRadius(24)
+                    Button {
+                        action()
+                    } label: {
+                        HStack(spacing: 7){
+                            Spacer()
+                            Image("guide_add")
+                            Text("Add").foregroundStyle(.white).font(.system(size: 16.0)).padding(.vertical, 15)
+                            Spacer()
+                        }
+                    }.background(.linearGradient(colors: [Color("#FFB985"), Color("#F89042")], startPoint: .leading, endPoint: .trailing)).cornerRadius(26).padding(.horizontal, 70)
                     Spacer()
                 }
             }.onAppear {

@@ -100,7 +100,9 @@ struct ProportionView: View {
                     DescriptionView(store: store).padding(.top, 20)
                     Spacer()
                 }
-            }
+            }.onAppear(perform: {
+                GADUtil.share.load(.back)
+            })
         }.background(Color("#F3F8FB").ignoresSafeArea())
     }
     

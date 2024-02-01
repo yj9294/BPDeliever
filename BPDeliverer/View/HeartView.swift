@@ -90,22 +90,22 @@ struct HearView: View {
     let store: StoreOf<HeartReducer>
     var body: some View {
         WithViewStore(store, observe: {$0}) { viewStore in
-            WithViewStore(store, observe: {$0}) { viewStore in
-                ScrollView{
-                    VStack(spacing: 35){
-                        VStack(spacing: 16){
-                            NavigationBarView(backAction: {viewStore.send(.dismiss)}, title: "Heart Rate")
-                            FilterButtonView(item: viewStore.filter) { item in
-                                viewStore.send(.filterDidSelected(item))
-                            }
+            ScrollView{
+                VStack(spacing: 35){
+                    VStack(spacing: 16){
+                        NavigationBarView(backAction: {viewStore.send(.dismiss)}, title: "Heart Rate")
+                        FilterButtonView(item: viewStore.filter) { item in
+                            viewStore.send(.filterDidSelected(item))
                         }
-                        AverageView(store: store)
-                        ChartsView(store: store)
-                        Spacer()
                     }
+                    AverageView(store: store)
+                    ChartsView(store: store)
+                    Spacer()
                 }
-            }.background(Color("#F3F8FB").ignoresSafeArea())
-        }
+            }.onAppear(perform: {
+                GADUtil.share.load(.back)
+            })
+        }.background(Color("#F3F8FB").ignoresSafeArea())
     }
     
     struct AverageView: View {

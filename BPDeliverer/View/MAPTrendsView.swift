@@ -103,7 +103,9 @@ struct MAPTrendsView: View {
                         ChartsView(store: store)
                         Spacer()
                     }
-                }
+                }.onAppear(perform: {
+                    GADUtil.share.load(.back)
+                })
             }.background(Color("#F3F8FB").ignoresSafeArea())
         }
     }
