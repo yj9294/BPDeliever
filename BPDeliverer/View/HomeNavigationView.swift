@@ -51,7 +51,7 @@ struct HomeNavigationReducer: Reducer {
                 return .run { send in
                     // 进入详情
                     let item = ChartsReducer.State.Item.allCases.randomElement() ?? .balance
-                    await send(.root(.analytics(.itemDidSelected(item))))
+                    await send(.root(.analytics(.showEnterAD(item))))
                 }
             default:
                 break

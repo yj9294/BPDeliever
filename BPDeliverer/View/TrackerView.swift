@@ -40,7 +40,6 @@ struct TrackerReducer: Reducer {
         case updateTopMode(MeasureTopMode)
         case updateShowReadingGuide(Bool)
         case okButtonTapped
-        case showEnterAD
     }
     var body: some Reducer<State, Action> {
         Reduce{ state, action in
@@ -60,16 +59,6 @@ struct TrackerReducer: Reducer {
                     GADUtil.share.load(.guide)
                     GADUtil.share.show(.guide) { _ in
                         promiss(.success(.addButtonTapped))
-                    }
-                }
-                return .publisher {
-                    publisher
-                }
-            case .showEnterAD:
-                let publisher = Future<Action, Never> { promise in
-                    GADUtil.share.load(.enter)
-                    GADUtil.share.show(.enter) { _ in
-                        promise(.success(.okButtonTapped))
                     }
                 }
                 return .publisher {
@@ -174,14 +163,20 @@ struct TrackerView: View {
                 if viewStore.showReadingGuide {
                     ReadingGuideView {
                         viewStore.send(.updateShowReadingGuide(false))
-                        viewStore.send(.showEnterAD)
+                        viewStore.send(.okButtonTapped)
+                        Request.tbaRequest(event: .readingGuideAgreen)
                     } skip: {
                         viewStore.send(.updateShowReadingGuide(false))
+                        Request.tbaRequest(event: .readingGuideDisagreen)
+                    }.onAppear{
+                        Request.tbaRequest(event: .readingGuide)
+                        GADUtil.share.load(.enter)
                     }
                 }
             }.onAppear {
                 viewStore.send(.showAD)
                 Request.tbaRequest(event: .track)
+                Request.tbaRequest(event: .homeAD)
             }
         }.background(Color("#F3F8FB")).onAppear {
             ATTrackingManager.requestTrackingAuthorization { _ in

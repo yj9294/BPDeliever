@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+import Combine
 import ComposableArchitecture
 
 enum Filter: CaseIterable {
@@ -33,13 +34,27 @@ struct ProportionReducer: Reducer {
     }
     enum Action: Equatable {
         case dismiss
+        
         case filterDidSelected(Filter)
+        case showBackAD
     }
     
     var body: some Reducer<State, Action> {
         Reduce{ state, action in
             if case let .filterDidSelected(filter) = action {
                 state.filter = filter
+            }
+            if case .showBackAD = action {
+                Request.tbaRequest(event: .backAD)
+                let publisher = Future<Action, Never> { promise in
+                    GADUtil.share.load(.back)
+                    GADUtil.share.show(.back) { _ in
+                        promise(.success(.dismiss))
+                    }
+                }
+                return .publisher {
+                    publisher
+                }
             }
             return .none
         }
@@ -82,7 +97,7 @@ struct ProportionView: View {
             ScrollView{
                 VStack(spacing: 35){
                     VStack(spacing: 16){
-                        NavigationBarView(backAction: {viewStore.send(.dismiss)}, title: "BP Proportion")
+                        NavigationBarView(backAction: {viewStore.send(.showBackAD)}, title: "BP Proportion")
                         FilterButtonView(item: viewStore.filter) { item in
                             viewStore.send(.filterDidSelected(item))
                         }

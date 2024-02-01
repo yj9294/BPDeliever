@@ -104,6 +104,7 @@ struct ProfileView: View {
             }.onAppear {
                 viewStore.send(.showAD)
                 Request.tbaRequest(event: .setting)
+                Request.tbaRequest(event: .settings)
             }
         }.background(Color("#F3F8FB").ignoresSafeArea())
     }

@@ -211,14 +211,14 @@ enum RequestEvent: String, Codable {
     
     
     // 自定义广告打点事件
-    case loading = "bp_enter_1"
-    case home = "bp_enter_2"
+    case loadingAD = "bp_enter_1"
+    case homeAD = "bp_enter_2"
     case add = "bp_enter_3"
     case save = "bp_enter_4"
     case setting = "bp_enter_5"
     case guideAd = "bp_enter_6"
-    case enter = "bp_enter_7"
-    case back = "bp_enter_8"
+    case enterAD = "bp_enter_7"
+    case backAD = "bp_enter_8"
     case trackerBar = "bp_enter_9"
     case trackerExchange = "bp_enter_10"
     
@@ -259,6 +259,12 @@ enum RequestEvent: String, Codable {
     
     case notificationMutOff = "bp_set_notice1"
     case notificationMutOn = "bp_set_notice0"
+    
+    case settings = "bp_setting"
+    
+    case readingGuide = "bp_read_pop"
+    case readingGuideAgreen = "bp_read_pop1"
+    case readingGuideDisagreen = "bp_read_pop0"
     
 }
 

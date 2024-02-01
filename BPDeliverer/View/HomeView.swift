@@ -183,7 +183,7 @@ extension HomeReducer.State {
         GADUtil.share.disappear(.tracker)
         GADUtil.share.load(.tracker)
         Request.tbaRequest(event: .track)
-        Request.tbaRequest(event: .home)
+        Request.tbaRequest(event: .homeAD)
         Request.tbaRequest(event: .homeShow)
     }
     

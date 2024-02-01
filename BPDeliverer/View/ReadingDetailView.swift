@@ -21,11 +21,12 @@ struct ReadingDetailReducer: Reducer {
     }
     enum Action: Equatable {
         case dismiss
-        case showAD
+        case showBackAD
     }
     var body: some Reducer<State, Action> {
         Reduce{ state, action in
-            if case .showAD = action {
+            if case .showBackAD = action {
+                Request.tbaRequest(event: .backAD)
                 // 审核模式不需要返回广告广告
                 if CacheUtil.shared.isUserGo {
                     GADUtil.share.load(.back)
@@ -53,7 +54,7 @@ struct ReadingDetailView: View {
     var body: some View {
         WithViewStore(store, observe: {$0}) { viewStore in
             VStack(spacing: 0){
-                NavigationBarView(backAction: {viewStore.send(.showAD)}, title: "Details")
+                NavigationBarView(backAction: {viewStore.send(.showBackAD)}, title: "Details")
                 WebView(urlString: viewStore.item.url).padding(.top, 5).padding(.horizontal, 20)
             }
         }.background(Color("#F3F8FB").ignoresSafeArea()).onAppear(perform: {

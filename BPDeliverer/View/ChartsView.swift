@@ -30,7 +30,7 @@ struct ChartsReducer: Reducer {
         case heart(PresentationAction<HeartReducer.Action>)
         case detail(PresentationAction<ReadingDetailReducer.Action>)
         case itemDidSelected(State.Item)
-        case showAD(State.Item)
+        case showEnterAD(State.Item)
     }
     var body: some Reducer<State, Action> {
         Reduce{ state, action in
@@ -39,7 +39,6 @@ struct ChartsReducer: Reducer {
                 if !item.isAnalytics {
                     Request.tbaRequest(event: .versionRed, parameters: ["red": "\(item.count)"])
                 }
-                Request.tbaRequest(event: .enter)
             }
             if case .proportion(.presented(.dismiss)) = action {
                 if CacheUtil.shared.isUserGo {
@@ -71,8 +70,8 @@ struct ChartsReducer: Reducer {
                 }
                 state.dismissDetailView()
             }
-            if case let .showAD(item) = action {
-                Request.tbaRequest(event: .enterShow)
+            if case let .showEnterAD(item) = action {
+                Request.tbaRequest(event: .enterAD)
                 if CacheUtil.shared.isUserGo {
                     let publisher = Future<Action, Never> { [item = item] promiss in
                         GADUtil.share.show(.enter) { _ in
@@ -303,7 +302,7 @@ struct ChartsView: View {
                                         let items = viewStore.state.getItems(section)
                                         ForEach(items, id: \.self) { item in
                                             Button {
-                                                viewStore.send(.showAD(item))
+                                                viewStore.send(.showEnterAD(item))
                                             } label: {
                                                 ItemCell(item: item, progress: viewStore.progress)
                                             }.foregroundStyle(Color("#0C2529"))
@@ -319,7 +318,7 @@ struct ChartsView: View {
                                         let items = viewStore.state.getItems(section)
                                         ForEach(items, id: \.self) { item in
                                             Button {
-                                                viewStore.send(.showAD(item))
+                                                viewStore.send(.showEnterAD(item))
                                             } label: {
                                                 ItemCell(item: item, progress: viewStore.progress)
                                             }.foregroundStyle(Color("#0C2529"))

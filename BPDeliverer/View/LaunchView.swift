@@ -81,8 +81,8 @@ struct LaunchReducer: Reducer {
 extension LaunchReducer.State {
     func startCloakRequest() {
         Request.cloakRequest()
-        Request.tbaRequest(event: .loading)
     }
+    
     mutating func initProgress() {
         isStart = true
         progress = 0.0
@@ -108,7 +108,9 @@ struct LaunchView: View {
                 Image("BP Deliverer").padding(.top, 110)
                 Spacer()
                 ProgressView(value: viewStore.progress).tint(.white).padding(.bottom, 43).padding(.horizontal, 80)
-            }.background(Image("bg") .resizable().ignoresSafeArea()).onReceive(coldOpenPublisher) { _ in
+            }.onAppear(perform: {
+                Request.tbaRequest(event: .loadingAD)
+            }).background(Image("bg") .resizable().ignoresSafeArea()).onReceive(coldOpenPublisher) { _ in
                 viewStore.send(.start)
             }.onChange(of: scenePhase) { state in
                 if case .inactive = state {
