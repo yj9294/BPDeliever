@@ -53,12 +53,7 @@ class CacheUtil: NSObject {
     private var fbPrice: FBPrice?
     
 //    血压记录引导弹窗，弹出时机
-//    A 方案
-//
-//    1. 用户第一次打开app，弹出引导弹窗
-//    B 方案
-//    1. 只要没有任何血压记录数据，就弹引导弹窗
-//      1. 有血压数据，但是全部清空后也需要弹
+//  https://stayfoolish.feishu.cn/docx/HX68dNZBzoIkWqxJIAMcO3Lpnrh?from=from_copylink
     @FileHelper(.measureGuide)
     private var measureGuide: ABTest?
     
@@ -193,20 +188,27 @@ class CacheUtil: NSObject {
     
     // 计算 measure guide 的随机ab 概率分布
     // a: 0~100 随机概率
-    private func configMeasureGuide(a: Int) -> ABTest {
-        let random = arc4random() % 100
-        NSLog("[AB] 开始随机值：\(random), 当前版本已确定使用 b方案")
-        measureGuide = .b
-        return .b
-//        if random < a {
-//            NSLog("[AB] 当前方案：A")
-//            measureGuide = .a
-//            return .a
-//        } else {
-//            NSLog("[AB] 当前方案：B")
-//            measureGuide = .b
-//            return .b
-//        }
+    private func configMeasureGuide() -> ABTest {
+        let random = arc4random() % 99
+        NSLog("[AB] 开始随机值：\(random) % 3 = \(random % 3), 0 = a, 1 = b , 2 = c")
+        
+        let ret = random % 3
+        switch ret {
+        case 0:
+            NSLog("[AB] 当前方案：A")
+            measureGuide = .a
+            return .a
+        case 1:
+            NSLog("[AB] 当前方案：B")
+            measureGuide = .b
+            return .b
+        case 2:
+            NSLog("[AB] 当前方案：c")
+            measureGuide = .c
+            return .c
+        default:
+            return .a
+        }
     }
     
     func getMeasureGuide() -> ABTest {
@@ -214,8 +216,8 @@ class CacheUtil: NSObject {
             NSLog("[AB] 当前已有AB，当前配置:\(measureGuide)")
             return measureGuide
         } else {
-            NSLog("[AB] 当前没有AB，开始随机按照AB比例分配, A(50%)")
-            return configMeasureGuide(a: 50);
+            NSLog("[AB] 当前没有AB，开始随机按照AB比例分配, A(33%), b(33%), c(33%)")
+            return configMeasureGuide();
         }
     }
     
@@ -358,7 +360,7 @@ enum GADNativeCachePosition: Codable {
 }
 
 enum ABTest: String, Codable {
-    case a, b
+    case a, b, c
 }
 
 

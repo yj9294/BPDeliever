@@ -12,8 +12,8 @@ import AppTrackingTransparency
 
 struct TrackerReducer: Reducer {
     struct State: Equatable {
-        @UserDefault("guide", defaultValue: false)
-        var isGuide: Bool
+//        @UserDefault("guide", defaultValue: false)
+        var isGuide: Bool = false
         
         @UserDefault("measures", defaultValue: [])
         var measures: [Measurement]
@@ -139,19 +139,21 @@ struct TrackerView: View {
                 }
                 // 方案判定
                 if CacheUtil.shared.getMeasureGuide() == .a {
-                    // a 方案是 一次安装首次打开
+                    // a 每次冷启动都弹出
                     if !viewStore.isGuide {
                         GuideView {
                             viewStore.send(.showGuideAD)
+                            Request.tbaRequest(event: .trackAdd)
                             Request.tbaRequest(event: .guideAdd)
                             Request.tbaRequest(event: .guideAd)
                         }
                     }
-                } else {
+                } else if CacheUtil.shared.getMeasureGuide() == .b {
                     // b 方案是每次打开判定是否有记录 没得记录都要弹出
                     if viewStore.measures.count == 0 {
                         GuideView {
                             viewStore.send(.showGuideAD)
+                            Request.tbaRequest(event: .trackAdd)
                             Request.tbaRequest(event: .guideAdd)
                             Request.tbaRequest(event: .guideAd)
                         }
