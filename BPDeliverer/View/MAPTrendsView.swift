@@ -28,15 +28,21 @@ struct MAPTrendsReducer: Reducer {
                 state.filter = filter
             }
             if case .showBackAD = action {
-                Request.tbaRequest(event: .backAD)
-                let publisher = Future<Action, Never> { promise in
-                    GADUtil.share.load(.back)
-                    GADUtil.share.show(.back) { _ in
-                        promise(.success(.dismiss))
+                if CacheUtil.shared.isUserGo {
+                    Request.tbaRequest(event: .backAD)
+                    let publisher = Future<Action, Never> { promise in
+                        GADUtil.share.load(.back)
+                        GADUtil.share.show(.back) { _ in
+                            promise(.success(.dismiss))
+                        }
                     }
-                }
-                return .publisher {
-                    publisher
+                    return .publisher {
+                        publisher
+                    }
+                } else {
+                    return .run { send in
+                        await send(.dismiss)
+                    }
                 }
             }
             return .none
@@ -119,7 +125,9 @@ struct MAPTrendsView: View {
                         Spacer()
                     }
                 }.onAppear(perform: {
-                    GADUtil.share.load(.back)
+                    if CacheUtil.shared.isUserGo {
+                        GADUtil.share.load(.back)
+                    }
                 })
             }.background(Color("#F3F8FB").ignoresSafeArea())
         }

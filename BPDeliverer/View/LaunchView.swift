@@ -13,7 +13,7 @@ struct LaunchReducer: Reducer {
     enum CancelID { case progress}
     struct State: Equatable {
         var progress = 0.0
-        var duration = 12.5
+        var duration = 14.0
         var isLaunched: Bool {
             progress >= 1.0
         }
@@ -36,7 +36,7 @@ struct LaunchReducer: Reducer {
                 state.initProgress()
                 state.startCloakRequest()
                 GADPosition.allCases.filter({ po in
-                    po != .enter && po != .back
+                    po != .enter && po != .back && po != .submit && po != .trackerBar
                 }).forEach({
                     GADUtil.share.load($0)
                 })
@@ -48,9 +48,13 @@ struct LaunchReducer: Reducer {
                 return .cancel(id: CancelID.progress)
             case .update:
                 state.updateProgress()
-                if GADUtil.share.isLoaded(.loading), state.progress > 0.3 {
-                    state.updateDuration()
+                if state.progress > 0.6 {
+                    state.updateDuration(14.0)
+                    if GADUtil.share.isLoaded(.loading) {
+                        state.updateDuration(3.0)
+                    }
                 }
+                
                 if state.isLaunched {
                     return .run { send in
                         await send(.stop)
@@ -86,7 +90,7 @@ extension LaunchReducer.State {
     mutating func initProgress() {
         isStart = true
         progress = 0.0
-        duration = 12.5
+        duration = 3.0 / 0.6
     }
     mutating func updateProgress() {
         progress += 0.01 / duration
@@ -94,8 +98,8 @@ extension LaunchReducer.State {
             progress = 1.0
         }
     }
-    mutating func updateDuration() {
-        duration = 0.3
+    mutating func updateDuration(_ duration: Double) {
+        self.duration = duration
     }
 }
 

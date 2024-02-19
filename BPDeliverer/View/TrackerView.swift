@@ -28,14 +28,14 @@ struct TrackerReducer: Reducer {
         var showReadingGuide = false
     }
     enum Action: Equatable {
-        case guide
+        case updateIsGuide(Bool)
         case filterDateLastTapped
         case filterDateNextTapped
         case filterDateMinTapped
         case filterDateMaxTapped
         case addButtonTapped
-        case showAD
-        case showGuideAD
+        case showTrackerAD
+        case showLogAD
         case updateTopMode(MeasureTopMode)
         case updateShowReadingGuide(Bool)
         case okButtonTapped
@@ -43,20 +43,20 @@ struct TrackerReducer: Reducer {
     var body: some Reducer<State, Action> {
         Reduce{ state, action in
             switch action{
-            case .guide:
-                state.isGuide = true
+            case let .updateIsGuide(guide):
+                state.isGuide = guide
             case .filterDateLastTapped:
                 state.lastFilterDate()
             case .filterDateNextTapped:
                 state.nextFilterDate()
             case .addButtonTapped:
                 return .run { send in
-                    await send(.guide)
+                    await send(.updateIsGuide(true))
                 }
-            case .showGuideAD:
+            case .showLogAD:
                 let publisher = Future<Action, Never> { promiss in
-                    GADUtil.share.load(.guide)
-                    GADUtil.share.show(.guide) { _ in
+                    GADUtil.share.load(.log)
+                    GADUtil.share.show(.log) { _ in
                         promiss(.success(.addButtonTapped))
                     }
                 }
@@ -64,11 +64,6 @@ struct TrackerReducer: Reducer {
                     publisher
                 }
             case let .updateTopMode(mode):
-                if mode != state.topMode {
-                    GADUtil.share.load(.trackerExchange)
-                    GADUtil.share.show(.trackerExchange)
-                    Request.tbaRequest(event: .trackerExchange)
-                }
                 state.topMode = mode
             case let .updateShowReadingGuide(isShow):
                 state.showReadingGuide = isShow
@@ -142,20 +137,20 @@ struct TrackerView: View {
                     // a 每次冷启动都弹出
                     if !viewStore.isGuide {
                         GuideView {
-                            viewStore.send(.showGuideAD)
+                            viewStore.send(.showLogAD)
                             Request.tbaRequest(event: .trackAdd)
                             Request.tbaRequest(event: .guideAdd)
-                            Request.tbaRequest(event: .guideAd)
+                            Request.tbaRequest(event: .logAD)
                         }
                     }
                 } else if CacheUtil.shared.getMeasureGuide() == .b {
                     // b 方案是每次打开判定是否有记录 没得记录都要弹出
                     if viewStore.measures.count == 0 {
                         GuideView {
-                            viewStore.send(.showGuideAD)
+                            viewStore.send(.showLogAD)
                             Request.tbaRequest(event: .trackAdd)
                             Request.tbaRequest(event: .guideAdd)
-                            Request.tbaRequest(event: .guideAd)
+                            Request.tbaRequest(event: .logAD)
                         }
                     }
                 }
@@ -171,13 +166,15 @@ struct TrackerView: View {
                         Request.tbaRequest(event: .readingGuideDisagreen)
                     }.onAppear{
                         Request.tbaRequest(event: .readingGuide)
-                        GADUtil.share.load(.enter)
+                        if CacheUtil.shared.isUserGo {
+                            GADUtil.share.load(.enter)
+                        }
                     }
                 }
             }.onAppear {
-                viewStore.send(.showAD)
+                viewStore.send(.showTrackerAD)
                 Request.tbaRequest(event: .track)
-                Request.tbaRequest(event: .homeAD)
+                Request.tbaRequest(event: .trackerADShow)
             }
         }.background(Color("#F3F8FB")).onAppear {
             ATTrackingManager.requestTrackingAuthorization { _ in
@@ -270,7 +267,7 @@ struct TrackerView: View {
         var body: some View {
             WithViewStore(store, observe: {$0}) { viewStore in
                 Button {
-                    viewStore.send(.addButtonTapped)
+                    viewStore.send(.showLogAD)
                     Request.tbaRequest(event: .trackAdd)
                 } label: {
                     HStack(spacing: 7){

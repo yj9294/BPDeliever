@@ -18,7 +18,7 @@ struct ProfileReducer: Reducer {
         case reminderButtonTapped
         case  privacyButtonTapped
         case languageButtonTapped
-        case showAD
+        case showProfileAD
     }
     var body: some Reducer<State, Action> {
         Reduce{ state, action in
@@ -102,8 +102,8 @@ struct ProfileView: View {
                     }.frame(height: 136).padding(.horizontal, 20).padding(.bottom, 24)
                 }
             }.onAppear {
-                viewStore.send(.showAD)
-                Request.tbaRequest(event: .setting)
+                viewStore.send(.showProfileAD)
+                Request.tbaRequest(event: .profileAD)
                 Request.tbaRequest(event: .settings)
             }
         }.background(Color("#F3F8FB").ignoresSafeArea())

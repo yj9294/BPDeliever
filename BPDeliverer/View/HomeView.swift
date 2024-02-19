@@ -94,15 +94,12 @@ struct HomeReducer: Reducer {
                 let max = state.tracker.filterDuration.min
                 state.presentDatePickerView(max, position: .filterMax)
                 Request.tbaRequest(event: .trackDateChange)
-            case .tracker(.guide):
-                state.presentAddView()
-        
                 
-            case .tracker(.showAD):
+            case .tracker(.showTrackerAD):
                 state.showAD(.tracker)
-            case .profile(.showAD):
+            case .profile(.showProfileAD):
                 state.showAD(.profile)
-            case .add(.presented(.root(.showAD))):
+            case .add(.presented(.root(.showAddAD))):
                 state.showAD(.add)
             case let .updateAD(model):
                 state.updateAD(model)
@@ -166,7 +163,6 @@ extension HomeReducer.State {
     
     mutating func presentAddView(_ measure: Measurement = .init(), status: AddReducer.RootReducer.State.Status = .new) {
         GADUtil.share.disappear(.tracker)
-        GADUtil.share.load(.submit)
         add = .init(root: .init(measure: measure, status: status))
     }
     
@@ -184,8 +180,8 @@ extension HomeReducer.State {
             GADUtil.share.disappear(.tracker)
             GADUtil.share.load(.tracker)
             Request.tbaRequest(event: .track)
-            Request.tbaRequest(event: .homeAD)
-            Request.tbaRequest(event: .homeShow)
+            Request.tbaRequest(event: .trackerAD)
+            Request.tbaRequest(event: .trackerADShow)
         }
     }
     
@@ -244,11 +240,11 @@ extension HomeReducer.State {
         })
         switch item {
         case .tracker:
-            Request.tbaRequest(event: .homeShow)
+            Request.tbaRequest(event: .trackerADShow)
         case .add:
-            Request.tbaRequest(event: .addShow)
+            Request.tbaRequest(event: .addADShow)
         case .profile:
-            Request.tbaRequest(event: .settingShow)
+            Request.tbaRequest(event: .profileADShow)
         default:
             break
         }
@@ -315,7 +311,9 @@ struct HomeView: View {
                         if viewStore.item == .tracker {
                             GADUtil.share.load(.trackerBar)
                             GADUtil.share.show(.trackerBar)
-                            Request.tbaRequest(event: .trackerBar)
+                            Request.tbaRequest(event: .trackerBarAD)
+                        } else {
+                            GADUtil.share.load(.trackerBar)
                         }
                     }
                     viewStore.send(.lastItem(newValue))
@@ -327,11 +325,12 @@ struct HomeView: View {
                     }
                 }
                 
-                if viewStore.showNotiAlertView {
-                    NotificationAlertView(store: store.scope(state: \.notiAlert, action: {.notiAlert($0)})).onAppear {
-                        Request.tbaRequest(event: .notificationAlert)
-                    }
-                }
+                // 去掉通知弹窗
+//                if viewStore.showNotiAlertView {
+//                    NotificationAlertView(store: store.scope(state: \.notiAlert, action: {.notiAlert($0)})).onAppear {
+//                        Request.tbaRequest(event: .notificationAlert)
+//                    }
+//                }
             }
         }
     }

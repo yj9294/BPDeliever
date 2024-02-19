@@ -113,7 +113,7 @@ struct ReminderView: View {
                 NotificationHeaderView(store: store)
                 ReminderListView(store: store)
             }.onAppear(perform: {
-                Request.tbaRequest(event: .backShow)
+                Request.tbaRequest(event: .backADShow)
                 viewStore.items.forEach {
                     NotificationHelper.shared.appendReminder($0)
                 }

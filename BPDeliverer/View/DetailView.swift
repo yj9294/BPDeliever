@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Combine
 import ComposableArchitecture
 
 struct DetailReducer: Reducer {
@@ -19,6 +20,7 @@ struct DetailReducer: Reducer {
         case deleteButtonTapped
         case editButtonTapped
         case delete
+        case showLogAD
         case alert(PresentationAction<Alert>)
         enum Alert: Equatable {
             case delete
@@ -37,6 +39,17 @@ struct DetailReducer: Reducer {
             if case action = Action.alert(.presented(.delete)) {
                 return .run { send in
                     await send(.delete)
+                }
+            }
+            if case .showLogAD = action {
+                let publisher = Future<Action, Never> { promise in
+                    GADUtil.share.load(.log)
+                    GADUtil.share.show(.log) { _ in
+                        promise(.success(.editButtonTapped))
+                    }
+                }
+                return .publisher {
+                    publisher
                 }
             }
             return .none
@@ -72,7 +85,7 @@ struct DetailView: View {
                 Spacer()
                 VStack(spacing: 10){
                     DeleteButton{viewStore.send(.deleteButtonTapped)}
-                    EditButton{viewStore.send(.editButtonTapped)}
+                    EditButton{viewStore.send(.showLogAD)}
                 }.padding(.bottom, 40)
             }
             .alert(store: self.store.scope(state: \.$alert, action: DetailReducer.Action.alert))

@@ -139,7 +139,7 @@ extension GADUtil {
             $0.position == position
         }.first
         switch position {
-        case .loading, .back, .enter, .guide, .submit, .trackerExchange, .trackerBar:
+        case .loading, .back, .enter, .log, .submit, .trackerBar:
             /// 有廣告
             if let ad = loadAD?.loadedArray.first as? GADFullScreenModel, !isGADLimited {
                 if let ad = ad as? GADInterstitialModel {
@@ -168,7 +168,7 @@ extension GADUtil {
                     loadAD?.impressionDate = Date()
                     self?.add(.show, in: loadAD?.position)
                     self?.display(position)
-                    if position != .back, position != .guide {
+                    if position != .back, position != .submit, position != .enter {
                         self?.load(position)
                     }
                 }
@@ -348,10 +348,10 @@ struct GADLimit: Codable {
 }
 
 public enum GADPosition: String, CaseIterable {
-    case loading, tracker, profile, add, submit, guide, enter, back, trackerBar, trackerExchange
+    case loading, tracker, profile, add, submit, log, enter, back, trackerBar
     var isInterstitial: Bool {
         switch self {
-        case .submit, .guide, .enter , .back, .trackerBar, .trackerExchange:
+        case .submit, .enter , .back, .log, .trackerBar:
             return true
         default:
             return false

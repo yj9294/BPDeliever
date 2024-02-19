@@ -92,7 +92,7 @@ struct AddReducer: Reducer {
             case dismiss
             case binding(BindingAction<State>)
             case continueButtonTapped
-            case showAD
+            case showAddAD
         }
         var body: some Reducer<State, Action> {
             BindingReducer()
@@ -175,9 +175,10 @@ struct AddView: View {
                 }.navigationTitle(LocalizedStringKey("New Measurement")).navigationBarTitleDisplayMode(.inline)
                     .onAppear {
                         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                            viewStore.send(.showAD)
+                            viewStore.send(.showAddAD)
                         }
-                        Request.tbaRequest(event: .add)
+                        Request.tbaRequest(event: .addAD)
+                        GADUtil.share.load(.submit)
                     }
             }
         }

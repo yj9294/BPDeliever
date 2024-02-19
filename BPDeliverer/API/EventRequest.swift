@@ -120,18 +120,16 @@ extension Request {
         switch position {
         case .loading:
             Request.tbaRequest(event: .loadingShow, ad: ad)
-        case .guide:
-            Request.tbaRequest(event: .guideAdShow, ad: ad)
+        case .log:
+            Request.tbaRequest(event: .logADShow, ad: ad)
         case .submit:
-            Request.tbaRequest(event: .saveShow, ad: ad)
+            Request.tbaRequest(event: .submitADShow, ad: ad)
         case .enter:
-            Request.tbaRequest(event: .enterShow, ad: ad)
+            Request.tbaRequest(event: .enterADShow, ad: ad)
         case .back:
-            Request.tbaRequest(event: .backShow, ad: ad)
+            Request.tbaRequest(event: .backADShow, ad: ad)
         case .trackerBar:
-            Request.tbaRequest(event: .trackerBarShow, ad: ad)
-        case .trackerExchange:
-            Request.tbaRequest(event: .trackerExchangeShow, ad: ad)
+            Request.tbaRequest(event: .trackerBarADShow, ad: ad)
         default:
             break
         }
@@ -142,23 +140,21 @@ extension Request {
         case .loading:
             Request.tbaRequest(event: .loadingImpress, ad: ad)
         case .tracker:
-            Request.tbaRequest(event: .homeImpress, ad: ad)
+            Request.tbaRequest(event: .trackerADImpress, ad: ad)
         case .profile:
-            Request.tbaRequest(event: .settingImpress, ad: ad)
+            Request.tbaRequest(event: .profileADImpress, ad: ad)
         case .add:
-            Request.tbaRequest(event: .addImpress, ad: ad)
-        case .guide:
-            Request.tbaRequest(event: .guideAdImpress, ad: ad)
+            Request.tbaRequest(event: .addADImpress, ad: ad)
+        case .log:
+            Request.tbaRequest(event: .logADImpress, ad: ad)
         case .submit:
-            Request.tbaRequest(event: .saveImpress, ad: ad)
+            Request.tbaRequest(event: .submitADImpress, ad: ad)
         case .enter:
-            Request.tbaRequest(event: .enterImpress, ad: ad)
+            Request.tbaRequest(event: .enterADImpress, ad: ad)
         case .back:
-            Request.tbaRequest(event: .backImpress, ad: ad)
+            Request.tbaRequest(event: .backADImpress, ad: ad)
         case .trackerBar:
-            Request.tbaRequest(event: .trackerBarImpress, ad: ad)
-        case .trackerExchange:
-            Request.tbaRequest(event: .trackerExchangeImpress, ad: ad)
+            Request.tbaRequest(event: .trackerBarADImpress, ad: ad)
         }
         if let price = ad?.price, let currency = ad?.currency {
             AppEvents.shared.logPurchase(amount: price, currency: currency)
@@ -212,37 +208,36 @@ enum RequestEvent: String, Codable {
     
     // 自定义广告打点事件
     case loadingAD = "bp_enter_1"
-    case homeAD = "bp_enter_2"
-    case add = "bp_enter_3"
-    case save = "bp_enter_4"
-    case setting = "bp_enter_5"
-    case guideAd = "bp_enter_6"
+    
+    case trackerAD = "bp_enter_2"
+    case addAD = "bp_enter_3"
+    case profileAD = "bp_enter_5"
+    case submitAD = "bp_enter_4"
+    case logAD = "bp_enter_6"
     case enterAD = "bp_enter_7"
     case backAD = "bp_enter_8"
-    case trackerBar = "bp_enter_9"
-    case trackerExchange = "bp_enter_10"
+    case trackerBarAD = "bp_enter_9"
     
     case loadingShow = "bp_start_1"
-    case homeShow = "bp_start_2"
-    case addShow = "bp_start_3"
-    case saveShow = "bp_start_4"
-    case settingShow = "bp_start_5"
-    case guideAdShow = "bp_start_6"
-    case enterShow = "bp_start_7"
-    case backShow = "bp_start_8"
-    case trackerBarShow = "bp_start_9"
-    case trackerExchangeShow = "bp_start_10"
+    case trackerADShow = "bp_start_2"
+    case addADShow = "bp_start_3"
+    case profileADShow = "bp_start_5"
+    case submitADShow = "bp_start_4"
+    case logADShow = "bp_start_6"
+    case enterADShow = "bp_start_7"
+    case backADShow = "bp_start_8"
+    case trackerBarADShow = "bp_start_9"
     
     case loadingImpress = "bp_success_1"
-    case homeImpress = "bp_success_2"
-    case addImpress = "bp_success_3"
-    case saveImpress = "bp_success_4"
-    case settingImpress = "bp_success_5"
-    case guideAdImpress = "bp_success_6"
-    case enterImpress = "bp_success_7"
-    case backImpress = "bp_success_8"
-    case trackerBarImpress = "bp_success_9"
-    case trackerExchangeImpress = "bp_success_10"
+    case trackerADImpress = "bp_success_2"
+    case addADImpress = "bp_success_3"
+    case profileADImpress = "bp_success_5"
+    case submitADImpress = "bp_success_4"
+    case logADImpress = "bp_success_6"
+    case enterADImpress = "bp_success_7"
+    case backADImpress = "bp_success_8"
+    case trackerBarADImpress = "bp_success_9"
+    
     
     // tba广告事件
     case adImpresssion = "gaze"

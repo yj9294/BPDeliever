@@ -29,7 +29,7 @@ struct EditReducer: Reducer {
         case itemSelected(String, Measurement.Posture)
         case saveButtonTapped(Measurement)
         case dateButtonTapped
-        case showAD
+        case showSubmitAD
     }
     var body: some Reducer<State, Action> {
         BindingReducer()
@@ -37,7 +37,7 @@ struct EditReducer: Reducer {
             switch action {
             case let .itemSelected(item, posture):
                 state.itemSelected(item, posture: posture)
-            case .showAD:
+            case .showSubmitAD:
                 GADUtil.share.load(.submit)
                 let publisher = Future<Action, Never> { [measure = state.measure] promise in
                     GADUtil.share.show(.submit) { _ in
@@ -70,16 +70,10 @@ struct EditView: View {
                     NoteView(measure: viewStore.$measure, enable: true)
                     ButtonView {
                         CacheUtil.shared.updateNotiAlertAddMeasureCount()
-                        viewStore.send(.showAD)
-                        Request.tbaRequest(event: .save)
+                        viewStore.send(.showSubmitAD)
+                        Request.tbaRequest(event: .submitAD)
                         Request.tbaRequest(event: .addSave)
                         Request.tbaRequest(event: .addEditSave)
-//                        Request.tbaRequest(event: .addFeel)
-//                        Request.tbaRequest(event: .addArm)
-//                        Request.tbaRequest(event: .addBody)
-//                        if !viewStore.measure.note.isEmpty {
-//                            Request.tbaRequest(event: .addNote)
-//                        }
                     }
                     Spacer()
                 }
