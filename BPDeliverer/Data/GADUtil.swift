@@ -483,6 +483,8 @@ extension GADLoadModel {
                 self.loadedArray.append(ad)
                 callback?(true)
                 return
+            } else {
+                self.alertError(error)
             }
             
             NSLog("[AD] (\(self.position.rawValue)) Load Ad Failed: try reload at index: \(index + 1).")
@@ -504,6 +506,16 @@ extension GADLoadModel {
         self.displayArray = []
         self.loadedArray = []
         self.loadingArray = []
+    }
+    
+    // test::
+    func alertError(_ msg: String) {
+        if let scene = UIApplication.shared.connectedScenes.filter({$0 is UIWindowScene}).first as? UIWindowScene, let rootVC = scene.keyWindow?.rootViewController {
+            let alertController = UIAlertController(title: "Error", message: msg, preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "OK", style: .cancel)
+            alertController.addAction(okAction)
+            rootVC.present(alertController, animated: true)
+        }
     }
 }
 
@@ -549,7 +561,7 @@ extension GADInterstitialModel: GADFullScreenContentDelegate {
         GADInterstitialAd.load(withAdUnitID: model?.theAdID ?? "", request: GADRequest()) { [weak self] ad, error in
             guard let self = self else { return }
             if let error = error {
-                NSLog("[AD] (\(self.position.rawValue)) load ad FAILED for id \(self.model?.theAdID ?? "invalid id")")
+                NSLog("[AD] (\(self.position.rawValue)) load ad FAILED for id \(self.model?.theAdID ?? "invalid id"), error = \(error.localizedDescription)")
                 self.loadedHandler?(false, error.localizedDescription)
                 return
             }
@@ -611,7 +623,7 @@ extension GADOpenModel: GADFullScreenContentDelegate {
         GADAppOpenAd.load(withAdUnitID: model?.theAdID ?? "", request: GADRequest(), orientation: .portrait) { [weak self] ad, error in
             guard let self = self else { return }
             if let error = error {
-                NSLog("[AD] (\(self.position.rawValue)) load ad FAILED for id \(self.model?.theAdID ?? "invalid id")")
+                NSLog("[AD] (\(self.position.rawValue)) load ad FAILED for id \(self.model?.theAdID ?? "invalid id"), error = \(error.localizedDescription)")
                 self.loadedHandler?(false, error.localizedDescription)
                 return
             }
@@ -689,7 +701,7 @@ extension GADNativeModel {
 
 extension GADNativeModel: GADAdLoaderDelegate {
     public func adLoader(_ adLoader: GADAdLoader, didFailToReceiveAdWithError error: Error) {
-        NSLog("[AD] (\(position.rawValue)) load ad FAILED for id \(model?.theAdID ?? "invalid id")")
+        NSLog("[AD] (\(self.position.rawValue)) load ad FAILED for id \(self.model?.theAdID ?? "invalid id"), error = \(error.localizedDescription)")
         loadedHandler?(false, error.localizedDescription)
     }
 }
