@@ -189,10 +189,10 @@ class CacheUtil: NSObject {
     // 计算 measure guide 的随机ab 概率分布
     // a: 0~100 随机概率
     private func configMeasureGuide() -> ABTest {
-        let random = arc4random() % 99
-        NSLog("[AB] 开始随机值：\(random) % 3 = \(random % 3), 0 = a, 1 = b , 2 = c")
+        let random = arc4random() % 100
+        NSLog("[AB] 开始随机值：\(random) % 2 = \(random % 2), 0 = a, 1 = b")
         
-        let ret = random % 3
+        let ret = random % 2
         switch ret {
         case 0:
             NSLog("[AB] 当前方案：A")
@@ -202,10 +202,6 @@ class CacheUtil: NSObject {
             NSLog("[AB] 当前方案：B")
             measureGuide = .b
             return .b
-        case 2:
-            NSLog("[AB] 当前方案：c")
-            measureGuide = .c
-            return .c
         default:
             return .a
         }
@@ -216,7 +212,7 @@ class CacheUtil: NSObject {
             NSLog("[AB] 当前已有AB，当前配置:\(measureGuide)")
             return measureGuide
         } else {
-            NSLog("[AB] 当前没有AB，开始随机按照AB比例分配, A(33%), b(33%), c(33%)")
+            NSLog("[AB] 当前没有AB，开始随机按照AB比例分配, a(50%), b(50%)")
             return configMeasureGuide();
         }
     }
@@ -360,7 +356,7 @@ enum GADNativeCachePosition: Codable {
 }
 
 enum ABTest: String, Codable {
-    case a, b, c
+    case a, b
 }
 
 

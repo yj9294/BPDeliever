@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Combine
 import ComposableArchitecture
 
 struct HomeReducer: Reducer {
@@ -35,6 +36,9 @@ struct HomeReducer: Reducer {
         var notiAlert: NotificationAlertReducer.State = .init()
         
         var lastItem: Item = .tracker
+        
+        var isShowMeasureGuide = true
+        var isShowReadingGuide = false
     }
     enum Action: BindableAction, Equatable {
         case binding(BindingAction<State>)
@@ -52,7 +56,12 @@ struct HomeReducer: Reducer {
         
         case notiAlert(NotificationAlertReducer.Action)
         
-        case lastItem(State.Item)
+        case updateLastItem(State.Item)
+        case updateShowReadingGuide(Bool)
+        case updateShowMeasureGuide(Bool)
+        case okButtonTapped
+        case showLogAD
+        case showTrackerBarAD
     }
     var body: some Reducer<State, Action> {
         BindingReducer()
@@ -62,22 +71,22 @@ struct HomeReducer: Reducer {
                 state.presentAddView()
             case .add(.presented(.root(.dismiss))):
                 state.dismissAddView()
+                return .run { send in
+                    await send(.tracker(.showTrackerAD))
+                }
                 
             // 新增 血压 （关闭广告后）
             case let .add(.presented(.path(.element(id: _, action: .edit(.saveButtonTapped(measure)))))):
                 state.showNotiAlertView = CacheUtil.shared.getNeedNotiAlert()
                 state.updateMeasures(measure)
                 state.dismissAddView()
-                state.updateShowReadingGuide(true)
+                return .run { send in
+                    await send(.updateShowReadingGuide(true))
+                }
             case .tracker(.addButtonTapped):
-                state.presentAddView()
-//            case let .add(.presented(.path(.element(id: id, action: .edit(.dateButtonTapped))))):
-//                // 编辑的时候不跳转，新增才跳转
-//                if case let .edit(editState) = state.add?.path[id: id] {
-//                    if state.measures.contains(where: { $0.id != editState.measure.id }) {
-//                        state.presentDatePickerView(position: .newMeasure)
-//                    }
-//                }
+                return .run { send in
+                    await send(.showLogAD)
+                }
             case .analytics(.historyButtonTapped):
                 state.presentHistoryView()
             case .datePicker(.presented(.cancel)):
@@ -112,14 +121,39 @@ struct HomeReducer: Reducer {
             case .notiAlert(.gotoSetting):
                 state.showNotiAlertView = false
                 
-            case let .lastItem(item):
+            case let .updateLastItem(item):
                 state.lastItem = item
-            
+            case let .updateShowReadingGuide(showReadingGuide):
+                state.isShowReadingGuide = showReadingGuide
+            case let .updateShowMeasureGuide(showMeasureGuide):
+                state.isShowMeasureGuide = showMeasureGuide
+                
             // 进入历史血压列表
             case .history(.presented(.dismiss)):
                 state.dismissHistoryView()
             case .history(.presented(.itemSelected)):
                 state.dismissHistoryView()
+            
+            case .showLogAD:
+                let publisher = Future<Action, Never> { promiss in
+                    GADUtil.share.load(.log)
+                    GADUtil.share.show(.log) { _ in
+                        promiss(.success(.presentAddView))
+                    }
+                }
+                return .publisher {
+                    publisher
+                }
+            case .showTrackerBarAD:
+                let publiser = Future<Action, Never> { promise in
+                    GADUtil.share.load(.trackerBar)
+                    GADUtil.share.show(.trackerBar) { _ in
+                        promise(.success(.tracker(.showTrackerAD)))
+                    }
+                }
+                return .publisher{
+                    publiser
+                }
             default:
                 break
             }
@@ -177,8 +211,6 @@ extension HomeReducer.State {
     mutating func dismissAddView() {
         add = nil
         if item == .tracker {
-            GADUtil.share.disappear(.tracker)
-            GADUtil.share.load(.tracker)
             Request.tbaRequest(event: .track)
             Request.tbaRequest(event: .trackerAD)
             Request.tbaRequest(event: .trackerADShow)
@@ -278,10 +310,7 @@ extension HomeReducer.State {
             profile.adModel = .none
         }
     }
-    
-    mutating func updateShowReadingGuide(_ isShow: Bool) {
-        tracker.showReadingGuide = isShow
-    }
+
 }
 
 
@@ -309,28 +338,57 @@ struct HomeView: View {
                 }.onChange(of: viewStore.item) { newValue in
                     if viewStore.item != viewStore.state.lastItem {
                         if viewStore.item == .tracker {
-                            GADUtil.share.load(.trackerBar)
-                            GADUtil.share.show(.trackerBar)
+                            viewStore.send(.showTrackerBarAD)
                             Request.tbaRequest(event: .trackerBarAD)
                         } else {
                             GADUtil.share.load(.trackerBar)
                         }
                     }
-                    viewStore.send(.lastItem(newValue))
+                    viewStore.send(.updateLastItem(newValue))
                 }
+                
+                if viewStore.measures.isEmpty, viewStore.isShowMeasureGuide {
+                    MeasureGuideView {
+                        viewStore.send(.updateShowMeasureGuide(false))
+                        viewStore.send(.showLogAD)
+                        Request.tbaRequest(event: .trackAdd)
+                        Request.tbaRequest(event: .guideAdd)
+                        Request.tbaRequest(event: .logAD)
+                    } skip: {
+                        viewStore.send(.updateShowMeasureGuide(false))
+                        // 关闭引导弹窗
+                        viewStore.send(.tracker(.showTrackerAD))
+                        Request.tbaRequest(event: .guideSkip)
+                    }
+                }
+                
+                // reading 引导
+                if viewStore.isShowReadingGuide {
+                    ReadingGuideView {
+                        viewStore.send(.updateShowReadingGuide(false))
+                        viewStore.send(.okButtonTapped)
+                        Request.tbaRequest(event: .readingGuideAgreen)
+                    } skip: {
+                        viewStore.send(.updateShowReadingGuide(false))
+                        Request.tbaRequest(event: .readingGuideDisagreen)
+                        // 关闭引导弹窗
+                        if !viewStore.measures.isEmpty || !viewStore.isShowMeasureGuide {
+                            viewStore.send(.tracker(.showTrackerAD))
+                        }
+                    }.onAppear{
+                        Request.tbaRequest(event: .readingGuide)
+                        if CacheUtil.shared.isUserGo {
+                            GADUtil.share.load(.enter)
+                        }
+                    }
+                }
+                
                 if !viewStore.allowUser {
                     AllowUserView {
                         Request.tbaRequest(event: .disclaimer)
                         viewStore.send(.allowUser)
                     }
                 }
-                
-                // 去掉通知弹窗
-//                if viewStore.showNotiAlertView {
-//                    NotificationAlertView(store: store.scope(state: \.notiAlert, action: {.notiAlert($0)})).onAppear {
-//                        Request.tbaRequest(event: .notificationAlert)
-//                    }
-//                }
             }
         }
     }
@@ -359,6 +417,53 @@ struct HomeView: View {
         }
     }
     
+    struct ReadingGuideView: View {
+        let ok: ()->Void
+        let skip: ()->Void
+        @State var time: Int = 5
+        let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+        var body: some View {
+            ZStack{
+                Color.black.opacity(0.7).ignoresSafeArea()
+                VStack{
+                    HStack{Spacer()}.frame(height: 1)
+                    Spacer()
+                    VStack(spacing: 18){
+                        Image("reading_guide")
+                        Text("Try to learn more about blood pressure health!").lineLimit(nil).multilineTextAlignment(.center).foregroundStyle(Color("#53545C")).font(.system(size: 16))
+                        VStack(spacing: 12){
+                            Button{
+                                ok()
+                            } label: {
+                                HStack{
+                                    Spacer()
+                                    Text("ok").padding(.vertical,15).foregroundStyle(.white)
+                                    Spacer()
+                                }
+                            }.background(.linearGradient(colors: [Color("#42C3D6"), Color("#5AE9FF")], startPoint: .leading, endPoint: .trailing)).cornerRadius(26).padding(.horizontal, 30)
+                            Button {
+                                if time == 0 {
+                                    skip()
+                                }
+                            } label: {
+                                if time > 0 {
+                                    Text("Skip(\(time)s)").foregroundStyle(Color("#B4B3B3"))
+                                } else {
+                                    Text("Skip").foregroundStyle(Color("#42C3D6"))
+                                }
+                            }
+                        }.font(.system(size: 16))
+                    }.padding(.all, 20).background(Color("#F3F8FB")).cornerRadius(16).padding(.horizontal, 20)
+                    Spacer()
+                }
+            }.onReceive(timer) { _ in
+                if self.time > 0 {
+                    self.time -= 1
+                }
+            }
+        }
+    }
+    
     struct AllowUserView: View {
         let action: ()->Void
         var body: some View {
@@ -375,6 +480,117 @@ struct HomeView: View {
                         }).background(Color("#42C3D6")).cornerRadius(26)
                     }.padding(.vertical, 28).background(.white).cornerRadius(10).padding(.horizontal, 35)
                     Spacer()
+                }
+            }
+        }
+    }
+    
+    struct MeasureGuideView: View {
+        let action: ()->Void
+        let skip: ()->Void
+        var body: some View {
+            ZStack{
+                Color.black.opacity(0.9).ignoresSafeArea()
+                if CacheUtil.shared.getMeasureGuide() == .b{
+                    contentView1(action: action, skip: skip)
+                } else {
+                    contentView2(action: action, skip: skip)
+                }
+            }.onAppear {
+                Request.tbaRequest(event: .guide)
+            }
+        }
+    }
+    
+    struct contentView1: View {
+        let action: ()->Void
+        let skip: ()->Void
+        @State var time: Int = 5
+        let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+        var color: Color {
+            time > 0 ? Color("#BBCDD9") : Color.white
+        }
+        var title: String {
+            time > 0 ? "Skip \(time)s" : "Skip"
+        }
+        var body: some View {
+            VStack(spacing: 30){
+                HStack{
+                    Spacer()
+                    Button(action: {
+                        if time == 0 {
+                            skip()
+                        }
+                    }, label: {
+                        Text(title).padding(.horizontal, 16).padding(.vertical, 6).background(RoundedRectangle(cornerRadius: 15).stroke(color)).font(.system(size: 13))
+                    }).foregroundColor(color).padding(.trailing, 12).padding(.top, 6)
+                }
+                Spacer()
+                VStack(spacing: 0){
+                    Image("tracker_guide")
+                    Text(LocalizedStringKey("Record blood pressure status")).foregroundStyle(.white).font(.system(size: 17))
+                }
+                Button {
+                    action()
+                } label: {
+                    HStack(spacing: 7){
+                        Spacer()
+                        Image("guide_add")
+                        Text("Add").foregroundStyle(.white).font(.system(size: 16.0)).padding(.vertical, 15)
+                        Spacer()
+                    }
+                }.background(.linearGradient(colors: [Color("#FFB985"), Color("#F89042")], startPoint: .leading, endPoint: .trailing)).cornerRadius(26).padding(.horizontal, 70)
+                Spacer()
+            }.onReceive(timer) { _ in
+                if self.time > 0 {
+                    self.time -= 1
+                }
+            }
+        }
+    }
+
+    struct contentView2: View {
+        let action: ()->Void
+        let skip: ()->Void
+        @State var time: Int = 5
+        let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+        var color: Color {
+            time > 0 ? Color("#BBCDD9") : Color("#194D54")
+        }
+        var title: String {
+            time > 0 ? "Skip \(time)s" : "Skip"
+        }
+        var body: some View {
+            VStack{
+                HStack{
+                    Spacer()
+                    Button(action: {
+                        if time == 0 {
+                            skip()
+                        }
+                    }, label: {
+                        Text(title).padding(.horizontal, 16).padding(.vertical, 6).background(RoundedRectangle(cornerRadius: 15).stroke(color)).font(.system(size: 13))
+                    }).foregroundColor(color).padding(.trailing, 12).padding(.top, 6)
+                }
+                Spacer()
+                VStack(spacing: 33){
+                    Image("measure_guide")
+                    Text("Please add at least one record to unlock statistics").lineLimit(nil).multilineTextAlignment(.center).padding(.top, 15).font(.system(size: 16)).foregroundColor(.black).padding(.horizontal, 60)
+                    Button {
+                        action()
+                    } label: {
+                        HStack{
+                            Spacer()
+                            Image("guide_add")
+                            Text("Add")
+                            Spacer()
+                        }.foregroundColor(.white)
+                    }.background(Image("guide_button_bg"))
+                }
+                Spacer()
+            }.background(.white).onReceive(timer) { _ in
+                if self.time > 0 {
+                    self.time -= 1
                 }
             }
         }

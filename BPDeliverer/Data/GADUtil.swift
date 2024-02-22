@@ -484,7 +484,7 @@ extension GADLoadModel {
                 callback?(true)
                 return
             } else {
-                self.alertError(error)
+//                self.alertError(error)
             }
             
             NSLog("[AD] (\(self.position.rawValue)) Load Ad Failed: try reload at index: \(index + 1).")

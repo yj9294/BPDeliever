@@ -46,7 +46,7 @@ struct HomeNavigationReducer: Reducer {
                 })
                 
             // 点击 reading 引导进入reading 详细（随机一篇）
-            case .root(.tracker(.okButtonTapped)):
+            case .root(.okButtonTapped):
                 state.root.item = .analytics
                 return .run { send in
                     // 进入详情

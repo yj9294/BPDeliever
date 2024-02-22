@@ -12,8 +12,6 @@ import AppTrackingTransparency
 
 struct TrackerReducer: Reducer {
     struct State: Equatable {
-//        @UserDefault("guide", defaultValue: false)
-        var isGuide: Bool = false
         
         @UserDefault("measures", defaultValue: [])
         var measures: [Measurement]
@@ -24,49 +22,27 @@ struct TrackerReducer: Reducer {
         var filterDuration: DateDuration = .init()
         
         var adModel: GADNativeViewModel = .none
-        
-        var showReadingGuide = false
     }
+    
     enum Action: Equatable {
         case updateIsGuide(Bool)
         case filterDateLastTapped
         case filterDateNextTapped
         case filterDateMinTapped
         case filterDateMaxTapped
-        case addButtonTapped
         case showTrackerAD
-        case showLogAD
         case updateTopMode(MeasureTopMode)
-        case updateShowReadingGuide(Bool)
-        case okButtonTapped
+        case addButtonTapped
     }
     var body: some Reducer<State, Action> {
         Reduce{ state, action in
             switch action{
-            case let .updateIsGuide(guide):
-                state.isGuide = guide
             case .filterDateLastTapped:
                 state.lastFilterDate()
             case .filterDateNextTapped:
                 state.nextFilterDate()
-            case .addButtonTapped:
-                return .run { send in
-                    await send(.updateIsGuide(true))
-                }
-            case .showLogAD:
-                let publisher = Future<Action, Never> { promiss in
-                    GADUtil.share.load(.log)
-                    GADUtil.share.show(.log) { _ in
-                        promiss(.success(.addButtonTapped))
-                    }
-                }
-                return .publisher {
-                    publisher
-                }
             case let .updateTopMode(mode):
                 state.topMode = mode
-            case let .updateShowReadingGuide(isShow):
-                state.showReadingGuide = isShow
             default:
                 break
             }
@@ -132,47 +108,7 @@ struct TrackerView: View {
                         Spacer().frame(height: 136)
                     }
                 }
-                // 方案判定
-                if CacheUtil.shared.getMeasureGuide() == .a {
-                    // a 每次冷启动都弹出
-                    if !viewStore.isGuide {
-                        GuideView {
-                            viewStore.send(.showLogAD)
-                            Request.tbaRequest(event: .trackAdd)
-                            Request.tbaRequest(event: .guideAdd)
-                            Request.tbaRequest(event: .logAD)
-                        }
-                    }
-                } else if CacheUtil.shared.getMeasureGuide() == .b {
-                    // b 方案是每次打开判定是否有记录 没得记录都要弹出
-                    if viewStore.measures.count == 0 {
-                        GuideView {
-                            viewStore.send(.showLogAD)
-                            Request.tbaRequest(event: .trackAdd)
-                            Request.tbaRequest(event: .guideAdd)
-                            Request.tbaRequest(event: .logAD)
-                        }
-                    }
-                }
-                
-                // reading 引导
-                if viewStore.showReadingGuide {
-                    ReadingGuideView {
-                        viewStore.send(.updateShowReadingGuide(false))
-                        viewStore.send(.okButtonTapped)
-                        Request.tbaRequest(event: .readingGuideAgreen)
-                    } skip: {
-                        viewStore.send(.updateShowReadingGuide(false))
-                        Request.tbaRequest(event: .readingGuideDisagreen)
-                    }.onAppear{
-                        Request.tbaRequest(event: .readingGuide)
-                        if CacheUtil.shared.isUserGo {
-                            GADUtil.share.load(.enter)
-                        }
-                    }
-                }
             }.onAppear {
-                viewStore.send(.showTrackerAD)
                 Request.tbaRequest(event: .track)
                 Request.tbaRequest(event: .trackerADShow)
             }
@@ -267,7 +203,7 @@ struct TrackerView: View {
         var body: some View {
             WithViewStore(store, observe: {$0}) { viewStore in
                 Button {
-                    viewStore.send(.showLogAD)
+                    viewStore.send(.addButtonTapped)
                     Request.tbaRequest(event: .trackAdd)
                 } label: {
                     HStack(spacing: 7){
@@ -277,36 +213,6 @@ struct TrackerView: View {
                         Spacer()
                     }
                 }.background(.linearGradient(colors: [Color("#FFB985"), Color("#F89042")], startPoint: .leading, endPoint: .trailing)).cornerRadius(26).padding(.horizontal, 70)
-            }
-        }
-    }
-    
-    struct GuideView: View {
-        let action: ()->Void
-        var body: some View {
-            ZStack{
-                Color.black.opacity(0.9).ignoresSafeArea()
-                VStack(spacing: 30){
-                    HStack{Spacer()}
-                    Spacer()
-                    VStack(spacing: 0){
-                        Image("tracker_guide")
-                        Text(LocalizedStringKey("Record blood pressure status")).foregroundStyle(.white).font(.system(size: 17))
-                    }
-                    Button {
-                        action()
-                    } label: {
-                        HStack(spacing: 7){
-                            Spacer()
-                            Image("guide_add")
-                            Text("Add").foregroundStyle(.white).font(.system(size: 16.0)).padding(.vertical, 15)
-                            Spacer()
-                        }
-                    }.background(.linearGradient(colors: [Color("#FFB985"), Color("#F89042")], startPoint: .leading, endPoint: .trailing)).cornerRadius(26).padding(.horizontal, 70)
-                    Spacer()
-                }
-            }.onAppear {
-                Request.tbaRequest(event: .guide)
             }
         }
     }
@@ -418,53 +324,6 @@ struct TrackerView: View {
                 Button(action: action, label: {
                     Text(title).foregroundStyle(isSelected ? Color.white : Color("#C8B8AC")).font(.system(size: 12)).padding(.vertical, 7).padding(.horizontal, 12)
                 }).background(isSelected ? Color("#F89042").cornerRadius(14) : Color.clear.cornerRadius(0))
-            }
-        }
-    }
-    
-    struct ReadingGuideView: View {
-        let ok: ()->Void
-        let skip: ()->Void
-        @State var time: Int = 5
-        let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
-        var body: some View {
-            ZStack{
-                Color.black.opacity(0.7).ignoresSafeArea()
-                VStack{
-                    HStack{Spacer()}.frame(height: 1)
-                    Spacer()
-                    VStack(spacing: 18){
-                        Image("reading_guide")
-                        Text("Try to learn more about blood pressure health!").lineLimit(nil).multilineTextAlignment(.center).foregroundStyle(Color("#53545C")).font(.system(size: 16))
-                        VStack(spacing: 12){
-                            Button{
-                                ok()
-                            } label: {
-                                HStack{
-                                    Spacer()
-                                    Text("ok").padding(.vertical,15).foregroundStyle(.white)
-                                    Spacer()
-                                }
-                            }.background(.linearGradient(colors: [Color("#42C3D6"), Color("#5AE9FF")], startPoint: .leading, endPoint: .trailing)).cornerRadius(26).padding(.horizontal, 30)
-                            Button {
-                                if time == 0 {
-                                    skip()
-                                }
-                            } label: {
-                                if time > 0 {
-                                    Text("Skip(\(time)s)").foregroundStyle(Color("#B4B3B3"))
-                                } else {
-                                    Text("Skip").foregroundStyle(Color("#42C3D6"))
-                                }
-                            }
-                        }.font(.system(size: 16))
-                    }.padding(.all, 20).background(Color("#F3F8FB")).cornerRadius(16).padding(.horizontal, 20)
-                    Spacer()
-                }
-            }.onReceive(timer) { _ in
-                if self.time > 0 {
-                    self.time -= 1
-                }
             }
         }
     }

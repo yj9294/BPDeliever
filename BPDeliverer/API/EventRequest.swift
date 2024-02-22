@@ -81,7 +81,7 @@ extension Request {
         let countryCode = Locale.current.identifier.components(separatedBy: "_").last
         param["bp_brith>melodic"] = countryCode
         let guideModel = CacheUtil.shared.getMeasureGuide()
-        param["guild_test>melodic"] = guideModel.rawValue
+        param["style_test>melodic"] = guideModel.rawValue
         
         if event == .firstOpen {
             NSLog("[tba] 开始上报\(event.rawValue) 第\(3 - count ) 次")
@@ -260,6 +260,8 @@ enum RequestEvent: String, Codable {
     case readingGuide = "bp_read_pop"
     case readingGuideAgreen = "bp_read_pop1"
     case readingGuideDisagreen = "bp_read_pop0"
+    
+    case guideSkip = "bp_track_pop0"
     
 }
 

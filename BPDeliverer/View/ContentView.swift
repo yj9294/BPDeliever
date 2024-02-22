@@ -31,6 +31,15 @@ struct ContentReducer: Reducer {
             case .launch(.launched):
                 if state.launch.isLaunched {
                     state.updateItem(.home)
+                    state.home.root.isShowMeasureGuide = true
+                    
+                    // 如果没得弹窗就直接加载广告
+                    if !state.home.root.isShowMeasureGuide || !state.home.root.measures.isEmpty{
+                        return .run { send in
+                            try await Task.sleep(nanoseconds: 200_000_000)
+                            await send(.home(.root(.tracker(.showTrackerAD))))
+                        }
+                    }
                 }
             case let .home(.path(.element(id: _, action: .language(.update(language))))):
                 state.language = language.code
