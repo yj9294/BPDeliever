@@ -57,6 +57,15 @@
             ]
         },
         {
+            "key": "continueAdd",
+            "value": [
+                {
+                    "theAdPriority":1,
+                    "theAdID":"ca-app-pub-3189996234987863/2137336849"
+                }
+            ]
+        }
+        {
             "key": "tracker",
             "value": [
                 {

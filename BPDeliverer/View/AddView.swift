@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Combine
 import ComposableArchitecture
 
 struct AddReducer: Reducer {
@@ -32,6 +33,9 @@ struct AddReducer: Reducer {
             }
             if case .path(.element(id: _, action: .edit(.pop))) = action {
                 state.popEditView()
+                return .run{ send in
+                    await send(.root(.showAddAD))
+                }
             }
             if case .path(.element(id:_, action: .edit(.dateButtonTapped))) = action {
                 state.presentDatePickerView()
@@ -93,12 +97,31 @@ struct AddReducer: Reducer {
             case binding(BindingAction<State>)
             case continueButtonTapped
             case showAddAD
+            case showContinueAD
         }
         var body: some Reducer<State, Action> {
             BindingReducer()
             Reduce{ state, action in
                 if case .continueButtonTapped = action {
                     GADUtil.share.disappear(.add)
+                }
+                if case .showContinueAD = action {
+                    Request.tbaRequest(event: .continueAD)
+                    if CacheUtil.shared.isUserGo {
+                        let publisher = Future<Action, Never> { promise in
+                            GADUtil.share.load(.continueAdd)
+                            GADUtil.share.show(.continueAdd) { _ in
+                                promise(.success(.continueButtonTapped))
+                            }
+                        }
+                        return .publisher {
+                            publisher
+                        }
+                    } else {
+                        return .run { send in
+                            await send(.continueButtonTapped)
+                        }
+                    }
                 }
                 return .none
             }
@@ -155,8 +178,7 @@ struct AddView: View {
                 VStack{
                     MeasurementView(measure: viewStore.$measure).padding(.horizontal, 20).padding(.vertical, 16)
                     ButtonView {
-                        viewStore.send(.continueButtonTapped)
-                        
+                        viewStore.send(.showContinueAD)
                     }
                     if viewStore.hasAD {
                         HStack{
@@ -174,9 +196,6 @@ struct AddView: View {
                     }
                 }.navigationTitle(LocalizedStringKey("New Measurement")).navigationBarTitleDisplayMode(.inline)
                     .onAppear {
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                            viewStore.send(.showAddAD)
-                        }
                         Request.tbaRequest(event: .addAD)
                         GADUtil.share.load(.submit)
                     }

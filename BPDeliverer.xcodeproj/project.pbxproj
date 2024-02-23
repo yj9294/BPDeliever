@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF406B9A2B88690300091DBB /* GuideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF406B992B88690300091DBB /* GuideView.swift */; };
 		C70446372B317F3900F60541 /* AnyCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70446362B317F3900F60541 /* AnyCodable.swift */; };
 		C7051BB92B2064310046D270 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7051BB82B2064310046D270 /* Helper.swift */; };
 		C7051BBC2B2064C70046D270 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C7051BBE2B2064C70046D270 /* Localizable.strings */; };
@@ -69,6 +70,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BF406B992B88690300091DBB /* GuideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideView.swift; sourceTree = "<group>"; };
 		C70446362B317F3900F60541 /* AnyCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyCodable.swift; sourceTree = "<group>"; };
 		C7051BB82B2064310046D270 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		C7051BBD2B2064C70046D270 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -238,6 +240,7 @@
 				C706F6162B68AFFC0009111B /* HistoryView.swift */,
 				C7D2917D2B19845300A6B2D8 /* HomeNavigationView.swift */,
 				C7D2918D2B19BE7C00A6B2D8 /* HomeView.swift */,
+				BF406B992B88690300091DBB /* GuideView.swift */,
 				C72808A72B234AAE000E4A8D /* LanguageView.swift */,
 				C7D2917B2B19844B00A6B2D8 /* LaunchView.swift */,
 				C728089F2B23328A000E4A8D /* MAPTrendsView.swift */,
@@ -377,6 +380,7 @@
 				C79A040E2B4C1D0800FE58CF /* CustomRoundedRectangel.swift in Sources */,
 				C7D2917C2B19844B00A6B2D8 /* LaunchView.swift in Sources */,
 				C7051BB92B2064310046D270 /* Helper.swift in Sources */,
+				BF406B9A2B88690300091DBB /* GuideView.swift in Sources */,
 				C728089A2B22F63C000E4A8D /* ProportionView.swift in Sources */,
 				C7D2918A2B19B8E400A6B2D8 /* ProfileView.swift in Sources */,
 				C7D291942B19DED800A6B2D8 /* Profile.swift in Sources */,
@@ -549,7 +553,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 20240115;
+				CURRENT_PROJECT_VERSION = 20240222;
 				DEVELOPMENT_ASSET_PATHS = "\"BPDeliverer/Preview Content\"";
 				DEVELOPMENT_TEAM = 7HH5ZUB44G;
 				ENABLE_PREVIEWS = YES;
@@ -566,8 +570,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3.3;
-				PRODUCT_BUNDLE_IDENTIFIER = com.bpdeliver.keephabbit.iosapp.test1;
+				MARKETING_VERSION = 1.6.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bpdeliver.keephabbit.iosapp.test2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -585,7 +589,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 20240115;
+				CURRENT_PROJECT_VERSION = 20240222;
 				DEVELOPMENT_ASSET_PATHS = "\"BPDeliverer/Preview Content\"";
 				DEVELOPMENT_TEAM = 7HH5ZUB44G;
 				ENABLE_PREVIEWS = YES;
@@ -602,8 +606,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3.3;
-				PRODUCT_BUNDLE_IDENTIFIER = com.bpdeliver.keephabbit.iosapp.test1;
+				MARKETING_VERSION = 1.6.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bpdeliver.keephabbit.iosapp.test2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

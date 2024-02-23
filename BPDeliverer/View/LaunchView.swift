@@ -38,7 +38,11 @@ struct LaunchReducer: Reducer {
                 GADPosition.allCases.filter({ po in
                     po != .enter && po != .back && po != .submit && po != .trackerBar
                 }).forEach({
-                    GADUtil.share.load($0)
+                    if !CacheUtil.shared.isUserGo, $0 == .continueAdd {
+                        // continue 审核模式不加载
+                    } else {
+                        GADUtil.share.load($0)
+                    }
                 })
                 return .publisher {
                     Timer.publish(every: 0.01, on: .main, in: .common).autoconnect().map({_ in Action.update})

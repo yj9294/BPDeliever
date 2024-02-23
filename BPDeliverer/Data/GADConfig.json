@@ -82,6 +82,15 @@
                     "theAdID":"ca-app-pub-3940256099942544/4411468910"
                 }
             ]
+        },
+        {
+            "key": "continueAdd",
+            "value": [
+                {
+                    "theAdPriority":1,
+                    "theAdID":"ca-app-pub-3940256099942544/4411468910"
+                }
+            ]
         }
     ]
 }

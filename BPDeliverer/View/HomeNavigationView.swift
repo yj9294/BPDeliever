@@ -46,12 +46,16 @@ struct HomeNavigationReducer: Reducer {
                 })
                 
             // 点击 reading 引导进入reading 详细（随机一篇）
-            case .root(.okButtonTapped):
+            case .root(.readingOKButtonTapped):
                 state.root.item = .analytics
                 return .run { send in
                     // 进入详情
                     let item = ChartsReducer.State.Item.allCases.randomElement() ?? .balance
                     await send(.root(.analytics(.showEnterAD(item))))
+                }
+            case .root(.proporOKButtonTapped):
+                return .run{ send in
+                    await send(.root(.analytics(.showEnterAD(.proportion))))
                 }
             default:
                 break

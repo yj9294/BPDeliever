@@ -130,6 +130,8 @@ extension Request {
             Request.tbaRequest(event: .backADShow, ad: ad)
         case .trackerBar:
             Request.tbaRequest(event: .trackerBarADShow, ad: ad)
+        case .continueAdd:
+            Request.tbaRequest(event: .continueADShow, ad: ad)
         default:
             break
         }
@@ -155,6 +157,8 @@ extension Request {
             Request.tbaRequest(event: .backADImpress, ad: ad)
         case .trackerBar:
             Request.tbaRequest(event: .trackerBarADImpress, ad: ad)
+        case .continueAdd:
+            Request.tbaRequest(event: .continueAD, ad: ad)
         }
         if let price = ad?.price, let currency = ad?.currency {
             AppEvents.shared.logPurchase(amount: price, currency: currency)
@@ -217,6 +221,7 @@ enum RequestEvent: String, Codable {
     case enterAD = "bp_enter_7"
     case backAD = "bp_enter_8"
     case trackerBarAD = "bp_enter_9"
+    case continueAD = "bp_enter_10"
     
     case loadingShow = "bp_start_1"
     case trackerADShow = "bp_start_2"
@@ -227,6 +232,7 @@ enum RequestEvent: String, Codable {
     case enterADShow = "bp_start_7"
     case backADShow = "bp_start_8"
     case trackerBarADShow = "bp_start_9"
+    case continueADShow = "bp_start_10"
     
     case loadingImpress = "bp_success_1"
     case trackerADImpress = "bp_success_2"
@@ -237,6 +243,7 @@ enum RequestEvent: String, Codable {
     case enterADImpress = "bp_success_7"
     case backADImpress = "bp_success_8"
     case trackerBarADImpress = "bp_success_9"
+    case continueADImpress = "bp_success_10"
     
     
     // tba广告事件
@@ -262,6 +269,10 @@ enum RequestEvent: String, Codable {
     case readingGuideDisagreen = "bp_read_pop0"
     
     case guideSkip = "bp_track_pop0"
+    
+    case proporGuide = "bp_chart_pop"
+    case proporGuideAgreen = "bp_chart_pop1"
+    case proporGuideDisagreen = "bp_chart_pop0"
     
 }
 

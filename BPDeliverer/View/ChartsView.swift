@@ -76,6 +76,7 @@ struct ChartsReducer: Reducer {
                 Request.tbaRequest(event: .enterAD)
                 if CacheUtil.shared.isUserGo {
                     let publisher = Future<Action, Never> { [item = item] promiss in
+                        GADUtil.share.load(.enter)
                         GADUtil.share.show(.enter) { _ in
                             promiss(.success(.itemDidSelected(item)))
                         }
