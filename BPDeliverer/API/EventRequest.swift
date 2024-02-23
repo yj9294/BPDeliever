@@ -158,7 +158,7 @@ extension Request {
         case .trackerBar:
             Request.tbaRequest(event: .trackerBarADImpress, ad: ad)
         case .continueAdd:
-            Request.tbaRequest(event: .continueAD, ad: ad)
+            Request.tbaRequest(event: .continueADImpress, ad: ad)
         }
         if let price = ad?.price, let currency = ad?.currency {
             AppEvents.shared.logPurchase(amount: price, currency: currency)
