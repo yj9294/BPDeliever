@@ -20,7 +20,6 @@ struct BPDelivererApp: App {
             ContentView(store: Store(initialState: ContentReducer.State(), reducer: {
                 ContentReducer()
             })).onReceive(NotificationCenter.default.publisher(for: UIApplication.willEnterForegroundNotification)) { _ in
-                NotificationHelper.shared.register()
                 if CacheUtil.shared.enterBackgrounded {
                     NotificationCenter.default.post(name: .hotOpen, object: nil)
                     Request.tbaRequest(event: .hot)

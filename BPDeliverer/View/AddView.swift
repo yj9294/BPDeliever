@@ -281,10 +281,12 @@ struct Picker: UIViewRepresentable {
         let view = UIPickerView()
         view.dataSource = context.coordinator
         view.delegate = context.coordinator
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-            view.selectRow(selection.systolic - 30, inComponent: 0, animated: false)
-            view.selectRow(selection.diastolic - 30, inComponent: 1, animated: false)
-            view.selectRow(selection.pulse - 30, inComponent: 2, animated: false)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+            if selection.systolic >= 30 , selection.diastolic >= 30, selection.pulse >= 30 {
+                view.selectRow(selection.systolic - 30, inComponent: 0, animated: false)
+                view.selectRow(selection.diastolic - 30, inComponent: 1, animated: false)
+                view.selectRow(selection.pulse - 30, inComponent: 2, animated: false)
+            }
         }
         return view
     }

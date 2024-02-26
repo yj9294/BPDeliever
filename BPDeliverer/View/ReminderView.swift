@@ -139,7 +139,6 @@ struct ReminderView: View {
             .fullScreenCover(store: store.scope(state: \.$datePicker, action: {.datePicker($0)})) { store in
                 DatePickerView(store: store).background(BackgroundClearView())
             }.onAppear {
-                NotificationHelper.shared.register()
                 viewStore.send(.onAppear)
             }
         }.background(Color("#F3F8FB").ignoresSafeArea())
