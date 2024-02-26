@@ -60,6 +60,11 @@ class UINativeAdView: GADNativeAdView {
         return imageView
     }()
     
+    lazy var playerView: GADMediaView = {
+        let view = GADMediaView()
+        return view
+    }()
+    
     lazy var rightView: UIView = {
         let view = UIView()
         return view
@@ -113,6 +118,11 @@ extension UINativeAdView {
         bigImageView.snp.makeConstraints { make in
             make.left.bottom.top.equalToSuperview()
             make.width.equalTo(163)
+        }
+        
+        addSubview(playerView)
+        playerView.snp.makeConstraints { make in
+            make.top.left.right.bottom.equalTo(bigImageView)
         }
         
         addSubview(rightView)
@@ -169,12 +179,15 @@ extension UINativeAdView {
         self.headlineView = self.titleLabel
         self.bodyView = self.subTitleLabel
         self.imageView = self.bigImageView
+        self.mediaView = self.playerView
         self.callToActionView = self.installLabel
         self.installLabel.setTitle(ad?.callToAction, for: .normal)
         self.iconImageView.image = ad?.icon?.image
-        self.bigImageView.image = ad?.images?.first?.image
+//        self.bigImageView.image = ad?.images?.first?.image
         self.titleLabel.text = ad?.headline
         self.subTitleLabel.text = ad?.body
+        
+        self.mediaView?.mediaContent = ad?.mediaContent
         
         self.hiddenSubviews(hidden: self.nativeAd == nil)
         
