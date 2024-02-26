@@ -54,7 +54,15 @@ class NotificationHelper: NSObject {
             timespace = 24 * 3600 + timespace
         }
         
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: abs(timespace), repeats: false)
+        if timespace <= 0 {
+            timespace = 100
+        }
+        
+        var trigger:UNTimeIntervalNotificationTrigger?  = UNTimeIntervalNotificationTrigger(timeInterval: abs(timespace), repeats: false)
+        
+        if trigger!.timeInterval <= 0 {
+            trigger = nil
+        }
         
         let request = UNNotificationRequest(identifier: time , content: noticeContent, trigger: trigger)
         UNUserNotificationCenter.current().add(request) { error in
