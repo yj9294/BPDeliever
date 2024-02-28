@@ -42,6 +42,7 @@ struct DetailReducer: Reducer {
                 }
             }
             if case .showLogAD = action {
+                Request.tbaRequest(event: .logAD)
                 let publisher = Future<Action, Never> { promise in
                     GADUtil.share.load(.log)
                     GADUtil.share.show(.log) { _ in

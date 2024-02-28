@@ -274,5 +274,6 @@ enum RequestEvent: String, Codable {
     case proporGuideAgreen = "bp_chart_pop1"
     case proporGuideDisagreen = "bp_chart_pop0"
     
+    case disclaimerShow = "bp_dispop"
 }
 

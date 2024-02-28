@@ -31,7 +31,6 @@ struct ContentReducer: Reducer {
             case .launch(.launched):
                 if state.launch.isLaunched {
                     state.updateItem(.home)
-                    state.home.root.isShowMeasureGuide = true
                     
                     // 如果没得弹窗就直接加载广告
                     if !state.home.root.isShowMeasureGuide || !state.home.root.measures.isEmpty{

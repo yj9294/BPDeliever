@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Combine
+import Reachability
 import ComposableArchitecture
 
 struct LaunchReducer: Reducer {
@@ -18,6 +19,14 @@ struct LaunchReducer: Reducer {
             progress >= 1.0
         }
         var isStart = false
+        
+        func preloadAD() {
+            GADPosition.allCases.filter({ po in
+                po != .enter && po != .back && po != .submit && po != .trackerBar && po != .continueAdd
+            }).forEach({
+                GADUtil.share.load($0)
+            })
+        }
     }
     enum Action: Equatable {
         case start
@@ -33,17 +42,10 @@ struct LaunchReducer: Reducer {
                 if state.isStart {
                     return .none
                 }
+                Request.tbaRequest(event: .loadingAD)
                 state.initProgress()
                 state.startCloakRequest()
-                GADPosition.allCases.filter({ po in
-                    po != .enter && po != .back && po != .submit && po != .trackerBar
-                }).forEach({
-                    if !CacheUtil.shared.isUserGo, $0 == .continueAdd {
-                        // continue 审核模式不加载
-                    } else {
-                        GADUtil.share.load($0)
-                    }
-                })
+                state.preloadAD()
                 return .publisher {
                     Timer.publish(every: 0.01, on: .main, in: .common).autoconnect().map({_ in Action.update})
                 }.cancellable(id: CancelID.progress)
@@ -95,11 +97,24 @@ extension LaunchReducer.State {
         isStart = true
         progress = 0.0
         duration = 3.0 / 0.6
+        if CacheUtil.shared.getFirstNetwork() {
+            duration = 14.0
+        }
     }
     mutating func updateProgress() {
         progress += 0.01 / duration
         if progress >= 1.0 {
             progress = 1.0
+            GADUtil.share.load(.tracker)
+            GADUtil.share.load(.log)
+        } else {
+            let reachability = try! Reachability()
+            if reachability.connection == .unavailable {
+                print("没有网络连接")
+            } else {
+                print("有网络连接")
+                preloadAD()
+            }
         }
     }
     mutating func updateDuration(_ duration: Double) {
@@ -116,9 +131,7 @@ struct LaunchView: View {
                 Image("BP Deliverer").padding(.top, 110)
                 Spacer()
                 ProgressView(value: viewStore.progress).tint(.white).padding(.bottom, 43).padding(.horizontal, 80)
-            }.onAppear(perform: {
-                Request.tbaRequest(event: .loadingAD)
-            }).background(Image("bg") .resizable().ignoresSafeArea()).onReceive(coldOpenPublisher) { _ in
+            }.background(Image("bg") .resizable().ignoresSafeArea()).onReceive(coldOpenPublisher) { _ in
                 viewStore.send(.start)
             }.onChange(of: scenePhase) { state in
                 if case .inactive = state {

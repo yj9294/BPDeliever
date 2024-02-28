@@ -35,7 +35,8 @@ struct BPDelivererApp: App {
     
     class Appdelegate: NSObject, UIApplicationDelegate {
         func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
-            NotificationHelper.shared.register()
+            UserDefaults.standard.setObject(true, forKey: "showMeasureGuide")
+            
             FBSDKCoreKit.ApplicationDelegate.shared.application(
                         application,
                         didFinishLaunchingWithOptions: launchOptions

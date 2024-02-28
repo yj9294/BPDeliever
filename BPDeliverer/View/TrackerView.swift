@@ -110,7 +110,9 @@ struct TrackerView: View {
                 }
             }.onAppear {
                 Request.tbaRequest(event: .track)
+                Request.tbaRequest(event: .trackerAD)
                 Request.tbaRequest(event: .trackerADShow)
+                GADUtil.share.load(.log)
             }
         }.background(Color("#F3F8FB")).onAppear {
             ATTrackingManager.requestTrackingAuthorization { _ in

@@ -57,6 +57,8 @@ class CacheUtil: NSObject {
     @FileHelper(.measureGuide)
     private var measureGuide: ABTest?
     
+    @FileHelper(.firstNetwork)
+    private var firstNetwork: Bool?
     
     // 用于防止 定时间的轮训和网络变化同时进行网络请求
     var connectedNetworkUpload: Bool = false
@@ -309,6 +311,12 @@ class CacheUtil: NSObject {
         } else {
             fbPrice = FBPrice(price: price, currency: currency)
         }
+    }
+    
+    func getFirstNetwork() -> Bool {
+        let ret = firstNetwork ?? true
+        firstNetwork = false
+        return ret
     }
 }
 

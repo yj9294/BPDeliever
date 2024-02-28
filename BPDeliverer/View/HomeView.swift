@@ -18,13 +18,18 @@ struct HomeReducer: Reducer {
         @UserDefault("measures", defaultValue: [])
         var measures: [Measurement]
         
-        @BindingState var item: Item = .tracker
+        @BindingState 
+        var item: Item = .tracker
         let items = Item.allCases
         
         var tracker: TrackerReducer.State = .init()
-        @PresentationState var add: AddReducer.State? = nil
-        @PresentationState var datePicker: DatePickerReducer.State? = nil
-        @PresentationState var history: HistoryReducer.State? = nil
+        @PresentationState 
+        var add: AddReducer.State? = nil
+        @PresentationState 
+        var datePicker: DatePickerReducer.State? = nil
+        @PresentationState 
+        var history: HistoryReducer.State? = nil
+        
         var analytics: ChartsReducer.State = .init()
         var profile: ProfileReducer.State = .init()
         
@@ -37,13 +42,19 @@ struct HomeReducer: Reducer {
         
         var lastItem: Item = .tracker
         
-        var isShowMeasureGuide = true
-        var isShowReadingGuide = false
+        @UserDefault("showMeasureGuide", defaultValue: true)
+        var isShowMeasureGuide: Bool
         @UserDefault("showProporGuide", defaultValue: true)
         var isShowProporGuide: Bool
+        var isShowReadingGuide = false
+
+        mutating func updateItem(_ item: Item) {
+            self.item = item
+        }
     }
     enum Action: BindableAction, Equatable {
         case binding(BindingAction<State>)
+        case updateItem(HomeReducer.State.Item)
         case tracker(TrackerReducer.Action)
         case analytics(ChartsReducer.Action)
         case profile(ProfileReducer.Action)
@@ -66,11 +77,14 @@ struct HomeReducer: Reducer {
         case proporOKButtonTapped
         case showLogAD
         case showTrackerBarAD
+        case showBackAD
     }
     var body: some Reducer<State, Action> {
         BindingReducer()
         Reduce{ state, action in
             switch action {
+            case let .updateItem(item):
+                state.updateItem(item)
             case .presentAddView:
                 state.presentAddView()
                 return .run { send in
@@ -88,6 +102,7 @@ struct HomeReducer: Reducer {
                 state.showNotiAlertView = CacheUtil.shared.getNeedNotiAlert()
                 state.updateMeasures(measure)
                 state.dismissAddView()
+                state.updateItem(.analytics)
                 return .run { send in
                     await send(.updateShowReadingGuide(true))
                 }
@@ -145,6 +160,7 @@ struct HomeReducer: Reducer {
                 state.dismissHistoryView()
             
             case .showLogAD:
+                Request.tbaRequest(event: .logAD)
                 let publisher = Future<Action, Never> { promiss in
                     GADUtil.share.load(.log)
                     GADUtil.share.show(.log) { _ in
@@ -158,6 +174,17 @@ struct HomeReducer: Reducer {
                 let publiser = Future<Action, Never> { promise in
                     GADUtil.share.load(.trackerBar)
                     GADUtil.share.show(.trackerBar) { _ in
+                        promise(.success(.tracker(.showTrackerAD)))
+                    }
+                }
+                return .publisher{
+                    publiser
+                }
+            case .showBackAD:
+                Request.tbaRequest(event: .backAD)
+                let publiser = Future<Action, Never> { promise in
+                    GADUtil.share.load(.back)
+                    GADUtil.share.show(.back) { _ in
                         promise(.success(.tracker(.showTrackerAD)))
                     }
                 }
@@ -256,6 +283,9 @@ extension HomeReducer.State {
     mutating func updateMeasure() {
         tracker.measures = measures
         analytics.measures = measures
+        if measures.isEmpty {
+            isShowMeasureGuide = true
+        }
     }
     
     mutating func updateDate(_ date: Date, position: DatePickerReducer.State.Position) {
@@ -282,6 +312,7 @@ extension HomeReducer.State {
         })
         switch item {
         case .tracker:
+            Request.tbaRequest(event: .trackerAD)
             Request.tbaRequest(event: .trackerADShow)
         case .add:
             Request.tbaRequest(event: .addADShow)
@@ -357,38 +388,23 @@ struct HomeView: View {
                     viewStore.send(.updateLastItem(newValue))
                 }
                 
-                if viewStore.measures.isEmpty, viewStore.isShowMeasureGuide {
+                if viewStore.isShowMeasureGuide {
                     MeasureGuideView {
                         viewStore.send(.updateShowMeasureGuide(false))
                         viewStore.send(.showLogAD)
                         Request.tbaRequest(event: .trackAdd)
                         Request.tbaRequest(event: .guideAdd)
-                        Request.tbaRequest(event: .logAD)
                     } skip: {
                         viewStore.send(.updateShowMeasureGuide(false))
                         // 关闭引导弹窗
-                        viewStore.send(.tracker(.showTrackerAD))
+                        viewStore.send(.showBackAD)
                         Request.tbaRequest(event: .guideSkip)
-                    }
-                }
-                
-                // reading 引导
-                if viewStore.isShowReadingGuide {
-                    ReadingGuideView {
-                        viewStore.send(.updateShowReadingGuide(false))
-                        viewStore.send(.readingOKButtonTapped)
-                        Request.tbaRequest(event: .readingGuideAgreen)
-                    } skip: {
-                        viewStore.send(.updateShowReadingGuide(false))
-                        Request.tbaRequest(event: .readingGuideDisagreen)
-                        // 关闭引导弹窗
-                        if !viewStore.measures.isEmpty || !viewStore.isShowMeasureGuide {
-                            viewStore.send(.tracker(.showTrackerAD))
-                        }
-                    }.onAppear{
-                        Request.tbaRequest(event: .readingGuide)
+                    }.onAppear {
+                        GADUtil.share.load(.tracker)
+                        GADUtil.share.load(.log)
+                        GADUtil.share.load(.continueAdd)
                         if CacheUtil.shared.isUserGo {
-                            GADUtil.share.load(.enter)
+                            GADUtil.share.load(.back)
                         }
                     }
                 }
@@ -401,16 +417,50 @@ struct HomeView: View {
                         Request.tbaRequest(event: .proporGuideAgreen)
                     } skip: {
                         viewStore.send(.updateShowProporGuide(false))
+                        viewStore.send(.showBackAD)
                         Request.tbaRequest(event: .proporGuideDisagreen)
                     }.onAppear{
                         Request.tbaRequest(event: .proporGuide)
+                        GADUtil.share.load(.tracker)
+                        if CacheUtil.shared.isUserGo {
+                            GADUtil.share.load(.back)
+                        }
                     }
                 }
+                
+                // reading 引导
+                if viewStore.isShowReadingGuide {
+                    ReadingGuideView {
+                        viewStore.send(.updateShowReadingGuide(false))
+                        viewStore.send(.readingOKButtonTapped)
+                        Request.tbaRequest(event: .readingGuideAgreen)
+                    } skip: {
+                        viewStore.send(.updateShowReadingGuide(false))
+                        Request.tbaRequest(event: .readingGuideDisagreen)
+                        viewStore.send(.showBackAD)
+//                        // 关闭引导弹窗
+//                        if !viewStore.measures.isEmpty || !viewStore.isShowMeasureGuide {
+//                            viewStore.send(.tracker(.showTrackerAD))
+//                        }
+                    }.onAppear{
+                        Request.tbaRequest(event: .readingGuide)
+                        if CacheUtil.shared.isUserGo {
+                            GADUtil.share.load(.enter)
+                        }
+                        GADUtil.share.load(.tracker)
+                        if CacheUtil.shared.isUserGo {
+                            GADUtil.share.load(.back)
+                        }
+                    }
+                }
+                
                 
                 if !viewStore.allowUser {
                     AllowUserView {
                         Request.tbaRequest(event: .disclaimer)
                         viewStore.send(.allowUser)
+                    }.onAppear{
+                        Request.tbaRequest(event: .disclaimerShow)
                     }
                 }
             }

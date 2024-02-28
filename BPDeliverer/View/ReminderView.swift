@@ -140,6 +140,7 @@ struct ReminderView: View {
                 DatePickerView(store: store).background(BackgroundClearView())
             }.onAppear {
                 viewStore.send(.onAppear)
+                NotificationHelper.shared.register()
             }
         }.background(Color("#F3F8FB").ignoresSafeArea())
     }
