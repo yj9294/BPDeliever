@@ -111,7 +111,9 @@ struct TrackerView: View {
             }.onAppear {
                 Request.tbaRequest(event: .track)
                 Request.tbaRequest(event: .trackerAD)
-                Request.tbaRequest(event: .trackerADShow)
+                if !GADUtil.share.isGADLimited {
+                    Request.tbaRequest(event: .trackerADShow)
+                }
                 GADUtil.share.load(.log)
             }
         }.background(Color("#F3F8FB")).onAppear {

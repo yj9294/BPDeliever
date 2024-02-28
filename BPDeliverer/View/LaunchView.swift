@@ -69,7 +69,6 @@ struct LaunchReducer: Reducer {
                     }
                 }
             case .showAD:
-                Request.tbaRequest(event: .loadingShow)
                 let publisher = Future<Action, Never>{ promiss in
                     GADUtil.share.show(.loading) { _ in
                         promiss(.success(.launched))

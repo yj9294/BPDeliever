@@ -250,7 +250,9 @@ extension HomeReducer.State {
         if item == .tracker {
             Request.tbaRequest(event: .track)
             Request.tbaRequest(event: .trackerAD)
-            Request.tbaRequest(event: .trackerADShow)
+            if !GADUtil.share.isGADLimited {
+                Request.tbaRequest(event: .trackerADShow)
+            }
         }
     }
     
@@ -313,11 +315,17 @@ extension HomeReducer.State {
         switch item {
         case .tracker:
             Request.tbaRequest(event: .trackerAD)
-            Request.tbaRequest(event: .trackerADShow)
+            if !GADUtil.share.isGADLimited {
+                Request.tbaRequest(event: .trackerADShow)
+            }
         case .add:
-            Request.tbaRequest(event: .addADShow)
+            if !GADUtil.share.isGADLimited {
+                Request.tbaRequest(event: .addADShow)
+            }
         case .profile:
-            Request.tbaRequest(event: .profileADShow)
+            if !GADUtil.share.isGADLimited {
+                Request.tbaRequest(event: .profileADShow)
+            }
         default:
             break
         }
